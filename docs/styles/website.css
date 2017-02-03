@@ -109,3 +109,13 @@ a[aria-label="Change Layout"]{
   color: #939da3 !important;
   padding-top: 20px !important;
 }
+
+#headerLogo{
+  background-image: url('https://s3.amazonaws.com/bw-v2-api/headerLogo.png');
+}
+
+@media (max-width: 980px){
+  #headerLogo{
+    background-image: url('https://s3.amazonaws.com/bw-v2-api/mobileLogo.png');
+    width: 40px;
+  }
