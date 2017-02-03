@@ -82,14 +82,6 @@ request(options, function (error, response, body) {
   if (error) throw new Error(error);
 
   console.log(body);
-  // { id: '1486146872688aih2vr2rpxi7n2ll',
-  // owner: '+12345678901',
-  // time: '2017-02-03T18:34:32.688Z',
-  // direction: 'out',
-  // to: [ '+12345678902', '+12345678903' ],
-  // from: '+12345678901',
-  // text: 'Hey, check this out!',
-  // tag: 'test message' }
 });
 ```
 
@@ -188,15 +180,6 @@ request(options, function (error, response, body) {
   if (error) throw new Error(error);
 
   console.log(body);
-  // { id: '1486146872688aih2vr2rpxi7n2ll',
-  // owner: '+12345678901',
-  // time: '2017-02-03T18:34:32.688Z',
-  // direction: 'out',
-  // to: [ '+12345678902', '+12345678903'],
-  // from: '+12345678901',
-  // text: 'Hey, check this out!',
-  // media: ['https://s3.amazonaws.com/bw-v2-api/demo.jpg'],
-  // tag: 'test message' }
 });
 ```
 
