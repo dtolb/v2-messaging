@@ -111,11 +111,11 @@ a[aria-label="Change Layout"]{
 }
 
 #headerLogo{
-  background-image: url('https://s3.amazonaws.com/bw-v2-api/headerLogo.png');
+  background-image: url('://s3.amazonaws.com/bw-v2-api/headerLogo.png');
 }
 
 @media (max-width: 980px){
   #headerLogo{
-    background-image: url('https://s3.amazonaws.com/bw-v2-api/mobileLogo.png');
+    background-image: url('://s3.amazonaws.com/bw-v2-api/mobileLogo.png');
     width: 40px;
   }

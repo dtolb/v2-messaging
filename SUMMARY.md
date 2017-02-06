@@ -9,7 +9,7 @@
 * [Group Message](methods/createGroup.md)
 
 ## Message Events
-* [Standard Event](events/receiveSingle.md)
+* [Incoming SMS/MMS Message](events/receiveSingle.md)
 * [Incoming Group Message](events/incomingGroup.md)
 * [Message Sent](events/outSent.md)
 * [Message Delivered](events/msgDelivered.md)
