@@ -351,6 +351,35 @@
 <blockquote>
 <p>Follow the <a href="http://dev.bandwidth.com/howto/incomingCallandMessaging.html" target="_blank">tutorial</a> on how to create an application and order phone numbers</p>
 </blockquote>
+<h3 id="enable-the-application-for-v2-messaging">Enable the application for v2-messaging</h3>
+<p>You <em>MUST</em> update each individual <code>application</code> to use v2-messaging.  This can <em>ONLY</em> be done via a <code class="post">POST</code> request to the <code>/applications</code> endpoint.</p>
+<h4 id="update-an-existing-application">Update an existing Application</h4>
+<p>Updating an existing application will enable <em>ALL</em> phonenumbers associated that appication for v2-messaging.</p>
+<p>Create a <code class="post">POST</code> request to the <code>applicationId</code> endpoint to with <code>{&quot;messageApiVersion&quot; : &quot;V2&quot;}</code>.</p>
+<pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">https://api.catapult.inetwork.com/v1/users/{userId}/applications/{applicationId}</span> HTTP/1.1
+<span class="hljs-attribute">Content-Type</span>: application/json; charset=utf-8
+<span class="hljs-attribute">Authorization</span>: Basic dc123
+
+<span class="json">{
+    <span class="hljs-attr">&quot;messageApiVersion&quot;</span>: <span class="hljs-string">&quot;V2&quot;</span>
+}
+</span></code></pre>
+<h4 id="create-a-new-application">Create a new Application</h4>
+<p>You can also create a new application to use with v2-messaging.</p>
+<aside class="alert general small">
+    You need to assign numbers to the new application to use for v2-messaging
+</aside>
+
+<pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">https://api.catapult.inetwork.com/v1/users/{userId}/applications</span> HTTP/1.1
+<span class="hljs-attribute">Content-Type</span>: application/json; charset=utf-8
+<span class="hljs-attribute">Authorization</span>: Basic dc123
+
+<span class="json">{
+    <span class="hljs-attr">&quot;name&quot;</span>              : <span class="hljs-string">&quot;My Super Fast Messaging Service&quot;</span>,
+    <span class="hljs-attr">&quot;incomingMessageUrl&quot;</span>: <span class="hljs-string">&quot;http://your_site.co,m/messages&quot;</span>,
+    <span class="hljs-attr">&quot;messageApiVersion&quot;</span> : <span class="hljs-string">&quot;V2&quot;</span>
+}
+</span></code></pre>
 <h2 id="validate-callback-url">Validate callback Url</h2>
 <p>Make sure that the callback url is configured correctly for your application.</p>
 <h3 id="using-the-ui">Using the UI</h3>
@@ -410,7 +439,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Setup Application","level":"1.2","depth":1,"next":{"title":"Single Message","level":"2.1","depth":1,"path":"methods/createSingle.md","ref":"methods/createSingle.md","articles":[]},"previous":{"title":"Get Started","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth","header","sharing","custom-favicon","toggle-chapters","customJquery@git+https://github.com/dtolb/gitbook-plugin-customJquery.git","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight"],"pluginsConfig":{"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"application.md","mtime":"2017-02-03T19:15:11.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-02-07T19:05:52.237Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Setup Application","level":"1.2","depth":1,"next":{"title":"Single Message","level":"2.1","depth":1,"path":"methods/createSingle.md","ref":"methods/createSingle.md","articles":[]},"previous":{"title":"Get Started","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth","header","sharing","custom-favicon","toggle-chapters","customJquery@git+https://github.com/dtolb/gitbook-plugin-customJquery.git","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight"],"pluginsConfig":{"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"application.md","mtime":"2017-02-17T19:39:25.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-02-17T19:40:27.529Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
