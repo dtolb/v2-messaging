@@ -17,3 +17,8 @@ _book
 
 docs/docs
 docs/.gitignore
+
+## Deploy files
+deploy_key.pub
+deploy_key
+my_project
