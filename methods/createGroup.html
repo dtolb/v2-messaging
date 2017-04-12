@@ -1,0 +1,631 @@
+
+<!DOCTYPE HTML>
+<html lang="">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Group Message</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-bandwidth-fonts/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-bandwidth-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-bandwidth/theme-api.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../events/receiveSingle.html">
+    
+    
+    <link rel="prev" href="createSingle.html">
+    
+
+    </head>
+    <body>
+        
+<div class="book"><link href="../styles/styles.min.css" type="text/css">
+<div class="head">
+   <a href="http://www.bandwidth.com" class="aimg"><div id="headerLogo"></div></a>
+   <h2>v2 Messaging Preview</h2>
+   <ul>
+   	<li><a href="https://catapult.inetwork.com/portal/signup" target="_blank"><button class="medium hover-go right">Sign up</button></a></li>
+   	<li><a href="https://catapult.inetwork.com/pages/login.jsf" target="_blank">Log in</a></li>
+   	<li><a href="https://support.bandwidth.com/access/unauthenticated" target="_blank">Support</a></li>
+   </ul>
+</div>
+
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Overview</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Get Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../application.html">
+            
+                <a href="../application.html">
+            
+                    
+                    Setup Application
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Send Messages</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="createSingle.html">
+            
+                <a href="createSingle.html">
+            
+                    
+                    Single Message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.2" data-path="createGroup.html">
+            
+                <a href="createGroup.html">
+            
+                    
+                    Group Message
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Message Events</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../events/receiveSingle.html">
+            
+                <a href="../events/receiveSingle.html">
+            
+                    
+                    Incoming SMS/MMS Message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../events/incomingGroup.html">
+            
+                <a href="../events/incomingGroup.html">
+            
+                    
+                    Incoming Group Message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../events/outSent.html">
+            
+                <a href="../events/outSent.html">
+            
+                    
+                    Message Sent
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../events/msgDelivered.html">
+            
+                <a href="../events/msgDelivered.html">
+            
+                    
+                    Message Delivered
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../events/groupReject.html">
+            
+                <a href="../events/groupReject.html">
+            
+                    
+                    Group Message Rejected
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Api Error Response</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../errors/badRequest.html">
+            
+                <a href="../errors/badRequest.html">
+            
+                    
+                    400 - Bad Request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../errors/unauth.html">
+            
+                <a href="../errors/unauth.html">
+            
+                    
+                    401 - Unauthorized
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../errors/forbidden.html">
+            
+                <a href="../errors/forbidden.html">
+            
+                    
+                    403 - Forbidden
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../errors/tooManyReq.html">
+            
+                <a href="../errors/tooManyReq.html">
+            
+                    
+                    429 - Too Many Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="..">Group Message</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="api-method"><div class="api-method-definition"><div class="api-definition-top"></div><h2 id="send-or-create-a-group-message">Send or Create a Group Message</h2>
+<p>Send at least one text message or picture message</p>
+<h3 id="request-url">Request URL</h3>
+<p><code class="post">POST</code><code>https://api.catapult.inetwork.com/v2/users/{userId}/messages</code></p>
+<h3 id="supported-parameters">Supported Parameters</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">from</td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left">One of your telephone numbers the message should come from (must be in E.164 format, like +19195551212).</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">to</td>
+<td style="text-align:left"><code>array</code></td>
+<td style="text-align:left">The phone number the message should be sent to (must be in E.164 format, like +19195551212).</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">text</td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left">The contents of the text message (must be 2048 characters or less).</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">media</td>
+<td style="text-align:left"><code>array</code></td>
+<td style="text-align:left">A list of URLs to include as media attachments as part of the message.</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">tag</td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left">Any string, it will be included in the callback events of the message.</td>
+<td style="text-align:left">No</td>
+</tr>
+</tbody>
+</table>
+</div><div class="api-method-code"><div class="api-code-top"></div><div class="api-method-example"><h3 id="example-send-or-create-a-group-message">Example: Send or create a group message</h3>
+</div><div class="api-method-sample" data-lang="http" data-name="HTTP"><pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">https://api.catapult.inetwork.com/v2/users/{userId}/messages</span> HTTP/1.1
+<span class="hljs-attribute">Content-Type</span>: application/json; charset=utf-8
+<span class="hljs-attribute">Authorization</span>: Basic dc123
+
+<span class="json">{
+    <span class="hljs-attr">&quot;to&quot;</span>  :[
+      <span class="hljs-string">&quot;+12345678902&quot;</span>,
+      <span class="hljs-string">&quot;+12345678903&quot;</span>
+    ],
+    <span class="hljs-attr">&quot;from&quot;</span>:<span class="hljs-string">&quot;+12345678901&quot;</span>,
+    <span class="hljs-attr">&quot;text&quot;</span>:<span class="hljs-string">&quot;Hey, check this out!&quot;</span>,
+    <span class="hljs-attr">&quot;tag&quot;</span> :<span class="hljs-string">&quot;test message&quot;</span>
+}
+</span></code></pre>
+</div><div class="api-method-sample" data-lang="bash" data-name="cURL"><pre><code class="lang-bash">curl --request POST \
+    --url https://api.catapult.inetwork.com/v2/users/{{userId}}/messages \
+    --user {token}:{secret} \
+    --header <span class="hljs-string">&apos;content-type: application/json&apos;</span> \
+    --data <span class="hljs-string">&apos;
+    {
+        &quot;to&quot;  :[
+          &quot;+12345678902&quot;,
+          &quot;+12345678903&quot;
+        ],
+        &quot;from&quot;:&quot;+12345678901&quot;,
+        &quot;text&quot;:&quot;Hey, check this out!&quot;,
+        &quot;tag&quot; :&quot;test message&quot;
+    }
+  &apos;</span>
+</code></pre>
+</div><div class="api-method-sample" data-lang="js" data-name="Js"><pre><code class="lang-js"><span class="hljs-keyword">var</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;request&quot;</span>);
+
+<span class="hljs-keyword">var</span> options = { <span class="hljs-attr">method</span>: <span class="hljs-string">&apos;POST&apos;</span>,
+  <span class="hljs-attr">url</span>: <span class="hljs-string">&apos;https://api.catapult.inetwork.com/v2/users/{{userId}}/messages&apos;</span>,
+  <span class="hljs-attr">headers</span>: { <span class="hljs-string">&apos;content-type&apos;</span>: <span class="hljs-string">&apos;application/json&apos;</span> },
+  <span class="hljs-attr">auth</span>: {
+    <span class="hljs-attr">user</span>: <span class="hljs-string">&apos;{{token}}&apos;</span>,
+    <span class="hljs-attr">pass</span>: <span class="hljs-string">&apos;{{secret}}&apos;</span>
+  },
+  <span class="hljs-attr">body</span>:
+   { <span class="hljs-attr">to</span>: [ <span class="hljs-string">&apos;+12345678902&apos;</span>, <span class="hljs-string">&apos;+12345678903&apos;</span>],
+     <span class="hljs-attr">from</span>: <span class="hljs-string">&apos;+12345678901&apos;</span>,
+     <span class="hljs-attr">text</span>: <span class="hljs-string">&apos;Hey, check this out!&apos;</span>,
+     <span class="hljs-attr">tag</span>: <span class="hljs-string">&apos;test message&apos;</span> },
+  <span class="hljs-attr">json</span>: <span class="hljs-literal">true</span> };
+
+request(options, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error, response, body</span>) </span>{
+  <span class="hljs-keyword">if</span> (error) <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(error);
+
+  <span class="hljs-built_in">console</span>.log(body);
+});
+</code></pre>
+</div><div class="api-method-example"><blockquote>
+<p>The above command returns a JSON Response structured like this:</p>
+</blockquote>
+<pre><code class="lang-http"><span class="hljs-attribute">Status</span>: 202 Accepted
+<span class="hljs-attribute">Content-Type</span>: application/json; charset=utf-8
+
+<span class="json">{
+  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;14762070468292kw2fuqty55yp2b2&quot;</span>,
+  <span class="hljs-attr">&quot;time&quot;</span>: <span class="hljs-string">&quot;2016-09-14T18:20:16Z&quot;</span>,
+  <span class="hljs-attr">&quot;to&quot;</span>: [
+    <span class="hljs-string">&quot;+12345678902&quot;</span>,
+    <span class="hljs-string">&quot;+12345678903&quot;</span>
+  ],
+  <span class="hljs-attr">&quot;from&quot;</span>: <span class="hljs-string">&quot;+12345678901&quot;</span>,
+  <span class="hljs-attr">&quot;text&quot;</span>: <span class="hljs-string">&quot;Hey, check this out!&quot;</span>,
+  <span class="hljs-attr">&quot;tag&quot;</span>: <span class="hljs-string">&quot;test message&quot;</span>,
+  <span class="hljs-attr">&quot;owner&quot;</span>: <span class="hljs-string">&quot;+12345678901&quot;</span>,
+  <span class="hljs-attr">&quot;direction&quot;</span>: <span class="hljs-string">&quot;out&quot;</span>
+}
+</span></code></pre>
+<h3 id="example-send-picture-to-a-group-message-thread">Example: Send Picture to a group message thread</h3>
+</div><div class="api-method-sample" data-lang="http" data-name="HTTP"><pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">https://api.catapult.inetwork.com/v2/users/{userId}/messages</span> HTTP/1.1
+<span class="hljs-attribute">Content-Type</span>: application/json; charset=utf-8
+<span class="hljs-attribute">Authorization</span>: Basic dc123
+
+<span class="json">{
+    <span class="hljs-attr">&quot;to&quot;</span>  :[
+      <span class="hljs-string">&quot;+12345678902&quot;</span>,
+      <span class="hljs-string">&quot;+12345678903&quot;</span>
+    ],
+    <span class="hljs-attr">&quot;from&quot;</span>:<span class="hljs-string">&quot;+12345678901&quot;</span>,
+    <span class="hljs-attr">&quot;text&quot;</span>:<span class="hljs-string">&quot;Hey, check this out!&quot;</span>,
+    <span class="hljs-attr">&quot;media&quot;</span>: [
+      <span class="hljs-string">&quot;https://s3.amazonaws.com/bw-v2-api/demo.jpg&quot;</span>
+    ],
+    <span class="hljs-attr">&quot;tag&quot;</span> :<span class="hljs-string">&quot;test message&quot;</span>
+}
+</span></code></pre>
+</div><div class="api-method-sample" data-lang="bash" data-name="cURL"><pre><code class="lang-bash">curl --request POST \
+    --url https://api.catapult.inetwork.com/v2/users/{{userId}}/messages \
+    --user {token}:{secret} \
+    --header <span class="hljs-string">&apos;content-type: application/json&apos;</span> \
+    --data <span class="hljs-string">&apos;
+    {
+        &quot;to&quot;  :[
+          &quot;+12345678902&quot;,
+          &quot;+12345678903&quot;
+        ],
+        &quot;from&quot;:&quot;+12345678901&quot;,
+        &quot;text&quot;:&quot;Hey, check this out!&quot;,
+        &quot;media&quot;: [
+          &quot;https://s3.amazonaws.com/bw-v2-api/demo.jpg&quot;
+          ],
+        &quot;tag&quot; :&quot;test message&quot;
+    }
+  &apos;</span>
+</code></pre>
+</div><div class="api-method-sample" data-lang="js" data-name="Js"><pre><code class="lang-js"><span class="hljs-keyword">var</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;request&quot;</span>);
+
+<span class="hljs-keyword">var</span> options = { <span class="hljs-attr">method</span>: <span class="hljs-string">&apos;POST&apos;</span>,
+  <span class="hljs-attr">url</span>: <span class="hljs-string">&apos;https://api.catapult.inetwork.com/v2/users/{{userId}}/messages&apos;</span>,
+  <span class="hljs-attr">headers</span>: { <span class="hljs-string">&apos;content-type&apos;</span>: <span class="hljs-string">&apos;application/json&apos;</span> },
+  <span class="hljs-attr">auth</span>: {
+    <span class="hljs-attr">user</span>: <span class="hljs-string">&apos;{{token}}&apos;</span>,
+    <span class="hljs-attr">pass</span>: <span class="hljs-string">&apos;{{secret}}&apos;</span>
+  },
+  <span class="hljs-attr">body</span>:
+   { <span class="hljs-attr">to</span>: [ <span class="hljs-string">&apos;+12345678902&apos;</span>, <span class="hljs-string">&apos;+12345678903&apos;</span>],
+     <span class="hljs-attr">from</span>: <span class="hljs-string">&apos;+12345678901&apos;</span>,
+     <span class="hljs-attr">text</span>: <span class="hljs-string">&apos;Hey, check this out!&apos;</span>,
+     <span class="hljs-attr">media</span>: [
+      <span class="hljs-string">&quot;https://s3.amazonaws.com/bw-v2-api/demo.jpg&quot;</span>
+      ],
+     <span class="hljs-attr">tag</span>: <span class="hljs-string">&apos;test message&apos;</span> },
+  <span class="hljs-attr">json</span>: <span class="hljs-literal">true</span> };
+
+request(options, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error, response, body</span>) </span>{
+  <span class="hljs-keyword">if</span> (error) <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(error);
+
+  <span class="hljs-built_in">console</span>.log(body);
+});
+</code></pre>
+</div><div class="api-method-example"><blockquote>
+<p>The above command returns a JSON Response structured like this:</p>
+</blockquote>
+<pre><code class="lang-http"><span class="hljs-attribute">Status</span>: 202 Accepted
+<span class="hljs-attribute">Content-Type</span>: application/json; charset=utf-8
+
+<span class="json">{
+  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;14762070468292kw2fuqty55yp2b2&quot;</span>,
+  <span class="hljs-attr">&quot;time&quot;</span>: <span class="hljs-string">&quot;2016-09-14T18:20:16Z&quot;</span>,
+  <span class="hljs-attr">&quot;to&quot;</span>: [
+    <span class="hljs-string">&quot;+12345678902&quot;</span>,
+    <span class="hljs-string">&quot;+12345678903&quot;</span>
+  ],
+  <span class="hljs-attr">&quot;from&quot;</span>: <span class="hljs-string">&quot;+12345678901&quot;</span>,
+  <span class="hljs-attr">&quot;text&quot;</span>: <span class="hljs-string">&quot;Hey, check this out!&quot;</span>,
+  <span class="hljs-attr">&quot;tag&quot;</span>: <span class="hljs-string">&quot;test message&quot;</span>,
+  <span class="hljs-attr">&quot;owner&quot;</span>: <span class="hljs-string">&quot;+12345678901&quot;</span>,
+  <span class="hljs-attr">&quot;media&quot;</span>: [
+    <span class="hljs-string">&quot;https://s3.amazonaws.com/bw-v2-api/demo.jpg&quot;</span>
+  ],
+  <span class="hljs-attr">&quot;direction&quot;</span>: <span class="hljs-string">&quot;out&quot;</span>
+}
+</span></code></pre>
+</div></div></div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class="search-results-count"></span> results matching &quot;<span class="search-query"></span>&quot;</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching &quot;<span class="search-query"></span>&quot;</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Group Message","level":"2.2","depth":1,"next":{"title":"Incoming SMS/MMS Message","level":"3.1","depth":1,"path":"events/receiveSingle.md","ref":"events/receiveSingle.md","articles":[]},"previous":{"title":"Single Message","level":"2.1","depth":1,"path":"methods/createSingle.md","ref":"methods/createSingle.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth","header","sharing","custom-favicon","toggle-chapters","customJquery@git+https://github.com/dtolb/gitbook-plugin-customJquery.git","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight"],"pluginsConfig":{"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"methods/createGroup.md","mtime":"2017-04-12T23:41:16.083Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-12T23:42:36.614Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-bandwidth-fonts/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-bandwidth/theme-api.js"></script>
+        
+    
+
+    </body>
+</html>
+

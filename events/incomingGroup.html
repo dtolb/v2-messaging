@@ -1,0 +1,540 @@
+
+<!DOCTYPE HTML>
+<html lang="">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Incoming Group Message</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-bandwidth-fonts/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-bandwidth-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-bandwidth/theme-api.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="outSent.html">
+    
+    
+    <link rel="prev" href="receiveSingle.html">
+    
+
+    </head>
+    <body>
+        
+<div class="book"><link href="../styles/styles.min.css" type="text/css">
+<div class="head">
+   <a href="http://www.bandwidth.com" class="aimg"><div id="headerLogo"></div></a>
+   <h2>v2 Messaging Preview</h2>
+   <ul>
+   	<li><a href="https://catapult.inetwork.com/portal/signup" target="_blank"><button class="medium hover-go right">Sign up</button></a></li>
+   	<li><a href="https://catapult.inetwork.com/pages/login.jsf" target="_blank">Log in</a></li>
+   	<li><a href="https://support.bandwidth.com/access/unauthenticated" target="_blank">Support</a></li>
+   </ul>
+</div>
+
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Overview</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Get Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../application.html">
+            
+                <a href="../application.html">
+            
+                    
+                    Setup Application
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Send Messages</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../methods/createSingle.html">
+            
+                <a href="../methods/createSingle.html">
+            
+                    
+                    Single Message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../methods/createGroup.html">
+            
+                <a href="../methods/createGroup.html">
+            
+                    
+                    Group Message
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Message Events</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="receiveSingle.html">
+            
+                <a href="receiveSingle.html">
+            
+                    
+                    Incoming SMS/MMS Message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.2" data-path="incomingGroup.html">
+            
+                <a href="incomingGroup.html">
+            
+                    
+                    Incoming Group Message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="outSent.html">
+            
+                <a href="outSent.html">
+            
+                    
+                    Message Sent
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="msgDelivered.html">
+            
+                <a href="msgDelivered.html">
+            
+                    
+                    Message Delivered
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="groupReject.html">
+            
+                <a href="groupReject.html">
+            
+                    
+                    Group Message Rejected
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Api Error Response</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../errors/badRequest.html">
+            
+                <a href="../errors/badRequest.html">
+            
+                    
+                    400 - Bad Request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../errors/unauth.html">
+            
+                <a href="../errors/unauth.html">
+            
+                    
+                    401 - Unauthorized
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../errors/forbidden.html">
+            
+                <a href="../errors/forbidden.html">
+            
+                    
+                    403 - Forbidden
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../errors/tooManyReq.html">
+            
+                <a href="../errors/tooManyReq.html">
+            
+                    
+                    429 - Too Many Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="..">Incoming Group Message</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="api-method"><div class="api-method-definition"><div class="api-definition-top"></div><h1 id="incoming-group-message-event">Incoming Group Message Event</h1>
+<p>In order to receive text messages events, you need to ensure you have <a href="../application.html">setup your application</a> to send callbacks to your server&apos;s URL.</p>
+<h3 id="parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">type</td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left">The Event type</td>
+</tr>
+<tr>
+<td style="text-align:left">time</td>
+<td style="text-align:left"><code>array</code></td>
+<td style="text-align:left">The time of the event described in the receipt</td>
+</tr>
+<tr>
+<td style="text-align:left">description</td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left">A detailed description of the event described by the receipt</td>
+</tr>
+<tr>
+<td style="text-align:left">to</td>
+<td style="text-align:left"><code>array</code></td>
+<td style="text-align:left">The destination number for an outbound group message receipt</td>
+</tr>
+<tr>
+<td style="text-align:left">message</td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left">Any string, it will be included in the callback events of the message.</td>
+</tr>
+<tr>
+<td style="text-align:left">message.id</td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left">The unique ID of this message</td>
+</tr>
+<tr>
+<td style="text-align:left">message.owner</td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left">The phone number this particular message is associated with.<br> For an outbound message, this is always the <code>from</code> number.<br> For an inbound message, this will be (one of) the <code>to</code> number(s).<br>For instance, if this is an inbound group message, the <code>owner</code> field will be set to the <code>to</code> number that this particular copy of the group message belongs to.</td>
+</tr>
+<tr>
+<td style="text-align:left">message.time</td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left">The time stamp of when message was created</td>
+</tr>
+<tr>
+<td style="text-align:left">message.direction</td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left">Whether the message was sent from Bandwidth, or received by a Bandwidth number</td>
+</tr>
+<tr>
+<td style="text-align:left">message.to</td>
+<td style="text-align:left"><code>array</code></td>
+<td style="text-align:left">The phone number (or numbers) the message the message is sent to. On a POST, this can be a String, or an array of one or more numbers. In all other places, this will be an array.</td>
+</tr>
+<tr>
+<td style="text-align:left">message.from</td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left">The phone number the message was sent from</td>
+</tr>
+<tr>
+<td style="text-align:left">message.text</td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left">The text content of the message</td>
+</tr>
+<tr>
+<td style="text-align:left">message.media</td>
+<td style="text-align:left"><code>array</code></td>
+<td style="text-align:left">A list of URLs to include as media attachments as part of the message</td>
+</tr>
+<tr>
+<td style="text-align:left">message.tag</td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left">An custom String that you can use to track this particular message</td>
+</tr>
+</tbody>
+</table>
+</div><div class="api-method-code"><div class="api-code-top"></div><div class="api-method-example"><h3 id="incoming-group-message">Incoming group message</h3>
+</div><div class="api-method-sample" data-lang="http" data-name="HTTP"><pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">/your_url</span> HTTP/1.1
+<span class="hljs-attribute">Content-Type</span>: application/json; charset=utf-8
+<span class="hljs-attribute">User-Agent</span>: BandwidthAPI/v2
+
+<span class="json">[
+  {
+    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;message-received&quot;</span>,
+    <span class="hljs-attr">&quot;time&quot;</span>: <span class="hljs-string">&quot;2016-09-14T18:20:16Z&quot;</span>,
+    <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;Incoming message received&quot;</span>,
+    <span class="hljs-attr">&quot;to&quot;</span>: <span class="hljs-string">&quot;+12345678902&quot;</span>,
+    <span class="hljs-attr">&quot;message&quot;</span>: {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;14762070468292kw2fuqty55yp2b2&quot;</span>,
+      <span class="hljs-attr">&quot;time&quot;</span>: <span class="hljs-string">&quot;2016-09-14T18:20:16Z&quot;</span>,
+      <span class="hljs-attr">&quot;to&quot;</span>: [
+        <span class="hljs-string">&quot;+12345678902&quot;</span>,
+        <span class="hljs-string">&quot;+12345678903&quot;</span>
+      ],
+      <span class="hljs-attr">&quot;from&quot;</span>: <span class="hljs-string">&quot;+12345678901&quot;</span>,
+      <span class="hljs-attr">&quot;text&quot;</span>: <span class="hljs-string">&quot;Hey, check this out!&quot;</span>,
+      <span class="hljs-attr">&quot;media&quot;</span>: [
+        <span class="hljs-string">&quot;https://s3.amazonaws.com/bw-v2-api/demo.jpg&quot;</span>
+      ],
+      <span class="hljs-attr">&quot;owner&quot;</span>: <span class="hljs-string">&quot;+12345678902&quot;</span>,
+      <span class="hljs-attr">&quot;direction&quot;</span>: <span class="hljs-string">&quot;in&quot;</span>
+    }
+  }
+]
+</span></code></pre>
+</div></div></div>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class="search-results-count"></span> results matching &quot;<span class="search-query"></span>&quot;</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching &quot;<span class="search-query"></span>&quot;</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Incoming Group Message","level":"3.2","depth":1,"next":{"title":"Message Sent","level":"3.3","depth":1,"path":"events/outSent.md","ref":"events/outSent.md","articles":[]},"previous":{"title":"Incoming SMS/MMS Message","level":"3.1","depth":1,"path":"events/receiveSingle.md","ref":"events/receiveSingle.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth","header","sharing","custom-favicon","toggle-chapters","customJquery@git+https://github.com/dtolb/gitbook-plugin-customJquery.git","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight"],"pluginsConfig":{"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"events/incomingGroup.md","mtime":"2017-04-12T23:41:16.083Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-12T23:42:36.614Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-bandwidth-fonts/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-bandwidth/theme-api.js"></script>
+        
+    
+
+    </body>
+</html>
+
