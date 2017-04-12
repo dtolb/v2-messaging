@@ -13,3 +13,25 @@ The request body for HTTP callbacks regarding message state changes will follow 
 Callbacks will be sent to the Callback URL for the Application associated with the `from` number on the outgoing message.
 
 If there is a need to identify individual messages, or correlate them with an ID in your application, the `tag` field can be set to any string. The custom `tag` will be included in all callbacks for this message.
+
+### SDK Preview Branches
+
+#### C#
+
+[Github](https://github.com/bandwidthcom/csharp-bandwidth/pull/63)
+
+```csharp
+// using v2 api
+var message = await client.V2.Message.SendAsync(new MessageData{From="+1234567890", To=new[]{"+1234567891"}, Text="Hello"});
+
+// using v1 api
+var messageId = await client.Message.SendAsync(new MessageData{From="+1234567890", To="+1234567891", Text="Hello"});
+```
+
+#### Ruby
+
+[Github](https://github.com/bandwidthcom/ruby-bandwidth/pull/13)
+
+```ruby
+message = Bandwidth::V2::Message.create({:from => "+19195551212", :to => ["+191955512142"], :text => "Test"})
+```
