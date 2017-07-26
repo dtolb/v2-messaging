@@ -1,24 +1,25 @@
 {% method %}
 
-## Send or Create a Group Message
+## Send Group MMS
 
-Send at least one text message or picture message
+Send a group text message or picture message
 
 ### Request URL
 
 <code class="post">POST</code>`https://api.catapult.inetwork.com/v2/users/{userId}/messages`
 
 ### Supported Parameters
-| Parameter | Type     | Description                                                                                              | Mandatory |
-|:----------|:---------|:---------------------------------------------------------------------------------------------------------|:----------|
-| from      | `string` | One of your telephone numbers the message should come from (must be in E.164 format, like +19195551212). | Yes       |
-| to        | `array`  | The phone number the message should be sent to (must be in E.164 format, like +19195551212).             | Yes       |
-| text      | `string` | The contents of the text message (must be 2048 characters or less).                                      | Yes       |
-| media     | `array`  | A list of URLs to include as media attachments as part of the message.                                   | No        |
-| tag       | `string` | Any string, it will be included in the callback events of the message.                                   | No        |
+| Parameter     | Type     | Description                                                                                                  | Mandatory |
+|:--------------|:---------|:-------------------------------------------------------------------------------------------------------------|:----------|
+| from          | `string` | One of your telephone numbers the message should come from (must be in E.164 format, like +19195551212).     | Yes       |
+| to            | `array`  | The phone number the message should be sent to (must be in E.164 format, like +19195551212).                 | Yes       |
+| text          | `string` | The contents of the text message (must be 2048 characters or less).                                          | Yes       |
+| applicationId | `string` | The ID of the Application your `from` number is associated with in the Bandwidth Phone Number Dashboard.     | Yes       |
+| media         | `array`  | A list of URLs to include as media attachments as part of the message.                                       | No        |
+| tag           | `string` | Any string which will be included in the callback events of the message.                                     | No        |
 
 {% common %}
-### Example: Send or create a group message
+### Example: Send a group message
 
 {% sample lang='http' %}
 
@@ -34,6 +35,7 @@ Authorization: Basic dc123
     ],
     "from":"+12345678901",
     "text":"Hey, check this out!",
+    "applicationId": "93de2206-9669-4e07-948d-329f4b722ee2",
     "tag" :"test message"
 }
 
@@ -54,6 +56,7 @@ curl --request POST \
         ],
         "from":"+12345678901",
         "text":"Hey, check this out!",
+        "applicationId": "93de2206-9669-4e07-948d-329f4b722ee2",
         "tag" :"test message"
     }
   '
@@ -75,6 +78,7 @@ var options = { method: 'POST',
    { to: [ '+12345678902', '+12345678903'],
      from: '+12345678901',
      text: 'Hey, check this out!',
+     applicationId: '93de2206-9669-4e07-948d-329f4b722ee2',
      tag: 'test message' },
   json: true };
 
@@ -102,6 +106,7 @@ Content-Type: application/json; charset=utf-8
   ],
   "from": "+12345678901",
   "text": "Hey, check this out!",
+  "applicationId": "93de2206-9669-4e07-948d-329f4b722ee2",
   "tag": "test message",
   "owner": "+12345678901",
   "direction": "out"
@@ -123,6 +128,7 @@ Authorization: Basic dc123
     ],
     "from":"+12345678901",
     "text":"Hey, check this out!",
+    "applicationId": "93de2206-9669-4e07-948d-329f4b722ee2",
     "media": [
       "https://s3.amazonaws.com/bw-v2-api/demo.jpg"
     ],
@@ -146,6 +152,7 @@ curl --request POST \
         ],
         "from":"+12345678901",
         "text":"Hey, check this out!",
+        "applicationId": "93de2206-9669-4e07-948d-329f4b722ee2",
         "media": [
           "https://s3.amazonaws.com/bw-v2-api/demo.jpg"
           ],
@@ -170,6 +177,7 @@ var options = { method: 'POST',
    { to: [ '+12345678902', '+12345678903'],
      from: '+12345678901',
      text: 'Hey, check this out!',
+     applicationId: '93de2206-9669-4e07-948d-329f4b722ee2',
      media: [
       "https://s3.amazonaws.com/bw-v2-api/demo.jpg"
       ],
@@ -200,6 +208,7 @@ Content-Type: application/json; charset=utf-8
   ],
   "from": "+12345678901",
   "text": "Hey, check this out!",
+  "applicationId": "93de2206-9669-4e07-948d-329f4b722ee2",
   "tag": "test message",
   "owner": "+12345678901",
   "media": [
