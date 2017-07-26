@@ -67,7 +67,7 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="application.html">
+    <link rel="next" href="application.md">
     
     
 
@@ -122,18 +122,18 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="application.html">
+        <li class="chapter " data-level="1.2" data-path="application.md">
             
-                <a href="application.html">
+                <span>
             
                     
                     Setup Application
             
-                </a>
+                
             
 
             
-        </li>
+        </span></li>
     
 
     
@@ -344,31 +344,33 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="bandwidth-v2-messaging-preview">Bandwidth v2 Messaging Preview</h1>
-<h2 id="quick-start">Quick Start</h2>
-<ol>
-<li><a href="application.html">Setup Application</a></li>
-<li><a href="methods/createSingle.html">Send Text Message</a></li>
-<li>Receive <a href="events/outSent.html">Sent Event</a> then <a href="events/msgDelivered.html">Delivered Event</a></li>
-</ol>
+                                <h1 id="bandwidth-v2-messaging-api">Bandwidth V2 Messaging API</h1>
 <h3 id="about">About</h3>
-<p>In the V2 version of the Messaging API, messages are sent asynchronously. Message validation will happen after the server returns <code>202</code>. API clients should listen for HTTP callback events if they need to track message state after the inital <code>POST</code> request.</p>
-<p>The request body for HTTP callbacks regarding message state changes will follow the same format as the response body for a <code>POST</code> or <code>GET</code> on a message.</p>
-<p>Callbacks will be sent to the Callback URL for the Application associated with the <code>from</code> number on the outgoing message.</p>
-<p>If there is a need to identify individual messages, or correlate them with an ID in your application, the <code>tag</code> field can be set to any string. The custom <code>tag</code> will be included in all callbacks for this message.</p>
-<h3 id="sdk-preview-branches">SDK Preview Branches</h3>
-<h4 id="c">C</h4>
-<p><a href="https://github.com/bandwidthcom/csharp-bandwidth/pull/63" target="_blank">Github</a></p>
-<pre><code class="lang-csharp"><span class="hljs-comment">// using v2 api</span>
-<span class="hljs-keyword">var</span> message = <span class="hljs-keyword">await</span> client.V2.Message.SendAsync(<span class="hljs-keyword">new</span> MessageData{From=<span class="hljs-string">&quot;+1234567890&quot;</span>, To=<span class="hljs-keyword">new</span>[]{<span class="hljs-string">&quot;+1234567891&quot;</span>}, Text=<span class="hljs-string">&quot;Hello&quot;</span>});
-
-<span class="hljs-comment">// using v1 api</span>
-<span class="hljs-keyword">var</span> messageId = <span class="hljs-keyword">await</span> client.Message.SendAsync(<span class="hljs-keyword">new</span> MessageData{From=<span class="hljs-string">&quot;+1234567890&quot;</span>, To=<span class="hljs-string">&quot;+1234567891&quot;</span>, Text=<span class="hljs-string">&quot;Hello&quot;</span>});
-</code></pre>
-<h4 id="ruby">Ruby</h4>
-<p><a href="https://github.com/bandwidthcom/ruby-bandwidth/pull/13" target="_blank">Github</a></p>
-<pre><code class="lang-ruby">message = Bandwidth::V2::Message.create({<span class="hljs-symbol">:from</span> =&gt; <span class="hljs-string">&quot;+19195551212&quot;</span>, <span class="hljs-symbol">:to</span> =&gt; [<span class="hljs-string">&quot;+191955512142&quot;</span>], <span class="hljs-symbol">:text</span> =&gt; <span class="hljs-string">&quot;Test&quot;</span>})
-</code></pre>
+<p>The Bandwidth V2 Messaging API is an all new way to send and receive SMS, MMS, and Group Messages on the Bandwidth network. It works with your numbers you already have in the Number Management section of the Bandwidth Phone Number Dashboard.</p>
+<h3 id="getting-started">Getting Started</h3>
+<h4 id="set-up-your-application">Set up your Application</h4>
+<ul>
+<li>To get started, you&apos;ll want to head over to the <a href="https://dashboard.bandwidth.com/portal/report/" target="_blank">Bandwidth Phone Number Dashboard</a> and set up an Application on your Location (SipPeer) that you want to use for HTTP Messaging. Specific documentation on this process is still in progress. You&apos;ll get an <code>applicationId</code> for the Application you created, which will be used when sending messages.</li>
+</ul>
+<h4 id="sending-messages">Sending Messages</h4>
+<ul>
+<li>To send a message, <code>POST</code> to the <a href="methods/createSingle.html"><code>/messages</code> endpoint</a></li>
+<li>In the V2 Messaging API, messages are sent asynchronously. Message validation will happen after the server returns <code>202</code>. API clients should listen for HTTP callback events if they need to track message state after the initial <code>POST</code> request.</li>
+</ul>
+<h4 id="callbacks-and-delivery-receipts">Callbacks and Delivery Receipts</h4>
+<ul>
+<li>Callbacks will be sent to the Callback URL for the Application associated with the <code>from</code> number on the outgoing message.</li>
+<li>You will get a callback for any event related to that message. For example, you will get an HTTP callback if your message was sent, delivered, or blocked. In addition, you will get an event for any kind of Delivery Receipt that the destination carrier sends back, regarding the delivery of your message.</li>
+<li>For incoming messages sent to your numbers, a callback will also be received, notifying your Application of the incoming message. For group messages where you own multiple recipient phone numbers, you will receive a distinct event and <code>messageId</code> for each individual recipient.</li>
+</ul>
+<h4 id="tags">Tags</h4>
+<ul>
+<li>If there is a need to identify individual outbound messages, or correlate them with an ID in your own application, the <code>tag</code> field can be set to any string. The custom <code>tag</code> will be included in all callbacks for an outbound message.</li>
+</ul>
+<h4 id="api-credentials">API Credentials</h4>
+<ul>
+<li>API Credentials work the same way they do in the V1 Messaging API. Use your API Token and Secret with Basic Auth when making API requests to send messages. <a href="http://dev.bandwidth.com/security.html" target="_blank">See here for more details</a>.</li>
+</ul>
 
                                 
                                 </section>
@@ -402,7 +404,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Get Started","level":"1.1","depth":1,"next":{"title":"Setup Application","level":"1.2","depth":1,"path":"application.md","ref":"application.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth","header","sharing","custom-favicon","toggle-chapters","customJquery@git+https://github.com/dtolb/gitbook-plugin-customJquery.git","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight"],"pluginsConfig":{"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2017-07-12T17:06:57.055Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-12T17:08:14.843Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Get Started","level":"1.1","depth":1,"next":{"title":"Setup Application","level":"1.2","depth":1,"path":"application.md","ref":"application.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth","header","sharing","custom-favicon","toggle-chapters","customJquery@git+https://github.com/dtolb/gitbook-plugin-customJquery.git","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight"],"pluginsConfig":{"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2017-07-26T20:17:32.650Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-26T20:19:15.492Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
