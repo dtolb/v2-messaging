@@ -1,15 +1,17 @@
 {
     "plugins": [
-        "theme-bandwidth",
+        "theme-bandwidth@1.7.14",
         "header",
         "sharing",
         "custom-favicon",
         "toggle-chapters",
-        "customJquery@git+https://github.com/dtolb/gitbook-plugin-customJquery.git",
+        "custom-jquery-postprocessing",
         "-fontsettings",
         "bandwidth-fonts",
         "-highlight",
-        "bandwidth-highlight"
+        "bandwidth-highlight",
+        "codetabs",
+        "include-html@0.2.0"
     ],
     "pluginsConfig": {
         "theme-bandwidth": {

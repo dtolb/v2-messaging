@@ -1,0 +1,139 @@
+<div class="inline-wrap">
+    <div class="form-input clearfix blocks half-block required">
+        <label for="input-text">Dashboard Username:</label>
+        <input class="postman-env" type="text" value="" id="db_user" />
+        <div class="help">Your username to signin to Bandwidth Dashboard</div>
+    </div>
+    <div class="form-input clearfix blocks half-block required">
+        <label for="input-text">Dashboard Password:</label>
+        <input class="postman-env" type="text" value="" id="db_password" />
+        <div class="help">Your Password to signin to Bandwidth Dashboard</div>
+    </div>
+</div>
+<div class="inline-wrap">
+    <div class="form-input clearfix blocks half-block required">
+        <label for="input-text">Dashboard Account Id:</label>
+        <input class="postman-env" type="text" value="" id="db_account_id" />
+        <div class="help">Your Bandwidth Dashboard Accound ID</div>
+    </div>
+    <div class="form-input clearfix blocks half-block required">
+        <label for="input-text">Dashboard Sub-account Id:</label>
+        <input class="postman-env" type="text" value="" id="db_subaccount_id" />
+        <div class="help">Your Bandwidth Dashboard Sub-account Id</div>
+    </div>
+</div>
+<div class="inline-wrap">
+    <div class="form-input clearfix blocks medium-block required">
+        <label for="input-text">Messaging API User Id:</label>
+        <input class="postman-env" type="text" value="" id="messaging_user_id" />
+        <div class="help">Your Messaging API User Id</div>
+    </div>
+    <div class="form-input clearfix blocks medium-block required">
+        <label for="input-text">Messaging API Token:</label>
+        <input class="postman-env" type="text" value="" id="messaging_api_token" />
+        <div class="help">Your Messaging API Token</div>
+    </div>
+    <div class="form-input clearfix blocks medium-block required">
+        <label for="input-text">Messaging API Secret:</label>
+        <input class="postman-env" type="text" value="" id="messaging_api_secret" />
+        <div class="help">Your Messaging API Secret</div>
+    </div>
+</div>
+
+<div id="postman-container" style="pointer-events: none; opacity: 0.5;">
+<div class="postman-run-button"
+data-postman-action="collection/import"
+data-postman-var-1="53bb13675c43def87aaf"
+data-postman-param="env%5BBandwidth%20API%20Keys%5D=W3sia2V5IjoidXNlciIsInZhbHVlIjoiIiwiZGVzY3JpcHRpb24iOiIiLCJ0eXBlIjoidGV4dCIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoicGFzc3dvcmQiLCJ2YWx1ZSI6IiIsImRlc2NyaXB0aW9uIjoiIiwidHlwZSI6InRleHQiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6InVzZXJJZCIsInZhbHVlIjoiIiwiZGVzY3JpcHRpb24iOiIiLCJ0eXBlIjoidGV4dCIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoidG9rZW4iLCJ2YWx1ZSI6IiIsImRlc2NyaXB0aW9uIjoiIiwidHlwZSI6InRleHQiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6InNlY3JldCIsInZhbHVlIjoiIiwiZGVzY3JpcHRpb24iOiIiLCJ0eXBlIjoidGV4dCIsImVuYWJsZWQiOnRydWV9LHsia2V5Ijoic3ViYWNjb3VudCIsInZhbHVlIjoiIiwiZGVzY3JpcHRpb24iOiIiLCJ0eXBlIjoidGV4dCIsImVuYWJsZWQiOnRydWV9XQ=="></div></div>
+</div>
+<script type="text/javascript">
+function messaging2Page () {
+
+    function enableOnChange (functionName) {
+        console.log('Enabling On Change for elements');
+
+        const elements = document.getElementsByClassName("postman-env");
+        for (let element of elements) {
+            element.addEventListener("change", functionName, false);
+            element.addEventListener("keyup", functionName, false);
+            element.addEventListener("paste", functionName, false);
+        }
+    }
+
+    function loadPostman () {
+        console.log('loading postman');
+        try {
+            document.getElementById("_pmPostmanRunObject").outerHTML="";
+            document.getElementById("pm-oip-overlay").outerHTML="";
+        }
+        catch (e) {
+            console.log('Postman was not loaded');
+        }
+        (function (p,o,s,t,m,a,n) {
+            !p[s] && (p[s] = function () { (p[t] || (p[t] = [])).push(arguments); });
+            !o.getElementById(s+t) && o.getElementsByTagName("head")[0].appendChild((
+              (n = o.createElement("script")),
+              (n.id = s+t), (n.async = 1), (n.src = m), n
+            ));
+            }(window, document, "_pm", "PostmanRunObject", "https://run.pstmn.io/button.js"));
+    }
+
+
+    function checkAllVal (obj) {
+        var result = true;
+
+        for (var i in obj) {
+            if (obj[i] === '') {
+                result = false;
+                break;
+            }
+        }
+        return result;
+    }
+
+    function updatePostmanEnv (data) {
+        const success = _pm("env.replace", "Bandwidth API Keys", data);
+        if (!success) {
+            _pm("env.create", "Bandwidth API Keys", data);
+        }
+    }
+
+    function updateMessaging20Env () {
+    //instead of triggering on button, do onchange (keyup, paste, enter, tab, bbrown will send all this fun stuff)
+        const user       = document.getElementById("db_user").value;
+        const password   = document.getElementById("db_password").value;
+        const account    = document.getElementById("db_account_id").value;
+        const userId     = document.getElementById("messaging_user_id").value;
+        const token      = document.getElementById("messaging_api_token").value;
+        const secret     = document.getElementById("messaging_api_secret").value;
+        const subaccount = document.getElementById("db_subaccount_id").value;
+        const envData = {
+          user       : user,
+          password   : password,
+          account    : account,
+          userId     : userId,
+          token      : token,
+          secret     : secret,
+          subaccount : subaccount
+        };
+        console.log(envData);
+        //INstead of creating, replace. will need update collection to contain default empty enviornment
+        if (checkAllVal(envData)) {
+            console.log('All set, updating postman');
+            updatePostmanEnv(envData);
+            document.getElementById("postman-container").removeAttribute("style");
+        }
+        else {
+            console.log('Nothing yet');
+            updatePostmanEnv(envData);
+            document.getElementById("postman-container").setAttribute("style", "pointer-events: none; opacity: 0.5;");
+        }
+    }
+    loadPostman();
+    enableOnChange(updateMessaging20Env);
+
+};
+
+messaging2Page();
+
+</script>
