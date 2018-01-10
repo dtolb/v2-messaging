@@ -7,7 +7,7 @@
         <title>Group Message</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.2">
+        <meta name="generator" content="GitBook 3.2.3">
         
         
         
@@ -26,6 +26,10 @@
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-bandwidth-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-codetabs/codetabs.css">
                 
             
                 
@@ -67,7 +71,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../events/receiveSingle.html">
+    <link rel="next" href="../events/messageEvents.html">
     
     
     <link rel="prev" href="createSingle.html">
@@ -78,12 +82,23 @@
         
 <div class="book"><link href="../styles/styles.min.css" type="text/css">
 <div class="head">
+     <!-- <div id="banner">
+       <div class="bannerContainer">
+         <p>Due to a change in Github Pages, the API reference requires you to accept an invalid certificate. We are actively working on a fix.</p>
+         <p id="bannerClose">X</p>
+       </div>
+     </div> -->
    <a href="http://www.bandwidth.com" class="aimg"><div id="headerLogo"></div></a>
-   <h2>v2 Messaging Preview</h2>
+   <h2> &#x203A;&#xA0; Messaging 2.0 Beta Preview</h2>
+   <!-- <aside class="alert general small" style="margin: 15px 0px 0px 0px !important; position: fixed;left: 440px;">
+   <p>
+   Due to a change in Github Pages, the API reference requires you to accept an invalid certificate.
+   </p>
+   </aside> -->
    <ul>
-   	<li><a href="https://catapult.inetwork.com/portal/signup" target="_blank"><button class="medium hover-go right">Sign up</button></a></li>
-   	<li><a href="https://catapult.inetwork.com/pages/login.jsf" target="_blank">Log in</a></li>
-   	<li><a href="https://support.bandwidth.com/access/unauthenticated" target="_blank">Support</a></li>
+   	<li><a href="https://app.bandwidth.com" class="headerLink" target="_blank">Voice And Messagings Dashbaord</a></li>
+   	<li><a href="https://dashboard.bandwidth.com" class="headerLink" target="_blank">Phone Number Dashboard</a></li>
+   	<li><a href="https://support.bandwidth.com/access/unauthenticated" class="headerLink" target="_blank">Support</a></li>
    </ul>
 </div>
 
@@ -116,7 +131,7 @@
                 <a href="../">
             
                     
-                    Get Started
+                    About
             
                 </a>
             
@@ -124,18 +139,64 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="../application.md">
+        <li class="chapter " data-level="1.2" data-path="../messaging2Migration.html">
             
-                <span>
+                <a href="../messaging2Migration.html">
             
                     
-                    Setup Application
+                    Migration Guide
             
-                
+                </a>
             
 
             
-        </span></li>
+        </li>
+    
+
+    
+        
+        <li class="header">Account Setup</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../uisetup.html">
+            
+                <a href="../uisetup.html">
+            
+                    
+                    via UI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../apisetup.html">
+            
+                <a href="../apisetup.html">
+            
+                    
+                    via API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../videosetup.html">
+            
+                <a href="../videosetup.html">
+            
+                    
+                    video walkthrough
+            
+                </a>
+            
+
+            
+        </li>
     
 
     
@@ -144,7 +205,7 @@
         
         
     
-        <li class="chapter " data-level="2.1" data-path="createSingle.html">
+        <li class="chapter " data-level="3.1" data-path="createSingle.html">
             
                 <a href="createSingle.html">
             
@@ -157,7 +218,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.2" data-path="createGroup.html">
+        <li class="chapter active" data-level="3.2" data-path="createGroup.html">
             
                 <a href="createGroup.html">
             
@@ -173,13 +234,26 @@
 
     
         
-        <li class="header">Message Events</li>
+        <li class="header">Message Callbacks</li>
         
         
     
-        <li class="chapter " data-level="3.1" data-path="../events/receiveSingle.html">
+        <li class="chapter " data-level="4.1" data-path="../events/messageEvents.html">
             
-                <a href="../events/receiveSingle.html">
+                <a href="../events/messageEvents.html">
+            
+                    
+                    About Message Events/Callbacks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../events/incomingSingle.html">
+            
+                <a href="../events/incomingSingle.html">
             
                     
                     Incoming SMS/MMS Message
@@ -190,7 +264,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="../events/incomingGroup.html">
+        <li class="chapter " data-level="4.3" data-path="../events/incomingGroup.html">
             
                 <a href="../events/incomingGroup.html">
             
@@ -203,7 +277,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.3" data-path="../events/outSent.html">
+        <li class="chapter " data-level="4.4" data-path="../events/outSent.html">
             
                 <a href="../events/outSent.html">
             
@@ -216,7 +290,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.4" data-path="../events/msgDelivered.html">
+        <li class="chapter " data-level="4.5" data-path="../events/msgDelivered.html">
             
                 <a href="../events/msgDelivered.html">
             
@@ -229,7 +303,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.5" data-path="../events/groupReject.html">
+        <li class="chapter " data-level="4.6" data-path="../events/groupReject.html">
             
                 <a href="../events/groupReject.html">
             
@@ -249,7 +323,7 @@
         
         
     
-        <li class="chapter " data-level="4.1" data-path="../errors/badRequest.html">
+        <li class="chapter " data-level="5.1" data-path="../errors/badRequest.html">
             
                 <a href="../errors/badRequest.html">
             
@@ -262,7 +336,7 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2" data-path="../errors/unauth.html">
+        <li class="chapter " data-level="5.2" data-path="../errors/unauth.html">
             
                 <a href="../errors/unauth.html">
             
@@ -275,7 +349,7 @@
             
         </li>
     
-        <li class="chapter " data-level="4.3" data-path="../errors/forbidden.html">
+        <li class="chapter " data-level="5.3" data-path="../errors/forbidden.html">
             
                 <a href="../errors/forbidden.html">
             
@@ -288,12 +362,78 @@
             
         </li>
     
-        <li class="chapter " data-level="4.4" data-path="../errors/tooManyReq.html">
+        <li class="chapter " data-level="5.4" data-path="../errors/tooManyReq.html">
             
                 <a href="../errors/tooManyReq.html">
             
                     
                     429 - Too Many Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Message Codes</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../codes.html">
+            
+                <a href="../codes.html">
+            
+                    
+                    Codes
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">SDKs</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1">
+            
+                <a target="_blank" href="https://github.com/bandwidthcom/node-bandwidth#using-messaging-v2-api">
+            
+                    
+                    NodeJS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2">
+            
+                <a target="_blank" href="https://github.com/bandwidthcom/csharp-bandwidth#messaging-20">
+            
+                    
+                    C#
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3">
+            
+                <a target="_blank" href="https://github.com/bandwidthcom/ruby-bandwidth#messaging-20">
+            
+                    
+                    Ruby
             
                 </a>
             
@@ -350,6 +490,10 @@
 <p>Send a group text message or picture message</p>
 <h3 id="request-url">Request URL</h3>
 <p><code class="post">POST</code><code>https://api.catapult.inetwork.com/v2/users/{userId}/messages</code></p>
+<h3 id="tags">Tags</h3>
+<ul>
+<li>If there is a need to identify individual outbound messages, or correlate them with an ID in your own application, the <code>tag</code> field can be set to any string. The custom <code>tag</code> will be included in all callbacks for an outbound message.</li>
+</ul>
 <h3 id="supported-parameters">Supported Parameters</h3>
 <table>
 <thead>
@@ -369,8 +513,8 @@
 </tr>
 <tr>
 <td style="text-align:left">to</td>
-<td style="text-align:left"><code>array</code></td>
-<td style="text-align:left">The phone number the message should be sent to (must be in E.164 format, like +19195551212).</td>
+<td style="text-align:left"><code>array</code> of <code>strings</code></td>
+<td style="text-align:left">The phone numbers the message should be sent to (must be in E.164 format, like <code>+19195551212</code>). <br><br> Example: <br> <code>[&quot;+19195551212&quot;, &quot;+19195554444&quot;, &quot;+19192227777&quot;]</code></td>
 <td style="text-align:left">Yes</td>
 </tr>
 <tr>
@@ -399,7 +543,7 @@
 </tr>
 </tbody>
 </table>
-</div><div class="api-method-code"><div class="api-code-top"></div><div class="api-method-example"><h3 id="example-send-a-group-message">Example: Send a group message</h3>
+</div><div class="api-method-code"><div class="api-code-top"></div><div class="api-method-example"><h3 id="example-1-of-2-send-a-group-message">Example 1 of 2: Send a group message</h3>
 </div><div class="api-method-sample" data-lang="http" data-name="HTTP"><pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">https://api.catapult.inetwork.com/v2/users/{userId}/messages</span> HTTP/1.1
 <span class="hljs-attribute">Content-Type</span>: application/json; charset=utf-8
 <span class="hljs-attribute">Authorization</span>: Basic dc123
@@ -462,37 +606,37 @@ request(options, <span class="hljs-function"><span class="hljs-keyword">function
 <span class="hljs-attribute">Content-Type</span>: application/json; charset=utf-8
 
 <span class="json">{
-  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;14762070468292kw2fuqty55yp2b2&quot;</span>,
-  <span class="hljs-attr">&quot;time&quot;</span>: <span class="hljs-string">&quot;2016-09-14T18:20:16Z&quot;</span>,
-  <span class="hljs-attr">&quot;to&quot;</span>: [
+  <span class="hljs-attr">&quot;id&quot;</span>            : <span class="hljs-string">&quot;14762070468292kw2fuqty55yp2b2&quot;</span>,
+  <span class="hljs-attr">&quot;time&quot;</span>          : <span class="hljs-string">&quot;2016-09-14T18:20:16Z&quot;</span>,
+  <span class="hljs-attr">&quot;to&quot;</span>            : [
     <span class="hljs-string">&quot;+12345678902&quot;</span>,
     <span class="hljs-string">&quot;+12345678903&quot;</span>
   ],
-  <span class="hljs-attr">&quot;from&quot;</span>: <span class="hljs-string">&quot;+12345678901&quot;</span>,
-  <span class="hljs-attr">&quot;text&quot;</span>: <span class="hljs-string">&quot;Hey, check this out!&quot;</span>,
-  <span class="hljs-attr">&quot;applicationId&quot;</span>: <span class="hljs-string">&quot;93de2206-9669-4e07-948d-329f4b722ee2&quot;</span>,
-  <span class="hljs-attr">&quot;tag&quot;</span>: <span class="hljs-string">&quot;test message&quot;</span>,
-  <span class="hljs-attr">&quot;owner&quot;</span>: <span class="hljs-string">&quot;+12345678901&quot;</span>,
-  <span class="hljs-attr">&quot;direction&quot;</span>: <span class="hljs-string">&quot;out&quot;</span>
+  <span class="hljs-attr">&quot;from&quot;</span>          : <span class="hljs-string">&quot;+12345678901&quot;</span>,
+  <span class="hljs-attr">&quot;text&quot;</span>          : <span class="hljs-string">&quot;Hey, check this out!&quot;</span>,
+  <span class="hljs-attr">&quot;applicationId&quot;</span> : <span class="hljs-string">&quot;93de2206-9669-4e07-948d-329f4b722ee2&quot;</span>,
+  <span class="hljs-attr">&quot;tag&quot;</span>           : <span class="hljs-string">&quot;test message&quot;</span>,
+  <span class="hljs-attr">&quot;owner&quot;</span>         : <span class="hljs-string">&quot;+12345678901&quot;</span>,
+  <span class="hljs-attr">&quot;direction&quot;</span>     : <span class="hljs-string">&quot;out&quot;</span>
 }
 </span></code></pre>
-<h3 id="example-send-picture-to-a-group-message-thread">Example: Send Picture to a group message thread</h3>
+<h3 id="example-2-of-2-send-picture-to-a-group-message-thread">Example 2 of 2: Send Picture to a group message thread</h3>
 </div><div class="api-method-sample" data-lang="http" data-name="HTTP"><pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">https://api.catapult.inetwork.com/v2/users/{userId}/messages</span> HTTP/1.1
 <span class="hljs-attribute">Content-Type</span>: application/json; charset=utf-8
 <span class="hljs-attribute">Authorization</span>: Basic dc123
 
 <span class="json">{
-    <span class="hljs-attr">&quot;to&quot;</span>  :[
+    <span class="hljs-attr">&quot;to&quot;</span>            : [
       <span class="hljs-string">&quot;+12345678902&quot;</span>,
       <span class="hljs-string">&quot;+12345678903&quot;</span>
     ],
-    <span class="hljs-attr">&quot;from&quot;</span>:<span class="hljs-string">&quot;+12345678901&quot;</span>,
-    <span class="hljs-attr">&quot;text&quot;</span>:<span class="hljs-string">&quot;Hey, check this out!&quot;</span>,
-    <span class="hljs-attr">&quot;applicationId&quot;</span>: <span class="hljs-string">&quot;93de2206-9669-4e07-948d-329f4b722ee2&quot;</span>,
-    <span class="hljs-attr">&quot;media&quot;</span>: [
-      <span class="hljs-string">&quot;https://s3.amazonaws.com/bw-v2-api/demo.jpg&quot;</span>
+    <span class="hljs-attr">&quot;from&quot;</span>          : <span class="hljs-string">&quot;+12345678901&quot;</span>,
+    <span class="hljs-attr">&quot;text&quot;</span>          : <span class="hljs-string">&quot;Hey, check this out!&quot;</span>,
+    <span class="hljs-attr">&quot;applicationId&quot;</span> : <span class="hljs-string">&quot;93de2206-9669-4e07-948d-329f4b722ee2&quot;</span>,
+    <span class="hljs-attr">&quot;media&quot;</span>         : [
+    <span class="hljs-string">&quot;https          : //s3.amazonaws.com/bw-v2-api/demo.jpg&quot;</span>
     ],
-    <span class="hljs-attr">&quot;tag&quot;</span> :<span class="hljs-string">&quot;test message&quot;</span>
+    <span class="hljs-attr">&quot;tag&quot;</span>           : <span class="hljs-string">&quot;test message&quot;</span>
 }
 </span></code></pre>
 </div><div class="api-method-sample" data-lang="bash" data-name="cURL"><pre><code class="lang-bash">curl --request POST \
@@ -501,17 +645,17 @@ request(options, <span class="hljs-function"><span class="hljs-keyword">function
     --header <span class="hljs-string">&apos;content-type: application/json&apos;</span> \
     --data <span class="hljs-string">&apos;
     {
-        &quot;to&quot;  :[
+        &quot;to&quot;            : [
           &quot;+12345678902&quot;,
           &quot;+12345678903&quot;
         ],
-        &quot;from&quot;:&quot;+12345678901&quot;,
-        &quot;text&quot;:&quot;Hey, check this out!&quot;,
-        &quot;applicationId&quot;: &quot;93de2206-9669-4e07-948d-329f4b722ee2&quot;,
-        &quot;media&quot;: [
+        &quot;from&quot;          : &quot;+12345678901&quot;,
+        &quot;text&quot;          : &quot;Hey, check this out!&quot;,
+        &quot;applicationId&quot; : &quot;93de2206-9669-4e07-948d-329f4b722ee2&quot;,
+        &quot;media&quot;         : [
           &quot;https://s3.amazonaws.com/bw-v2-api/demo.jpg&quot;
-          ],
-        &quot;tag&quot; :&quot;test message&quot;
+        ],
+        &quot;tag&quot;           : &quot;test message&quot;
     }
   &apos;</span>
 </code></pre>
@@ -525,14 +669,14 @@ request(options, <span class="hljs-function"><span class="hljs-keyword">function
     <span class="hljs-attr">pass</span>: <span class="hljs-string">&apos;{{secret}}&apos;</span>
   },
   <span class="hljs-attr">body</span>:
-   { <span class="hljs-attr">to</span>: [ <span class="hljs-string">&apos;+12345678902&apos;</span>, <span class="hljs-string">&apos;+12345678903&apos;</span>],
-     <span class="hljs-attr">from</span>: <span class="hljs-string">&apos;+12345678901&apos;</span>,
-     <span class="hljs-attr">text</span>: <span class="hljs-string">&apos;Hey, check this out!&apos;</span>,
-     <span class="hljs-attr">applicationId</span>: <span class="hljs-string">&apos;93de2206-9669-4e07-948d-329f4b722ee2&apos;</span>,
-     <span class="hljs-attr">media</span>: [
-      <span class="hljs-string">&quot;https://s3.amazonaws.com/bw-v2-api/demo.jpg&quot;</span>
-      ],
-     <span class="hljs-attr">tag</span>: <span class="hljs-string">&apos;test message&apos;</span> },
+   { <span class="hljs-attr">to</span>          : [ <span class="hljs-string">&apos;+12345678902&apos;</span>, <span class="hljs-string">&apos;+12345678903&apos;</span>],
+   <span class="hljs-attr">from</span>          : <span class="hljs-string">&apos;+12345678901&apos;</span>,
+   <span class="hljs-attr">text</span>          : <span class="hljs-string">&apos;Hey, check this out!&apos;</span>,
+   <span class="hljs-attr">applicationId</span> : <span class="hljs-string">&apos;93de2206-9669-4e07-948d-329f4b722ee2&apos;</span>,
+   <span class="hljs-attr">media</span>         : [
+    <span class="hljs-string">&quot;https://s3.amazonaws.com/bw-v2-api/demo.jpg&quot;</span>
+   ],
+   <span class="hljs-attr">tag</span>           : <span class="hljs-string">&apos;test message&apos;</span> },
   <span class="hljs-attr">json</span>: <span class="hljs-literal">true</span> };
 
 request(options, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error, response, body</span>) </span>{
@@ -548,21 +692,21 @@ request(options, <span class="hljs-function"><span class="hljs-keyword">function
 <span class="hljs-attribute">Content-Type</span>: application/json; charset=utf-8
 
 <span class="json">{
-  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;14762070468292kw2fuqty55yp2b2&quot;</span>,
-  <span class="hljs-attr">&quot;time&quot;</span>: <span class="hljs-string">&quot;2016-09-14T18:20:16Z&quot;</span>,
-  <span class="hljs-attr">&quot;to&quot;</span>: [
+  <span class="hljs-attr">&quot;id&quot;</span>            : <span class="hljs-string">&quot;14762070468292kw2fuqty55yp2b2&quot;</span>,
+  <span class="hljs-attr">&quot;time&quot;</span>          : <span class="hljs-string">&quot;2016-09-14T18:20:16Z&quot;</span>,
+  <span class="hljs-attr">&quot;to&quot;</span>            : [
     <span class="hljs-string">&quot;+12345678902&quot;</span>,
     <span class="hljs-string">&quot;+12345678903&quot;</span>
   ],
-  <span class="hljs-attr">&quot;from&quot;</span>: <span class="hljs-string">&quot;+12345678901&quot;</span>,
-  <span class="hljs-attr">&quot;text&quot;</span>: <span class="hljs-string">&quot;Hey, check this out!&quot;</span>,
-  <span class="hljs-attr">&quot;applicationId&quot;</span>: <span class="hljs-string">&quot;93de2206-9669-4e07-948d-329f4b722ee2&quot;</span>,
-  <span class="hljs-attr">&quot;tag&quot;</span>: <span class="hljs-string">&quot;test message&quot;</span>,
-  <span class="hljs-attr">&quot;owner&quot;</span>: <span class="hljs-string">&quot;+12345678901&quot;</span>,
-  <span class="hljs-attr">&quot;media&quot;</span>: [
+  <span class="hljs-attr">&quot;from&quot;</span>          : <span class="hljs-string">&quot;+12345678901&quot;</span>,
+  <span class="hljs-attr">&quot;text&quot;</span>          : <span class="hljs-string">&quot;Hey, check this out!&quot;</span>,
+  <span class="hljs-attr">&quot;applicationId&quot;</span> : <span class="hljs-string">&quot;93de2206-9669-4e07-948d-329f4b722ee2&quot;</span>,
+  <span class="hljs-attr">&quot;tag&quot;</span>           : <span class="hljs-string">&quot;test message&quot;</span>,
+  <span class="hljs-attr">&quot;owner&quot;</span>         : <span class="hljs-string">&quot;+12345678901&quot;</span>,
+  <span class="hljs-attr">&quot;media&quot;</span>         : [
     <span class="hljs-string">&quot;https://s3.amazonaws.com/bw-v2-api/demo.jpg&quot;</span>
   ],
-  <span class="hljs-attr">&quot;direction&quot;</span>: <span class="hljs-string">&quot;out&quot;</span>
+  <span class="hljs-attr">&quot;direction&quot;</span>     : <span class="hljs-string">&quot;out&quot;</span>
 }
 </span></code></pre>
 </div></div></div>
@@ -599,7 +743,7 @@ request(options, <span class="hljs-function"><span class="hljs-keyword">function
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Group Message","level":"2.2","depth":1,"next":{"title":"Incoming SMS/MMS Message","level":"3.1","depth":1,"path":"events/receiveSingle.md","ref":"events/receiveSingle.md","articles":[]},"previous":{"title":"Single Message","level":"2.1","depth":1,"path":"methods/createSingle.md","ref":"methods/createSingle.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth","header","sharing","custom-favicon","toggle-chapters","customJquery@git+https://github.com/dtolb/gitbook-plugin-customJquery.git","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight"],"pluginsConfig":{"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"methods/createGroup.md","mtime":"2017-08-03T21:06:38.609Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-03T21:08:01.690Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Group Message","level":"3.2","depth":1,"next":{"title":"About Message Events/Callbacks","level":"4.1","depth":1,"path":"events/messageEvents.md","ref":"events/messageEvents.md","articles":[]},"previous":{"title":"Single Message","level":"3.1","depth":1,"path":"methods/createSingle.md","ref":"methods/createSingle.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.7.14","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"methods/createGroup.md","mtime":"2018-01-10T21:26:56.003Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-10T21:28:08.933Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -618,6 +762,10 @@ request(options, <span class="hljs-function"><span class="hljs-keyword">function
     
         
         <script src="../gitbook/gitbook-plugin-bandwidth-fonts/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-codetabs/codetabs.js"></script>
         
     
         

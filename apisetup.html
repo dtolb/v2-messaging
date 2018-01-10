@@ -1,0 +1,1292 @@
+
+<!DOCTYPE HTML>
+<html lang="">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>via API</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-bandwidth-fonts/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-bandwidth-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-codetabs/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-theme-bandwidth/theme-api.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="videosetup.html">
+    
+    
+    <link rel="prev" href="uisetup.html">
+    
+
+    </head>
+    <body>
+        
+<div class="book"><link href="../styles/styles.min.css" type="text/css">
+<div class="head">
+     <!-- <div id="banner">
+       <div class="bannerContainer">
+         <p>Due to a change in Github Pages, the API reference requires you to accept an invalid certificate. We are actively working on a fix.</p>
+         <p id="bannerClose">X</p>
+       </div>
+     </div> -->
+   <a href="http://www.bandwidth.com" class="aimg"><div id="headerLogo"></div></a>
+   <h2> &#x203A;&#xA0; Messaging 2.0 Beta Preview</h2>
+   <!-- <aside class="alert general small" style="margin: 15px 0px 0px 0px !important; position: fixed;left: 440px;">
+   <p>
+   Due to a change in Github Pages, the API reference requires you to accept an invalid certificate.
+   </p>
+   </aside> -->
+   <ul>
+   	<li><a href="https://app.bandwidth.com" class="headerLink" target="_blank">Voice And Messagings Dashbaord</a></li>
+   	<li><a href="https://dashboard.bandwidth.com" class="headerLink" target="_blank">Phone Number Dashboard</a></li>
+   	<li><a href="https://support.bandwidth.com/access/unauthenticated" class="headerLink" target="_blank">Support</a></li>
+   </ul>
+</div>
+
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Overview</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="messaging2Migration.html">
+            
+                <a href="messaging2Migration.html">
+            
+                    
+                    Migration Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Account Setup</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="uisetup.html">
+            
+                <a href="uisetup.html">
+            
+                    
+                    via UI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.2" data-path="apisetup.html">
+            
+                <a href="apisetup.html">
+            
+                    
+                    via API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="videosetup.html">
+            
+                <a href="videosetup.html">
+            
+                    
+                    video walkthrough
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Send Messages</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="methods/createSingle.html">
+            
+                <a href="methods/createSingle.html">
+            
+                    
+                    Single Message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="methods/createGroup.html">
+            
+                <a href="methods/createGroup.html">
+            
+                    
+                    Group Message
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Message Callbacks</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="events/messageEvents.html">
+            
+                <a href="events/messageEvents.html">
+            
+                    
+                    About Message Events/Callbacks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="events/incomingSingle.html">
+            
+                <a href="events/incomingSingle.html">
+            
+                    
+                    Incoming SMS/MMS Message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="events/incomingGroup.html">
+            
+                <a href="events/incomingGroup.html">
+            
+                    
+                    Incoming Group Message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="events/outSent.html">
+            
+                <a href="events/outSent.html">
+            
+                    
+                    Message Sent
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="events/msgDelivered.html">
+            
+                <a href="events/msgDelivered.html">
+            
+                    
+                    Message Delivered
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="events/groupReject.html">
+            
+                <a href="events/groupReject.html">
+            
+                    
+                    Group Message Rejected
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Api Error Response</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="errors/badRequest.html">
+            
+                <a href="errors/badRequest.html">
+            
+                    
+                    400 - Bad Request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="errors/unauth.html">
+            
+                <a href="errors/unauth.html">
+            
+                    
+                    401 - Unauthorized
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="errors/forbidden.html">
+            
+                <a href="errors/forbidden.html">
+            
+                    
+                    403 - Forbidden
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="errors/tooManyReq.html">
+            
+                <a href="errors/tooManyReq.html">
+            
+                    
+                    429 - Too Many Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Message Codes</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="codes.html">
+            
+                <a href="codes.html">
+            
+                    
+                    Codes
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">SDKs</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1">
+            
+                <a target="_blank" href="https://github.com/bandwidthcom/node-bandwidth#using-messaging-v2-api">
+            
+                    
+                    NodeJS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2">
+            
+                <a target="_blank" href="https://github.com/bandwidthcom/csharp-bandwidth#messaging-20">
+            
+                    
+                    C#
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3">
+            
+                <a target="_blank" href="https://github.com/bandwidthcom/ruby-bandwidth#messaging-20">
+            
+                    
+                    Ruby
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".">via API</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="api-method"><div class="api-method-definition"><div class="api-definition-top"></div></div><div class="api-method-code mm-code-first" style="min-height: 0vh;"><div class="api-code-top mm-code-top"></div></div></div>
+
+<h1 id="messaging-20-api-setup">Messaging 2.0 API Setup</h1>
+<h2 id="pre-reqs">Pre-reqs</h2>
+<ul>
+<li><a href="http://dashboard.bandwidth.com" target="_blank">Bandwidth Phone Number Dashboard (AKA: Dashboard, Iris) Account</a><ul>
+<li>You will also need your <a href="https://catapult.inetwork.com/pages/login.jsf" target="_blank">Bandwidth Voice and Messaging APIs (AKA Catapult, Application Platform) Account</a></li>
+</ul>
+</li>
+<li>Communicated to your <a href="http://support.bandwidth.com" target="_blank">Customer Service Advocate</a> (CSA) and have messaging 2.0 enabled.</li>
+<li><a href="">Sub-account</a></li>
+</ul>
+<h2 id="getting-started">Getting Started</h2>
+<ol>
+<li>Create application</li>
+<li>Create location (<em>sippeer</em>)</li>
+<li>Enable SMS on Location (<em>sippeer</em>)</li>
+<li>Enable MMS on Location (<em>sippeer</em>)</li>
+<li>Assign Application to Location (sippeer)</li>
+<li>Order Available Numbers</li>
+<li>Check Order Status</li>
+<li>Send Text Message</li>
+</ol>
+<h2 id="follow-along-with-postman">Follow along with Postman</h2>
+<p>&#x2139;&#xFE0F; Fill in your Bandwidth API Credentials here to get a customized postman environment &#x2139;&#xFE0F;</p>
+<div class="inline-wrap">
+    <div class="form-input clearfix blocks half-block required">
+        <label for="input-text">Dashboard Username:</label>
+        <input class="postman-env" type="text" value="" id="db_user">
+        <div class="help">Your username to signin to Bandwidth Dashboard</div>
+    </div>
+    <div class="form-input clearfix blocks half-block required">
+        <label for="input-text">Dashboard Password:</label>
+        <input class="postman-env" type="text" value="" id="db_password">
+        <div class="help">Your Password to signin to Bandwidth Dashboard</div>
+    </div>
+</div>
+<div class="inline-wrap">
+    <div class="form-input clearfix blocks half-block required">
+        <label for="input-text">Dashboard Account Id:</label>
+        <input class="postman-env" type="text" value="" id="db_account_id">
+        <div class="help">Your Bandwidth Dashboard Accound ID</div>
+    </div>
+    <div class="form-input clearfix blocks half-block required">
+        <label for="input-text">Dashboard Sub-account Id:</label>
+        <input class="postman-env" type="text" value="" id="db_subaccount_id">
+        <div class="help">Your Bandwidth Dashboard Sub-account Id</div>
+    </div>
+</div>
+<div class="inline-wrap">
+    <div class="form-input clearfix blocks medium-block required">
+        <label for="input-text">Messaging API User Id:</label>
+        <input class="postman-env" type="text" value="" id="messaging_user_id">
+        <div class="help">Your Messaging API User Id</div>
+    </div>
+    <div class="form-input clearfix blocks medium-block required">
+        <label for="input-text">Messaging API Token:</label>
+        <input class="postman-env" type="text" value="" id="messaging_api_token">
+        <div class="help">Your Messaging API Token</div>
+    </div>
+    <div class="form-input clearfix blocks medium-block required">
+        <label for="input-text">Messaging API Secret:</label>
+        <input class="postman-env" type="text" value="" id="messaging_api_secret">
+        <div class="help">Your Messaging API Secret</div>
+    </div>
+</div>
+
+<div id="postman-container" style="pointer-events: none; opacity: 0.5;">
+<div class="postman-run-button" data-postman-action="collection/import" data-postman-var-1="53bb13675c43def87aaf" data-postman-param="env%5BBandwidth%20API%20Keys%5D=W3sia2V5IjoidXNlciIsInZhbHVlIjoiIiwiZGVzY3JpcHRpb24iOiIiLCJ0eXBlIjoidGV4dCIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoicGFzc3dvcmQiLCJ2YWx1ZSI6IiIsImRlc2NyaXB0aW9uIjoiIiwidHlwZSI6InRleHQiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6InVzZXJJZCIsInZhbHVlIjoiIiwiZGVzY3JpcHRpb24iOiIiLCJ0eXBlIjoidGV4dCIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoidG9rZW4iLCJ2YWx1ZSI6IiIsImRlc2NyaXB0aW9uIjoiIiwidHlwZSI6InRleHQiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6InNlY3JldCIsInZhbHVlIjoiIiwiZGVzY3JpcHRpb24iOiIiLCJ0eXBlIjoidGV4dCIsImVuYWJsZWQiOnRydWV9LHsia2V5Ijoic3ViYWNjb3VudCIsInZhbHVlIjoiIiwiZGVzY3JpcHRpb24iOiIiLCJ0eXBlIjoidGV4dCIsImVuYWJsZWQiOnRydWV9XQ=="></div></div>
+
+<script type="text/javascript">
+function messaging2Page () {
+
+    function enableOnChange (functionName) {
+        console.log('Enabling On Change for elements');
+
+        const elements = document.getElementsByClassName("postman-env");
+        for (let element of elements) {
+            element.addEventListener("change", functionName, false);
+            element.addEventListener("keyup", functionName, false);
+            element.addEventListener("paste", functionName, false);
+        }
+    }
+
+    function loadPostman () {
+        console.log('loading postman');
+        try {
+            document.getElementById("_pmPostmanRunObject").outerHTML="";
+            document.getElementById("pm-oip-overlay").outerHTML="";
+        }
+        catch (e) {
+            console.log('Postman was not loaded');
+        }
+        (function (p,o,s,t,m,a,n) {
+            !p[s] && (p[s] = function () { (p[t] || (p[t] = [])).push(arguments); });
+            !o.getElementById(s+t) && o.getElementsByTagName("head")[0].appendChild((
+              (n = o.createElement("script")),
+              (n.id = s+t), (n.async = 1), (n.src = m), n
+            ));
+            }(window, document, "_pm", "PostmanRunObject", "https://run.pstmn.io/button.js"));
+    }
+
+
+    function checkAllVal (obj) {
+        var result = true;
+
+        for (var i in obj) {
+            if (obj[i] === '') {
+                result = false;
+                break;
+            }
+        }
+        return result;
+    }
+
+    function updatePostmanEnv (data) {
+        const success = _pm("env.replace", "Bandwidth API Keys", data);
+        if (!success) {
+            _pm("env.create", "Bandwidth API Keys", data);
+        }
+    }
+
+    function updateMessaging20Env () {
+    //instead of triggering on button, do onchange (keyup, paste, enter, tab, bbrown will send all this fun stuff)
+        const user       = document.getElementById("db_user").value;
+        const password   = document.getElementById("db_password").value;
+        const account    = document.getElementById("db_account_id").value;
+        const userId     = document.getElementById("messaging_user_id").value;
+        const token      = document.getElementById("messaging_api_token").value;
+        const secret     = document.getElementById("messaging_api_secret").value;
+        const subaccount = document.getElementById("db_subaccount_id").value;
+        const envData = {
+          user       : user,
+          password   : password,
+          account    : account,
+          userId     : userId,
+          token      : token,
+          secret     : secret,
+          subaccount : subaccount
+        };
+        console.log(envData);
+        //INstead of creating, replace. will need update collection to contain default empty enviornment
+        if (checkAllVal(envData)) {
+            console.log('All set, updating postman');
+            updatePostmanEnv(envData);
+            document.getElementById("postman-container").removeAttribute("style");
+        }
+        else {
+            console.log('Nothing yet');
+            updatePostmanEnv(envData);
+            document.getElementById("postman-container").setAttribute("style", "pointer-events: none; opacity: 0.5;");
+        }
+    }
+    loadPostman();
+    enableOnChange(updateMessaging20Env);
+
+};
+
+messaging2Page();
+
+</script>
+<h3 id="create-application">Create application</h3>
+<h3 id="setup-your-application">Setup your Application</h3>
+<p><a name="setup-your-application"></a></p>
+<aside class="alert general small">
+<p>
+Save the <code>Application Id</code> After creating the application.
+</p>
+</aside>
+
+<p>The Application contains the HTTP URL you want to use for both inbound and outbound messages.</p>
+<div class="api-method"><div class="api-method-definition"><div class="api-definition-top"></div><h4 id="application-parameters">Application Parameters</h4>
+<h4 id="request-url">Request URL</h4>
+<p><code class="post">POST</code><code>https://dashboard.bandwidth.com/api/accounts/{{accountId}}/applications</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameters</th>
+<th style="text-align:left">Mandatory</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>AppName</code></td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Plain text name of the application</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>CallbackUrl</code></td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Url to recieve <em>all</em> <a href="events/msgDelivered.html">message events</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>CallBackCreds</code></td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">Basic auth credentials to apply to your <a href="events/msgDelivered.html">message events</a></td>
+</tr>
+</tbody>
+</table>
+</div><div class="api-method-code mm-method-code"><div class="api-method-example"><h3 id="create-application">Create Application</h3>
+</div><div class="api-method-sample" data-lang="http" data-name="HTTP"><pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">https://dashboard.bandwidth.com/api/accounts/{{accountId}}/applications</span> HTTP/1.1
+<span class="hljs-attribute">Content-Type</span>: application/xml; charset=utf-8
+<span class="hljs-attribute">Authorization</span>: {user:password}
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Application</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">AppName</span>&gt;</span>Demo Server<span class="hljs-tag">&lt;/<span class="hljs-name">AppName</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">CallbackUrl</span>&gt;</span>https://requestb.in/zuaqjbzu<span class="hljs-tag">&lt;/<span class="hljs-name">CallbackUrl</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">CallbackCreds</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">Application</span>&gt;</span>
+</span></code></pre>
+</div><div class="api-method-example"><h3 id="response">Response</h3>
+<pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">201</span> Created
+<span class="hljs-attribute">Content-Type</span>: application/xml
+
+<span class="xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span> standalone=<span class="hljs-string">&quot;yes&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ApplicationProvisioningResponse</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Application</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ApplicationId</span>&gt;</span>7cc3c4f7-3b8f-4fff-a211-45070792b431<span class="hljs-tag">&lt;/<span class="hljs-name">ApplicationId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ServiceType</span>&gt;</span>Messaging-V2<span class="hljs-tag">&lt;/<span class="hljs-name">ServiceType</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">AppName</span>&gt;</span>Demo Server<span class="hljs-tag">&lt;/<span class="hljs-name">AppName</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">CallbackUrl</span>&gt;</span>https://requestb.in/1m009f61<span class="hljs-tag">&lt;/<span class="hljs-name">CallbackUrl</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">CallbackCreds</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Application</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ApplicationProvisioningResponse</span>&gt;</span>
+</span></code></pre>
+</div></div></div>
+
+<hr>
+<h3 id="create-location-sippeer">Create location (<em>sippeer</em>)</h3>
+<p><a name="create-location-sippeer-and-assign-the-application-sippeer"></a></p>
+<aside class="alert general small">
+<p>
+Save the <code>Location (sippeer) Id</code> After creating the application.
+</p>
+</aside>
+
+<p>The location (<em>sippeer</em>) is a logical grouping of numbers.</p>
+<ul>
+<li>You&apos;ll need a location (<em>sippeer</em>) in order to group phone numbers.</li>
+</ul>
+<div class="api-method"><div class="api-method-definition"><div class="api-definition-top"></div><h3 id="location-parameters">Location Parameters</h3>
+<h4 id="request-url">Request URL</h4>
+<p><code class="post">POST</code><code>https://dashboard.bandwidth.com/api/accounts/{{account}}/sites/{{subaccount}}/sippeers</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameters</th>
+<th style="text-align:left">Mandatory</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>PeerName</code></td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Plain text name of the Location (<em>sippeer</em>)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>IsDefaultPeer</code></td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">Boolean: <br> <em> <code>true</code> <br> </em> <code>false</code> <br> The Default SIP Peer is the default &quot;destination&quot; for any Telephone Numbers that are ordered for the Site in which the SIP Peer resides.  Each sub-account (<em>site</em>) can have only 1 default SIP Peer. You can configure multiple SIP Peers on a Site</td>
+</tr>
+</tbody>
+</table>
+</div><div class="api-method-code mm-method-code"><div class="api-method-example"><h3 id="create-location-sippeer">Create Location (<em>sippeer</em>)</h3>
+</div><div class="api-method-sample" data-lang="http" data-name="HTTP"><pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">https://dashboard.bandwidth.com/api/accounts/{{account}}/sites/{{subaccount}}/sippeers</span> HTTP/1.1
+<span class="hljs-attribute">Content-Type</span>: application/xml; charset=utf-8
+<span class="hljs-attribute">Authorization</span>: {user:password}
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">SipPeer</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">PeerName</span>&gt;</span>Bandwidth Messaging 2 test2<span class="hljs-tag">&lt;/<span class="hljs-name">PeerName</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">IsDefaultPeer</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">IsDefaultPeer</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">SipPeer</span>&gt;</span>
+</span></code></pre>
+</div><div class="api-method-example"><h3 id="response">Response</h3>
+<pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">201</span> Created
+<span class="hljs-attribute">Location</span>: https://dashboard.bandwidth.com/api/accounts/{{account}}/sites/{{subaccount}}/sippeers/{{location}}
+</code></pre>
+<blockquote>
+<p>Save the  from the <code>location</code> header!</p>
+</blockquote>
+</div></div></div>
+
+<hr>
+<h3 id="enable-sms-on-location-sippeer">Enable SMS on Location (<em>sippeer</em>)</h3>
+<p>In order to use messaging 2.0 in your account, you need to enable SMS and MMS on each location after creating.</p>
+<div class="api-method"><div class="api-method-definition"><div class="api-definition-top"></div><h3 id="enable-sms-parameters">Enable SMS Parameters</h3>
+<h4 id="request-url">Request URL</h4>
+<p><code class="post">POST</code><code>https://dashboard.bandwidth.com/api/accounts/{{account}}/sites/{{subaccount}}/sippeers/{{location}}/products/messaging/features/sms</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameters</th>
+<th style="text-align:left">Mandatory</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>TollFree</code></td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Will enable texting to and from <em>toll-free phone numbers</em>. <br> Boolean: <br> <em> <code>true</code> <br> </em> <code>false</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>ShortCode</code></td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Will enable texting to and from <em>short codes</em>. <br> Boolean: <br> <em> <code>true</code> <br> </em> <code>false</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Protocol</code></td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left"><strong>MUST BE SET TO</strong> <code>HTTP</code> <br> <em>Notice the UPPER case <code>Protocol</code></em></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Zone1</code></td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left"><strong>MUST BE SET TO</strong>: <code>true</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Zone2</code></td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left"><strong>MUST BE SET TO</strong>: <code>false</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Zone3</code></td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left"><strong>MUST BE SET TO</strong>: <code>false</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Zone4</code></td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left"><strong>MUST BE SET TO</strong>: <code>false</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Zone5</code></td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left"><strong>MUST BE SET TO</strong>: <code>false</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>ProxyPeerId</code></td>
+<td style="text-align:left">Yest</td>
+<td style="text-align:left"><strong>MUST BE SET TO</strong>: <code>539692</code></td>
+</tr>
+</tbody>
+</table>
+</div><div class="api-method-code mm-method-code"><div class="api-method-example"><h3 id="enable-sms-on-location-sippeer">Enable SMS on Location (<em>sippeer</em>)</h3>
+</div><div class="api-method-sample" data-lang="http" data-name="HTTP"><pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">https://dashboard.bandwidth.com/api/accounts/{{account}}/sites/{{subaccount}}/sippeers/{{location}}/products/messaging/features/sms</span> HTTP/1.1
+<span class="hljs-attribute">Content-Type</span>: application/xml; charset=utf-8
+<span class="hljs-attribute">Authorization</span>: {user:password}
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">SipPeerSmsFeature</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">SipPeerSmsFeatureSettings</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">TollFree</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">TollFree</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ShortCode</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">ShortCode</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Protocol</span>&gt;</span>HTTP<span class="hljs-tag">&lt;/<span class="hljs-name">Protocol</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Zone1</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">Zone1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Zone2</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-name">Zone2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Zone3</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-name">Zone3</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Zone4</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-name">Zone4</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Zone5</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-name">Zone5</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">SipPeerSmsFeatureSettings</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">HttpSettings</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ProxyPeerId</span>&gt;</span>539692<span class="hljs-tag">&lt;/<span class="hljs-name">ProxyPeerId</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">HttpSettings</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">SipPeerSmsFeature</span>&gt;</span>
+</span></code></pre>
+</div><div class="api-method-example"><h3 id="response">Response</h3>
+<pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">201</span> Created
+<span class="hljs-attribute">Content-Type</span>: application/xml; charset=utf-8
+
+<span class="xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span> standalone=<span class="hljs-string">&quot;yes&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">SipPeerSmsFeatureResponse</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">SipPeerSmsFeature</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">SipPeerSmsFeatureSettings</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">TollFree</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">TollFree</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">ShortCode</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">ShortCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Protocol</span>&gt;</span>HTTP<span class="hljs-tag">&lt;/<span class="hljs-name">Protocol</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Zone1</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">Zone1</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Zone2</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-name">Zone2</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Zone3</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-name">Zone3</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Zone4</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-name">Zone4</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Zone5</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-name">Zone5</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">SipPeerSmsFeatureSettings</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">HttpSettings</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">ProxyPeerId</span>&gt;</span>539692<span class="hljs-tag">&lt;/<span class="hljs-name">ProxyPeerId</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">HttpSettings</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">SipPeerSmsFeature</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">SipPeerSmsFeatureResponse</span>&gt;</span>
+</span></code></pre>
+</div></div></div>
+
+<hr>
+<h3 id="enable-mms-on-location-sippeer">Enable MMS on Location (<em>sippeer</em>)</h3>
+<p>In addition to enabling SMS, you must also enable MMS to recieve picture messages and other multi-media messages.</p>
+<div class="api-method"><div class="api-method-definition"><div class="api-definition-top"></div><h3 id="enable-mms-parameters">Enable MMS Parameters</h3>
+<h4 id="request-url">Request URL</h4>
+<p><code class="post">POST</code><code>https://dashboard.bandwidth.com/api/accounts/{{account}}/sites/{{subaccount}}/sippeers/{{location}}/products/messaging/features/mms</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameters</th>
+<th style="text-align:left">Mandatory</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>protocol</code></td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left"><strong>MUST BE SET TO</strong> <code>HTTP</code> <br> <em>Notice the lower case <code>protocol</code></em></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>ProxyPeerId</code></td>
+<td style="text-align:left">Yest</td>
+<td style="text-align:left"><strong>MUST BE SET TO</strong>: <code>539692</code></td>
+</tr>
+</tbody>
+</table>
+</div><div class="api-method-code mm-method-code"><div class="api-method-example"><h3 id="enable-mms-on-location-sippeer">Enable MMS on Location (<em>sippeer</em>)</h3>
+</div><div class="api-method-sample" data-lang="http" data-name="HTTP"><pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">https://dashboard.bandwidth.com/api/accounts/{{account}}/sites/{{subaccount}}/sippeers/{{location}}/products/messaging/features/mms</span> HTTP/1.1
+<span class="hljs-attribute">Content-Type</span>: application/xml; charset=utf-8
+<span class="hljs-attribute">Authorization</span>: {user:password}
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">MmsFeature</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">MmsSettings</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">protocol</span>&gt;</span>HTTP<span class="hljs-tag">&lt;/<span class="hljs-name">protocol</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">MmsSettings</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Protocols</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">HTTP</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">HttpSettings</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ProxyPeerId</span>&gt;</span>539692<span class="hljs-tag">&lt;/<span class="hljs-name">ProxyPeerId</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">HttpSettings</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">HTTP</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Protocols</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">MmsFeature</span>&gt;</span>
+</span></code></pre>
+</div><div class="api-method-example"><h3 id="response">Response</h3>
+<pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">201</span> Created
+<span class="hljs-attribute">Content-Type</span>: application/xml; charset=utf-8
+
+<span class="xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span> standalone=<span class="hljs-string">&quot;yes&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">MmsFeatureResponse</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">MmsFeature</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">MmsSettings</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">protocol</span>&gt;</span>HTTP<span class="hljs-tag">&lt;/<span class="hljs-name">protocol</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">MmsSettings</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Protocols</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">HTTP</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">HttpSettings</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">proxyPeerId</span>&gt;</span>539692<span class="hljs-tag">&lt;/<span class="hljs-name">proxyPeerId</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">HttpSettings</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">HTTP</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Protocols</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">MmsFeature</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">MmsFeatureResponse</span>&gt;</span>
+</span></code></pre>
+</div></div></div>
+
+<hr>
+<h3 id="assign-application-to-location-sippeer">Assign Application to Location (<em>sippeer</em>)</h3>
+<p>In order to use messaging 2.0 in your account, you need to assign the <code>application</code> created above to the location (<em>sippeer</em>)</p>
+<div class="api-method"><div class="api-method-definition"><div class="api-definition-top"></div><h3 id="assign-application-parameters">Assign Application Parameters</h3>
+<h4 id="request-url">Request URL</h4>
+<p><code class="put">PUT</code><code>https://dashboard.bandwidth.com/api/accounts/{{account}}/sites/{{subaccount}}/sippeers/{{location}}/products/messaging/applicationSettings</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameters</th>
+<th style="text-align:left">Mandatory</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>HttpMessagingV2AppId</code></td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">The application ID from the <code>application</code> created above</td>
+</tr>
+</tbody>
+</table>
+</div><div class="api-method-code mm-method-code"><div class="api-method-example"><h3 id="assign-application-to-location-sippeer">Assign Application to Location (<em>sippeer</em>)</h3>
+</div><div class="api-method-sample" data-lang="http" data-name="HTTP"><pre><code class="lang-http"><span class="hljs-keyword">PUT</span> <span class="hljs-string">https://dashboard.bandwidth.com/api/accounts/{{account}}/sites/{{subaccount}}/sippeers/{{location}}/products/messaging/applicationSettings</span> HTTP/1.1
+<span class="hljs-attribute">Content-Type</span>: application/xml; charset=utf-8
+<span class="hljs-attribute">Authorization</span>: {user:password}
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ApplicationsSettings</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">HttpMessagingV2AppId</span>&gt;</span>299ab22a-d7e6-4cf6-9f4d-2089efc0c031<span class="hljs-tag">&lt;/<span class="hljs-name">HttpMessagingV2AppId</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ApplicationsSettings</span>&gt;</span>
+</span></code></pre>
+</div><div class="api-method-example"><h3 id="response">Response</h3>
+<pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">200</span> OK
+<span class="hljs-attribute">Content-Type</span>: application/xml; charset=utf-8
+
+<span class="xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span> standalone=<span class="hljs-string">&quot;yes&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ApplicationsSettingsResponse</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ApplicationsSettings</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">HttpMessagingV2AppId</span>&gt;</span>299ab22a-d7e6-4cf6-9f4d-2089efc0c031<span class="hljs-tag">&lt;/<span class="hljs-name">HttpMessagingV2AppId</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ApplicationsSettings</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ApplicationsSettingsResponse</span>&gt;</span>
+</span></code></pre>
+</div></div></div>
+
+<hr>
+<h3 id="order-available-numbers">Order Available Numbers</h3>
+<aside class="alert general small">
+<p>
+Save the <code>Order Id</code> After creating the order.
+</p>
+</aside>
+
+<p>Now that you have your account setup to send &amp; receive text messages, you need to order some numbers.</p>
+<div class="api-method"><div class="api-method-definition"><div class="api-definition-top"></div><h3 id="order-available-numbers-parameters">Order Available Numbers Parameters</h3>
+<h4 id="request-url">Request URL</h4>
+<p><code class="post">POST</code><code>https://dashboard.bandwidth.com/api/accounts/{{account}}/orders</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameters</th>
+<th style="text-align:left">Mandatory</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>AreaCode</code></td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">The area code of the desired numbers.<br> <br> <strong>This is just 1 of many ways to search for numbers</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Quantity</code></td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">Quantity of phone numbers to return, default is <code>5000</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>SiteId</code></td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">The id of your subaccount (<em>site</em>)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>PeerId</code></td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">The id of your location (<em>sippeer</em>)</td>
+</tr>
+</tbody>
+</table>
+</div><div class="api-method-code mm-method-code"><div class="api-method-example"><h3 id="order-1-available-number">Order 1 Available Number</h3>
+</div><div class="api-method-sample" data-lang="http" data-name="HTTP"><pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">https://dashboard.bandwidth.com/api/accounts/{{account}}/orders</span> HTTP/1.1
+<span class="hljs-attribute">Content-Type</span>: application/xml; charset=utf-8
+<span class="hljs-attribute">Authorization</span>: {user:password}
+
+<span class="django"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Order</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">AreaCodeSearchAndOrderType</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">AreaCode</span>&gt;</span>910<span class="hljs-tag">&lt;/<span class="hljs-name">AreaCode</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Quantity</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">Quantity</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">AreaCodeSearchAndOrderType</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">SiteId</span>&gt;</span></span><span class="hljs-template-variable">{{subaccount}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">SiteId</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">PeerId</span>&gt;</span></span><span class="hljs-template-variable">{{location}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">PeerId</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">Order</span>&gt;</span>
+</span></span></code></pre>
+</div><div class="api-method-example"><h3 id="response">Response</h3>
+<pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">201</span> Created
+<span class="hljs-attribute">Content-Type</span>: application/xml; charset=utf-8
+<span class="hljs-attribute">Location</span>: https://dashboard.bandwidth.com/api/accounts/{{account}}/orders/{{order}}
+
+<span class="django"><span class="xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span> standalone=<span class="hljs-string">&quot;yes&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">OrderResponse</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Order</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">OrderCreateDate</span>&gt;</span>2017-09-18T17:36:57.274Z<span class="hljs-tag">&lt;/<span class="hljs-name">OrderCreateDate</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">PeerId</span>&gt;</span></span><span class="hljs-template-variable">{{location}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">PeerId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">BackOrderRequested</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-name">BackOrderRequested</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>a18a8979-ebed-42f0-ae5f-3cfa7941d4c2<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">AreaCodeSearchAndOrderType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AreaCode</span>&gt;</span>910<span class="hljs-tag">&lt;/<span class="hljs-name">AreaCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Quantity</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">Quantity</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">AreaCodeSearchAndOrderType</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">PartialAllowed</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">PartialAllowed</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">SiteId</span>&gt;</span></span><span class="hljs-template-variable">{{subaccount}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">SiteId</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Order</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">OrderStatus</span>&gt;</span>RECEIVED<span class="hljs-tag">&lt;/<span class="hljs-name">OrderStatus</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">OrderResponse</span>&gt;</span>
+</span></span></code></pre>
+</div></div></div>
+
+<hr>
+<h3 id="check-order-status">Check Order Status</h3>
+<p>After ordering the numbers, you will need to check on the status to know when those numbers are ready to use.</p>
+<aside class="alert general small">
+<p>
+When the <code>Order Status</code> is <code>COMPLETE</code>&#xA0;:&#xA0;<code>&lt;OrderStatus&gt;COMPLETE&lt;/OrderStatus&gt;</code>, the numbers are ready to use
+</p>
+</aside>
+
+<div class="api-method"><div class="api-method-definition"><div class="api-definition-top"></div><h3 id="check-order-status-parameters">Check Order Status Parameters</h3>
+<h4 id="request-url">Request URL</h4>
+<p><code class="get">GET</code><code>https://dashboard.bandwidth.com/api/accounts/{{account}}/orders/{{order}}</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameters</th>
+<th style="text-align:left">Mandatory</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>order</code></td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">The ID of the order</td>
+</tr>
+</tbody>
+</table>
+</div><div class="api-method-code mm-method-code"><div class="api-method-example"><h3 id="check-order-status">Check order status</h3>
+</div><div class="api-method-sample" data-lang="http" data-name="HTTP"><pre><code class="lang-http"><span class="hljs-keyword">GET</span> <span class="hljs-string">https://dashboard.bandwidth.com/api/accounts/{{account}}/orders/{{order}}</span> HTTP/1.1
+<span class="hljs-attribute">Content-Type</span>: application/xml; charset=utf-8
+<span class="hljs-attribute">Authorization</span>: {user:password}
+</code></pre>
+</div><div class="api-method-example"><h3 id="response">Response</h3>
+<pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">200</span> OK
+<span class="hljs-attribute">Content-Type</span>: application/xml; charset=utf-8
+
+<span class="django"><span class="xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span> standalone=<span class="hljs-string">&quot;yes&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">OrderResponse</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">CompletedQuantity</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">CompletedQuantity</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">CreatedByUser</span>&gt;</span>lorem<span class="hljs-tag">&lt;/<span class="hljs-name">CreatedByUser</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">LastModifiedDate</span>&gt;</span>2017-09-18T17:36:57.411Z<span class="hljs-tag">&lt;/<span class="hljs-name">LastModifiedDate</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">OrderCompleteDate</span>&gt;</span>2017-09-18T17:36:57.410Z<span class="hljs-tag">&lt;/<span class="hljs-name">OrderCompleteDate</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Order</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">OrderCreateDate</span>&gt;</span>2017-09-18T17:36:57.274Z<span class="hljs-tag">&lt;/<span class="hljs-name">OrderCreateDate</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">PeerId</span>&gt;</span></span><span class="hljs-template-variable">{{location}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">PeerId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">BackOrderRequested</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-name">BackOrderRequested</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">AreaCodeSearchAndOrderType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">AreaCode</span>&gt;</span>910<span class="hljs-tag">&lt;/<span class="hljs-name">AreaCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Quantity</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">Quantity</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">AreaCodeSearchAndOrderType</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">PartialAllowed</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">PartialAllowed</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">SiteId</span>&gt;</span></span><span class="hljs-template-variable">{{subaccount}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">SiteId</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Order</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">OrderStatus</span>&gt;</span>COMPLETE<span class="hljs-tag">&lt;/<span class="hljs-name">OrderStatus</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">CompletedNumbers</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">TelephoneNumber</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">FullNumber</span>&gt;</span>9102398766<span class="hljs-tag">&lt;/<span class="hljs-name">FullNumber</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">TelephoneNumber</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">CompletedNumbers</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Summary</span>&gt;</span>1 number ordered in (910)<span class="hljs-tag">&lt;/<span class="hljs-name">Summary</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">FailedQuantity</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">FailedQuantity</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">OrderResponse</span>&gt;</span>
+</span></span></code></pre>
+<blockquote>
+<p>When the <code>Order Status</code> is <code>COMPLETE</code>: <code>&lt;OrderStatus&gt;COMPLETE&lt;/OrderStatus&gt;</code>, the numbers are ready to use</p>
+</blockquote>
+</div></div></div>
+
+<hr>
+<h3 id="sending-messages">Sending Messages</h3>
+<p><a name="sending-messages"></a></p>
+<ul>
+<li>To send a message, <code class="post">POST</code> to the <a href="methods/createSingle.html"><code>/messages</code> endpoint</a></li>
+<li>In the V2 Messaging API, messages are sent asynchronously. Message validation will happen after the server returns <code>202</code>. API clients should listen for HTTP callback events if they need to track message state after the initial <code class="post">POST</code> request.</li>
+</ul>
+<div class="api-method"><div class="api-method-definition"><div class="api-definition-top"></div><h3 id="message-parameters">Message Parameters</h3>
+<h4 id="request-url">Request URL</h4>
+<p><code class="post">POST</code><code>https://api.catapult.inetwork.com/v2/users/{{userId}}/messages</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:left">Mandatory</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>from</code></td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">One of your telephone numbers the message should come from (should be in E.164 format, like <code>+19195551212</code>). <br> <br> <strong>The <code>+1</code> can be omitted for US numbers in the <code>from</code> or <code>to</code> parameter</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>to</code></td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">The phone number the message should be sent to (must be in E.164 format, like <code>+19195551212</code>).  <br> <br> <strong>The <code>+1</code> can be omitted for US numbers in the <code>from</code> or <code>to</code> parameter</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>text</code></td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">The contents of the text message (must be 2048 characters or less).</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>applicationId</code></td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">The ID of the Application your <code>from</code> number is associated with in the Bandwidth Phone Number Dashboard.</td>
+</tr>
+</tbody>
+</table>
+</div><div class="api-method-code mm-method-code"><div class="api-method-example"><h3 id="send-text-message">Send Text Message</h3>
+</div><div class="api-method-sample" data-lang="http" data-name="HTTP"><pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">https://api.catapult.inetwork.com/v2/users/{{userId}}/messages</span> HTTP/1.1
+<span class="hljs-attribute">Content-Type</span>: application/json; charset=utf-8
+<span class="hljs-attribute">Authorization</span>: {token:secret}
+
+<span class="json">{
+  <span class="hljs-attr">&quot;from&quot;</span>          : <span class="hljs-string">&quot;{{your-bandwidth-number}}&quot;</span>,
+  <span class="hljs-attr">&quot;to&quot;</span>            : <span class="hljs-string">&quot;{{yourTN}}&quot;</span>,
+  <span class="hljs-attr">&quot;text&quot;</span>          : <span class="hljs-string">&quot;Good morning, this is a test message&quot;</span>,
+  <span class="hljs-attr">&quot;applicationId&quot;</span> : <span class="hljs-string">&quot;{{your-application-id}}&quot;</span>
+}
+</span></code></pre>
+</div><div class="api-method-example"><h3 id="response">Response</h3>
+<pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">202</span>
+<span class="hljs-attribute">Content-Type</span>: application/json; charset=utf-8
+
+<span class="json">{
+  <span class="hljs-attr">&quot;id&quot;</span>            : <span class="hljs-string">&quot;15047516192013g5tuga77zsa6jrp&quot;</span>,
+  <span class="hljs-attr">&quot;owner&quot;</span>         : <span class="hljs-string">&quot;+19193529968&quot;</span>,
+  <span class="hljs-attr">&quot;applicationId&quot;</span> : <span class="hljs-string">&quot;05851417-c78b-4636-81a2-014a54d8f119&quot;</span>,
+  <span class="hljs-attr">&quot;time&quot;</span>          : <span class="hljs-string">&quot;2017-09-07T02:33:39.201Z&quot;</span>,
+  <span class="hljs-attr">&quot;direction&quot;</span>     : <span class="hljs-string">&quot;out&quot;</span>,
+  <span class="hljs-attr">&quot;to&quot;</span>            : [<span class="hljs-string">&quot;+19191231234&quot;</span>],
+  <span class="hljs-attr">&quot;from&quot;</span>          : <span class="hljs-string">&quot;+19193524444&quot;</span>,
+  <span class="hljs-attr">&quot;text&quot;</span>          : <span class="hljs-string">&quot;Hi from Bandwidth!&quot;</span>
+}
+</span></code></pre>
+</div></div></div>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class="search-results-count"></span> results matching &quot;<span class="search-query"></span>&quot;</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching &quot;<span class="search-query"></span>&quot;</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"via API","level":"2.2","depth":1,"next":{"title":"video walkthrough","level":"2.3","depth":1,"path":"videosetup.md","ref":"videosetup.md","articles":[]},"previous":{"title":"via UI","level":"2.1","depth":1,"path":"uisetup.md","ref":"uisetup.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.7.14","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"apisetup.md","mtime":"2018-01-10T21:26:55.919Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-10T21:28:08.933Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-bandwidth-fonts/fontsettings.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-codetabs/codetabs.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-theme-bandwidth/theme-api.js"></script>
+        
+    
+
+    </body>
+</html>
+

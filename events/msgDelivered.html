@@ -7,7 +7,7 @@
         <title>Message Delivered</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.2">
+        <meta name="generator" content="GitBook 3.2.3">
         
         
         
@@ -26,6 +26,10 @@
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-bandwidth-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-codetabs/codetabs.css">
                 
             
                 
@@ -78,12 +82,23 @@
         
 <div class="book"><link href="../styles/styles.min.css" type="text/css">
 <div class="head">
+     <!-- <div id="banner">
+       <div class="bannerContainer">
+         <p>Due to a change in Github Pages, the API reference requires you to accept an invalid certificate. We are actively working on a fix.</p>
+         <p id="bannerClose">X</p>
+       </div>
+     </div> -->
    <a href="http://www.bandwidth.com" class="aimg"><div id="headerLogo"></div></a>
-   <h2>v2 Messaging Preview</h2>
+   <h2> &#x203A;&#xA0; Messaging 2.0 Beta Preview</h2>
+   <!-- <aside class="alert general small" style="margin: 15px 0px 0px 0px !important; position: fixed;left: 440px;">
+   <p>
+   Due to a change in Github Pages, the API reference requires you to accept an invalid certificate.
+   </p>
+   </aside> -->
    <ul>
-   	<li><a href="https://catapult.inetwork.com/portal/signup" target="_blank"><button class="medium hover-go right">Sign up</button></a></li>
-   	<li><a href="https://catapult.inetwork.com/pages/login.jsf" target="_blank">Log in</a></li>
-   	<li><a href="https://support.bandwidth.com/access/unauthenticated" target="_blank">Support</a></li>
+   	<li><a href="https://app.bandwidth.com" class="headerLink" target="_blank">Voice And Messagings Dashbaord</a></li>
+   	<li><a href="https://dashboard.bandwidth.com" class="headerLink" target="_blank">Phone Number Dashboard</a></li>
+   	<li><a href="https://support.bandwidth.com/access/unauthenticated" class="headerLink" target="_blank">Support</a></li>
    </ul>
 </div>
 
@@ -116,7 +131,7 @@
                 <a href="../">
             
                     
-                    Get Started
+                    About
             
                 </a>
             
@@ -124,18 +139,64 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="../application.md">
+        <li class="chapter " data-level="1.2" data-path="../messaging2Migration.html">
             
-                <span>
+                <a href="../messaging2Migration.html">
             
                     
-                    Setup Application
+                    Migration Guide
             
-                
+                </a>
             
 
             
-        </span></li>
+        </li>
+    
+
+    
+        
+        <li class="header">Account Setup</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../uisetup.html">
+            
+                <a href="../uisetup.html">
+            
+                    
+                    via UI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../apisetup.html">
+            
+                <a href="../apisetup.html">
+            
+                    
+                    via API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../videosetup.html">
+            
+                <a href="../videosetup.html">
+            
+                    
+                    video walkthrough
+            
+                </a>
+            
+
+            
+        </li>
     
 
     
@@ -144,7 +205,7 @@
         
         
     
-        <li class="chapter " data-level="2.1" data-path="../methods/createSingle.html">
+        <li class="chapter " data-level="3.1" data-path="../methods/createSingle.html">
             
                 <a href="../methods/createSingle.html">
             
@@ -157,7 +218,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="../methods/createGroup.html">
+        <li class="chapter " data-level="3.2" data-path="../methods/createGroup.html">
             
                 <a href="../methods/createGroup.html">
             
@@ -173,13 +234,26 @@
 
     
         
-        <li class="header">Message Events</li>
+        <li class="header">Message Callbacks</li>
         
         
     
-        <li class="chapter " data-level="3.1" data-path="receiveSingle.html">
+        <li class="chapter " data-level="4.1" data-path="messageEvents.html">
             
-                <a href="receiveSingle.html">
+                <a href="messageEvents.html">
+            
+                    
+                    About Message Events/Callbacks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="incomingSingle.html">
+            
+                <a href="incomingSingle.html">
             
                     
                     Incoming SMS/MMS Message
@@ -190,7 +264,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="incomingGroup.html">
+        <li class="chapter " data-level="4.3" data-path="incomingGroup.html">
             
                 <a href="incomingGroup.html">
             
@@ -203,7 +277,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.3" data-path="outSent.html">
+        <li class="chapter " data-level="4.4" data-path="outSent.html">
             
                 <a href="outSent.html">
             
@@ -216,7 +290,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="3.4" data-path="msgDelivered.html">
+        <li class="chapter active" data-level="4.5" data-path="msgDelivered.html">
             
                 <a href="msgDelivered.html">
             
@@ -229,7 +303,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.5" data-path="groupReject.html">
+        <li class="chapter " data-level="4.6" data-path="groupReject.html">
             
                 <a href="groupReject.html">
             
@@ -249,7 +323,7 @@
         
         
     
-        <li class="chapter " data-level="4.1" data-path="../errors/badRequest.html">
+        <li class="chapter " data-level="5.1" data-path="../errors/badRequest.html">
             
                 <a href="../errors/badRequest.html">
             
@@ -262,7 +336,7 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2" data-path="../errors/unauth.html">
+        <li class="chapter " data-level="5.2" data-path="../errors/unauth.html">
             
                 <a href="../errors/unauth.html">
             
@@ -275,7 +349,7 @@
             
         </li>
     
-        <li class="chapter " data-level="4.3" data-path="../errors/forbidden.html">
+        <li class="chapter " data-level="5.3" data-path="../errors/forbidden.html">
             
                 <a href="../errors/forbidden.html">
             
@@ -288,12 +362,78 @@
             
         </li>
     
-        <li class="chapter " data-level="4.4" data-path="../errors/tooManyReq.html">
+        <li class="chapter " data-level="5.4" data-path="../errors/tooManyReq.html">
             
                 <a href="../errors/tooManyReq.html">
             
                     
                     429 - Too Many Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Message Codes</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../codes.html">
+            
+                <a href="../codes.html">
+            
+                    
+                    Codes
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">SDKs</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1">
+            
+                <a target="_blank" href="https://github.com/bandwidthcom/node-bandwidth#using-messaging-v2-api">
+            
+                    
+                    NodeJS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2">
+            
+                <a target="_blank" href="https://github.com/bandwidthcom/csharp-bandwidth#messaging-20">
+            
+                    
+                    C#
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3">
+            
+                <a target="_blank" href="https://github.com/bandwidthcom/ruby-bandwidth#messaging-20">
+            
+                    
+                    Ruby
             
                 </a>
             
@@ -349,7 +489,7 @@
                                 <div class="api-method"><div class="api-method-definition"><div class="api-definition-top"></div><h1 id="message-delivered-to-carrier-event">Message Delivered to Carrier Event</h1>
 <p>In order to receive message events, you need to ensure you have set up your application to send callbacks to your server&apos;s URL.</p>
 <aside class="alert general small">
-Only for messages <b>WITHOUT</b> Media
+Only for messages <b>WITHOUT</b> Media, with <b>ONE</b> recipient
 </aside>
 
 <h3 id="parameters">Parameters</h3>
@@ -499,7 +639,7 @@ Only for messages <b>WITHOUT</b> Media
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Message Delivered","level":"3.4","depth":1,"next":{"title":"Group Message Rejected","level":"3.5","depth":1,"path":"events/groupReject.md","ref":"events/groupReject.md","articles":[]},"previous":{"title":"Message Sent","level":"3.3","depth":1,"path":"events/outSent.md","ref":"events/outSent.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth","header","sharing","custom-favicon","toggle-chapters","customJquery@git+https://github.com/dtolb/gitbook-plugin-customJquery.git","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight"],"pluginsConfig":{"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"events/msgDelivered.md","mtime":"2017-08-03T21:06:38.605Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-03T21:08:01.690Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Message Delivered","level":"4.5","depth":1,"next":{"title":"Group Message Rejected","level":"4.6","depth":1,"path":"events/groupReject.md","ref":"events/groupReject.md","articles":[]},"previous":{"title":"Message Sent","level":"4.4","depth":1,"path":"events/outSent.md","ref":"events/outSent.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.7.14","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"events/msgDelivered.md","mtime":"2018-01-10T21:26:55.919Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-10T21:28:08.933Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -518,6 +658,10 @@ Only for messages <b>WITHOUT</b> Media
     
         
         <script src="../gitbook/gitbook-plugin-bandwidth-fonts/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-codetabs/codetabs.js"></script>
         
     
         

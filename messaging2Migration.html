@@ -1,0 +1,697 @@
+
+<!DOCTYPE HTML>
+<html lang="">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Migration Guide</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-bandwidth-fonts/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-bandwidth-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-codetabs/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-theme-bandwidth/theme-api.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="uisetup.html">
+    
+    
+    <link rel="prev" href="./">
+    
+
+    </head>
+    <body>
+        
+<div class="book"><link href="../styles/styles.min.css" type="text/css">
+<div class="head">
+     <!-- <div id="banner">
+       <div class="bannerContainer">
+         <p>Due to a change in Github Pages, the API reference requires you to accept an invalid certificate. We are actively working on a fix.</p>
+         <p id="bannerClose">X</p>
+       </div>
+     </div> -->
+   <a href="http://www.bandwidth.com" class="aimg"><div id="headerLogo"></div></a>
+   <h2> &#x203A;&#xA0; Messaging 2.0 Beta Preview</h2>
+   <!-- <aside class="alert general small" style="margin: 15px 0px 0px 0px !important; position: fixed;left: 440px;">
+   <p>
+   Due to a change in Github Pages, the API reference requires you to accept an invalid certificate.
+   </p>
+   </aside> -->
+   <ul>
+   	<li><a href="https://app.bandwidth.com" class="headerLink" target="_blank">Voice And Messagings Dashbaord</a></li>
+   	<li><a href="https://dashboard.bandwidth.com" class="headerLink" target="_blank">Phone Number Dashboard</a></li>
+   	<li><a href="https://support.bandwidth.com/access/unauthenticated" class="headerLink" target="_blank">Support</a></li>
+   </ul>
+</div>
+
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Overview</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="messaging2Migration.html">
+            
+                <a href="messaging2Migration.html">
+            
+                    
+                    Migration Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Account Setup</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="uisetup.html">
+            
+                <a href="uisetup.html">
+            
+                    
+                    via UI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="apisetup.html">
+            
+                <a href="apisetup.html">
+            
+                    
+                    via API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="videosetup.html">
+            
+                <a href="videosetup.html">
+            
+                    
+                    video walkthrough
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Send Messages</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="methods/createSingle.html">
+            
+                <a href="methods/createSingle.html">
+            
+                    
+                    Single Message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="methods/createGroup.html">
+            
+                <a href="methods/createGroup.html">
+            
+                    
+                    Group Message
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Message Callbacks</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="events/messageEvents.html">
+            
+                <a href="events/messageEvents.html">
+            
+                    
+                    About Message Events/Callbacks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="events/incomingSingle.html">
+            
+                <a href="events/incomingSingle.html">
+            
+                    
+                    Incoming SMS/MMS Message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="events/incomingGroup.html">
+            
+                <a href="events/incomingGroup.html">
+            
+                    
+                    Incoming Group Message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="events/outSent.html">
+            
+                <a href="events/outSent.html">
+            
+                    
+                    Message Sent
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="events/msgDelivered.html">
+            
+                <a href="events/msgDelivered.html">
+            
+                    
+                    Message Delivered
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="events/groupReject.html">
+            
+                <a href="events/groupReject.html">
+            
+                    
+                    Group Message Rejected
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Api Error Response</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="errors/badRequest.html">
+            
+                <a href="errors/badRequest.html">
+            
+                    
+                    400 - Bad Request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="errors/unauth.html">
+            
+                <a href="errors/unauth.html">
+            
+                    
+                    401 - Unauthorized
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="errors/forbidden.html">
+            
+                <a href="errors/forbidden.html">
+            
+                    
+                    403 - Forbidden
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="errors/tooManyReq.html">
+            
+                <a href="errors/tooManyReq.html">
+            
+                    
+                    429 - Too Many Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Message Codes</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="codes.html">
+            
+                <a href="codes.html">
+            
+                    
+                    Codes
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">SDKs</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1">
+            
+                <a target="_blank" href="https://github.com/bandwidthcom/node-bandwidth#using-messaging-v2-api">
+            
+                    
+                    NodeJS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2">
+            
+                <a target="_blank" href="https://github.com/bandwidthcom/csharp-bandwidth#messaging-20">
+            
+                    
+                    C#
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3">
+            
+                <a target="_blank" href="https://github.com/bandwidthcom/ruby-bandwidth#messaging-20">
+            
+                    
+                    Ruby
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".">Migration Guide</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="messaging-20-migration-guide">Messaging 2.0 Migration guide</h1>
+<h2 id="assumptions">Assumptions</h2>
+<ul>
+<li>You have both your <a href="https://app.bandwidth.com" target="_blank">Voice and Messaging</a> &amp; your <a href="https://dashboard.bandwidth.com" target="_blank">Phone Number Dashboard</a> setup and configured.</li>
+<li>You have a storage solution for message recall that meets your needs.</li>
+</ul>
+<h2 id="key-differentiators">Key Differentiators</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Difference</th>
+<th style="text-align:left">v1/messages</th>
+<th style="text-align:left">v2/messages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Message Storage</td>
+<td style="text-align:left">All messages are stored within the API and can be fetched</td>
+<td style="text-align:left">Messages <strong>are not</strong> stored at all within the API and must be stored per your needs</td>
+</tr>
+<tr>
+<td style="text-align:left">Outbound Message <code>callbackUrl</code></td>
+<td style="text-align:left">Messages could be sent with a combination of <code>callbackUrl</code> and <code>receiptRequested</code> in order to get status updates as the message progresses throughout the system</td>
+<td style="text-align:left"><strong>ALL</strong> messages must include the <code>applicationId</code> and all status events are automatically sent to the <code>callbackUrl</code> specified in the <a href="https://dashboard.bandwidth.com/portal-v2/report/#application:/" target="_blank">application</a></td>
+</tr>
+<tr>
+<td style="text-align:left">Creating message <code>http</code> code</td>
+<td style="text-align:left">The API returns <code>201 - Created</code> when sending the message, however the message may still fail with an <a href="../methods/messages/getMessageMessageId.md">error code</a></td>
+<td style="text-align:left">The API returns a <code>202 - Accepted</code> and will send a callback for <a href="events/messageEvents.html">every event</a> (<em>including delivered and error</em>)</td>
+</tr>
+<tr>
+<td style="text-align:left">Creating message response</td>
+<td style="text-align:left">The API returns with the <code>{message-id}</code> in the <code>Location</code> Header</td>
+<td style="text-align:left">The API returns with a JSON object that contains the eventual location in the body of the response</td>
+</tr>
+<tr>
+<td style="text-align:left">Outbound message <code>to</code> value</td>
+<td style="text-align:left">Can only include a single phone number as a string</td>
+<td style="text-align:left">Will accept both a string and an array. If an array with more than one phone number is sent, the message will be treated as a group message</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Any</strong> Message Callback</td>
+<td style="text-align:left">Message callbacks are sent as a single object for both <a href="../apiCallbacks/sms.md">sms</a> and <a href="../apiCallbacks/mms.md">mms</a></td>
+<td style="text-align:left">Message callbacks are sent as an array of objects for <a href="events/messageEvents.html">every event</a></td>
+</tr>
+<tr>
+<td style="text-align:left">HTTP Errors</td>
+<td style="text-align:left">See the <a href="../errors.md">errors</a> for possible responses</td>
+<td style="text-align:left">See the <a href="errors/errors.md">v2 errors</a> for possible responses</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sending-message">Sending Message</h3>
+<p><div class="codetabs"><div class="codetabs-header"><div class="tab active" data-codetab="0">v1/messages</div><div class="tab" data-codetab="1">v2/messages</div></div><div class="codetabs-body"><div class="tab active" data-codetab="0"><pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">https://api.catapult.inetwork.com/v1/users/{userId}/messages</span> HTTP/1.1
+<span class="hljs-attribute">Content-Type</span>: application/json; charset=utf-8
+<span class="hljs-attribute">Authorization</span>: Basic Base64_Encoded_Token_Secret
+
+<span class="json">{
+    <span class="hljs-attr">&quot;from&quot;</span> : <span class="hljs-string">&quot;+12525089000&quot;</span>,
+    <span class="hljs-attr">&quot;to&quot;</span>   : <span class="hljs-string">&quot;+15035555555&quot;</span>,
+    <span class="hljs-attr">&quot;text&quot;</span> : <span class="hljs-string">&quot;Hello there from Bandwidth!&quot;</span>
+}</span></code></pre></div><div class="tab" data-codetab="1"><pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">https://api.catapult.inetwork.com/v2/users/{userId}/messages</span> HTTP/1.1
+<span class="hljs-attribute">Content-Type</span>: application/json; charset=utf-8
+<span class="hljs-attribute">Authorization</span>: Basic Base64_Encoded_Token_Secret
+
+<span class="json">{
+    <span class="hljs-attr">&quot;to&quot;</span>            : [<span class="hljs-string">&quot;+12345678902&quot;</span>],
+    <span class="hljs-attr">&quot;from&quot;</span>          : <span class="hljs-string">&quot;+12345678901&quot;</span>,
+    <span class="hljs-attr">&quot;text&quot;</span>          : <span class="hljs-string">&quot;Hey, check this out!&quot;</span>,
+    <span class="hljs-attr">&quot;applicationId&quot;</span> : <span class="hljs-string">&quot;93de2206-9669-4e07-948d-329f4b722ee2&quot;</span>,
+    <span class="hljs-attr">&quot;tag&quot;</span>           : <span class="hljs-string">&quot;test message&quot;</span>
+}</span></code></pre></div></div></div></p>
+<h4 id="responds">Responds</h4>
+<p><div class="codetabs"><div class="codetabs-header"><div class="tab active" data-codetab="0">v1/messages response</div><div class="tab" data-codetab="1">v2/messages response</div></div><div class="codetabs-body"><div class="tab active" data-codetab="0"><pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">201</span> Created
+<span class="hljs-attribute">Location</span>: https://api.catapult.inetwork.com/v1/users/{userId}/messages/{message-id}</code></pre></div><div class="tab" data-codetab="1"><pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">https://api.catapult.inetwork.com/v2/users/{userId}/messages</span> HTTP/1.1
+<span class="hljs-attribute">Content-Type</span>: application/json; charset=utf-8
+
+<span class="json">{
+    <span class="hljs-attr">&quot;to&quot;</span>            : [<span class="hljs-string">&quot;+12345678902&quot;</span>],
+    <span class="hljs-attr">&quot;from&quot;</span>          : <span class="hljs-string">&quot;+12345678901&quot;</span>,
+    <span class="hljs-attr">&quot;text&quot;</span>          : <span class="hljs-string">&quot;Hey, check this out!&quot;</span>,
+    <span class="hljs-attr">&quot;applicationId&quot;</span> : <span class="hljs-string">&quot;93de2206-9669-4e07-948d-329f4b722ee2&quot;</span>,
+    <span class="hljs-attr">&quot;tag&quot;</span>           : <span class="hljs-string">&quot;test message&quot;</span>
+}</span></code></pre></div></div></div></p>
+<h3 id="callback-example">Callback Example</h3>
+<p><div class="codetabs"><div class="codetabs-header"><div class="tab active" data-codetab="0">v1/messages Callback</div><div class="tab" data-codetab="1">v2/messages Callback</div></div><div class="codetabs-body"><div class="tab active" data-codetab="0"><pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">/your_url</span> HTTP/1.1
+<span class="hljs-attribute">Content-Type</span>: application/json; charset=utf-8
+<span class="hljs-attribute">User-Agent</span>: BandwidthAPI/v1
+
+<span class="json">{
+   <span class="hljs-attr">&quot;eventType&quot;</span>  : <span class="hljs-string">&quot;sms&quot;</span>,
+   <span class="hljs-attr">&quot;direction&quot;</span>  : <span class="hljs-string">&quot;out&quot;</span>,
+   <span class="hljs-attr">&quot;messageId&quot;</span>  : <span class="hljs-string">&quot;{messageId}&quot;</span>,
+   <span class="hljs-attr">&quot;messageUri&quot;</span> : <span class="hljs-string">&quot;https://api.catapult.inetwork.com/v1/users/{userId}/messages/{messageId}&quot;</span>,
+   <span class="hljs-attr">&quot;from&quot;</span>       : <span class="hljs-string">&quot;+13233326955&quot;</span>,
+   <span class="hljs-attr">&quot;to&quot;</span>         : <span class="hljs-string">&quot;+13865245000&quot;</span>,
+   <span class="hljs-attr">&quot;text&quot;</span>       : <span class="hljs-string">&quot;Example&quot;</span>,
+   <span class="hljs-attr">&quot;time&quot;</span>       : <span class="hljs-string">&quot;2012-11-14T16:13:06.076Z&quot;</span>,
+   <span class="hljs-attr">&quot;state&quot;</span>      : <span class="hljs-string">&quot;sent&quot;</span>
+}</span></code></pre></div><div class="tab" data-codetab="1"><pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">/your_url</span> HTTP/1.1
+<span class="hljs-attribute">Content-Type</span>: application/json; charset=utf-8
+<span class="hljs-attribute">User-Agent</span>: BandwidthAPI/v2
+
+<span class="json">[
+  {
+    <span class="hljs-attr">&quot;type&quot;</span>        : <span class="hljs-string">&quot;message-received&quot;</span>,
+    <span class="hljs-attr">&quot;time&quot;</span>        : <span class="hljs-string">&quot;2016-09-14T18:20:16Z&quot;</span>,
+    <span class="hljs-attr">&quot;description&quot;</span> : <span class="hljs-string">&quot;Incoming message received&quot;</span>,
+    <span class="hljs-attr">&quot;to&quot;</span>          : <span class="hljs-string">&quot;+12345678902&quot;</span>,
+    <span class="hljs-attr">&quot;message&quot;</span>     : {
+      <span class="hljs-attr">&quot;id&quot;</span>            : <span class="hljs-string">&quot;14762070468292kw2fuqty55yp2b2&quot;</span>,
+      <span class="hljs-attr">&quot;time&quot;</span>          : <span class="hljs-string">&quot;2016-09-14T18:20:16Z&quot;</span>,
+      <span class="hljs-attr">&quot;to&quot;</span>            : [<span class="hljs-string">&quot;+12345678902&quot;</span>],
+      <span class="hljs-attr">&quot;from&quot;</span>          : <span class="hljs-string">&quot;+12345678901&quot;</span>,
+      <span class="hljs-attr">&quot;text&quot;</span>          : <span class="hljs-string">&quot;Hey, check this out!&quot;</span>,
+      <span class="hljs-attr">&quot;applicationId&quot;</span> : <span class="hljs-string">&quot;93de2206-9669-4e07-948d-329f4b722ee2&quot;</span>,
+      <span class="hljs-attr">&quot;media&quot;</span>         : [
+        <span class="hljs-string">&quot;https://api.catapult.inetwork.com/v1/users/{userId}/media/14762070468292kw2fuqty55yp2b2/0/bw.png&quot;</span>,
+        <span class="hljs-string">&quot;https://api.catapult.inetwork.com/v1/users/{userId}/media/14762070468292kw2fuqty55yp2b2/1/bandwidth_logo.png&quot;</span>,
+        <span class="hljs-string">&quot;https://api.catapult.inetwork.com/v1/users/{userId}/media/14762070468292kw2fuqty55yp2b2/2/Bandwidth_Contact.png&quot;</span>
+      ],
+      <span class="hljs-attr">&quot;owner&quot;</span>         : <span class="hljs-string">&quot;+12345678902&quot;</span>,
+      <span class="hljs-attr">&quot;direction&quot;</span>     : <span class="hljs-string">&quot;in&quot;</span>
+    }
+  }
+]</span></code></pre></div></div></div></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class="search-results-count"></span> results matching &quot;<span class="search-query"></span>&quot;</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching &quot;<span class="search-query"></span>&quot;</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Migration Guide","level":"1.2","depth":1,"next":{"title":"via UI","level":"2.1","depth":1,"path":"uisetup.md","ref":"uisetup.md","articles":[]},"previous":{"title":"About","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.7.14","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"messaging2Migration.md","mtime":"2018-01-10T21:26:56.003Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-10T21:28:08.933Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-bandwidth-fonts/fontsettings.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-codetabs/codetabs.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-theme-bandwidth/theme-api.js"></script>
+        
+    
+
+    </body>
+</html>
+

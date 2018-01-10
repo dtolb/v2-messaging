@@ -4,10 +4,10 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Get Started</title>
+        <title>About</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.2">
+        <meta name="generator" content="GitBook 3.2.3">
         
         
         
@@ -26,6 +26,10 @@
             
                 
                 <link rel="stylesheet" href="gitbook/gitbook-plugin-bandwidth-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-codetabs/codetabs.css">
                 
             
                 
@@ -67,7 +71,7 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="application.md">
+    <link rel="next" href="messaging2Migration.html">
     
     
 
@@ -76,12 +80,23 @@
         
 <div class="book"><link href="../styles/styles.min.css" type="text/css">
 <div class="head">
+     <!-- <div id="banner">
+       <div class="bannerContainer">
+         <p>Due to a change in Github Pages, the API reference requires you to accept an invalid certificate. We are actively working on a fix.</p>
+         <p id="bannerClose">X</p>
+       </div>
+     </div> -->
    <a href="http://www.bandwidth.com" class="aimg"><div id="headerLogo"></div></a>
-   <h2>v2 Messaging Preview</h2>
+   <h2> &#x203A;&#xA0; Messaging 2.0 Beta Preview</h2>
+   <!-- <aside class="alert general small" style="margin: 15px 0px 0px 0px !important; position: fixed;left: 440px;">
+   <p>
+   Due to a change in Github Pages, the API reference requires you to accept an invalid certificate.
+   </p>
+   </aside> -->
    <ul>
-   	<li><a href="https://catapult.inetwork.com/portal/signup" target="_blank"><button class="medium hover-go right">Sign up</button></a></li>
-   	<li><a href="https://catapult.inetwork.com/pages/login.jsf" target="_blank">Log in</a></li>
-   	<li><a href="https://support.bandwidth.com/access/unauthenticated" target="_blank">Support</a></li>
+   	<li><a href="https://app.bandwidth.com" class="headerLink" target="_blank">Voice And Messagings Dashbaord</a></li>
+   	<li><a href="https://dashboard.bandwidth.com" class="headerLink" target="_blank">Phone Number Dashboard</a></li>
+   	<li><a href="https://support.bandwidth.com/access/unauthenticated" class="headerLink" target="_blank">Support</a></li>
    </ul>
 </div>
 
@@ -114,7 +129,7 @@
                 <a href="./">
             
                     
-                    Get Started
+                    About
             
                 </a>
             
@@ -122,18 +137,64 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="application.md">
+        <li class="chapter " data-level="1.2" data-path="messaging2Migration.html">
             
-                <span>
+                <a href="messaging2Migration.html">
             
                     
-                    Setup Application
+                    Migration Guide
             
-                
+                </a>
             
 
             
-        </span></li>
+        </li>
+    
+
+    
+        
+        <li class="header">Account Setup</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="uisetup.html">
+            
+                <a href="uisetup.html">
+            
+                    
+                    via UI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="apisetup.html">
+            
+                <a href="apisetup.html">
+            
+                    
+                    via API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="videosetup.html">
+            
+                <a href="videosetup.html">
+            
+                    
+                    video walkthrough
+            
+                </a>
+            
+
+            
+        </li>
     
 
     
@@ -142,7 +203,7 @@
         
         
     
-        <li class="chapter " data-level="2.1" data-path="methods/createSingle.html">
+        <li class="chapter " data-level="3.1" data-path="methods/createSingle.html">
             
                 <a href="methods/createSingle.html">
             
@@ -155,7 +216,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="methods/createGroup.html">
+        <li class="chapter " data-level="3.2" data-path="methods/createGroup.html">
             
                 <a href="methods/createGroup.html">
             
@@ -171,13 +232,26 @@
 
     
         
-        <li class="header">Message Events</li>
+        <li class="header">Message Callbacks</li>
         
         
     
-        <li class="chapter " data-level="3.1" data-path="events/receiveSingle.html">
+        <li class="chapter " data-level="4.1" data-path="events/messageEvents.html">
             
-                <a href="events/receiveSingle.html">
+                <a href="events/messageEvents.html">
+            
+                    
+                    About Message Events/Callbacks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="events/incomingSingle.html">
+            
+                <a href="events/incomingSingle.html">
             
                     
                     Incoming SMS/MMS Message
@@ -188,7 +262,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="events/incomingGroup.html">
+        <li class="chapter " data-level="4.3" data-path="events/incomingGroup.html">
             
                 <a href="events/incomingGroup.html">
             
@@ -201,7 +275,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.3" data-path="events/outSent.html">
+        <li class="chapter " data-level="4.4" data-path="events/outSent.html">
             
                 <a href="events/outSent.html">
             
@@ -214,7 +288,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.4" data-path="events/msgDelivered.html">
+        <li class="chapter " data-level="4.5" data-path="events/msgDelivered.html">
             
                 <a href="events/msgDelivered.html">
             
@@ -227,7 +301,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.5" data-path="events/groupReject.html">
+        <li class="chapter " data-level="4.6" data-path="events/groupReject.html">
             
                 <a href="events/groupReject.html">
             
@@ -247,7 +321,7 @@
         
         
     
-        <li class="chapter " data-level="4.1" data-path="errors/badRequest.html">
+        <li class="chapter " data-level="5.1" data-path="errors/badRequest.html">
             
                 <a href="errors/badRequest.html">
             
@@ -260,7 +334,7 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2" data-path="errors/unauth.html">
+        <li class="chapter " data-level="5.2" data-path="errors/unauth.html">
             
                 <a href="errors/unauth.html">
             
@@ -273,7 +347,7 @@
             
         </li>
     
-        <li class="chapter " data-level="4.3" data-path="errors/forbidden.html">
+        <li class="chapter " data-level="5.3" data-path="errors/forbidden.html">
             
                 <a href="errors/forbidden.html">
             
@@ -286,12 +360,78 @@
             
         </li>
     
-        <li class="chapter " data-level="4.4" data-path="errors/tooManyReq.html">
+        <li class="chapter " data-level="5.4" data-path="errors/tooManyReq.html">
             
                 <a href="errors/tooManyReq.html">
             
                     
                     429 - Too Many Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Message Codes</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="codes.html">
+            
+                <a href="codes.html">
+            
+                    
+                    Codes
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">SDKs</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1">
+            
+                <a target="_blank" href="https://github.com/bandwidthcom/node-bandwidth#using-messaging-v2-api">
+            
+                    
+                    NodeJS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2">
+            
+                <a target="_blank" href="https://github.com/bandwidthcom/csharp-bandwidth#messaging-20">
+            
+                    
+                    C#
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3">
+            
+                <a target="_blank" href="https://github.com/bandwidthcom/ruby-bandwidth#messaging-20">
+            
+                    
+                    Ruby
             
                 </a>
             
@@ -329,7 +469,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".">Get Started</a>
+        <a href=".">About</a>
     </h1>
 </div>
 
@@ -344,29 +484,83 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="bandwidth-v2-messaging-api">Bandwidth V2 Messaging API</h1>
-<h3 id="about">About</h3>
-<p>The Bandwidth V2 Messaging API is an all new way to send and receive SMS, MMS, and Group Messages on the Bandwidth network. It works with your numbers you already have in the Number Management section of the Bandwidth Phone Number Dashboard.</p>
-<h3 id="getting-started">Getting Started</h3>
-<h4 id="set-up-your-application">Set up your Application</h4>
-<ul>
-<li>To get started, you&apos;ll want to head over to the <a href="https://dashboard.bandwidth.com/portal/report/" target="_blank">Bandwidth Phone Number Dashboard</a> and set up an Application on your Location (SipPeer) that you want to use for HTTP Messaging. Specific documentation on this process is still in progress. You&apos;ll get an <code>applicationId</code> for the Application you created, which will be used when sending messages.</li>
-</ul>
-<h4 id="sending-messages">Sending Messages</h4>
-<ul>
-<li>To send a message, <code>POST</code> to the <a href="methods/createSingle.html"><code>/messages</code> endpoint</a></li>
-<li>In the V2 Messaging API, messages are sent asynchronously. Message validation will happen after the server returns <code>202</code>. API clients should listen for HTTP callback events if they need to track message state after the initial <code>POST</code> request.</li>
-</ul>
-<h4 id="callbacks-and-delivery-receipts">Callbacks and Delivery Receipts</h4>
-<ul>
-<li>Callbacks will be sent to the Callback URL for the Application associated with the <code>from</code> number on the outgoing message.</li>
-<li>You will get a callback for any event related to that message. For example, you will get an HTTP callback if your message was sent, delivered, or blocked. In addition, you will get an event for any kind of Delivery Receipt that the destination carrier sends back, regarding the delivery of your message.</li>
-<li>For incoming messages sent to your numbers, a callback will also be received, notifying your Application of the incoming message. For group messages where you own multiple recipient phone numbers, you will receive a distinct event and <code>messageId</code> for each individual recipient.</li>
-</ul>
-<h4 id="tags">Tags</h4>
-<ul>
-<li>If there is a need to identify individual outbound messages, or correlate them with an ID in your own application, the <code>tag</code> field can be set to any string. The custom <code>tag</code> will be included in all callbacks for an outbound message.</li>
-</ul>
+                                <h1 id="bandwidth-messaging-20-beta">Bandwidth Messaging 2.0 Beta</h1>
+<p>The Messaging 2.0 API is an all new way to send and receive SMS, MMS, and Group Messages on the Bandwidth network. It works with your numbers you already have in the Number Management section of the Bandwidth Phone Number Dashboard.</p>
+<p>&#x26A0;&#xFE0F; Messaging 2.0 Does not store <strong>ANY</strong> messages or records for fetching later. If you need message history you need to implement a storage solution that meets your needs. &#x26A0;&#xFE0F;</p>
+<h3 id="&#x1F449;-sign-up-for-beta-&#x1F448;"> &#x1F449; <a href="https://go.bandwidth.com/messaging-v2-api.html" target="_blank">Sign up for Beta</a> &#x1F448;</h3>
+
+<h2 id="10-vs-20-messaging-apis">1.0 VS. 2.0 Messaging APIs</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left">1.0</th>
+<th style="text-align:left">2.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">SMS</td>
+<td style="text-align:left">&#x221A;</td>
+<td style="text-align:left">&#x221A;</td>
+</tr>
+<tr>
+<td style="text-align:left">MMS</td>
+<td style="text-align:left">&#x221A;</td>
+<td style="text-align:left">&#x221A;</td>
+</tr>
+<tr>
+<td style="text-align:left">Pin codes, notifications, and long message support</td>
+<td style="text-align:left">&#x221A;</td>
+<td style="text-align:left">&#x221A;</td>
+</tr>
+<tr>
+<td style="text-align:left">Redundant network</td>
+<td style="text-align:left">&#x221A;</td>
+<td style="text-align:left">&#x221A;</td>
+</tr>
+<tr>
+<td style="text-align:left">Global reach</td>
+<td style="text-align:left">&#x221A;</td>
+<td style="text-align:left">&#x221A;</td>
+</tr>
+<tr>
+<td style="text-align:left">Toll-free texting</td>
+<td style="text-align:left">&#x221A;</td>
+<td style="text-align:left">&#x221A;</td>
+</tr>
+<tr>
+<td style="text-align:left">Unlimited concurrent messaging</td>
+<td style="text-align:left">Limited to 1,000 msg/sec</td>
+<td style="text-align:left">&#x221A;</td>
+</tr>
+<tr>
+<td style="text-align:left">Full-featured group messaging API</td>
+<td style="text-align:left">Can send and receive group messages</td>
+<td style="text-align:left">&#x221A;</td>
+</tr>
+<tr>
+<td style="text-align:left">Hosted Messaging</td>
+<td style="text-align:left">Only Bandwidth numbers are allowed</td>
+<td style="text-align:left">&#x221A;</td>
+</tr>
+<tr>
+<td style="text-align:left">Advanced number management like porting and bulk number ordering</td>
+<td style="text-align:left">Basic capabilities available</td>
+<td style="text-align:left">&#x221A;</td>
+</tr>
+<tr>
+<td style="text-align:left">Instant text-enabled toll-free numbers</td>
+<td style="text-align:left">Takes average 1-4 days</td>
+<td style="text-align:left">&#x221A;</td>
+</tr>
+<tr>
+<td style="text-align:left">Built-in deliverability receipts</td>
+<td style="text-align:left">Can be manually added</td>
+<td style="text-align:left">&#x221A;</td>
+</tr>
+</tbody>
+</table>
 <h4 id="api-credentials">API Credentials</h4>
 <ul>
 <li>API Credentials work the same way they do in the V1 Messaging API. Use your API Token and Secret with Basic Auth when making API requests to send messages. <a href="http://dev.bandwidth.com/security.html" target="_blank">See here for more details</a>.</li>
@@ -404,7 +598,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Get Started","level":"1.1","depth":1,"next":{"title":"Setup Application","level":"1.2","depth":1,"path":"application.md","ref":"application.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth","header","sharing","custom-favicon","toggle-chapters","customJquery@git+https://github.com/dtolb/gitbook-plugin-customJquery.git","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight"],"pluginsConfig":{"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2017-08-03T21:06:38.605Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-03T21:08:01.690Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"About","level":"1.1","depth":1,"next":{"title":"Migration Guide","level":"1.2","depth":1,"path":"messaging2Migration.md","ref":"messaging2Migration.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.7.14","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2018-01-10T21:26:55.919Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-10T21:28:08.933Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -423,6 +617,10 @@
     
         
         <script src="gitbook/gitbook-plugin-bandwidth-fonts/fontsettings.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-codetabs/codetabs.js"></script>
         
     
         
