@@ -3,7 +3,7 @@
 In order to receive message events, you need to ensure you have set up your application to send callbacks to your server's URL.
 
 <aside class="alert general small">
-Only for messages <b>WITHOUT</b> Media
+Only for messages <b>WITHOUT</b> Media, with <b>ONE</b> recipient
 </aside>
 
 ### Parameters
