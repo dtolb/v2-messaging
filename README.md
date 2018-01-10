@@ -4,7 +4,7 @@ The Messaging 2.0 API is an all new way to send and receive SMS, MMS, and Group 
 
 ⚠️ Messaging 2.0 Does not store **ANY** messages or records for fetching later. If you need message history you need to implement a storage solution that meets your needs. ⚠️
 
-<h3> 👉 <a href="https://go.bandwidth.com/messaging-v2-api.html">Sign up for Beta</a> 👈</h3>
+<h3> 👉 <a href="https://go.bandwidth.com/messaging-v2-api.html">Request Access to Beta</a> 👈</h3>
 
 ## 1.0 VS. 2.0 Messaging APIs
 
