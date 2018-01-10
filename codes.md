@@ -12,6 +12,12 @@
 | 610  | Message submittion failed                     |
 | 620  | Destination application error                 |
 | 630  | Message not acknowledge                       |
+| 650  | Destination Failure                           |
 | 720  | Invalid destination number                    |
 | 740  | Invalid source number                         |
+| 750  | Destination Rejected Message                  |
+| 751  | Destination Rejected Message too large        |
+| 770  | Destination Rejected due to SPAM              |
+| 775  | Rejected due to user opt out                  |
+| 902  | Message Expired                               |
 | 999  | Unknown error                                 |
