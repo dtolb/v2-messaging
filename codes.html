@@ -534,12 +534,36 @@
 <td style="text-align:left">Message not acknowledge</td>
 </tr>
 <tr>
+<td style="text-align:left">650</td>
+<td style="text-align:left">Destination Failure</td>
+</tr>
+<tr>
 <td style="text-align:left">720</td>
 <td style="text-align:left">Invalid destination number</td>
 </tr>
 <tr>
 <td style="text-align:left">740</td>
 <td style="text-align:left">Invalid source number</td>
+</tr>
+<tr>
+<td style="text-align:left">750</td>
+<td style="text-align:left">Destination Rejected Message</td>
+</tr>
+<tr>
+<td style="text-align:left">751</td>
+<td style="text-align:left">Destination Rejected Message too large</td>
+</tr>
+<tr>
+<td style="text-align:left">770</td>
+<td style="text-align:left">Destination Rejected due to SPAM</td>
+</tr>
+<tr>
+<td style="text-align:left">775</td>
+<td style="text-align:left">Rejected due to user opt out</td>
+</tr>
+<tr>
+<td style="text-align:left">902</td>
+<td style="text-align:left">Message Expired</td>
 </tr>
 <tr>
 <td style="text-align:left">999</td>
@@ -580,7 +604,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Codes","level":"6.1","depth":1,"next":{"title":"NodeJS","level":"7.1","depth":1,"anchor":"#using-messaging-v2-api","url":"https://github.com/bandwidthcom/node-bandwidth#using-messaging-v2-api","ref":"https://github.com/bandwidthcom/node-bandwidth#using-messaging-v2-api","articles":[]},"previous":{"title":"429 - Too Many Requests","level":"5.4","depth":1,"path":"errors/tooManyReq.md","ref":"errors/tooManyReq.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.7.14","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"codes.md","mtime":"2018-01-10T21:26:55.919Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-10T21:28:08.933Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Codes","level":"6.1","depth":1,"next":{"title":"NodeJS","level":"7.1","depth":1,"anchor":"#using-messaging-v2-api","url":"https://github.com/bandwidthcom/node-bandwidth#using-messaging-v2-api","ref":"https://github.com/bandwidthcom/node-bandwidth#using-messaging-v2-api","articles":[]},"previous":{"title":"429 - Too Many Requests","level":"5.4","depth":1,"path":"errors/tooManyReq.md","ref":"errors/tooManyReq.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.7.14","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"codes.md","mtime":"2018-01-10T21:35:25.029Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-10T21:37:02.543Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
