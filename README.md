@@ -16,13 +16,8 @@ The Messaging 2.0 API is an all new way to send and receive SMS, MMS, and Group 
 | Redundant network                                                | √                                   | √   |
 | Global reach                                                     | √                                   | √   |
 | Toll-free texting                                                | √                                   | √   |
-| Unlimited concurrent messaging                                   | Limited to 1,000 msg/sec            | √   |
 | Full-featured group messaging API                                | Can send and receive group messages | √   |
 | Hosted Messaging                                                 | Only Bandwidth numbers are allowed  | √   |
 | Advanced number management like porting and bulk number ordering | Basic capabilities available        | √   |
 | Instant text-enabled toll-free numbers                           | Takes average 1-4 days              | √   |
 | Built-in deliverability receipts                                 | Can be manually added               | √   |
-
-
-#### API Credentials
-* API Credentials work the same way they do in the V1 Messaging API. Use your API Token and Secret with Basic Auth when making API requests to send messages. [See here for more details](http://dev.bandwidth.com/security.html).

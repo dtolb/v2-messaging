@@ -3,6 +3,7 @@
 ## Overview
 * [About](README.md)
 * [Migration Guide](messaging2Migration.md)
+* [Concepts](concepts.md)
 
 ## Account Setup
 * [via UI](uisetup.md)
@@ -10,6 +11,7 @@
 * [video walkthrough](videosetup.md)
 
 ## Send Messages
+* [Send Messages](methods/sendMessages.md)
 * [Single Message](methods/createSingle.md)
 * [Group Message](methods/createGroup.md)
 
@@ -19,7 +21,7 @@
 * [Incoming Group Message](events/incomingGroup.md)
 * [Message Sent](events/outSent.md)
 * [Message Delivered](events/msgDelivered.md)
-* [Group Message Rejected](events/groupReject.md)
+* [Message Failed](events/messageFailed.md)
 
 ## Api Error Response
 * [400 - Bad Request](errors/badRequest.md)
@@ -27,8 +29,8 @@
 * [403 - Forbidden](errors/forbidden.md)
 * [429 - Too Many Requests](errors/tooManyReq.md)
 
-## Message Codes
-* [Codes](codes.md)
+## Message Error Codes
+* [Error Codes](codes.md)
 
 ## SDKs
 * [NodeJS](https://github.com/bandwidthcom/node-bandwidth#using-messaging-v2-api)
