@@ -12,14 +12,14 @@
 
 ## Getting Started
 
-1. Create application
-2. Create location (_sippeer_)
-3. Enable SMS on Location (_sippeer_)
-4. Enable MMS on Location (_sippeer_)
-5. Assign Application to Location (sippeer)
-6. Order Available Numbers
-7. Check Order Status
-8. Send Text Message
+1. [Create application](#setup-your-application)
+2. [Create location (_sippeer_)](#create-location)
+3. [Enable SMS on Location (_sippeer_)](#enable-sms-on-location)
+4. [Enable MMS on Location (_sippeer_)](#enable-mms-on-location)
+5. [Assign Application to Location (_sippeer_)](#assign-application-to-location)
+6. [Order Available Numbers](#order-numbers)
+7. [Check Order Status](#check-order-status)
+8. [Send Text Message](#sending-messages)
 
 ## Follow along with Postman
 
@@ -95,8 +95,8 @@ Content-Type: application/xml
 
 ---
 
-### Create location (_sippeer_)
-<a name="create-location-sippeer-and-assign-the-application-sippeer"></a>
+### Create location (_sippeer_) {#create-location}
+<a name="create-location"></a>
 
 <aside class="alert general small">
 <p>
@@ -154,7 +154,8 @@ Location: https://dashboard.bandwidth.com/api/accounts/{{account}}/sites/{{subac
 
 ---
 
-### Enable SMS on Location (_sippeer_)
+### Enable SMS on Location (_sippeer_) {#enable-sms-on-location}
+<a name="enable-sms-on-location"></a>
 
 In order to use messaging 2.0 in your account, you need to enable SMS and MMS on each location after creating.
 
@@ -239,7 +240,8 @@ Content-Type: application/xml; charset=utf-8
 
 ---
 
-### Enable MMS on Location (_sippeer_)
+### Enable MMS on Location (_sippeer_) {#enable-mms-on-location}
+<a name="enable-mms-on-location"></a>
 
 In addition to enabling SMS, you must also enable MMS to recieve picture messages and other multi-media messages.
 
@@ -311,7 +313,8 @@ Content-Type: application/xml; charset=utf-8
 
 ---
 
-### Assign Application to Location (_sippeer_)
+### Assign Application to Location (_sippeer_) {#assign-application-to-location}
+<a name="assign-application-to-location"></a>
 
 In order to use messaging 2.0 in your account, you need to assign the `application` created above to the location (_sippeer_)
 
@@ -365,7 +368,8 @@ Content-Type: application/xml; charset=utf-8
 ---
 
 
-### Order Available Numbers
+### Order Available Numbers {#order-numbers}
+<a name="order-numbers"></a>
 
 <aside class="alert general small">
 <p>
@@ -442,7 +446,8 @@ Location: https://dashboard.bandwidth.com/api/accounts/{{account}}/orders/{{orde
 
 ---
 
-### Check Order Status
+### Check Order Status {#check-order-status}
+<a name="check-order-status"></a>
 
 After ordering the numbers, you will need to check on the status to know when those numbers are ready to use.
 
@@ -518,8 +523,7 @@ Content-Type: application/xml; charset=utf-8
 
 ---
 
-### Sending Messages
-
+### Sending Messages {#sending-messages}
 <a name="sending-messages"></a>
 
 * To send a message, <code class="post">POST</code> to the [`/messages` endpoint](methods/createSingle.md)
