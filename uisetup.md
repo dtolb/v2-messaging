@@ -1,6 +1,6 @@
 # Messaging 2.0 Account Setup (UI)
 
-This walks through the steps to configure your Bandwidth Phone Number Dashboard and Messaging API to work together 
+This walks through the steps to configure your Bandwidth Phone Number Dashboard and Messaging API to work together
 
 ## Steps
 
@@ -18,6 +18,8 @@ This walks through the steps to configure your Bandwidth Phone Number Dashboard 
 
 ### Setup your Application
 <a name="setup-your-application"></a>
+
+Hidden URL: https://admin.dashboard.bandwidth.com/portal-v2/
 
 The Application contains the HTTP URL you want to use for both inbound and outbound messages.
 
