@@ -19,7 +19,7 @@ This walks through the steps to configure your Bandwidth Phone Number Dashboard 
 ### Setup your Application
 <a name="setup-your-application"></a>
 
-Hidden URL: https://admin.dashboard.bandwidth.com/portal-v2/
+Hidden URL: https://dashboard.bandwidth.com/portal-v2/
 
 The Application contains the HTTP URL you want to use for both inbound and outbound messages.
 
