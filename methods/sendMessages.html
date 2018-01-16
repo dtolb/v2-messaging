@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>403 - Forbidden</title>
+        <title>Send Messages</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -71,10 +71,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="tooManyReq.html">
+    <link rel="next" href="createSingle.html">
     
     
-    <link rel="prev" href="unauth.html">
+    <link rel="prev" href="../videosetup.html">
     
 
     </head>
@@ -218,9 +218,9 @@
         
         
     
-        <li class="chapter " data-level="3.1" data-path="../methods/sendMessages.html">
+        <li class="chapter active" data-level="3.1" data-path="sendMessages.html">
             
-                <a href="../methods/sendMessages.html">
+                <a href="sendMessages.html">
             
                     
                     Send Messages
@@ -231,9 +231,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="../methods/createSingle.html">
+        <li class="chapter " data-level="3.2" data-path="createSingle.html">
             
-                <a href="../methods/createSingle.html">
+                <a href="createSingle.html">
             
                     
                     Single Message
@@ -244,9 +244,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.3" data-path="../methods/createGroup.html">
+        <li class="chapter " data-level="3.3" data-path="createGroup.html">
             
-                <a href="../methods/createGroup.html">
+                <a href="createGroup.html">
             
                     
                     Group Message
@@ -349,9 +349,9 @@
         
         
     
-        <li class="chapter " data-level="5.1" data-path="badRequest.html">
+        <li class="chapter " data-level="5.1" data-path="../errors/badRequest.html">
             
-                <a href="badRequest.html">
+                <a href="../errors/badRequest.html">
             
                     
                     400 - Bad Request
@@ -362,9 +362,9 @@
             
         </li>
     
-        <li class="chapter " data-level="5.2" data-path="unauth.html">
+        <li class="chapter " data-level="5.2" data-path="../errors/unauth.html">
             
-                <a href="unauth.html">
+                <a href="../errors/unauth.html">
             
                     
                     401 - Unauthorized
@@ -375,9 +375,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="5.3" data-path="forbidden.html">
+        <li class="chapter " data-level="5.3" data-path="../errors/forbidden.html">
             
-                <a href="forbidden.html">
+                <a href="../errors/forbidden.html">
             
                     
                     403 - Forbidden
@@ -388,9 +388,9 @@
             
         </li>
     
-        <li class="chapter " data-level="5.4" data-path="tooManyReq.html">
+        <li class="chapter " data-level="5.4" data-path="../errors/tooManyReq.html">
             
-                <a href="tooManyReq.html">
+                <a href="../errors/tooManyReq.html">
             
                     
                     429 - Too Many Requests
@@ -497,7 +497,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="..">403 - Forbidden</a>
+        <a href="..">Send Messages</a>
     </h1>
 </div>
 
@@ -512,57 +512,38 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div class="api-method"><div class="api-method-definition"><div class="api-definition-top"></div><h1 id="forbidden-error---403">Forbidden Error - 403</h1>
-<h3 id="parameters">Parameters</h3>
+                                <h1 id="bandwidth-messaging-20">Bandwidth Messaging 2.0</h1>
+<p>The Messages resource lets you send both single SMS/MMS messages as well as Group SMS/MMS Messages.</p>
+<h3 id="base-url">Base URL</h3>
+<p><code>https://api.catapult.inetwork.com/v2/users/{userId}/messages</code></p>
+<h3 id="capabilities">Capabilities</h3>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">Parameter</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
+<th style="text-align:left">Verb</th>
+<th style="text-align:left">Path</th>
+<th style="text-align:left">about</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">timestamp</td>
-<td style="text-align:left"><code>string</code></td>
-<td style="text-align:left">The time of the error</td>
+<td style="text-align:left"><code class="post">POST</code></td>
+<td style="text-align:left"><a href="createSingle.html"><code>/v2/users/{userId}/messages</code></a></td>
+<td style="text-align:left">Send a text message to a single number</td>
 </tr>
 <tr>
-<td style="text-align:left">status</td>
-<td style="text-align:left"><code>int</code></td>
-<td style="text-align:left">The http status code</td>
-</tr>
-<tr>
-<td style="text-align:left">error</td>
-<td style="text-align:left"><code>string</code></td>
-<td style="text-align:left">Error Type</td>
-</tr>
-<tr>
-<td style="text-align:left">message</td>
-<td style="text-align:left"><code>string</code></td>
-<td style="text-align:left">Error Message</td>
-</tr>
-<tr>
-<td style="text-align:left">path</td>
-<td style="text-align:left"><code>string</code></td>
-<td style="text-align:left">Relative path for error</td>
+<td style="text-align:left"><code class="post">POST</code></td>
+<td style="text-align:left"><a href="createGroup.html"><code>/v2/users/{userId}/messages</code></a></td>
+<td style="text-align:left">Send a text message to a group MMS</td>
 </tr>
 </tbody>
 </table>
-</div><div class="api-method-code"><div class="api-code-top"></div><div class="api-method-example"><h3 id="forbidden">Forbidden</h3>
-</div><div class="api-method-sample" data-lang="http" data-name="HTTP"><pre><code class="lang-http"><span class="hljs-attribute">Status</span>: 403 Forbidden
-<span class="hljs-attribute">Content-Type</span>: application/json; charset=utf-8
+<h3 id="receive-incoming-messages">Receive Incoming Messages</h3>
+<p>To recieve <a href="../events/messageEvents.html">events/callbacks</a> for incoming and outgoing text messages (both SMS and MMS). You need to have:</p>
+<ul>
+<li>A <a href="../getStarted.md">Bandwidth Application</a> configured to send callbacks to your server.</li>
+</ul>
 
-<span class="json">{
-  <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-string">&quot;2017-01-11T18:25:27.047+0000&quot;</span>,
-  <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-number">403</span>,
-  <span class="hljs-attr">&quot;error&quot;</span>: <span class="hljs-string">&quot;Forbidden&quot;</span>,
-  <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;Access is denied&quot;</span>,
-  <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;/v2/users/u-abc123/messages&quot;</span>
-}
-</span></code></pre>
-</div></div></div>
                                 
                                 </section>
                             
@@ -595,7 +576,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"403 - Forbidden","level":"5.3","depth":1,"next":{"title":"429 - Too Many Requests","level":"5.4","depth":1,"path":"errors/tooManyReq.md","ref":"errors/tooManyReq.md","articles":[]},"previous":{"title":"401 - Unauthorized","level":"5.2","depth":1,"path":"errors/unauth.md","ref":"errors/unauth.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.7.14","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"errors/forbidden.md","mtime":"2017-08-30T18:25:54.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-16T20:43:21.378Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Send Messages","level":"3.1","depth":1,"next":{"title":"Single Message","level":"3.2","depth":1,"path":"methods/createSingle.md","ref":"methods/createSingle.md","articles":[]},"previous":{"title":"video walkthrough","level":"2.3","depth":1,"path":"videosetup.md","ref":"videosetup.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.7.14","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"methods/sendMessages.md","mtime":"2018-01-16T17:47:22.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-16T20:43:21.378Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

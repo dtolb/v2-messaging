@@ -152,6 +152,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3" data-path="../concepts.html">
+            
+                <a href="../concepts.html">
+            
+                    
+                    Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -205,7 +218,20 @@
         
         
     
-        <li class="chapter " data-level="3.1" data-path="../methods/createSingle.html">
+        <li class="chapter " data-level="3.1" data-path="../methods/sendMessages.html">
+            
+                <a href="../methods/sendMessages.html">
+            
+                    
+                    Send Messages
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../methods/createSingle.html">
             
                 <a href="../methods/createSingle.html">
             
@@ -218,7 +244,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="../methods/createGroup.html">
+        <li class="chapter " data-level="3.3" data-path="../methods/createGroup.html">
             
                 <a href="../methods/createGroup.html">
             
@@ -303,12 +329,12 @@
             
         </li>
     
-        <li class="chapter " data-level="4.6" data-path="groupReject.html">
+        <li class="chapter " data-level="4.6" data-path="messageFailed.html">
             
-                <a href="groupReject.html">
+                <a href="messageFailed.html">
             
                     
-                    Group Message Rejected
+                    Message Failed
             
                 </a>
             
@@ -378,7 +404,7 @@
 
     
         
-        <li class="header">Message Codes</li>
+        <li class="header">Message Error Codes</li>
         
         
     
@@ -387,7 +413,7 @@
                 <a href="../codes.html">
             
                     
-                    Codes
+                    Error Codes
             
                 </a>
             
@@ -493,6 +519,7 @@
 <li>Callbacks will be sent to the Callback URL for the Application associated with the <code>from</code> number on the outgoing message.</li>
 <li>You will get a callback for any event related to that message. For example, you will get an HTTP callback if your message was sent, delivered, or blocked. In addition, you will get an event for any kind of Delivery Receipt that the destination carrier sends back, regarding the delivery of your message.</li>
 <li>For incoming messages sent to your numbers, a callback will also be received, notifying your Application of the incoming message. For group messages where you own multiple recipient phone numbers, you will receive a distinct event and <code>messageId</code> for each individual recipient.</li>
+<li>You <strong>MUST</strong> Reply with a <code>HTTP 2xx</code> status code for <em>every</em> callback/delivery receipt.  Bandwidth will retry <em>every</em> callback over the next 24 hours until a <code>HTTP 2xx</code> code is received for the callback.  After 24 hours, Bandwidth will no longer try to send the callback</li>
 </ul>
 <table>
 <thead>
@@ -519,7 +546,7 @@
 <td style="text-align:left">Bandwidth sends this event when the outbound message has been sent to the downstream carrier</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="groupReject.html">Group Message Rejected</a></td>
+<td style="text-align:left"><a href="messageFailed.html">Message Failed</a></td>
 <td style="text-align:left">Bandwidth sends this event when the message contains was unable to be delivered</td>
 </tr>
 </tbody>
@@ -557,7 +584,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"About Message Events/Callbacks","level":"4.1","depth":1,"next":{"title":"Incoming SMS/MMS Message","level":"4.2","depth":1,"path":"events/incomingSingle.md","ref":"events/incomingSingle.md","articles":[]},"previous":{"title":"Group Message","level":"3.2","depth":1,"path":"methods/createGroup.md","ref":"methods/createGroup.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.7.14","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"events/messageEvents.md","mtime":"2018-01-10T21:51:49.440Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-10T21:52:52.843Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"About Message Events/Callbacks","level":"4.1","depth":1,"next":{"title":"Incoming SMS/MMS Message","level":"4.2","depth":1,"path":"events/incomingSingle.md","ref":"events/incomingSingle.md","articles":[]},"previous":{"title":"Group Message","level":"3.3","depth":1,"path":"methods/createGroup.md","ref":"methods/createGroup.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.7.14","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"events/messageEvents.md","mtime":"2018-01-16T18:47:40.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-16T20:43:21.378Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

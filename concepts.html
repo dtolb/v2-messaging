@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Error Codes</title>
+        <title>Concepts</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -71,8 +71,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="uisetup.html">
     
-    <link rel="prev" href="errors/tooManyReq.html">
+    
+    <link rel="prev" href="messaging2Migration.html">
     
 
     </head>
@@ -150,7 +152,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="concepts.html">
+        <li class="chapter active" data-level="1.3" data-path="concepts.html">
             
                 <a href="concepts.html">
             
@@ -406,7 +408,7 @@
         
         
     
-        <li class="chapter active" data-level="6.1" data-path="codes.html">
+        <li class="chapter " data-level="6.1" data-path="codes.html">
             
                 <a href="codes.html">
             
@@ -495,7 +497,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".">Error Codes</a>
+        <a href=".">Concepts</a>
     </h1>
 </div>
 
@@ -510,225 +512,23 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="message-delivery-code">Message Delivery Code</h1>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Code</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">4121</td>
-<td style="text-align:left">Rejected as SPAM</td>
-</tr>
-<tr>
-<td style="text-align:left">4301</td>
-<td style="text-align:left">Malformed message encoding</td>
-</tr>
-<tr>
-<td style="text-align:left">4302</td>
-<td style="text-align:left">Malformed From number</td>
-</tr>
-<tr>
-<td style="text-align:left">4303</td>
-<td style="text-align:left">Malformed To Number</td>
-</tr>
-<tr>
-<td style="text-align:left">4350</td>
-<td style="text-align:left">Malformed message encoding</td>
-</tr>
-<tr>
-<td style="text-align:left">4401</td>
-<td style="text-align:left">Message is looping from carrier back to BW</td>
-</tr>
-<tr>
-<td style="text-align:left">4403</td>
-<td style="text-align:left">Messaging forbidden on From number</td>
-</tr>
-<tr>
-<td style="text-align:left">4404</td>
-<td style="text-align:left">Messaging forbidden on To number</td>
-</tr>
-<tr>
-<td style="text-align:left">4405</td>
-<td style="text-align:left">Unallocated from number</td>
-</tr>
-<tr>
-<td style="text-align:left">4406</td>
-<td style="text-align:left">Unallocated to number</td>
-</tr>
-<tr>
-<td style="text-align:left">4410</td>
-<td style="text-align:left">Could not download media</td>
-</tr>
-<tr>
-<td style="text-align:left">4411</td>
-<td style="text-align:left">Combined size of media too large</td>
-</tr>
-<tr>
-<td style="text-align:left">4420</td>
-<td style="text-align:left">No Route to Destination Carrier</td>
-</tr>
-<tr>
-<td style="text-align:left">4421</td>
-<td style="text-align:left">No Route to Destination Carrier</td>
-</tr>
-<tr>
-<td style="text-align:left">4431</td>
-<td style="text-align:left">Messaging on shortcode forbidden</td>
-</tr>
-<tr>
-<td style="text-align:left">4432</td>
-<td style="text-align:left">Messaging to country forbidden</td>
-</tr>
-<tr>
-<td style="text-align:left">4433</td>
-<td style="text-align:left">Messaging on Toll Free Number Forbidden</td>
-</tr>
-<tr>
-<td style="text-align:left">4434</td>
-<td style="text-align:left">Messaging to Toll Free Number Forbidden</td>
-</tr>
-<tr>
-<td style="text-align:left">4451</td>
-<td style="text-align:left">Invalid User Id</td>
-</tr>
-<tr>
-<td style="text-align:left">4452</td>
-<td style="text-align:left">Invalid Application Id</td>
-</tr>
-<tr>
-<td style="text-align:left">4470</td>
-<td style="text-align:left">Rejected as SPAM (future)</td>
-</tr>
-<tr>
-<td style="text-align:left">4481</td>
-<td style="text-align:left">From Number in black list</td>
-</tr>
-<tr>
-<td style="text-align:left">4482</td>
-<td style="text-align:left">To Number in black list</td>
-</tr>
-<tr>
-<td style="text-align:left">4492</td>
-<td style="text-align:left">Message to emergency number forbidden</td>
-</tr>
-<tr>
-<td style="text-align:left">4493</td>
-<td style="text-align:left">Unauthorized</td>
-</tr>
-<tr>
-<td style="text-align:left">4700</td>
-<td style="text-align:left">Carrier Rejected as Invalid Service Type</td>
-</tr>
-<tr>
-<td style="text-align:left">4720</td>
-<td style="text-align:left">Carrier Rejected as Invalid Destination Address</td>
-</tr>
-<tr>
-<td style="text-align:left">4740</td>
-<td style="text-align:left">Carrier Rejected as Invalid Source Address</td>
-</tr>
-<tr>
-<td style="text-align:left">4750</td>
-<td style="text-align:left">Carrier Rejected Message</td>
-</tr>
-<tr>
-<td style="text-align:left">4751</td>
-<td style="text-align:left">Message too long for carrier</td>
-</tr>
-<tr>
-<td style="text-align:left">4770</td>
-<td style="text-align:left">Carrier Rejected as SPAM</td>
-</tr>
-<tr>
-<td style="text-align:left">4775</td>
-<td style="text-align:left">Carrier Rejected due to user opt out</td>
-</tr>
-<tr>
-<td style="text-align:left">5100</td>
-<td style="text-align:left">Application Error</td>
-</tr>
-<tr>
-<td style="text-align:left">5101</td>
-<td style="text-align:left">Application Error</td>
-</tr>
-<tr>
-<td style="text-align:left">5111</td>
-<td style="text-align:left">Application Error</td>
-</tr>
-<tr>
-<td style="text-align:left">5112</td>
-<td style="text-align:left">Application Error</td>
-</tr>
-<tr>
-<td style="text-align:left">5143</td>
-<td style="text-align:left">Application Error</td>
-</tr>
-<tr>
-<td style="text-align:left">5144</td>
-<td style="text-align:left">Application Error</td>
-</tr>
-<tr>
-<td style="text-align:left">5146</td>
-<td style="text-align:left">Application Error</td>
-</tr>
-<tr>
-<td style="text-align:left">5201</td>
-<td style="text-align:left">Application Error</td>
-</tr>
-<tr>
-<td style="text-align:left">5211</td>
-<td style="text-align:left">Application Error</td>
-</tr>
-<tr>
-<td style="text-align:left">5220</td>
-<td style="text-align:left">Application Error</td>
-</tr>
-<tr>
-<td style="text-align:left">5231</td>
-<td style="text-align:left">Application Error</td>
-</tr>
-<tr>
-<td style="text-align:left">5500</td>
-<td style="text-align:left">General Message Send Failure</td>
-</tr>
-<tr>
-<td style="text-align:left">5501</td>
-<td style="text-align:left">General Message Send Failure</td>
-</tr>
-<tr>
-<td style="text-align:left">5503</td>
-<td style="text-align:left">Service Unavailable</td>
-</tr>
-<tr>
-<td style="text-align:left">5600</td>
-<td style="text-align:left">Carrier Service Unavailable</td>
-</tr>
-<tr>
-<td style="text-align:left">5610</td>
-<td style="text-align:left">Carrier Service Failure</td>
-</tr>
-<tr>
-<td style="text-align:left">5620</td>
-<td style="text-align:left">Carrier Application Error</td>
-</tr>
-<tr>
-<td style="text-align:left">5630</td>
-<td style="text-align:left">Carrier Application Error</td>
-</tr>
-<tr>
-<td style="text-align:left">5650</td>
-<td style="text-align:left">Carrier Service Failure</td>
-</tr>
-<tr>
-<td style="text-align:left">5999</td>
-<td style="text-align:left">Unknown error from downstream</td>
-</tr>
-</tbody>
-</table>
+                                <h1 id="messaging-20-concepts">Messaging 2.0 Concepts</h1>
+<p>There are a few concepts that are important to understand how Bandwidth&apos;s new messaging API functions:</p>
+<ol>
+<li>Message Storage</li>
+<li>Message Callbacks</li>
+<li>Message Creation</li>
+</ol>
+<h2 id="message-storage-ie-get-messages">Message Storage IE <code>GET /messages</code></h2>
+<p>Messaging 2.0 does not keep <em>any</em> records to fetch later.  If you need to keep track of delivered, error-ed, received messages after you receive the corresponding <a href="events/messageEvents.html">callback event</a>, you <strong>MUST</strong> store the events in the data-store of your choice.</p>
+<p>Once we have successfully delivered the <a href="events/messageEvents.html">callback event</a> and receive an <code>HTTP 2xx</code> response, Bandwidth can no longer provide any detail about that message.</p>
+<h2 id="message-callbacks">Message Callbacks</h2>
+<p>As the messaging 2.0 API <strong>does not</strong> offer message storage or detailed messaging records, Bandwidth will attempt to deliver <em>every</em> callback until your server replies with a <code>HTTP 2xx</code> status code.  If the callback request times out, or your server returns a code less than <code>HTTP 2xx</code> or greater than <code>HTTP 3xx</code> Bandwidth will try to deliver the callback multiple times over the next 24 hours.</p>
+<p>After 24 hours, if your server has not returned a <code>HTTP 2xx</code> code, Bandwidth will no longer try to send the callback.</p>
+<h2 id="message-creationacceptance-http-201-vs-http-202">Message Creation/Acceptance (<code>HTTP 201</code> vs <code>HTTP 202</code>)</h2>
+<p>The messaging 2.0 API works off of an internal queuing system.  As such, when you <code class="post">POST</code> to the <code>v2/.../messages</code> to <a href="methods/sendMessages.html">create a new message</a>, Bandwidth will reply with an <code>HTTP 202 - Accepted</code>.  This indicates that the message has been placed on the queue</p>
+<p>As the message progresses through the internal system you will receive a <a href="events/outSent.html">Message Sent</a> callback when the message has been dequeued and on the way to the downstream carrier.  You will then receive a <a href="events/msgDelivered.html">Message Delivered</a> callback when the message has been handed off to the downstream carrier.  &#x26A0;&#xFE0F; MMS messages (including Group messages) <strong>DO NOT</strong> support message delivery receipts, as such, you will only receive the <a href="events/outSent.html">Message Sent</a> callback.</p>
+<p>If at any-point through the process the message fails, you will receive a detailed <a href="events/messageFailed.html">Message Failed</a> callback with an <a href="codes.html">error code</a> describing the reason for failure.</p>
 
                                 
                                 </section>
@@ -762,7 +562,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Error Codes","level":"6.1","depth":1,"next":{"title":"NodeJS","level":"7.1","depth":1,"anchor":"#using-messaging-v2-api","url":"https://github.com/bandwidthcom/node-bandwidth#using-messaging-v2-api","ref":"https://github.com/bandwidthcom/node-bandwidth#using-messaging-v2-api","articles":[]},"previous":{"title":"429 - Too Many Requests","level":"5.4","depth":1,"path":"errors/tooManyReq.md","ref":"errors/tooManyReq.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.7.14","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"codes.md","mtime":"2018-01-16T17:51:44.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-16T20:43:21.378Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Concepts","level":"1.3","depth":1,"next":{"title":"via UI","level":"2.1","depth":1,"path":"uisetup.md","ref":"uisetup.md","articles":[]},"previous":{"title":"Migration Guide","level":"1.2","depth":1,"path":"messaging2Migration.md","ref":"messaging2Migration.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.7.14","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"concepts.md","mtime":"2018-01-16T18:48:06.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-16T20:43:21.378Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

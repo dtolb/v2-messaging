@@ -152,6 +152,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3" data-path="concepts.html">
+            
+                <a href="concepts.html">
+            
+                    
+                    Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -205,7 +218,20 @@
         
         
     
-        <li class="chapter " data-level="3.1" data-path="methods/createSingle.html">
+        <li class="chapter " data-level="3.1" data-path="methods/sendMessages.html">
+            
+                <a href="methods/sendMessages.html">
+            
+                    
+                    Send Messages
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="methods/createSingle.html">
             
                 <a href="methods/createSingle.html">
             
@@ -218,7 +244,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="methods/createGroup.html">
+        <li class="chapter " data-level="3.3" data-path="methods/createGroup.html">
             
                 <a href="methods/createGroup.html">
             
@@ -303,12 +329,12 @@
             
         </li>
     
-        <li class="chapter " data-level="4.6" data-path="events/groupReject.html">
+        <li class="chapter " data-level="4.6" data-path="events/messageFailed.html">
             
-                <a href="events/groupReject.html">
+                <a href="events/messageFailed.html">
             
                     
-                    Group Message Rejected
+                    Message Failed
             
                 </a>
             
@@ -378,7 +404,7 @@
 
     
         
-        <li class="header">Message Codes</li>
+        <li class="header">Message Error Codes</li>
         
         
     
@@ -387,7 +413,7 @@
                 <a href="codes.html">
             
                     
-                    Codes
+                    Error Codes
             
                 </a>
             
@@ -500,14 +526,14 @@
 </ul>
 <h2 id="getting-started">Getting Started</h2>
 <ol>
-<li>Create application</li>
-<li>Create location (<em>sippeer</em>)</li>
-<li>Enable SMS on Location (<em>sippeer</em>)</li>
-<li>Enable MMS on Location (<em>sippeer</em>)</li>
-<li>Assign Application to Location (sippeer)</li>
-<li>Order Available Numbers</li>
-<li>Check Order Status</li>
-<li>Send Text Message</li>
+<li><a href="#setup-your-application">Create application</a></li>
+<li><a href="#create-location">Create location (<em>sippeer</em>)</a></li>
+<li><a href="#enable-sms-on-location">Enable SMS on Location (<em>sippeer</em>)</a></li>
+<li><a href="#enable-mms-on-location">Enable MMS on Location (<em>sippeer</em>)</a></li>
+<li><a href="#assign-application-to-location">Assign Application to Location (<em>sippeer</em>)</a></li>
+<li><a href="#order-numbers">Order Available Numbers</a></li>
+<li><a href="#check-order-status">Check Order Status</a></li>
+<li><a href="#sending-messages">Send Text Message</a></li>
 </ol>
 <h2 id="follow-along-with-postman">Follow along with Postman</h2>
 <p>&#x2139;&#xFE0F; Fill in your Bandwidth API Credentials here to get a customized postman environment &#x2139;&#xFE0F;</p>
@@ -715,8 +741,8 @@ Save the <code>Application Id</code> After creating the application.
 </div></div></div>
 
 <hr>
-<h3 id="create-location-sippeer">Create location (<em>sippeer</em>)</h3>
-<p><a name="create-location-sippeer-and-assign-the-application-sippeer"></a></p>
+<h3 id="create-location">Create location (<em>sippeer</em>) </h3>
+<p><a name="create-location"></a></p>
 <aside class="alert general small">
 <p>
 Save the <code>Location (sippeer) Id</code> After creating the application.
@@ -771,7 +797,8 @@ Save the <code>Location (sippeer) Id</code> After creating the application.
 </div></div></div>
 
 <hr>
-<h3 id="enable-sms-on-location-sippeer">Enable SMS on Location (<em>sippeer</em>)</h3>
+<h3 id="enable-sms-on-location">Enable SMS on Location (<em>sippeer</em>) </h3>
+<p><a name="enable-sms-on-location"></a></p>
 <p>In order to use messaging 2.0 in your account, you need to enable SMS and MMS on each location after creating.</p>
 <div class="api-method"><div class="api-method-definition"><div class="api-definition-top"></div><h3 id="enable-sms-parameters">Enable SMS Parameters</h3>
 <h4 id="request-url">Request URL</h4>
@@ -879,7 +906,8 @@ Save the <code>Location (sippeer) Id</code> After creating the application.
 </div></div></div>
 
 <hr>
-<h3 id="enable-mms-on-location-sippeer">Enable MMS on Location (<em>sippeer</em>)</h3>
+<h3 id="enable-mms-on-location">Enable MMS on Location (<em>sippeer</em>) </h3>
+<p><a name="enable-mms-on-location"></a></p>
 <p>In addition to enabling SMS, you must also enable MMS to recieve picture messages and other multi-media messages.</p>
 <div class="api-method"><div class="api-method-definition"><div class="api-definition-top"></div><h3 id="enable-mms-parameters">Enable MMS Parameters</h3>
 <h4 id="request-url">Request URL</h4>
@@ -946,7 +974,8 @@ Save the <code>Location (sippeer) Id</code> After creating the application.
 </div></div></div>
 
 <hr>
-<h3 id="assign-application-to-location-sippeer">Assign Application to Location (<em>sippeer</em>)</h3>
+<h3 id="assign-application-to-location">Assign Application to Location (<em>sippeer</em>) </h3>
+<p><a name="assign-application-to-location"></a></p>
 <p>In order to use messaging 2.0 in your account, you need to assign the <code>application</code> created above to the location (<em>sippeer</em>)</p>
 <div class="api-method"><div class="api-method-definition"><div class="api-definition-top"></div><h3 id="assign-application-parameters">Assign Application Parameters</h3>
 <h4 id="request-url">Request URL</h4>
@@ -990,7 +1019,8 @@ Save the <code>Location (sippeer) Id</code> After creating the application.
 </div></div></div>
 
 <hr>
-<h3 id="order-available-numbers">Order Available Numbers</h3>
+<h3 id="order-numbers">Order Available Numbers </h3>
+<p><a name="order-numbers"></a></p>
 <aside class="alert general small">
 <p>
 Save the <code>Order Id</code> After creating the order.
@@ -1071,7 +1101,8 @@ Save the <code>Order Id</code> After creating the order.
 </div></div></div>
 
 <hr>
-<h3 id="check-order-status">Check Order Status</h3>
+<h3 id="check-order-status">Check Order Status </h3>
+<p><a name="check-order-status"></a></p>
 <p>After ordering the numbers, you will need to check on the status to know when those numbers are ready to use.</p>
 <aside class="alert general small">
 <p>
@@ -1140,7 +1171,7 @@ When the <code>Order Status</code> is <code>COMPLETE</code>&#xA0;:&#xA0;<code>&l
 </div></div></div>
 
 <hr>
-<h3 id="sending-messages">Sending Messages</h3>
+<h3 id="sending-messages">Sending Messages </h3>
 <p><a name="sending-messages"></a></p>
 <ul>
 <li>To send a message, <code class="post">POST</code> to the <a href="methods/createSingle.html"><code>/messages</code> endpoint</a></li>
@@ -1241,7 +1272,7 @@ When the <code>Order Status</code> is <code>COMPLETE</code>&#xA0;:&#xA0;<code>&l
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"via API","level":"2.2","depth":1,"next":{"title":"video walkthrough","level":"2.3","depth":1,"path":"videosetup.md","ref":"videosetup.md","articles":[]},"previous":{"title":"via UI","level":"2.1","depth":1,"path":"uisetup.md","ref":"uisetup.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.7.14","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"apisetup.md","mtime":"2018-01-10T21:51:49.440Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-10T21:52:52.843Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"via API","level":"2.2","depth":1,"next":{"title":"video walkthrough","level":"2.3","depth":1,"path":"videosetup.md","ref":"videosetup.md","articles":[]},"previous":{"title":"via UI","level":"2.1","depth":1,"path":"uisetup.md","ref":"uisetup.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.7.14","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"apisetup.md","mtime":"2018-01-16T20:34:24.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-16T20:43:21.378Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

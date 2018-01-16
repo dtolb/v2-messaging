@@ -71,7 +71,7 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="uisetup.html">
+    <link rel="next" href="concepts.html">
     
     
     <link rel="prev" href="./">
@@ -152,6 +152,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3" data-path="concepts.html">
+            
+                <a href="concepts.html">
+            
+                    
+                    Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -205,7 +218,20 @@
         
         
     
-        <li class="chapter " data-level="3.1" data-path="methods/createSingle.html">
+        <li class="chapter " data-level="3.1" data-path="methods/sendMessages.html">
+            
+                <a href="methods/sendMessages.html">
+            
+                    
+                    Send Messages
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="methods/createSingle.html">
             
                 <a href="methods/createSingle.html">
             
@@ -218,7 +244,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="methods/createGroup.html">
+        <li class="chapter " data-level="3.3" data-path="methods/createGroup.html">
             
                 <a href="methods/createGroup.html">
             
@@ -303,12 +329,12 @@
             
         </li>
     
-        <li class="chapter " data-level="4.6" data-path="events/groupReject.html">
+        <li class="chapter " data-level="4.6" data-path="events/messageFailed.html">
             
-                <a href="events/groupReject.html">
+                <a href="events/messageFailed.html">
             
                     
-                    Group Message Rejected
+                    Message Failed
             
                 </a>
             
@@ -378,7 +404,7 @@
 
     
         
-        <li class="header">Message Codes</li>
+        <li class="header">Message Error Codes</li>
         
         
     
@@ -387,7 +413,7 @@
                 <a href="codes.html">
             
                     
-                    Codes
+                    Error Codes
             
                 </a>
             
@@ -492,6 +518,10 @@
 <li>You have both your <a href="https://app.bandwidth.com" target="_blank">Voice and Messaging</a> &amp; your <a href="https://dashboard.bandwidth.com" target="_blank">Phone Number Dashboard</a> setup and configured.</li>
 <li>You have a storage solution for message recall that meets your needs.</li>
 </ul>
+<h3 id="api-credentials">API Credentials</h3>
+<ul>
+<li>API Credentials work the same way they do in the V1 Messaging API. Use your API Token and Secret with Basic Auth when making API requests to send messages. <a href="http://dev.bandwidth.com/security.html" target="_blank">See here for more details</a>.</li>
+</ul>
 <h2 id="key-differentiators">Key Differentiators</h2>
 <table>
 <thead>
@@ -514,7 +544,7 @@
 </tr>
 <tr>
 <td style="text-align:left">Creating message <code>http</code> code</td>
-<td style="text-align:left">The API returns <code>201 - Created</code> when sending the message, however the message may still fail with an <a href="../methods/messages/getMessageMessageId.md">error code</a></td>
+<td style="text-align:left">The API returns <code>201 - Created</code> when sending the message, however the message may still fail with an <a href="http://dev.bandwidth.com/ap-docs/methods/messages/getMessagesMessageId.html" target="_blank">error code</a></td>
 <td style="text-align:left">The API returns a <code>202 - Accepted</code> and will send a callback for <a href="events/messageEvents.html">every event</a> (<em>including delivered and error</em>)</td>
 </tr>
 <tr>
@@ -529,13 +559,13 @@
 </tr>
 <tr>
 <td style="text-align:left"><strong>Any</strong> Message Callback</td>
-<td style="text-align:left">Message callbacks are sent as a single object for both <a href="../apiCallbacks/sms.md">sms</a> and <a href="../apiCallbacks/mms.md">mms</a></td>
+<td style="text-align:left">Message callbacks are sent as a single JSON object for both <a href="http://dev.bandwidth.com/ap-docs/apiCallbacks/messagingEvents.html" target="_blank">sms and mms</a></td>
 <td style="text-align:left">Message callbacks are sent as an array of objects for <a href="events/messageEvents.html">every event</a></td>
 </tr>
 <tr>
 <td style="text-align:left">HTTP Errors</td>
-<td style="text-align:left">See the <a href="../errors.md">errors</a> for possible responses</td>
-<td style="text-align:left">See the <a href="errors/errors.md">v2 errors</a> for possible responses</td>
+<td style="text-align:left">See the <a href="http://dev.bandwidth.com/ap-docs/methods/messages/getMessagesMessageId.html" target="_blank">errors</a> for possible responses</td>
+<td style="text-align:left">See the <a href="codes.html">v2 errors</a> for possible responses</td>
 </tr>
 </tbody>
 </table>
@@ -646,7 +676,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Migration Guide","level":"1.2","depth":1,"next":{"title":"via UI","level":"2.1","depth":1,"path":"uisetup.md","ref":"uisetup.md","articles":[]},"previous":{"title":"About","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.7.14","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"messaging2Migration.md","mtime":"2018-01-10T21:51:49.527Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-10T21:52:52.843Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Migration Guide","level":"1.2","depth":1,"next":{"title":"Concepts","level":"1.3","depth":1,"path":"concepts.md","ref":"concepts.md","articles":[]},"previous":{"title":"About","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.7.14","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"messaging2Migration.md","mtime":"2018-01-16T18:52:44.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-16T20:43:21.378Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
