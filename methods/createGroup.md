@@ -133,7 +133,7 @@ Authorization: Basic dc123
     "text"          : "Hey, check this out!",
     "applicationId" : "93de2206-9669-4e07-948d-329f4b722ee2",
     "media"         : [
-    "https          : //s3.amazonaws.com/bw-v2-api/demo.jpg"
+      "https://s3.amazonaws.com/bw-v2-api/demo.jpg"
     ],
     "tag"           : "test message"
 }
