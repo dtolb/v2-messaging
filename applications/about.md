@@ -1,4 +1,4 @@
-# Application
+# Applications
 
 Bandwidth uses HTTP Callbacks (also known as [webhooks](https://webhooks.pbworks.com/w/page/13385124/FrontPage)) to send [message events](../events/messageEvents.md) to any publicly addressable url.
 
