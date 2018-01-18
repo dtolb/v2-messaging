@@ -10,6 +10,16 @@
 * [via API](apisetup.md)
 * [video walkthrough](videosetup.md)
 
+## Application Setup
+* [About Applications](applications/about.md)
+* [Create Application](applications/postApplications.md)
+* [List Applications](applications/getApplications.md)
+* [Fetch Application info](applications/getApplicationsApplicationId.md)
+* [Partial Update Application](applications/patchApplicationsApplicationId.md)
+* [Completely Update Application](applications/putApplicationsApplicationId.md)
+* [Remove Application](applications/deleteApplicationsApplicationId.md)
+* [List Associated Sippeers](applications/getApplicationsApplicationIdSippeers.md)
+
 ## Send Messages
 * [Send Messages](methods/sendMessages.md)
 * [Single Message](methods/createSingle.md)

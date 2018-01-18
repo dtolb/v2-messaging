@@ -17,6 +17,10 @@ module.exports = function ($) {
 			var newTxt = li.children().first().html().replace("PUT", "<code class=\"put\">PUT </code>");
 			li.children().first().html(newTxt);
 		}
+		else if (li.text().indexOf('PATCH') > 0) {
+			var newTxt = li.children().first().html().replace("PUT", "<code class=\"patch\">PATCH </code>");
+			li.children().first().html(newTxt);
+		}
 	});
 	var title = $('title').text();
 
