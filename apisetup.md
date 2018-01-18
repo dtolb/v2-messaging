@@ -47,11 +47,13 @@ The Application contains the HTTP URL you want to use for both inbound and outbo
 #### Request URL
 <code class="post">POST</code>`https://dashboard.bandwidth.com/api/accounts/{{accountId}}/applications`
 
-| Parameters      | Mandatory | Description                                                                        |
-|:----------------|:----------|:-----------------------------------------------------------------------------------|
-| `AppName`       | Yes       | Plain text name of the application                                                 |
-| `CallbackUrl`   | Yes       | Url to recieve _all_ [message events](./events/msgDelivered.md)                    |
-| `CallBackCreds` | No        | Basic auth credentials to apply to your [message events](./events/msgDelivered.md) |
+| Parameters               | Mandatory | Description                                                                       |
+|:-------------------------|:----------|:----------------------------------------------------------------------------------|
+| `AppName`                | Yes       | Plain text name of the application                                                |
+| `CallbackUrl`            | Yes       | Url to recieve _all_ [message events](events/messageEvents.md)                    |
+| `CallBackCreds`          | No        | Basic auth credentials to apply to your [message events](events/messageEvents.md) |
+| `CallBackCreds.UserId`   | No        | Basic auth `UserId`                                                               |
+| `CallBackCreds.Password` | No        | Basic auth `Password`                                                             |
 
 {% common %}
 
@@ -65,9 +67,12 @@ Content-Type: application/xml; charset=utf-8
 Authorization: {user:password}
 
 <Application>
-  <AppName>Demo Server</AppName>
-  <CallbackUrl>https://requestb.in/zuaqjbzu</CallbackUrl>
-  <CallbackCreds/>
+    <AppName>Production Server</AppName>
+    <CallbackUrl>https://yourSecureSite.com/callbacks</CallbackUrl>
+    <CallbackCreds>
+      <UserId>Your-User-id</UserId>
+      <Password>Your-Password</Password>
+  </CallbackCreds>
 </Application>
 ```
 
@@ -81,13 +86,16 @@ Content-Type: application/xml
 
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ApplicationProvisioningResponse>
-  <Application>
-    <ApplicationId>7cc3c4f7-3b8f-4fff-a211-45070792b431</ApplicationId>
-    <ServiceType>Messaging-V2</ServiceType>
-    <AppName>Demo Server</AppName>
-    <CallbackUrl>https://requestb.in/1m009f61</CallbackUrl>
-    <CallbackCreds/>
-  </Application>
+    <Application>
+        <ApplicationId>d775585a-ed5b-4a49-8b96-f68c0a993ebe</ApplicationId>
+        <ServiceType>Messaging-V2</ServiceType>
+        <AppName>Production Server</AppName>
+        <CallbackUrl>https://yourSecureSite.com/callbacks</CallbackUrl>
+        <CallbackCreds>
+            <UserId>Your-User-id</UserId>
+            <Password>Your-Password</Password>
+        </CallbackCreds>
+    </Application>
 </ApplicationProvisioningResponse>
 ```
 
