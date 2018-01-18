@@ -139,20 +139,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="messaging2Migration.html">
-            
-                <a href="messaging2Migration.html">
-            
-                    
-                    Migration Guide
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3" data-path="concepts.html">
+        <li class="chapter " data-level="1.2" data-path="concepts.html">
             
                 <a href="concepts.html">
             
@@ -165,10 +152,36 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3" data-path="messaging2Migration.html">
+            
+                <a href="messaging2Migration.html">
+            
+                    
+                    Migration Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="postman.html">
+            
+                <a href="postman.html">
+            
+                    
+                    Postman Collection
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
-        <li class="header">Account Setup</li>
+        <li class="header">Initial Account Setup</li>
         
         
     
@@ -203,7 +216,7 @@
                 <a href="videosetup.html">
             
                     
-                    video walkthrough
+                    Video walkthrough
             
                 </a>
             
@@ -334,7 +347,7 @@
                 <a href="methods/sendMessages.html">
             
                     
-                    Send Messages
+                    About Messages
             
                 </a>
             
@@ -633,8 +646,10 @@
 </ul>
 </li>
 <li>Communicated to your <a href="http://support.bandwidth.com" target="_blank">Customer Service Advocate</a> (CSA) and have messaging 2.0 enabled.</li>
-<li><a href="">Sub-account</a></li>
+<li><a href="uisetup.html#create-subaccount-site">Sub-account</a></li>
 </ul>
+<h2 id="follow-along-with-postman">Follow along with Postman</h2>
+<p>Fill out the form on the <a href="postman.html">Postman</a> page to download the Messaging 2.0 collection.</p>
 <h2 id="getting-started">Getting Started</h2>
 <ol>
 <li><a href="#setup-your-application">Create application</a></li>
@@ -646,144 +661,6 @@
 <li><a href="#check-order-status">Check Order Status</a></li>
 <li><a href="#sending-messages">Send Text Message</a></li>
 </ol>
-<h2 id="follow-along-with-postman">Follow along with Postman</h2>
-<p>&#x2139;&#xFE0F; Fill in your Bandwidth API Credentials here to get a customized postman environment &#x2139;&#xFE0F;</p>
-<div class="inline-wrap">
-    <div class="form-input clearfix blocks half-block required">
-        <label for="input-text">Dashboard Username:</label>
-        <input class="postman-env" type="text" value="" id="db_user">
-        <div class="help">Your username to signin to Bandwidth Dashboard</div>
-    </div>
-    <div class="form-input clearfix blocks half-block required">
-        <label for="input-text">Dashboard Password:</label>
-        <input class="postman-env" type="text" value="" id="db_password">
-        <div class="help">Your Password to signin to Bandwidth Dashboard</div>
-    </div>
-</div>
-<div class="inline-wrap">
-    <div class="form-input clearfix blocks half-block required">
-        <label for="input-text">Dashboard Account Id:</label>
-        <input class="postman-env" type="text" value="" id="db_account_id">
-        <div class="help">Your Bandwidth Dashboard Accound ID</div>
-    </div>
-    <div class="form-input clearfix blocks half-block required">
-        <label for="input-text">Dashboard Sub-account Id:</label>
-        <input class="postman-env" type="text" value="" id="db_subaccount_id">
-        <div class="help">Your Bandwidth Dashboard Sub-account Id</div>
-    </div>
-</div>
-<div class="inline-wrap">
-    <div class="form-input clearfix blocks medium-block required">
-        <label for="input-text">Messaging API User Id:</label>
-        <input class="postman-env" type="text" value="" id="messaging_user_id">
-        <div class="help">Your Messaging API User Id</div>
-    </div>
-    <div class="form-input clearfix blocks medium-block required">
-        <label for="input-text">Messaging API Token:</label>
-        <input class="postman-env" type="text" value="" id="messaging_api_token">
-        <div class="help">Your Messaging API Token</div>
-    </div>
-    <div class="form-input clearfix blocks medium-block required">
-        <label for="input-text">Messaging API Secret:</label>
-        <input class="postman-env" type="text" value="" id="messaging_api_secret">
-        <div class="help">Your Messaging API Secret</div>
-    </div>
-</div>
-
-<div id="postman-container" style="pointer-events: none; opacity: 0.5;">
-<div class="postman-run-button" data-postman-action="collection/import" data-postman-var-1="53bb13675c43def87aaf" data-postman-param="env%5BBandwidth%20API%20Keys%5D=W3sia2V5IjoidXNlciIsInZhbHVlIjoiIiwiZGVzY3JpcHRpb24iOiIiLCJ0eXBlIjoidGV4dCIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoicGFzc3dvcmQiLCJ2YWx1ZSI6IiIsImRlc2NyaXB0aW9uIjoiIiwidHlwZSI6InRleHQiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6InVzZXJJZCIsInZhbHVlIjoiIiwiZGVzY3JpcHRpb24iOiIiLCJ0eXBlIjoidGV4dCIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoidG9rZW4iLCJ2YWx1ZSI6IiIsImRlc2NyaXB0aW9uIjoiIiwidHlwZSI6InRleHQiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6InNlY3JldCIsInZhbHVlIjoiIiwiZGVzY3JpcHRpb24iOiIiLCJ0eXBlIjoidGV4dCIsImVuYWJsZWQiOnRydWV9LHsia2V5Ijoic3ViYWNjb3VudCIsInZhbHVlIjoiIiwiZGVzY3JpcHRpb24iOiIiLCJ0eXBlIjoidGV4dCIsImVuYWJsZWQiOnRydWV9XQ=="></div></div>
-
-<script type="text/javascript">
-function messaging2Page () {
-
-    function enableOnChange (functionName) {
-        console.log('Enabling On Change for elements');
-
-        const elements = document.getElementsByClassName("postman-env");
-        for (let element of elements) {
-            element.addEventListener("change", functionName, false);
-            element.addEventListener("keyup", functionName, false);
-            element.addEventListener("paste", functionName, false);
-        }
-    }
-
-    function loadPostman () {
-        console.log('loading postman');
-        try {
-            document.getElementById("_pmPostmanRunObject").outerHTML="";
-            document.getElementById("pm-oip-overlay").outerHTML="";
-        }
-        catch (e) {
-            console.log('Postman was not loaded');
-        }
-        (function (p,o,s,t,m,a,n) {
-            !p[s] && (p[s] = function () { (p[t] || (p[t] = [])).push(arguments); });
-            !o.getElementById(s+t) && o.getElementsByTagName("head")[0].appendChild((
-              (n = o.createElement("script")),
-              (n.id = s+t), (n.async = 1), (n.src = m), n
-            ));
-            }(window, document, "_pm", "PostmanRunObject", "https://run.pstmn.io/button.js"));
-    }
-
-
-    function checkAllVal (obj) {
-        var result = true;
-
-        for (var i in obj) {
-            if (obj[i] === '') {
-                result = false;
-                break;
-            }
-        }
-        return result;
-    }
-
-    function updatePostmanEnv (data) {
-        const success = _pm("env.replace", "Bandwidth API Keys", data);
-        if (!success) {
-            _pm("env.create", "Bandwidth API Keys", data);
-        }
-    }
-
-    function updateMessaging20Env () {
-    //instead of triggering on button, do onchange (keyup, paste, enter, tab, bbrown will send all this fun stuff)
-        const user       = document.getElementById("db_user").value;
-        const password   = document.getElementById("db_password").value;
-        const account    = document.getElementById("db_account_id").value;
-        const userId     = document.getElementById("messaging_user_id").value;
-        const token      = document.getElementById("messaging_api_token").value;
-        const secret     = document.getElementById("messaging_api_secret").value;
-        const subaccount = document.getElementById("db_subaccount_id").value;
-        const envData = {
-          user       : user,
-          password   : password,
-          account    : account,
-          userId     : userId,
-          token      : token,
-          secret     : secret,
-          subaccount : subaccount
-        };
-        console.log(envData);
-        //INstead of creating, replace. will need update collection to contain default empty enviornment
-        if (checkAllVal(envData)) {
-            console.log('All set, updating postman');
-            updatePostmanEnv(envData);
-            document.getElementById("postman-container").removeAttribute("style");
-        }
-        else {
-            console.log('Nothing yet');
-            updatePostmanEnv(envData);
-            document.getElementById("postman-container").setAttribute("style", "pointer-events: none; opacity: 0.5;");
-        }
-    }
-    loadPostman();
-    enableOnChange(updateMessaging20Env);
-
-};
-
-messaging2Page();
-
-</script>
 <h3 id="create-application">Create application</h3>
 <h3 id="setup-your-application">Setup your Application</h3>
 <p><a name="setup-your-application"></a></p>
@@ -1399,7 +1276,7 @@ When the <code>Order Status</code> is <code>COMPLETE</code>&#xA0;:&#xA0;<code>&l
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"via API","level":"2.2","depth":1,"next":{"title":"video walkthrough","level":"2.3","depth":1,"path":"videosetup.md","ref":"videosetup.md","articles":[]},"previous":{"title":"via UI","level":"2.1","depth":1,"path":"uisetup.md","ref":"uisetup.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.7.14","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"apisetup.md","mtime":"2018-01-18T22:04:35.768Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-18T22:05:37.869Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"via API","level":"2.2","depth":1,"next":{"title":"Video walkthrough","level":"2.3","depth":1,"path":"videosetup.md","ref":"videosetup.md","articles":[]},"previous":{"title":"via UI","level":"2.1","depth":1,"path":"uisetup.md","ref":"uisetup.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.7.14","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"apisetup.md","mtime":"2018-01-18T23:29:09.319Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-18T23:31:24.034Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
