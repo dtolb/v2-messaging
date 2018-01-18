@@ -2,13 +2,14 @@
 
 ## Overview
 * [About](README.md)
-* [Migration Guide](messaging2Migration.md)
 * [Concepts](concepts.md)
+* [Migration Guide](messaging2Migration.md)
+* [Postman Collection](postman.md)
 
-## Account Setup
+## Initial Account Setup
 * [via UI](uisetup.md)
 * [via API](apisetup.md)
-* [video walkthrough](videosetup.md)
+* [Video walkthrough](videosetup.md)
 
 ## Application Setup
 * [About Applications](applications/about.md)
@@ -21,7 +22,7 @@
 * [List Associated Sippeers](applications/getApplicationsApplicationIdSippeers.md)
 
 ## Send Messages
-* [Send Messages](methods/sendMessages.md)
+* [About Messages](methods/sendMessages.md)
 * [Single Message](methods/createSingle.md)
 * [Group Message](methods/createGroup.md)
 

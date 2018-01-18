@@ -2,6 +2,10 @@
 
 This walks through the steps to configure your Bandwidth Phone Number Dashboard and Messaging API to work together
 
+## Follow along with Postman
+
+Fill out the form on the [Postman](postman.md) page to download the Messaging 2.0 collection.
+
 ## Steps
 
 1. [Get your account ID](#get-your-account-id)
@@ -79,7 +83,7 @@ Authorization: {user:password}
 
 ---
 
-### Create subaccount (_site_)
+### Create subaccount (_site_) {#create-subaccount-site}
 <a name="create-subaccount-site"></a>
 
 * You'll need a sub-account (_site_) in order to create a location (_sippeer_).
