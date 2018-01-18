@@ -89,7 +89,7 @@ Authorization: {user:password}
 * You'll need a sub-account (_site_) in order to create a location (_sippeer_).
 * Fill in the address and set the `type` to `Service`
 
-![Create Sub-account](../images/messaging-2/createSubAccount.gif)
+![Create Sub-account](./images/messaging-2/createSubAccount.gif)
 
 ---
 
