@@ -1,4 +1,4 @@
-# Messaging 2.0 Account Setup (UI)
+# Messaging 2.0 Account Setup (UI) {#top}
 
 This walks through the steps to configure your Bandwidth Phone Number Dashboard and Messaging API to work together
 
@@ -15,15 +15,11 @@ Fill out the form on the [Postman](postman.md) page to download the Messaging 2.
 5. [Order Phone numbers to location (_sippeer_)](#order-numbers-to-location)
 6. [Sending Messages](#sending-messages)
 
-### Get your account ID
-<a name="get-your-account-id"></a>
+## Get your account ID {#get-your-account-id}
 
 ![Get Account Id](./images/messaging-2/getAccountId.gif)
 
-### Setup your Application
-<a name="setup-your-application"></a>
-
-Hidden URL: https://dashboard.bandwidth.com/portal-v2/
+## Setup your Application {#setup-your-application}
 
 The Application contains the HTTP URL you want to use for both inbound and outbound messages.
 
@@ -83,8 +79,7 @@ Authorization: {user:password}
 
 ---
 
-### Create subaccount (_site_) {#create-subaccount-site}
-<a name="create-subaccount-site"></a>
+## Create subaccount (_site_) {#create-subaccount-site}
 
 * You'll need a sub-account (_site_) in order to create a location (_sippeer_).
 * Fill in the address and set the `type` to `Service`
@@ -93,7 +88,7 @@ Authorization: {user:password}
 
 ---
 
-### Create location (_sippeer_) and assign the application
+## Create location (_sippeer_) and assign the application
 <a name="create-location-sippeer-and-assign-the-application"></a>
 
 * You'll need a location (_sippeer_) in order to group phone numbers.
@@ -112,8 +107,7 @@ Authorization: {user:password}
 
 ---
 
-### Order Phone numbers to location (_sippeer_)
-<a name="order-numbers-to-location"></a>
+## Order Phone numbers to location (_sippeer_) {#order-numbers-to-location}
 
 * Once your application, sub-account (_site_), and location (_sippeer_) have been configured you're ready to start ordering phone numbers to use.
 * Using the UI, search for a number and order it to the sub-account (_site_) and location (_sippeer_) created above.
@@ -122,9 +116,8 @@ Authorization: {user:password}
 
 ---
 
-### Sending Messages
+## Sending Messages {#sending-messages}
 
-<a name="sending-messages"></a>
 
 * To send a message, `POST` to the [`/messages` endpoint](methods/createSingle.md)
 * In the V2 Messaging API, messages are sent asynchronously. Message validation will happen after the server returns `202`. API clients should listen for HTTP callback events if they need to track message state after the initial `POST` request.

@@ -1,7 +1,7 @@
 {% multimethod %}
 {% endmultimethod %}
 
-# Messaging 2.0 API Setup
+# Messaging 2.0 API Setup {#top}
 
 ## Pre-reqs
 
@@ -100,7 +100,6 @@ Content-Type: application/xml
 ---
 
 ## Create location (_sippeer_) {#create-location}
-<a name="create-location"></a>
 
 <aside class="alert general small">
 <p>
@@ -159,7 +158,6 @@ Location: https://dashboard.bandwidth.com/api/accounts/{{account}}/sites/{{subac
 ---
 
 ## Enable SMS on Location (_sippeer_) {#enable-sms-on-location}
-<a name="enable-sms-on-location"></a>
 
 In order to use messaging 2.0 in your account, you need to enable SMS and MMS on each location after creating.
 
@@ -245,7 +243,6 @@ Content-Type: application/xml; charset=utf-8
 ---
 
 ## Enable MMS on Location (_sippeer_) {#enable-mms-on-location}
-<a name="enable-mms-on-location"></a>
 
 In addition to enabling SMS, you must also enable MMS to recieve picture messages and other multi-media messages.
 
@@ -318,7 +315,6 @@ Content-Type: application/xml; charset=utf-8
 ---
 
 ## Assign Application to Location (_sippeer_) {#assign-application-to-location}
-<a name="assign-application-to-location"></a>
 
 In order to use messaging 2.0 in your account, you need to assign the `application` created above to the location (_sippeer_)
 
@@ -373,7 +369,6 @@ Content-Type: application/xml; charset=utf-8
 
 
 ## Order Available Numbers {#order-numbers}
-<a name="order-numbers"></a>
 
 <aside class="alert general small">
 <p>
@@ -451,7 +446,6 @@ Location: https://dashboard.bandwidth.com/api/accounts/{{account}}/orders/{{orde
 ---
 
 ## Check Order Status {#check-order-status}
-<a name="check-order-status"></a>
 
 After ordering the numbers, you will need to check on the status to know when those numbers are ready to use.
 
@@ -528,7 +522,6 @@ Content-Type: application/xml; charset=utf-8
 ---
 
 ## Sending Messages {#sending-messages}
-<a name="sending-messages"></a>
 
 * To send a message, <code class="post">POST</code> to the [`/messages` endpoint](methods/createSingle.md)
 * In the V2 Messaging API, messages are sent asynchronously. Message validation will happen after the server returns `202`. API clients should listen for HTTP callback events if they need to track message state after the initial <code class="post">POST</code> request.

@@ -8,7 +8,21 @@
 
 ## Initial Account Setup
 * [via UI](uisetup.md)
+	* [1. Get your account ID](uisetup.md#get-your-account-id)
+	* [2. Setup your Application](uisetup.md#setup-your-application)
+	* [3. Create subaccount (_site_)](uisetup.md#create-subaccount-site)
+	* [4. Create location (_sippeer_) and assign the application](uisetup.md#create-location-sippeer-and-assign-the-application)
+	* [5. Order Phone numbers to location (_sippeer_)](uisetup.md#order-numbers-to-location)
+	* [6. Sending Messages](uisetup.md#sending-messages)
 * [via API](apisetup.md)
+	* [1. Create application](apisetup.md#create-application)
+	* [2. Create location (_sippeer_)](apisetup.md#create-location)
+	* [3. Enable SMS on Location (_sippeer_)](apisetup.md#enable-sms-on-location)
+	* [4. Enable MMS on Location (_sippeer_)](apisetup.md#enable-mms-on-location)
+	* [5. Assign Application to Location (_sippeer_)](apisetup.md#assign-application-to-location)
+	* [6. Order Available Numbers](apisetup.md#order-numbers)
+	* [7. Check Order Status](apisetup.md#check-order-status)
+	* [8. Send Text Message](apisetup.md#sending-messages)
 * [Video walkthrough](videosetup.md)
 
 ## Application Setup
