@@ -3,12 +3,18 @@
 
 # Messaging 2.0 API Setup {#top}
 
-## Pre-reqs
+This walks through how to setup your Bandwidth Phone Number API and Bandwidth Voice and Mesasging API to send messages with the new Messaging 2.0 API.
+This guide is entirely focused on setup with the API.  If you'd like to follow along with the UI, head to the [via UI](uisetup.md) to follow along there.
 
-* [Bandwidth Phone Number Dashboard (AKA: Dashboard, Iris) Account](http://dashboard.bandwidth.com)
-    * You will also need your [Bandwidth Voice and Messaging APIs (AKA Catapult, Application Platform) Account](https://catapult.inetwork.com/pages/login.jsf)
-* Communicated to your [Customer Service Advocate](http://support.bandwidth.com) (CSA) and have messaging 2.0 enabled.
-* [Sub-account](uisetup.md#create-subaccount-site)
+## Assumptions
+
+* You have downloaded [Postman](https://www.getpostman.com/) -or- have the ability to make an API request.
+    * ⚠️ During the Beta, you will **HAVE** to use Postman, [curl](https://curl.haxx.se/), [hurl.it](https://www.hurl.it/) or other http tool to create your [application](applications/about.md) ⚠️
+* You have your [Voice and Messaging API](https://app.bandwidth.com) `userId`, `token`, `secret`
+* You have your [Phone Number API](https://dashboard.bandwidth.com) `username` and `password`
+* You have contacted [Support](http://support.bandwidth.com) to link your [Voice and Messaging API](https://app.bandwidth.com) and [Phone Number API](https://dashboard.bandwidth.com)
+* You have your Bandwidth Phone Number Dashboard [Account Id](uisetup.md#get-your-account-id)
+* You have an existing [Sub-account](uisetup.md#create-subaccount-site) you'd like to use.
 
 ## Follow along with Postman
 
