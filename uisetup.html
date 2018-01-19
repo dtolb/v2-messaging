@@ -831,26 +831,45 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="top">Messaging 2.0 Account Setup (UI) </h1>
-<p>This walks through the steps to configure your Bandwidth Phone Number Dashboard and Messaging API to work together</p>
+<p>This walks through the steps to configure your Bandwidth Phone Number Dashboard and Messaging API to work together.
+This guide is entirely focused on setup with the UI.  If you&apos;d like to follow along with the API, head to the <a href="apisetup.html">via API</a> to follow along there.</p>
+<h2 id="assumptions">Assumptions</h2>
+<ul>
+<li>You have downloaded <a href="https://www.getpostman.com/" target="_blank">Postman</a> -or- have the ability to make an API request.<ul>
+<li>&#x26A0;&#xFE0F; During the Beta, you <strong>MUST</strong> use Postman, <a href="https://curl.haxx.se/" target="_blank">curl</a>, <a href="https://www.hurl.it/" target="_blank">hurl.it</a> or other http tool to create your <a href="applications/about.html">application</a> &#x26A0;&#xFE0F;</li>
+</ul>
+</li>
+<li>You have your <a href="https://app.bandwidth.com" target="_blank">Voice and Messaging API</a> <code>userId</code>, <code>token</code>, <code>secret</code></li>
+<li>You have your <a href="https://dashboard.bandwidth.com" target="_blank">Phone Number API</a> <code>username</code> and <code>password</code></li>
+<li>You have contacted <a href="http://support.bandwidth.com" target="_blank">Support</a> to link your <a href="https://app.bandwidth.com" target="_blank">Voice and Messaging API</a> and <a href="https://dashboard.bandwidth.com" target="_blank">Phone Number API</a></li>
+</ul>
 <h2 id="follow-along-with-postman">Follow along with Postman</h2>
 <p>Fill out the form on the <a href="postman.html">Postman</a> page to download the Messaging 2.0 collection.</p>
 <h2 id="steps">Steps</h2>
 <ol>
 <li><a href="#get-your-account-id">Get your account ID</a></li>
-<li><a href="#setup-your-application">Setup your Application</a></li>
+<li><a href="#setup-your-application">Create your first Application</a></li>
 <li><a href="#create-subaccount-site">Create subaccount (<em>site</em>)</a></li>
 <li><a href="#create-location-sippeer-and-assign-the-application">Create location (<em>sippeer</em>) and assign the application</a></li>
 <li><a href="#order-numbers-to-location">Order Phone numbers to location (<em>sippeer</em>)</a></li>
 <li><a href="#sending-messages">Sending Messages</a></li>
 </ol>
 <h2 id="get-your-account-id">Get your account ID </h2>
-<p><img src="images/messaging-2/getAccountId.gif" alt="Get Account Id"></p>
-<h2 id="setup-your-application">Setup your Application </h2>
+<ol>
+<li>Log into the <a href="https://dashboard.bandwdith.com" target="_blank">Bandwidth Phone Number Dashboard</a></li>
+<li>Click the <strong>Account</strong> tab in the menu section to go to your <strong>Account Overview</strong></li>
+<li>Under the <strong>Account overview</strong> section you should see your account ID.</li>
+</ol>
+<p><img src="images/messaging-2/account_id.png" alt="Get Account Id"></p>
+<h2 id="setup-your-application">Create your first Application </h2>
+<p>&#x2139;&#xFE0F; Learn more about <a href="applicatons/about.md">Applications</a> &#x2139;&#xFE0F;</p>
 <p>The Application contains the HTTP URL you want to use for both inbound and outbound messages.</p>
-<ul>
-<li>To get started, you&apos;ll want to head over to the <a href="https://dashboard.bandwidth.com/portal/report/" target="_blank">Bandwidth Phone Number Dashboard</a> and set up an Application on your Location (SipPeer) that you want to use for HTTP Messaging. You&apos;ll get an <code>applicationId</code> for the Application you created, which will be used when sending messages.</li>
-</ul>
-<p><img src="images/messaging-2/createApplication.gif" alt="Create Application"></p>
+<aside class="alert general small">
+<p>
+Save the <code>Application Id</code> After creating the application.
+</p>
+</aside>
+
 <h4 id="application-parameters">Application Parameters</h4>
 <div class="api-method"><div class="api-method-definition"><div class="api-definition-top"></div><table>
 <thead>
@@ -876,6 +895,16 @@
 <td style="text-align:left">No</td>
 <td style="text-align:left">Basic auth credentials to apply to your <a href="events/messageEvents.html">message events</a></td>
 </tr>
+<tr>
+<td style="text-align:left"><code>CallBackCreds.UserId</code></td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">Basic auth <code>UserId</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>CallBackCreds.Password</code></td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">Basic auth <code>Password</code></td>
+</tr>
 </tbody>
 </table>
 </div><div class="api-method-code mm-method-code"><div class="api-method-example"><h3 id="create-application">Create Application</h3>
@@ -884,9 +913,12 @@
 <span class="hljs-attribute">Authorization</span>: {user:password}
 
 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Application</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">AppName</span>&gt;</span>Demo Server<span class="hljs-tag">&lt;/<span class="hljs-name">AppName</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">CallbackUrl</span>&gt;</span>https://requestb.in/zuaqjbzu<span class="hljs-tag">&lt;/<span class="hljs-name">CallbackUrl</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">CallbackCreds</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">AppName</span>&gt;</span>Production Server<span class="hljs-tag">&lt;/<span class="hljs-name">AppName</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">CallbackUrl</span>&gt;</span>https://yourSecureSite.com/callbacks<span class="hljs-tag">&lt;/<span class="hljs-name">CallbackUrl</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">CallbackCreds</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">UserId</span>&gt;</span>Your-User-id<span class="hljs-tag">&lt;/<span class="hljs-name">UserId</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Password</span>&gt;</span>Your-Password<span class="hljs-tag">&lt;/<span class="hljs-name">Password</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">CallbackCreds</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">Application</span>&gt;</span>
 </span></code></pre>
 </div><div class="api-method-example"><h3 id="response">Response</h3>
@@ -894,31 +926,48 @@
 <li>Status: 201</li>
 <li>Content-Type: &quot;application/xml&quot;</li>
 </ul>
-<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span> standalone=<span class="hljs-string">&quot;yes&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">201</span> Created
+<span class="hljs-attribute">Content-Type</span>: application/xml
+
+<span class="xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span> standalone=<span class="hljs-string">&quot;yes&quot;</span><span class="hljs-meta">?&gt;</span></span>
 <span class="hljs-tag">&lt;<span class="hljs-name">ApplicationProvisioningResponse</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">Application</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">ApplicationId</span>&gt;</span>7cc3c4f7-3b8f-4fff-a211-45070792b431<span class="hljs-tag">&lt;/<span class="hljs-name">ApplicationId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ApplicationId</span>&gt;</span>d775585a-ed5b-4a49-8b96-f68c0a993ebe<span class="hljs-tag">&lt;/<span class="hljs-name">ApplicationId</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">ServiceType</span>&gt;</span>Messaging-V2<span class="hljs-tag">&lt;/<span class="hljs-name">ServiceType</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">AppName</span>&gt;</span>Demo Server<span class="hljs-tag">&lt;/<span class="hljs-name">AppName</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">CallbackUrl</span>&gt;</span>https://requestb.in/1m009f61<span class="hljs-tag">&lt;/<span class="hljs-name">CallbackUrl</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">CallbackCreds</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">AppName</span>&gt;</span>Production Server<span class="hljs-tag">&lt;/<span class="hljs-name">AppName</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">CallbackUrl</span>&gt;</span>https://yourSecureSite.com/callbacks<span class="hljs-tag">&lt;/<span class="hljs-name">CallbackUrl</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">CallbackCreds</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">UserId</span>&gt;</span>Your-User-id<span class="hljs-tag">&lt;/<span class="hljs-name">UserId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Password</span>&gt;</span>Your-Password<span class="hljs-tag">&lt;/<span class="hljs-name">Password</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">CallbackCreds</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">Application</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">ApplicationProvisioningResponse</span>&gt;</span>
-</code></pre>
+</span></code></pre>
 </div></div></div>
 
 <hr>
-<h2 id="create-subaccount-site">Create subaccount (<em>site</em>) </h2>
+<h2 id="create-subaccount-site">Create sub-account (<em>site</em>) </h2>
+<ol>
+<li><p>Navigate to the <a href="https://dashboard.bandwidth.com/portal/report/#addsubaccount:" target="_blank"><strong>Add a sub-account</strong></a> page (<em>if you already have a sub-account you&apos;d like to use, you can skip this step</em>)</p>
 <ul>
-<li>You&apos;ll need a sub-account (<em>site</em>) in order to create a location (<em>sippeer</em>).</li>
-<li>Fill in the address and set the <code>type</code> to <code>Service</code></li>
+<li><strong>Account</strong> &gt; <strong>Configuration</strong> &gt; <strong>Sub-accounts</strong> &gt; <strong>Add a sub-account</strong></li>
 </ul>
-<p><img src="images/messaging-2/createSubAccount.gif" alt="Create Sub-account"></p>
+</li>
+<li><p>You&apos;ll need a sub-account (<em>site</em>) in order to create a location (<em>sippeer</em>).</p>
+</li>
+<li>Fill in the address and set the <code>type</code> to <code>Service</code></li>
+</ol>
+<p><img src="images/messaging-2/create_subaccount.png" alt="Create Sub-account"></p>
 <hr>
-<h2 id="create-location-sippeer-and-assign-the-application">Create location (<em>sippeer</em>) and assign the application</h2>
-<p><a name="create-location-sippeer-and-assign-the-application"></a></p>
+<h2 id="create-location-sippeer-and-assign-the-application">Create location (<em>sippeer</em>) and assign the application </h2>
+<ol>
+<li><p>Navigate to the <a href="https://dashboard.bandwidth.com/portal/report/#addlocation:" target="_blank"><strong>Add a location</strong></a> page</p>
 <ul>
-<li>You&apos;ll need a location (<em>sippeer</em>) in order to group phone numbers.</li>
+<li><strong>Account</strong> &gt; <strong>Configuration</strong> &gt; <strong>Locations</strong> &gt; <strong>Add a location</strong></li>
+</ul>
+</li>
+<li><p>You&apos;ll need a location (<em>sippeer</em>) in order to group phone numbers.</p>
+</li>
 <li>When creating the location be sure to check:<ul>
 <li><code>SMS Enabled</code></li>
 <li><code>Toll Free</code> (if available)</li>
@@ -928,24 +977,29 @@
 </ul>
 </li>
 <li>If you need <code>Toll Free</code> or <code>Short Code</code> support contact <a href="http://support.bandwidth.com" target="_blank">support</a> to enable.</li>
-</ul>
-<p><img src="images/messaging-2/createLocation.gif" alt="Create Location"></p>
+</ol>
 <h4 id="more-detail">More Detail</h4>
 <p><img src="images/messaging-2/detailLocation.png" alt="detail Location"></p>
 <hr>
 <h2 id="order-numbers-to-location">Order Phone numbers to location (<em>sippeer</em>) </h2>
+<ol>
+<li><p>Navigate to the <a href="https://dashboard.bandwidth.com/beta/#/newnumber" target="_blank"><strong>Order New Numbers</strong></a> page</p>
 <ul>
-<li>Once your application, sub-account (<em>site</em>), and location (<em>sippeer</em>) have been configured you&apos;re ready to start ordering phone numbers to use.</li>
-<li>Using the UI, search for a number and order it to the sub-account (<em>site</em>) and location (<em>sippeer</em>) created above.</li>
+<li><strong>Orders</strong> &gt; <strong>Order New Numbers</strong></li>
 </ul>
-<p><img src="images/messaging-2/orderNumber.gif" alt="Order Phone Number"></p>
+</li>
+<li><p>Once your application, sub-account (<em>site</em>), and location (<em>sippeer</em>) have been configured you&apos;re ready to start ordering phone numbers to use.</p>
+</li>
+<li>Using the UI, search for a number and order it to the sub-account (<em>site</em>) and location (<em>sippeer</em>) created above.</li>
+</ol>
+<p><img src="images/messaging-2/order_numbers.png" alt="Order numbers"></p>
 <hr>
 <h2 id="sending-messages">Sending Messages </h2>
+<p>&#x2139;&#xFE0F; Learn more about <a href="methods/sendMessages.html">Messages</a> &#x2139;&#xFE0F;</p>
 <ul>
 <li>To send a message, <code>POST</code> to the <a href="methods/createSingle.html"><code>/messages</code> endpoint</a></li>
-<li>In the V2 Messaging API, messages are sent asynchronously. Message validation will happen after the server returns <code>202</code>. API clients should listen for HTTP callback events if they need to track message state after the initial <code>POST</code> request.</li>
+<li>In the V2 Messaging API, messages are sent asynchronously. Message validation will happen after the server returns <code>HTTP 202 - Created</code>. API clients should listen for <a href="events/messageEvents.html">HTTP callback events</a> to track message state after the initial <code>POST</code> request.</li>
 </ul>
-<p><img src="images/messaging-2/sendMessage.gif" alt="Send Message"></p>
 <h4 id="message-parameters">Message Parameters</h4>
 <div class="api-method"><div class="api-method-definition"><div class="api-definition-top"></div><table>
 <thead>
@@ -959,7 +1013,7 @@
 <tr>
 <td style="text-align:left"><code>from</code></td>
 <td style="text-align:left">Yes</td>
-<td style="text-align:left">One of your telephone numbers the message should come from (must be in E.164 format, like +19195551212).</td>
+<td style="text-align:left">One of your telephone numbers the message should come from (must be in E.164 format, like <code>+19195551212</code>).</td>
 </tr>
 <tr>
 <td style="text-align:left"><code>to</code></td>
@@ -1038,7 +1092,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"via UI","level":"2.1","depth":1,"next":{"title":"1. Get your account ID","level":"2.1.1","depth":2,"anchor":"#get-your-account-id","path":"uisetup.md","ref":"uisetup.md#get-your-account-id","articles":[]},"previous":{"title":"Postman Collection","level":"1.4","depth":1,"path":"postman.md","ref":"postman.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.7.14","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"uisetup.md","mtime":"2018-01-19T00:09:05.876Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-19T00:10:19.007Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"via UI","level":"2.1","depth":1,"next":{"title":"1. Get your account ID","level":"2.1.1","depth":2,"anchor":"#get-your-account-id","path":"uisetup.md","ref":"uisetup.md#get-your-account-id","articles":[]},"previous":{"title":"Postman Collection","level":"1.4","depth":1,"path":"postman.md","ref":"postman.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.7.14","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"uisetup.md","mtime":"2018-01-19T16:40:32.737Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-19T16:41:37.307Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
