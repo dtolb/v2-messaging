@@ -22,7 +22,16 @@ module.exports = function ($) {
 			li.children().first().html(newTxt);
 		}
 	});
+
+	$('li.chapter a').each(function(i, elem) {
+		var a = $(elem);
+		var link = a.attr("href");
+		if (link === 'uisetup.html' || link === 'apisetup.html') {
+			a.attr("href", link+'#top');
+		}
+	});
 	var title = $('title').text();
+
 
 	if(title.indexOf(' · GitBook')  > 0) {
 		var newTitle = title.replace(' · GitBook', '');
