@@ -23,10 +23,19 @@ module.exports = function ($) {
 		}
 	});
 
+	var helperPages = [
+		'uisetup.html',
+		'apisetup.html',
+		'numberOrderingSummary.html',
+		'concepts/numberOrderingSummary.html'
+	];
+
+
+
 	$('li.chapter a').each(function(i, elem) {
 		var a = $(elem);
 		var link = a.attr("href");
-		if (link === 'uisetup.html' || link === 'apisetup.html') {
+		if (helperPages.includes(link)) {
 			a.attr("href", link+'#top');
 		}
 	});

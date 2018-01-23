@@ -82,9 +82,6 @@ Authorization: {user:password}
 
 ### Response
 
-* Status: 201
-* Content-Type: "application/xml"
-
 ```http
 HTTP/1.1 201 Created
 Content-Type: application/xml
