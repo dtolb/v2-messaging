@@ -27,7 +27,6 @@ module.exports = function ($) {
 		'uisetup.html',
 		'apisetup.html',
 		'numberOrderingSummary.html',
-		'concepts/numberOrderingSummary.html'
 	];
 
 
@@ -35,9 +34,11 @@ module.exports = function ($) {
 	$('li.chapter a').each(function(i, elem) {
 		var a = $(elem);
 		var link = a.attr("href");
-		if (helperPages.includes(link)) {
-			a.attr("href", link+'#top');
-		}
+		helperPages.forEach(page => {
+			if(link.endsWith(page)) {
+				a.attr("href", link+'#top');
+			}
+		});
 	});
 	var title = $('title').text();
 

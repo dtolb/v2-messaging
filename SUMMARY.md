@@ -12,6 +12,9 @@
 	* [Search For Phone Numbers](concepts/numberOrderingSummary.md#search-for-phone-numbers)
 	* [Reserve Phone Numbers](concepts/numberOrderingSummary.md#reserving-phone-numbers))
 	* [Order Phone Numbers](concepts/numberOrderingSummary.md#order-phone-numbers)
+	* [Fetch Order Info](concepts/numberOrderingSummary.md#get-order-info)
+	* [Deactivate a Phone Number](concepts/numberOrderingSummary.md#deactivate-phone-number)
+	* [Fetch Deactivation Info](concepts/numberOrderingSummary.md#get-deactivation-info)
 
 
 ## Initial Account Setup
