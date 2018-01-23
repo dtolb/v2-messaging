@@ -266,10 +266,10 @@
     
         <li class="chapter " data-level="2.2.5" data-path="numberOrderingSummary.html">
             
-                <a href="numberOrderingSummary.html#deactivate-phone-number">
+                <a href="numberOrderingSummary.html#disconnect-phone-number">
             
                     
-                    Deactivate a Phone Number
+                    Disconnect a Phone Number
             
                 </a>
             
@@ -279,10 +279,10 @@
     
         <li class="chapter " data-level="2.2.6" data-path="numberOrderingSummary.html">
             
-                <a href="numberOrderingSummary.html#get-deactivation-info">
+                <a href="numberOrderingSummary.html#get-disconnect-info">
             
                     
-                    Fetch Deactivation Info
+                    Fetch Disconnect Info
             
                 </a>
             
@@ -950,7 +950,7 @@
                                 <div class="api-method"><div class="api-method-definition"><div class="api-definition-top"></div></div><div class="api-method-code mm-code-first" style="min-height: 0vh;"><div class="api-code-top mm-code-top"></div></div></div>
 
 <h1 id="top">Number Ordering Summary </h1>
-<p>Here is a first pass end-to-end &#x201C;happy path&#x201D; flow for provisioning, searching, reserving, activating and deactivating a number.</p>
+<p>This guide will take you through the <em>basics</em> of searching and ordering phone numbers with the Bandwidth Phone Number API.</p>
 <h2 id="assumptions">Assumptions</h2>
 <ul>
 <li>You have a <a href="https://dashboard.bandwidth.com" target="_blank">Phone Number Dashboard</a> account</li>
@@ -961,8 +961,8 @@
 <li><a href="#reserving-phone-numbers">Reserving Phone Numbers</a></li>
 <li><a href="#order-phone-numbers">Ordering Phone Numbers</a></li>
 <li><a href="#get-order-info">Fetching Order Info</a></li>
-<li><a href="#deactivate-phone-number">Deactivating a Phone Number</a></li>
-<li><a href="#get-deactivation-info">Fetching Deactivation Info</a></li>
+<li><a href="#disconnect-phone-number">Deactivating a Phone Number</a></li>
+<li><a href="#get-disconnect-info">Fetching Deactivation Info</a></li>
 </ul>
 <h2 id="search-for-phone-numbers">Searching For Phone Numbers </h2>
 <p>Finding numbers can be achieved by searching the Bandwidth inventory.</p>
@@ -1089,11 +1089,10 @@
 <tbody>
 <tr>
 <td style="text-align:left"><code>ReservedTn</code></td>
-<td style="text-align:left">The Desired Phone Number to reserve</td>
+<td style="text-align:left">The Desired Phone Number to reserve <br> You can only reserve a <strong>single</strong> phone number at a time!  If multiple <code>&lt;ReservedTn&gt;</code> are sent, only the last <code>&lt;ReservedTn&gt;</code> will be reserved</td>
 </tr>
 </tbody>
 </table>
-<p>&#x26A0;&#xFE0F; You can only reserve a single phone number at a time!  If multiple <code>&lt;ReservedTn&gt;</code> are sent, only the last <code>ReservedTn</code> will be reserved &#x26A0;&#xFE0F;</p>
 </div><div class="api-method-code mm-method-code"><div class="api-method-example"><h3 id="example-reserve-a-phone-number">Example: Reserve a Phone Number</h3>
 <pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">https://dashboard.bandwidth.com/api/accounts/{{accountId}}/tnreservation</span> HTTP/1.1
 <span class="hljs-attribute">Content-Type</span>: application/xml; charset=utf-8
@@ -1115,7 +1114,7 @@
 <h3 id="base-url">Base URL</h3>
 <p><code class="get">GET</code><code>https://dashboard.bandwidth.com/api/accounts/{{accountId}}/tnreservation/{{reservationId}}</code></p>
 <h3 id="query-parameters">Query Parameters</h3>
-<p>&#x26A0;&#xFE0F;  There are no query parameters for fetching information about an existing reservation  &#x26A0;&#xFE0F;</p>
+<p>There are no query parameters for fetching information about an existing reservation</p>
 <div class="api-method"><div class="api-method-definition"><div class="api-definition-top"></div></div><div class="api-method-code mm-method-code"><div class="api-method-example"><h3 id="example-fetch-an-existing-reservation">Example: Fetch an existing Reservation</h3>
 <pre><code class="lang-http"><span class="hljs-keyword">GET</span> <span class="hljs-string">https://dashboard.bandwidth.com/api/accounts/{{accountId}}/tnreservation/8dddbd6f-77ca-4a17-97ca-83d334fc404e</span> HTTP/1.1
 <span class="hljs-attribute">Content-Type</span>: application/xml; charset=utf-8
@@ -1352,7 +1351,7 @@
 <h3 id="base-url">Base URL</h3>
 <p><code class="get">GET</code><code>https://dashboard.bandwidth.com/api/accounts/{{accountId}}/orders/{{orderId}}</code></p>
 <div class="api-method"><div class="api-method-definition"><div class="api-definition-top"></div><h3 id="query-parameters">Query Parameters</h3>
-<p>&#x26A0;&#xFE0F;  There are no query parameters for fetching information about an existing order  &#x26A0;&#xFE0F;</p>
+<p>There are no query parameters for fetching information about an existing order.</p>
 </div><div class="api-method-code mm-method-code"><div class="api-method-example"><h3 id="example-fetch-order-information">Example: Fetch Order Information</h3>
 <pre><code class="lang-http"><span class="hljs-keyword">GET</span> <span class="hljs-string">https://dashboard.bandwidth.com/api/accounts/{{accountId}}/orders/d30eda5a-ce10-456e-8cb9-eb13b9f14cfd</span> HTTP/1.1
 <span class="hljs-attribute">Content-Type</span>: application/xml; charset=utf-8
@@ -1392,8 +1391,8 @@
 </span></code></pre>
 </div></div></div>
 
-<h2 id="deactivate-phone-number">Deactivating a Phone Number </h2>
-<p>Deactivating (or disconnecting) a phone number leaves it in all applicable inventories, but makes it available for activation with a new subscriber.</p>
+<h2 id="disconnect-phone-number">Disconnecting a Phone Number </h2>
+<p>Disconnecting a phone number leaves it in all applicable inventories, but makes it available for activation with a new subscriber.</p>
 <h3 id="base-url">Base URL</h3>
 <p><code class="post">POST</code><code>https://dashboard.bandwidth.com/api/accounts/{{accountId}}/disconnects</code></p>
 <div class="api-method"><div class="api-method-definition"><div class="api-definition-top"></div><h3 id="request-parameters">Request Parameters</h3>
@@ -1467,13 +1466,13 @@
 </span></code></pre>
 </div></div></div>
 
-<h2 id="get-deactivation-info">Fetching Deactivation Information </h2>
-<p>A <code class="get">GET</code> Request to an existing deactivation will return it&apos;s status as well as any information originally used to create the deactivation.</p>
+<h2 id="get-disconnect-info">Fetching Disconnect Information </h2>
+<p>A <code class="get">GET</code> Request to an existing disconnect will return it&apos;s status as well as any information originally used to create the disconnect.</p>
 <h3 id="base-url">Base URL</h3>
 <p><code class="get">GET</code><code>https://dashboard.bandwidth.com/api/accounts/{{accountId}}/disconnects/{{disconnectId}}</code></p>
 <div class="api-method"><div class="api-method-definition"><div class="api-definition-top"></div><h3 id="query-parameters">Query Parameters</h3>
-<p>&#x26A0;&#xFE0F;  There are no query parameters for fetching information about an existing deactivation  &#x26A0;&#xFE0F;</p>
-</div><div class="api-method-code mm-method-code"><div class="api-method-example"><h3 id="example-fetch-deactivation-information">Example: Fetch Deactivation Information</h3>
+<p>There are no query parameters for fetching information about an existing disconnect.</p>
+</div><div class="api-method-code mm-method-code"><div class="api-method-example"><h3 id="example-fetch-disconnect-information">Example: Fetch Disconnect Information</h3>
 <pre><code class="lang-http"><span class="hljs-keyword">GET</span> <span class="hljs-string">https://dashboard.bandwidth.com/api/accounts/{{accountId}}/disconnects/df2gc2e2-653d-466c-945d-8f292f09ce55</span> HTTP/1.1
 <span class="hljs-attribute">Content-Type</span>: application/xml; charset=utf-8
 <span class="hljs-attribute">Authorization</span>: {user:password}
@@ -1536,7 +1535,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Order Phone Numbers","level":"2.2","depth":1,"next":{"title":"Search For Phone Numbers","level":"2.2.1","depth":2,"anchor":"#search-for-phone-numbers","path":"concepts/numberOrderingSummary.md","ref":"concepts/numberOrderingSummary.md#search-for-phone-numbers","articles":[]},"previous":{"title":"Messaging 2.0 Specifics","level":"2.1","depth":1,"path":"concepts.md","ref":"concepts.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.7.14","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"concepts/numberOrderingSummary.md","mtime":"2018-01-23T21:25:13.643Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-23T21:26:23.742Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Order Phone Numbers","level":"2.2","depth":1,"next":{"title":"Search For Phone Numbers","level":"2.2.1","depth":2,"anchor":"#search-for-phone-numbers","path":"concepts/numberOrderingSummary.md","ref":"concepts/numberOrderingSummary.md#search-for-phone-numbers","articles":[]},"previous":{"title":"Messaging 2.0 Specifics","level":"2.1","depth":1,"path":"concepts.md","ref":"concepts.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.7.14","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"concepts/numberOrderingSummary.md","mtime":"2018-01-23T22:04:48.241Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-23T22:05:55.392Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
