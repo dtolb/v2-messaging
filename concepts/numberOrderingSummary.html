@@ -251,6 +251,45 @@
             
         </li>
     
+        <li class="chapter " data-level="2.2.4" data-path="numberOrderingSummary.html">
+            
+                <a href="numberOrderingSummary.html#get-order-info">
+            
+                    
+                    Fetch Order Info
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="numberOrderingSummary.html">
+            
+                <a href="numberOrderingSummary.html#deactivate-phone-number">
+            
+                    
+                    Deactivate a Phone Number
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.6" data-path="numberOrderingSummary.html">
+            
+                <a href="numberOrderingSummary.html#get-deactivation-info">
+            
+                    
+                    Fetch Deactivation Info
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -265,7 +304,7 @@
     
         <li class="chapter " data-level="3.1" data-path="../uisetup.html">
             
-                <a href="../uisetup.html">
+                <a href="../uisetup.html#top">
             
                     
                     via UI
@@ -362,7 +401,7 @@
     
         <li class="chapter " data-level="3.2" data-path="../apisetup.html">
             
-                <a href="../apisetup.html">
+                <a href="../apisetup.html#top">
             
                     
                     via API
@@ -922,8 +961,9 @@
 <li><a href="#search-for-phone-numbers">Searching for new Phone Numbers</a></li>
 <li><a href="#reserving-phone-numbers">Reserving Phone Numbers</a></li>
 <li><a href="#order-phone-numbers">Ordering Phone Numbers</a></li>
-<li>[Fetching Previous Phone Number Order Info]</li>
-<li>Deactivating a Number</li>
+<li><a href="#get-order-info">Fetching Order Info</a></li>
+<li><a href="#deactivate-phone-number">Deactivating a Phone Number</a></li>
+<li><a href="#get-deactivation-info">Fetching Deactivation Info</a></li>
 </ul>
 <h2 id="search-for-phone-numbers">Searching For Phone Numbers </h2>
 <p>Finding numbers can be achieved by searching the Bandwidth inventory.</p>
@@ -1135,8 +1175,8 @@
 </tr>
 <tr>
 <td style="text-align:left"><code>PeerId</code></td>
-<td style="text-align:left">Yes</td>
-<td style="text-align:left">The ID of the SIP Peer (<em>or location</em>) that the telephone numbers are to be assigned to.</td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">The ID of the SIP Peer (<em>or location</em>) that the telephone numbers are to be assigned to. <br> <br> &#x26A0;&#xFE0F; The <code>PeerId</code> <strong>MUST</strong> already exist under the <code>Site</code> (<em>or sub-account</em>) EX: <code>/accounts/{accountId}/sites/{siteId}/sippeers/{PeerId}</code></td>
 </tr>
 <tr>
 <td style="text-align:left"><code>PartialAllowed</code></td>
@@ -1272,7 +1312,198 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">OrderStatus</span>&gt;</span>RECEIVED<span class="hljs-tag">&lt;/<span class="hljs-name">OrderStatus</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">OrderResponse</span>&gt;</span>
 </span></code></pre>
-<h3 id="example-2-of-2">Example 2 of 2:</h3>
+<h3 id="example-2-of-2-search-and-order-1-number-in-area-code">Example 2 of 2: Search <strong>AND</strong> Order 1 Number in Area Code</h3>
+<pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">https://dashboard.bandwidth.com/api/accounts/{{accountId}}/orders</span> HTTP/1.1
+<span class="hljs-attribute">Content-Type</span>: application/xml; charset=utf-8
+<span class="hljs-attribute">Authorization</span>: {user:password}
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Order</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">AreaCodeSearchAndOrderType</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">AreaCode</span>&gt;</span>910<span class="hljs-tag">&lt;/<span class="hljs-name">AreaCode</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Quantity</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">Quantity</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">AreaCodeSearchAndOrderType</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">SiteId</span>&gt;</span>461<span class="hljs-tag">&lt;/<span class="hljs-name">SiteId</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">Order</span>&gt;</span>
+</span></code></pre>
+<h3 id="response">Response</h3>
+<pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">201</span> Created
+<span class="hljs-attribute">Content-Type</span>: application/xml; charset=utf-8
+<span class="hljs-attribute">Location</span>: https://dashboard.bandwidth.com/api/accounts/{{accountId}}/orders/47955555-ce10-456e-8cb9-eb13b9f14cfd
+
+<span class="xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span> standalone=<span class="hljs-string">&quot;yes&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">OrderResponse</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Order</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">OrderCreateDate</span>&gt;</span>2018-01-23T19:56:29.678Z<span class="hljs-tag">&lt;/<span class="hljs-name">OrderCreateDate</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">BackOrderRequested</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-name">BackOrderRequested</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>47955555-67aa-4adb-8c0f-b6894e60c0dc<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">AreaCodeSearchAndOrderType</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">AreaCode</span>&gt;</span>910<span class="hljs-tag">&lt;/<span class="hljs-name">AreaCode</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Quantity</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">Quantity</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">AreaCodeSearchAndOrderType</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">PartialAllowed</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">PartialAllowed</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">SiteId</span>&gt;</span>461<span class="hljs-tag">&lt;/<span class="hljs-name">SiteId</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Order</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">OrderStatus</span>&gt;</span>RECEIVED<span class="hljs-tag">&lt;/<span class="hljs-name">OrderStatus</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">OrderResponse</span>&gt;</span>
+</span></code></pre>
+</div></div></div>
+
+<h2 id="get-order-info">Fetching Order Information </h2>
+<p>A <code class="get">GET</code> Request to an existing order will return it&apos;s status as well as any information originally used to create the order.</p>
+<h3 id="base-url">Base URL</h3>
+<p><code class="get">GET</code><code>https://dashboard.bandwidth.com/api/accounts/{{accountId}}/orders/{{orderId}}</code></p>
+<div class="api-method"><div class="api-method-definition"><div class="api-definition-top"></div><h3 id="query-parameters">Query Parameters</h3>
+<p>&#x26A0;&#xFE0F;  There are no query parameters for fetching information about an existing order  &#x26A0;&#xFE0F;</p>
+</div><div class="api-method-code mm-method-code"><div class="api-method-example"><h3 id="example-fetch-order-information">Example: Fetch Order Information</h3>
+<pre><code class="lang-http"><span class="hljs-keyword">GET</span> <span class="hljs-string">https://dashboard.bandwidth.com/api/accounts/{{accountId}}/orders/d30eda5a-ce10-456e-8cb9-eb13b9f14cfd</span> HTTP/1.1
+<span class="hljs-attribute">Content-Type</span>: application/xml; charset=utf-8
+<span class="hljs-attribute">Authorization</span>: {user:password}
+</code></pre>
+<h3 id="response">Response</h3>
+<pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">200</span> OK
+<span class="hljs-attribute">Content-Type</span>: application/xml; charset=utf-8
+
+<span class="xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span> standalone=<span class="hljs-string">&quot;yes&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">OrderResponse</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">CompletedQuantity</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">CompletedQuantity</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">CreatedByUser</span>&gt;</span>jbm<span class="hljs-tag">&lt;/<span class="hljs-name">CreatedByUser</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">LastModifiedDate</span>&gt;</span>2015-01-20T20:58:39.549Z<span class="hljs-tag">&lt;/<span class="hljs-name">LastModifiedDate</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">OrderCompleteDate</span>&gt;</span>2015-01-20T20:58:39.549Z<span class="hljs-tag">&lt;/<span class="hljs-name">OrderCompleteDate</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Order</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">CustomerOrderId</span>&gt;</span>SJMres001<span class="hljs-tag">&lt;/<span class="hljs-name">CustomerOrderId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Name</span>&gt;</span>Available Telephone Number order<span class="hljs-tag">&lt;/<span class="hljs-name">Name</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">OrderCreateDate</span>&gt;</span>2015-01-20T20:58:39.365Z<span class="hljs-tag">&lt;/<span class="hljs-name">OrderCreateDate</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">PeerId</span>&gt;</span>1927<span class="hljs-tag">&lt;/<span class="hljs-name">PeerId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">BackOrderRequested</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-name">BackOrderRequested</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ExistingTelephoneNumberOrderType</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">PartialAllowed</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">PartialAllowed</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">SiteId</span>&gt;</span>461<span class="hljs-tag">&lt;/<span class="hljs-name">SiteId</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Order</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">OrderStatus</span>&gt;</span>COMPLETE<span class="hljs-tag">&lt;/<span class="hljs-name">OrderStatus</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">CompletedNumbers</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">TelephoneNumber</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">FullNumber</span>&gt;</span>5405514342<span class="hljs-tag">&lt;/<span class="hljs-name">FullNumber</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">TelephoneNumber</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">TelephoneNumber</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">FullNumber</span>&gt;</span>7034343704<span class="hljs-tag">&lt;/<span class="hljs-name">FullNumber</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">TelephoneNumber</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">CompletedNumbers</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">FailedQuantity</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">FailedQuantity</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">OrderResponse</span>&gt;</span>
+</span></code></pre>
+</div></div></div>
+
+<h2 id="deactivate-phone-number">Deactivating a Phone Number </h2>
+<p>Deactivating (or disconnecting) a phone number leaves it in all applicable inventories, but makes it available for activation with a new subscriber.</p>
+<h3 id="base-url">Base URL</h3>
+<p><code class="post">POST</code><code>https://dashboard.bandwidth.com/api/accounts/{{accountId}}/disconnects</code></p>
+<div class="api-method"><div class="api-method-definition"><div class="api-definition-top"></div><h3 id="request-parameters">Request Parameters</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:left">Required</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>Name</code></td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">The name of the order. Max length restricted to 50 characters</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>TelephoneNumberList</code></td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">A list of telephone numbers to disconnect.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>DisconnectMode</code></td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">The severity of disconnect order. Typically <code>Normal</code>.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Protected</code></td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">Change protected status of telephones during disconnection. Possible values: <code>TRUE</code>, <code>FALSE</code>, <code>UNCHANGED</code>. Typically <code>UNCHANGED</code>.</td>
+</tr>
+</tbody>
+</table>
+</div><div class="api-method-code mm-method-code"><div class="api-method-example"><h3 id="example-create-a-disconnect-request-for-2-phone-numbers">Example: Create a disconnect request for 2 Phone Numbers</h3>
+<pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">https://dashboard.bandwidth.com/api/accounts/{{accountId}}/disconnects</span> HTTP/1.1
+<span class="hljs-attribute">Content-Type</span>: application/xml; charset=utf-8
+<span class="hljs-attribute">Authorization</span>: {user:password}
+
+<span class="xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">DisconnectTelephoneNumberOrder</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>training run<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">DisconnectTelephoneNumberOrderType</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">TelephoneNumberList</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">TelephoneNumber</span>&gt;</span>5405514342<span class="hljs-tag">&lt;/<span class="hljs-name">TelephoneNumber</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">TelephoneNumber</span>&gt;</span>7034343704<span class="hljs-tag">&lt;/<span class="hljs-name">TelephoneNumber</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">TelephoneNumberList</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">DisconnectTelephoneNumberOrderType</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">DisconnectTelephoneNumberOrder</span>&gt;</span>
+</span></code></pre>
+<h3 id="response">Response</h3>
+<pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">201</span> Created
+<span class="hljs-attribute">Content-Type</span>: application/xml; charset=utf-8
+<span class="hljs-attribute">Location</span>: https://dashboard.bandwidth.com/api/accounts/{{accountId}}/disconnects/df2gc2e2-653d-466c-945d-8f292f09ce55
+
+<span class="xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span> standalone=<span class="hljs-string">&quot;yes&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">DisconnectTelephoneNumberOrderResponse</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">orderRequest</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">OrderCreateDate</span>&gt;</span>2018-01-23T21:00:23.802Z<span class="hljs-tag">&lt;/<span class="hljs-name">OrderCreateDate</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>df2gc2e2-653d-466c-945d-8f292f09ce55<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DisconnectTelephoneNumberOrderType</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">TelephoneNumberList</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">TelephoneNumber</span>&gt;</span>5405514342<span class="hljs-tag">&lt;/<span class="hljs-name">TelephoneNumber</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">TelephoneNumber</span>&gt;</span>7034343704<span class="hljs-tag">&lt;/<span class="hljs-name">TelephoneNumber</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">TelephoneNumberList</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">DisconnectMode</span>&gt;</span>normal<span class="hljs-tag">&lt;/<span class="hljs-name">DisconnectMode</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">DisconnectTelephoneNumberOrderType</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">orderRequest</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">OrderStatus</span>&gt;</span>RECEIVED<span class="hljs-tag">&lt;/<span class="hljs-name">OrderStatus</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">DisconnectTelephoneNumberOrderResponse</span>&gt;</span>
+</span></code></pre>
+</div></div></div>
+
+<h2 id="get-deactivation-info">Fetching Deactivation Information </h2>
+<p>A <code class="get">GET</code> Request to an existing deactivation will return it&apos;s status as well as any information originally used to create the deactivation.</p>
+<h3 id="base-url">Base URL</h3>
+<p><code class="get">GET</code><code>https://dashboard.bandwidth.com/api/accounts/{{accountId}}/disconnects/{{disconnectId}}</code></p>
+<div class="api-method"><div class="api-method-definition"><div class="api-definition-top"></div><h3 id="query-parameters">Query Parameters</h3>
+<p>&#x26A0;&#xFE0F;  There are no query parameters for fetching information about an existing deactivation  &#x26A0;&#xFE0F;</p>
+</div><div class="api-method-code mm-method-code"><div class="api-method-example"><h3 id="example-fetch-deactivation-information">Example: Fetch Deactivation Information</h3>
+<pre><code class="lang-http"><span class="hljs-keyword">GET</span> <span class="hljs-string">https://dashboard.bandwidth.com/api/accounts/{{accountId}}/disconnects/df2gc2e2-653d-466c-945d-8f292f09ce55</span> HTTP/1.1
+<span class="hljs-attribute">Content-Type</span>: application/xml; charset=utf-8
+<span class="hljs-attribute">Authorization</span>: {user:password}
+</code></pre>
+<h3 id="response">Response</h3>
+<pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">200</span> OK
+<span class="hljs-attribute">Content-Type</span>: application/xml; charset=utf-8
+
+<span class="xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span> standalone=<span class="hljs-string">&quot;yes&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">DisconnectTelephoneNumberOrderResponse</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">DisconnectedTelephoneNumberList</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">TelephoneNumber</span>&gt;</span>5405514342<span class="hljs-tag">&lt;/<span class="hljs-name">TelephoneNumber</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">TelephoneNumber</span>&gt;</span>7034343704<span class="hljs-tag">&lt;/<span class="hljs-name">TelephoneNumber</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">DisconnectedTelephoneNumberList</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ErrorList</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">orderRequest</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">OrderCreateDate</span>&gt;</span>2015-01-20T21:05:58.026Z<span class="hljs-tag">&lt;/<span class="hljs-name">OrderCreateDate</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>df2gc2e2-653d-466c-945d-8f292f09ce55<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">DisconnectTelephoneNumberOrderType</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">TelephoneNumberList</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">TelephoneNumber</span>&gt;</span>7034343704<span class="hljs-tag">&lt;/<span class="hljs-name">TelephoneNumber</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">TelephoneNumber</span>&gt;</span>5405514342<span class="hljs-tag">&lt;/<span class="hljs-name">TelephoneNumber</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">TelephoneNumberList</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">DisconnectMode</span>&gt;</span>normal<span class="hljs-tag">&lt;/<span class="hljs-name">DisconnectMode</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">DisconnectTelephoneNumberOrderType</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">orderRequest</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">OrderStatus</span>&gt;</span>COMPLETE<span class="hljs-tag">&lt;/<span class="hljs-name">OrderStatus</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">DisconnectTelephoneNumberOrderResponse</span>&gt;</span>
+</span></code></pre>
 </div></div></div>
                                 
                                 </section>
@@ -1306,7 +1537,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Order Phone Numbers","level":"2.2","depth":1,"next":{"title":"Search For Phone Numbers","level":"2.2.1","depth":2,"anchor":"#search-for-phone-numbers","path":"concepts/numberOrderingSummary.md","ref":"concepts/numberOrderingSummary.md#search-for-phone-numbers","articles":[]},"previous":{"title":"Messaging 2.0 Specifics","level":"2.1","depth":1,"path":"concepts.md","ref":"concepts.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.7.14","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"concepts/numberOrderingSummary.md","mtime":"2018-01-23T18:32:44.343Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-23T18:34:23.365Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Order Phone Numbers","level":"2.2","depth":1,"next":{"title":"Search For Phone Numbers","level":"2.2.1","depth":2,"anchor":"#search-for-phone-numbers","path":"concepts/numberOrderingSummary.md","ref":"concepts/numberOrderingSummary.md#search-for-phone-numbers","articles":[]},"previous":{"title":"Messaging 2.0 Specifics","level":"2.1","depth":1,"path":"concepts.md","ref":"concepts.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.7.14","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"concepts/numberOrderingSummary.md","mtime":"2018-01-23T21:15:12.482Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-23T21:16:27.183Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
