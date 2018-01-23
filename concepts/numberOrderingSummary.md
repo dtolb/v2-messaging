@@ -3,7 +3,7 @@
 
 # Number Ordering Summary {#top}
 
-Here is a first pass end-to-end “happy path” flow for provisioning, searching, reserving, activating and deactivating a number.
+This guide will take you through the _basics_ of searching and ordering phone numbers with the Bandwidth Phone Number API.
 
 ## Assumptions
 * You have a [Phone Number Dashboard](https://dashboard.bandwidth.com) account
@@ -13,8 +13,8 @@ Here is a first pass end-to-end “happy path” flow for provisioning, searchin
 * [Reserving Phone Numbers](#reserving-phone-numbers)
 * [Ordering Phone Numbers](#order-phone-numbers)
 * [Fetching Order Info](#get-order-info)
-* [Deactivating a Phone Number](#deactivate-phone-number)
-* [Fetching Deactivation Info](#get-deactivation-info)
+* [Deactivating a Phone Number](#disconnect-phone-number)
+* [Fetching Deactivation Info](#get-disconnect-info)
 
 ## Searching For Phone Numbers {#search-for-phone-numbers}
 Finding numbers can be achieved by searching the Bandwidth inventory.
@@ -99,9 +99,8 @@ A reserved telephone number or a set of reserved telephone numbers are reserved 
 
 | Parameter    | Description                         |
 |:-------------|:------------------------------------|
-| `ReservedTn` | The Desired Phone Number to reserve |
+| `ReservedTn` | The Desired Phone Number to reserve <br> You can only reserve a **single** phone number at a time!  If multiple `<ReservedTn>` are sent, only the last `<ReservedTn>` will be reserved |
 
-⚠️ You can only reserve a single phone number at a time!  If multiple `<ReservedTn>` are sent, only the last `ReservedTn` will be reserved ⚠️
 
 {% common %}
 
@@ -136,7 +135,7 @@ Retrieves a TN reservation's information.
 
 ### Query Parameters
 
-⚠️  There are no query parameters for fetching information about an existing reservation  ⚠️
+There are no query parameters for fetching information about an existing reservation
 
 {% extendmethod %}
 
@@ -327,7 +326,7 @@ A <code class="get">GET</code> Request to an existing order will return it's sta
 
 ### Query Parameters
 
-⚠️  There are no query parameters for fetching information about an existing order  ⚠️
+There are no query parameters for fetching information about an existing order.
 
 {% common %}
 
@@ -376,9 +375,9 @@ Content-Type: application/xml; charset=utf-8
 
 {% endextendmethod %}
 
-## Deactivating a Phone Number {#deactivate-phone-number}
+## Disconnecting a Phone Number {#disconnect-phone-number}
 
-Deactivating (or disconnecting) a phone number leaves it in all applicable inventories, but makes it available for activation with a new subscriber.
+Disconnecting a phone number leaves it in all applicable inventories, but makes it available for activation with a new subscriber.
 
 ### Base URL
 <code class="post">POST</code>`https://dashboard.bandwidth.com/api/accounts/{{accountId}}/disconnects`
@@ -441,8 +440,8 @@ Location: https://dashboard.bandwidth.com/api/accounts/{{accountId}}/disconnects
 
 {% endextendmethod %}
 
-## Fetching Deactivation Information {#get-deactivation-info}
-A <code class="get">GET</code> Request to an existing deactivation will return it's status as well as any information originally used to create the deactivation.
+## Fetching Disconnect Information {#get-disconnect-info}
+A <code class="get">GET</code> Request to an existing disconnect will return it's status as well as any information originally used to create the disconnect.
 
 ### Base URL
 <code class="get">GET</code>`https://dashboard.bandwidth.com/api/accounts/{{accountId}}/disconnects/{{disconnectId}}`
@@ -451,11 +450,11 @@ A <code class="get">GET</code> Request to an existing deactivation will return i
 
 ### Query Parameters
 
-⚠️  There are no query parameters for fetching information about an existing deactivation  ⚠️
+There are no query parameters for fetching information about an existing disconnect.
 
 {% common %}
 
-### Example: Fetch Deactivation Information
+### Example: Fetch Disconnect Information
 
 ```http
 GET https://dashboard.bandwidth.com/api/accounts/{{accountId}}/disconnects/df2gc2e2-653d-466c-945d-8f292f09ce55 HTTP/1.1

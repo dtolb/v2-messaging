@@ -13,8 +13,8 @@
 	* [Reserve Phone Numbers](concepts/numberOrderingSummary.md#reserving-phone-numbers))
 	* [Order Phone Numbers](concepts/numberOrderingSummary.md#order-phone-numbers)
 	* [Fetch Order Info](concepts/numberOrderingSummary.md#get-order-info)
-	* [Deactivate a Phone Number](concepts/numberOrderingSummary.md#deactivate-phone-number)
-	* [Fetch Deactivation Info](concepts/numberOrderingSummary.md#get-deactivation-info)
+	* [Disconnect a Phone Number](concepts/numberOrderingSummary.md#disconnect-phone-number)
+	* [Fetch Disconnect Info](concepts/numberOrderingSummary.md#get-disconnect-info)
 
 
 ## Initial Account Setup
