@@ -984,7 +984,7 @@
 <td style="text-align:left">The allowed number ranges are [2-9] for the first digit and [0-9] for both the second and third digits.</td>
 </tr>
 <tr>
-<td style="text-align:left"><code>npaNxx or npaNxxx</code></td>
+<td style="text-align:left"><code>npaNxx</code><br> -or- <br> <code>npaNxxx</code></td>
 <td style="text-align:left">NPA NXX combination to be searched. <br> - Valid npa values:[2-9] for the first digit, and [0-9] for both the second and third digits. <br> - Valid Nxx values:[2-9] for the first digit, and [0-9] for both the second and third digits. <br> - Valid x values [0-9].</td>
 </tr>
 <tr>
@@ -1110,7 +1110,7 @@
 </code></pre>
 </div></div></div>
 
-<h2 id="get-reserved-phone-numbers">Check existing Phone Numbers Reservatiom </h2>
+<h2 id="get-reserved-phone-numbers">Check existing Phone Numbers Reservation </h2>
 <p>Retrieves a TN reservation&apos;s information.</p>
 <h3 id="base-url">Base URL</h3>
 <p><code class="get">GET</code><code>https://dashboard.bandwidth.com/api/accounts/{{accountId}}/tnreservation/{{reservationId}}</code></p>
@@ -1261,7 +1261,7 @@
 </tr>
 </tbody>
 </table>
-</div><div class="api-method-code mm-method-code"><div class="api-method-example"><h3 id="example-1-of-2-order-previously-reserverd-phone-numbers-from-a-reservation">Example 1 of 2: Order Previously Reserverd Phone Numbers from a Reservation</h3>
+</div><div class="api-method-code mm-method-code"><div class="api-method-example"><h3 id="example-1-of-2-order-previously-reserved-phone-numbers-from-a-reservation">Example 1 of 2: Order Previously Reserved Phone Numbers from a Reservation</h3>
 <pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">https://dashboard.bandwidth.com/api/accounts/{{accountId}}/orders</span> HTTP/1.1
 <span class="hljs-attribute">Content-Type</span>: application/xml; charset=utf-8
 <span class="hljs-attribute">Authorization</span>: {user:password}
@@ -1536,7 +1536,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Order Phone Numbers","level":"2.2","depth":1,"next":{"title":"Search For Phone Numbers","level":"2.2.1","depth":2,"anchor":"#search-for-phone-numbers","path":"concepts/numberOrderingSummary.md","ref":"concepts/numberOrderingSummary.md#search-for-phone-numbers","articles":[]},"previous":{"title":"Messaging 2.0 Specifics","level":"2.1","depth":1,"path":"concepts.md","ref":"concepts.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.7.14","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"concepts/numberOrderingSummary.md","mtime":"2018-01-23T21:21:22.711Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-23T21:22:48.109Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Order Phone Numbers","level":"2.2","depth":1,"next":{"title":"Search For Phone Numbers","level":"2.2.1","depth":2,"anchor":"#search-for-phone-numbers","path":"concepts/numberOrderingSummary.md","ref":"concepts/numberOrderingSummary.md#search-for-phone-numbers","articles":[]},"previous":{"title":"Messaging 2.0 Specifics","level":"2.1","depth":1,"path":"concepts.md","ref":"concepts.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.7.14","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"concepts/numberOrderingSummary.md","mtime":"2018-01-23T21:25:13.643Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-23T21:26:23.742Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
