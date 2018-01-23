@@ -7,7 +7,6 @@ Here is a first pass end-to-end “happy path” flow for provisioning, searchin
 
 ## Assumptions
 * You have a [Phone Number Dashboard](https://dashboard.bandwidth.com) account
-* You have
 
 ## Overview
 * [Searching for new Phone Numbers](#search-for-phone-numbers)
