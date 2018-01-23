@@ -2,6 +2,7 @@
 
 ## Overview
 * [About](README.md)
+* [Account Credentials](accountCredentials.md)
 * [Migration Guide](messaging2Migration.md)
 * [Postman Collection](postman.md)
 
@@ -9,7 +10,9 @@
 * [Messaging 2.0 Specifics](concepts.md)
 * [Order Phone Numbers](concepts/numberOrderingSummary.md)
 	* [Search For Phone Numbers](concepts/numberOrderingSummary.md#search-for-phone-numbers)
+	* [Reserve Phone Numbers](concepts/numberOrderingSummary.md#reserving-phone-numbers))
 	* [Order Phone Numbers](concepts/numberOrderingSummary.md#order-phone-numbers)
+
 
 ## Initial Account Setup
 * [via UI](uisetup.md)

@@ -7,10 +7,11 @@ Here is a first pass end-to-end “happy path” flow for provisioning, searchin
 
 ## Assumptions
 * You have a [Phone Number Dashboard](https://dashboard.bandwidth.com) account
+* You have
 
 ## Overview
 * [Searching for new Phone Numbers](#search-for-phone-numbers)
-* Reserving Numbers
+* [Reserving Phone Numbers](#reserving-phone-numbers)
 * [Ordering Phone Numbers](#order-phone-numbers)
 * Deactivating a Number
 
@@ -39,7 +40,7 @@ There are a number of search approaches that can be used; the NPA NXX search is 
 | `lata`                    | A maximum five digit (XXXXX) numeric format.                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | `localVanity`             | Requested vanity number. Valid range is from 4 to 7 alphanumeric characters                                                                                                                                                                                                                                                                                                                                                                                              |
 | `tollFreeVanity`          | The Toll Free requested vanity number. Valid range is from 4 to 7 alphanumeric characters                                                                                                                                                                                                                                                                                                                                                                                |
-| `tollFreeWildCardPattern` | The requested Toll Free 3 digit wild card pattern. Examples: 8**, 80*, 87*, etc.                                                                                                                                                                                                                                                                                                                                                                                         |
+| `tollFreeWildCardPattern` | The requested Toll Free 3 digit wild card pattern. Examples: `8**`, `80*`, `87*`, etc.                                                                                                                                                                                                                                                                                                                                                                                   |
 | `quantity`                | The desired quantity of requested numbers. Values range from 1-5000. If no quantity is specified, the default of 5000 is returned.                                                                                                                                                                                                                                                                                                                                       |
 | `enableTNDetail`          | If set to true, a list of details associated with the telephone number (rate center abbreviation, rate center host city, state, and LATA) will be displayed along with the telephone number. This value is set to false by default.                                                                                                                                                                                                                                      |
 | `LCA`                     | Local Calling Area. If this parameter is specified then Telephone Numbers that are likely in the Local Calling Area of the stated Rate Center, NPANXX or NPANNXX will be returned, in addition to those that *exactly* match the query will be returned. Since LCA logic is not always symmetric and not always inclusive of RC and NPANXX search criteria, this result reflects somewhat of an approximation. The parameter value is true or false. The default is true |
@@ -82,16 +83,139 @@ Content-Type: application/xml; charset=utf-8
 
 {% endextendmethod %}
 
-## Order Numbers {#order-phone-numbers}
+## Reserve Phone Numbers {#reserving-phone-numbers}
+
+In the example below, we reserve a number returned by the search, preventing other accounts from ordering that available number before the number is activated on the account.  This is intended to manage the delays that occur in the customer “buy-flow”, permitting the number to be discarded unless a purchase confirmation is returned by the end user.
+
+A reserved telephone number or a set of reserved telephone numbers are reserved for a default time of 4 hours. A successful reservation returns a location header that can be used to retrieve the reservation at a later time.
+
+### Base URL
+<code class="post">POST</code>`https://dashboard.bandwidth.com/api/accounts/{{accountId}}/tnreservation`
+
+{% extendmethod %}
+
+### Body Parameters
+
+| Parameter    | Description                         |
+|:-------------|:------------------------------------|
+| `ReservedTn` | The Desired Phone Number to reserve |
+
+⚠️ You can only reserve a single phone number at a time!  If multiple `<ReservedTn>` are sent, only the last `ReservedTn` will be reserved ⚠️
+
+{% common %}
+
+### Example: Reserve a Phone Number
+
+```http
+POST https://dashboard.bandwidth.com/api/accounts/{{accountId}}/tnreservation HTTP/1.1
+Content-Type: application/xml; charset=utf-8
+Authorization: {user:password}
+
+<Reservation>
+    <ReservedTn>5405514342</ReservedTn>
+</Reservation>
+```
+
+### Response
+
+```http
+HTTP/1.1 201 Created
+Content-Type: application/xml; charset=utf-8
+Location: https://dashboard.bandwidth.com/api/accounts/{{accountId}}/tnreservation/8dddbd6f-77ca-4a17-97ca-83d334fc404e
+```
+
+{% endextendmethod %}
+
+## Check existing Phone Numbers Reservatiom {#get-reserved-phone-numbers}
+
+Retrieves a TN reservation's information.
+
+### Base URL
+<code class="get">GET</code>`https://dashboard.bandwidth.com/api/accounts/{{accountId}}/tnreservation/{{reservationId}}`
 
 ### Query Parameters
 
-| Parameter            | Description                                                                                                                                                                                                                                                                                                                                                      |
-|:---------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `Quantity`           | The desired quantity of requested numbers. values range from 1-5000. If no quantity is specified, the default of 5000 is returned.                                                                                                                                                                                                                               |
-| `name`               | The name of the order. Max length restricted to 50 characters.                                                                                                                                                                                                                                                                                                   |
-| `CustomerOrderId`    | Optional value for Id set by customer                                                                                                                                                                                                                                                                                                                            |
-| `SiteId`             | The ID of the Site that the SIP Peer is to be associated with.                                                                                                                                                                                                                                                                                                   |
-| `PeerId`             | The ID of the SIP Peer that the telephone numbers are to be assigned to.                                                                                                                                                                                                                                                                                         |
-| `PartialAllowed`     | By default all order submissions are fulfilled partially. Setting the PartialAllowed to false would trigger the entire order to be fulfilled (any error ecnountered such as 1 TN not being available would fail all TNs in the order) By default, this value is set to false                                                                                     |
-| `BackOrderRequested` | BackOrderRequested will indicate to the system that if the entire quantity of numbers is not available on the first attempt to fill the new number order, the request will be repeated periodically until the request is successful or cancelled. Setting the parameter to true indeicated a desire to backorder numbers if the entire quantity is not available |
+⚠️  There are no query parameters for fetching information about an existing reservation  ⚠️
+
+{% extendmethod %}
+
+{% common %}
+
+### Example: Fetch an existing Reservation
+
+```http
+GET https://dashboard.bandwidth.com/api/accounts/{{accountId}}/tnreservation/8dddbd6f-77ca-4a17-97ca-83d334fc404e HTTP/1.1
+Content-Type: application/xml; charset=utf-8
+Authorization: {user:password}
+```
+
+### Response
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/xml; charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ReservationResponse>
+  <Reservation>
+    <ReservationId>8dddbd6f-77ca-4a17-97ca-83d334fc404e</ReservationId>
+    <AccountId>9500012</AccountId>
+    <ReservationExpires>14293</ReservationExpires>
+    <ReservedTn>5405514342</ReservedTn>
+  </Reservation>
+</ReservationResponse>
+```
+
+{% endextendmethod %}
+
+## Order Phone Numbers {#order-phone-numbers}
+
+Ordering Phone Numbers for use with the network uses requires you to order specific phone numbers that have been discovered in a search.   This is only **one** of a number of ways to acquire and activate phone numbers.
+
+
+### Base URL
+<code class="post">POST</code>`https://dashboard.bandwidth.com/api/accounts/{{accountId}}/orders`
+
+{% extendmethod %}
+
+### Common Request Parameters
+
+**EVERY** type of order can/must include the parameters below
+
+| Parameter            | Required | Description                                                                                                                                                                                                                                                                                                                                                                                |
+|:---------------------|:---------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `Quantity`           | No       | The desired quantity of requested numbers. values range from 1-5000. <br><br> Default: `5000`                                                                                                                                                                                                                                                                                              |
+| `name`               | Yes      | The name of the order. Max length restricted to 50 characters.                                                                                                                                                                                                                                                                                                                             |
+| `CustomerOrderId`    | No       | Optional value for Id set by customer                                                                                                                                                                                                                                                                                                                                                      |
+| `SiteId`             | Yes      | The ID of the Site (_or sub-account_) that the SIP Peer is to be associated with.                                                                                                                                                                                                                                                                                                          |
+| `PeerId`             | Yes      | The ID of the SIP Peer (_or location_) that the telephone numbers are to be assigned to.                                                                                                                                                                                                                                                                                                   |
+| `PartialAllowed`     | No       | By default all order submissions are fulfilled partially. Setting the `PartialAllowed` to false would trigger the entire order to be fulfilled (any error encountered such as 1 TN not being available would fail all TNs in the order) <br><br> Default: `false`                                                                                                                            |
+| `BackOrderRequested` | No       | `BackOrderRequested` will indicate to the system that if the entire quantity of numbers is not available on the first attempt to fill the new number order, the request will be repeated periodically until the request is successful or canceled. <br> `true` - Backorder numbers if the entire quantity is not available <br><br> Default: `false` |
+
+### Order Type Specific Request Parameters
+
+These parameters _may or may not_ be required based on the type of order.  Check out the reference documentation for more information on the different types of orders
+
+| Parameter                                                                  | Description                                                                                                                                                                                                                                                                                                                                                                                                 |
+|:---------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `TelephoneNumberList`                                                      | A list of telephone numbers to order                                                                                                                                                                                                                                                                                                                                                                        |
+| `AreaCode`                                                                 | Allowed ranged: [2-9] for the first digit and [0, 9] for both the second and third digits.                                                                                                                                                                                                                                                                                                                  |
+| `RateCenter`                                                               | A text Rate Center name. Must be combined with State information                                                                                                                                                                                                                                                                                                                                            |
+| `State`                                                                    | The two-letter abbreviation of the state                                                                                                                                                                                                                                                                                                                                                                    |
+| `City`                                                                     | The name of the city that the Ordered telephone numbers should apply to                                                                                                                                                                                                                                                                                                                                     |
+| `Zip`                                                                      | A five-digit (XXXXX) or nine-digit (XXXXX-XXXX) format value.                                                                                                                                                                                                                                                                                                                                               |
+| `Lata`                                                                     | A maximum five-digit (XXXXX) numeric format.                                                                                                                                                                                                                                                                                                                                                                |
+| `EnableLCA`                                                                | If set to `true`, local calling access numbers will be returned for Rate Center, NPA-NXX and NPANXXX orders if numbers are not available for the given criteria. <br><br> Default: `true`.                                                                                                                                                                                                                  |
+| `Npa-Nxx` <br> -or- <br> `Npa-Nxxxx` <br><br> ⚠️ with `EnableLCA` : `true` | NpaNxx combination to be searched. <br> Valid Npa values: [2-9] for the first digit, and [0-9] for both the second and third digits. <br> Valid Nxx values: [2-9] for the first digit, and [0-9] for both the second and third digits. <br> Valid Xxvalues [0-9]. <br><br> ℹ️  If set to true, enables the ability to get local calling access numbers if numbers are not available for the given criteria. |
+| `LocalVanity`                                                              | A text string used to request a regular vanity number. Valid range is between 4 and 7 alphanumeric characters.                                                                                                                                                                                                                                                                                              |
+| `EndsIn`                                                                   | Intended to use with `LocalVanity` only. <br> -`true` : the search will look for only numbers which end in specified `LocalVanity` <br> -`false`: `LocalVanity` sequence can be met anywhere in last 7 number digits. <br><br> Default: `false`                                                                                                                                                             |
+| `TollFreeVanity`                                                           | A text string used to request a toll free vanity number. Valid range is between 4 and 7 alphanumeric characters.                                                                                                                                                                                                                                                                                            |
+| `TollFreeWildCardPattern`                                                  | A 3-digit wild card pattern for specifying toll free prefixes, comprised of 8 followed by two stars, a digit and a star or two digits                                                                                                                                                                                                                                                                       |
+| `ReservationIdList`                                                        | If a telephone number or numbers have been previously reserved, the ReservationIdList provides the IDs necessary to release the numbers. This only applies to reserved numbers - if no reservation has been placed on the numbers this list is not required.                                                                                                                                                |
+| `TnAttributes`                                                             | Attributes to be assigned to the telephone number. Optional parameter. Possible values: `Protected`                                                                                                                                                                                                                                                                                                         |
+
+{% common %}
+
+
+
+{% endextendmethod %}
