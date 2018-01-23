@@ -13,8 +13,9 @@ Here is a first pass end-to-end “happy path” flow for provisioning, searchin
 * [Searching for new Phone Numbers](#search-for-phone-numbers)
 * [Reserving Phone Numbers](#reserving-phone-numbers)
 * [Ordering Phone Numbers](#order-phone-numbers)
-* [Fetching Previous Phone Number Order Info]
-* Deactivating a Number
+* [Fetching Order Info](#get-order-info)
+* [Deactivating a Phone Number](#deactivate-phone-number)
+* [Fetching Deactivation Info](#get-deactivation-info)
 
 ## Searching For Phone Numbers {#search-for-phone-numbers}
 Finding numbers can be achieved by searching the Bandwidth inventory.
@@ -189,7 +190,7 @@ Ordering Phone Numbers for use with the network uses requires you to order speci
 | `Name`               | Yes      | The name of the order. Max length restricted to 50 characters.                                                                                                                                                                                                                                                                                                                             |
 | `CustomerOrderId`    | No       | Optional value for Id set by customer                                                                                                                                                                                                                                                                                                                                                      |
 | `SiteId`             | Yes      | The ID of the Site (_or sub-account_) that the SIP Peer is to be associated with.                                                                                                                                                                                                                                                                                                          |
-| `PeerId`             | No      | The ID of the SIP Peer (_or location_) that the telephone numbers are to be assigned to.                                                                                                                                                                                                                                                                                                   |
+| `PeerId`             | No      | The ID of the SIP Peer (_or location_) that the telephone numbers are to be assigned to. <br> <br> ⚠️ The `PeerId` **MUST** already exist under the `Site` (_or sub-account_) EX: `/accounts/{accountId}/sites/{siteId}/sippeers/{PeerId}`                                                                                                                                                                                                                                                                                                |
 | `PartialAllowed`     | No       | By default all order submissions are fulfilled partially. Setting the `PartialAllowed` to false would trigger the entire order to be fulfilled (any error encountered such as 1 TN not being available would fail all TNs in the order) <br><br> Default: `false`                                                                                                                            |
 | `BackOrderRequested` | No       | `BackOrderRequested` will indicate to the system that if the entire quantity of numbers is not available on the first attempt to fill the new number order, the request will be repeated periodically until the request is successful or canceled. <br> `true` - Backorder numbers if the entire quantity is not available <br><br> Default: `false` |
 
@@ -273,7 +274,225 @@ Location: https://dashboard.bandwidth.com/api/accounts/{{accountId}}/orders/d30e
 </OrderResponse>
 ```
 
-### Example 2 of 2:
+### Example 2 of 2: Search **AND** Order 1 Number in Area Code
+
+```http
+POST https://dashboard.bandwidth.com/api/accounts/{{accountId}}/orders HTTP/1.1
+Content-Type: application/xml; charset=utf-8
+Authorization: {user:password}
+
+<Order>
+    <AreaCodeSearchAndOrderType>
+        <AreaCode>910</AreaCode>
+        <Quantity>1</Quantity>
+    </AreaCodeSearchAndOrderType>
+    <SiteId>461</SiteId>
+</Order>
+```
+
+### Response
+
+```http
+HTTP/1.1 201 Created
+Content-Type: application/xml; charset=utf-8
+Location: https://dashboard.bandwidth.com/api/accounts/{{accountId}}/orders/47955555-ce10-456e-8cb9-eb13b9f14cfd
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OrderResponse>
+    <Order>
+        <OrderCreateDate>2018-01-23T19:56:29.678Z</OrderCreateDate>
+        <BackOrderRequested>false</BackOrderRequested>
+        <id>47955555-67aa-4adb-8c0f-b6894e60c0dc</id>
+        <AreaCodeSearchAndOrderType>
+            <AreaCode>910</AreaCode>
+            <Quantity>1</Quantity>
+        </AreaCodeSearchAndOrderType>
+        <PartialAllowed>true</PartialAllowed>
+        <SiteId>461</SiteId>
+    </Order>
+    <OrderStatus>RECEIVED</OrderStatus>
+</OrderResponse>
+```
+
+
+{% endextendmethod %}
+
+## Fetching Order Information {#get-order-info}
+
+A <code class="get">GET</code> Request to an existing order will return it's status as well as any information originally used to create the order.
+
+### Base URL
+<code class="get">GET</code>`https://dashboard.bandwidth.com/api/accounts/{{accountId}}/orders/{{orderId}}`
+
+{% extendmethod %}
+
+### Query Parameters
+
+⚠️  There are no query parameters for fetching information about an existing order  ⚠️
+
+{% common %}
+
+### Example: Fetch Order Information
+
+```http
+GET https://dashboard.bandwidth.com/api/accounts/{{accountId}}/orders/d30eda5a-ce10-456e-8cb9-eb13b9f14cfd HTTP/1.1
+Content-Type: application/xml; charset=utf-8
+Authorization: {user:password}
+```
+
+### Response
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/xml; charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OrderResponse>
+    <CompletedQuantity>2</CompletedQuantity>
+    <CreatedByUser>jbm</CreatedByUser>
+    <LastModifiedDate>2015-01-20T20:58:39.549Z</LastModifiedDate>
+    <OrderCompleteDate>2015-01-20T20:58:39.549Z</OrderCompleteDate>
+    <Order>
+        <CustomerOrderId>SJMres001</CustomerOrderId>
+        <Name>Available Telephone Number order</Name>
+        <OrderCreateDate>2015-01-20T20:58:39.365Z</OrderCreateDate>
+        <PeerId>1927</PeerId>
+        <BackOrderRequested>false</BackOrderRequested>
+        <ExistingTelephoneNumberOrderType/>
+        <PartialAllowed>true</PartialAllowed>
+        <SiteId>461</SiteId>
+    </Order>
+    <OrderStatus>COMPLETE</OrderStatus>
+    <CompletedNumbers>
+        <TelephoneNumber>
+            <FullNumber>5405514342</FullNumber>
+        </TelephoneNumber>
+        <TelephoneNumber>
+            <FullNumber>7034343704</FullNumber>
+        </TelephoneNumber>
+    </CompletedNumbers>
+    <FailedQuantity>0</FailedQuantity>
+</OrderResponse>
+```
+
+{% endextendmethod %}
+
+## Deactivating a Phone Number {#deactivate-phone-number}
+
+Deactivating (or disconnecting) a phone number leaves it in all applicable inventories, but makes it available for activation with a new subscriber.
+
+### Base URL
+<code class="post">POST</code>`https://dashboard.bandwidth.com/api/accounts/{{accountId}}/disconnects`
+
+{% extendmethod %}
+
+### Request Parameters
+
+| Parameter             | Required | Description                                                                                                                       |
+|:----------------------|:---------|:----------------------------------------------------------------------------------------------------------------------------------|
+| `Name`                | Yes        | The name of the order. Max length restricted to 50 characters                                                                     |
+| `TelephoneNumberList` | Yes      | A list of telephone numbers to disconnect.                                                                                        |
+| `DisconnectMode`      | No       | The severity of disconnect order. Typically `Normal`.                                                                             |
+| `Protected`           | No       | Change protected status of telephones during disconnection. Possible values: `TRUE`, `FALSE`, `UNCHANGED`. Typically `UNCHANGED`. |
+
+{% common %}
+
+### Example: Create a disconnect request for 2 Phone Numbers
+
+```http
+POST https://dashboard.bandwidth.com/api/accounts/{{accountId}}/disconnects HTTP/1.1
+Content-Type: application/xml; charset=utf-8
+Authorization: {user:password}
+
+<?xml version="1.0"?>
+<DisconnectTelephoneNumberOrder>
+    <name>training run</name>
+    <DisconnectTelephoneNumberOrderType>
+        <TelephoneNumberList>
+            <TelephoneNumber>5405514342</TelephoneNumber>
+            <TelephoneNumber>7034343704</TelephoneNumber>
+        </TelephoneNumberList>
+    </DisconnectTelephoneNumberOrderType>
+</DisconnectTelephoneNumberOrder>
+```
+
+### Response
+
+```http
+HTTP/1.1 201 Created
+Content-Type: application/xml; charset=utf-8
+Location: https://dashboard.bandwidth.com/api/accounts/{{accountId}}/disconnects/df2gc2e2-653d-466c-945d-8f292f09ce55
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DisconnectTelephoneNumberOrderResponse>
+    <orderRequest>
+        <OrderCreateDate>2018-01-23T21:00:23.802Z</OrderCreateDate>
+        <id>df2gc2e2-653d-466c-945d-8f292f09ce55</id>
+        <DisconnectTelephoneNumberOrderType>
+            <TelephoneNumberList>
+                <TelephoneNumber>5405514342</TelephoneNumber>
+                <TelephoneNumber>7034343704</TelephoneNumber>
+            </TelephoneNumberList>
+            <DisconnectMode>normal</DisconnectMode>
+        </DisconnectTelephoneNumberOrderType>
+    </orderRequest>
+    <OrderStatus>RECEIVED</OrderStatus>
+</DisconnectTelephoneNumberOrderResponse>
+```
+
+{% endextendmethod %}
+
+## Fetching Deactivation Information {#get-deactivation-info}
+A <code class="get">GET</code> Request to an existing deactivation will return it's status as well as any information originally used to create the deactivation.
+
+### Base URL
+<code class="get">GET</code>`https://dashboard.bandwidth.com/api/accounts/{{accountId}}/disconnects/{{disconnectId}}`
+
+{% extendmethod %}
+
+### Query Parameters
+
+⚠️  There are no query parameters for fetching information about an existing deactivation  ⚠️
+
+{% common %}
+
+### Example: Fetch Deactivation Information
+
+```http
+GET https://dashboard.bandwidth.com/api/accounts/{{accountId}}/disconnects/df2gc2e2-653d-466c-945d-8f292f09ce55 HTTP/1.1
+Content-Type: application/xml; charset=utf-8
+Authorization: {user:password}
+```
+
+### Response
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/xml; charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DisconnectTelephoneNumberOrderResponse>
+    <DisconnectedTelephoneNumberList>
+        <TelephoneNumber>5405514342</TelephoneNumber>
+        <TelephoneNumber>7034343704</TelephoneNumber>
+    </DisconnectedTelephoneNumberList>
+    <ErrorList/>
+    <orderRequest>
+        <OrderCreateDate>2015-01-20T21:05:58.026Z</OrderCreateDate>
+        <id>df2gc2e2-653d-466c-945d-8f292f09ce55</id>
+        <DisconnectTelephoneNumberOrderType>
+            <TelephoneNumberList>
+                <TelephoneNumber>7034343704</TelephoneNumber>
+                <TelephoneNumber>5405514342</TelephoneNumber>
+            </TelephoneNumberList>
+            <DisconnectMode>normal</DisconnectMode>
+        </DisconnectTelephoneNumberOrderType>
+    </orderRequest>
+    <OrderStatus>COMPLETE</OrderStatus>
+</DisconnectTelephoneNumberOrderResponse>
+
+```
+
 
 
 {% endextendmethod %}
