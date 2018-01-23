@@ -13,6 +13,7 @@ Here is a first pass end-to-end “happy path” flow for provisioning, searchin
 * [Searching for new Phone Numbers](#search-for-phone-numbers)
 * [Reserving Phone Numbers](#reserving-phone-numbers)
 * [Ordering Phone Numbers](#order-phone-numbers)
+* [Fetching Previous Phone Number Order Info]
 * Deactivating a Number
 
 ## Searching For Phone Numbers {#search-for-phone-numbers}
@@ -185,7 +186,7 @@ Ordering Phone Numbers for use with the network uses requires you to order speci
 | Parameter            | Required | Description                                                                                                                                                                                                                                                                                                                                                                                |
 |:---------------------|:---------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `Quantity`           | No       | The desired quantity of requested numbers. values range from 1-5000. <br><br> Default: `5000`                                                                                                                                                                                                                                                                                              |
-| `name`               | Yes      | The name of the order. Max length restricted to 50 characters.                                                                                                                                                                                                                                                                                                                             |
+| `Name`               | Yes      | The name of the order. Max length restricted to 50 characters.                                                                                                                                                                                                                                                                                                                             |
 | `CustomerOrderId`    | No       | Optional value for Id set by customer                                                                                                                                                                                                                                                                                                                                                      |
 | `SiteId`             | Yes      | The ID of the Site (_or sub-account_) that the SIP Peer is to be associated with.                                                                                                                                                                                                                                                                                                          |
 | `PeerId`             | Yes      | The ID of the SIP Peer (_or location_) that the telephone numbers are to be assigned to.                                                                                                                                                                                                                                                                                                   |
@@ -216,6 +217,63 @@ These parameters _may or may not_ be required based on the type of order.  Check
 
 {% common %}
 
+### Example 1 of 2: Order Previously Reserverd Phone Numbers from a Reservation
+
+```http
+POST https://dashboard.bandwidth.com/api/accounts/{{accountId}}/orders HTTP/1.1
+Content-Type: application/xml; charset=utf-8
+Authorization: {user:password}
+
+<Order>
+    <Name>Available Telephone Number order</Name>
+    <SiteId>461</SiteId>
+    <CustomerOrderId>SJMres001</CustomerOrderId>
+    <ExistingTelephoneNumberOrderType>
+       <TelephoneNumberList>
+           <TelephoneNumber>7034343704</TelephoneNumber>
+           <TelephoneNumber>5405514342</TelephoneNumber>
+       </TelephoneNumberList>
+       <ReservationIdList>
+           <ReservationId>3150268b-b7e8-421f-8cc8-9ad9f2e8fd24</ReservationId>
+           <ReservationId>8dddbd6f-77ca-4a17-97ca-83d334fc404e</ReservationId>
+       </ReservationIdList>
+    </ExistingTelephoneNumberOrderType>
+</Order>
+```
+
+### Response
+
+```http
+HTTP/1.1 201 Created
+Content-Type: application/xml; charset=utf-8
+Location: https://dashboard.bandwidth.com/api/accounts/{{accountId}}/orders/d30eda5a-ce10-456e-8cb9-eb13b9f14cfd
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OrderResponse>
+    <Order>
+        <CustomerOrderId>SJMres001</CustomerOrderId>
+        <Name>Available Telephone Number order</Name>
+        <OrderCreateDate>2015-01-20T20:58:39.365Z</OrderCreateDate>
+        <BackOrderRequested>false</BackOrderRequested>
+        <id>d30eda5a-ce10-456e-8cb9-eb13b9f14cfd</id>
+        <ExistingTelephoneNumberOrderType>
+            <ReservationIdList>
+                <ReservationId>3150268b-b7e8-421f-8cc8-9ad9f2e8fd24</ReservationId>
+                <ReservationId>8dddbd6f-77ca-4a17-97ca-83d334fc404e</ReservationId>
+            </ReservationIdList>
+            <TelephoneNumberList>
+                <TelephoneNumber>7034343704</TelephoneNumber>
+                <TelephoneNumber>5405514342</TelephoneNumber>
+            </TelephoneNumberList>
+        </ExistingTelephoneNumberOrderType>
+        <PartialAllowed>true</PartialAllowed>
+        <SiteId>461</SiteId>
+    </Order>
+    <OrderStatus>RECEIVED</OrderStatus>
+</OrderResponse>
+```
+
+### Example 2 of 2:
 
 
 {% endextendmethod %}
