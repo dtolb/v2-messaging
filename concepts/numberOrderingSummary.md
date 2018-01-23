@@ -127,7 +127,7 @@ Location: https://dashboard.bandwidth.com/api/accounts/{{accountId}}/tnreservati
 
 {% endextendmethod %}
 
-## Check existing Phone Numbers Reservatiom {#get-reserved-phone-numbers}
+## Check existing Phone Numbers Reservation {#get-reserved-phone-numbers}
 
 Retrieves a TN reservation's information.
 
@@ -217,7 +217,7 @@ These parameters _may or may not_ be required based on the type of order.  Check
 
 {% common %}
 
-### Example 1 of 2: Order Previously Reserverd Phone Numbers from a Reservation
+### Example 1 of 2: Order Previously Reserved Phone Numbers from a Reservation
 
 ```http
 POST https://dashboard.bandwidth.com/api/accounts/{{accountId}}/orders HTTP/1.1
@@ -491,7 +491,5 @@ Content-Type: application/xml; charset=utf-8
 </DisconnectTelephoneNumberOrderResponse>
 
 ```
-
-
 
 {% endextendmethod %}
