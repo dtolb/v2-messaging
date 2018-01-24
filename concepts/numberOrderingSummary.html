@@ -227,19 +227,6 @@
     
         <li class="chapter " data-level="2.2.2" data-path="numberOrderingSummary.html">
             
-                <a href="numberOrderingSummary.html#reserving-phone-numbers">
-            
-                    
-                    Reserve Phone Numbers
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.3" data-path="numberOrderingSummary.html">
-            
                 <a href="numberOrderingSummary.html#order-phone-numbers">
             
                     
@@ -251,7 +238,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2.4" data-path="numberOrderingSummary.html">
+        <li class="chapter " data-level="2.2.3" data-path="numberOrderingSummary.html">
             
                 <a href="numberOrderingSummary.html#get-order-info">
             
@@ -264,7 +251,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2.5" data-path="numberOrderingSummary.html">
+        <li class="chapter " data-level="2.2.4" data-path="numberOrderingSummary.html">
             
                 <a href="numberOrderingSummary.html#disconnect-phone-number">
             
@@ -277,7 +264,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2.6" data-path="numberOrderingSummary.html">
+        <li class="chapter " data-level="2.2.5" data-path="numberOrderingSummary.html">
             
                 <a href="numberOrderingSummary.html#get-disconnect-info">
             
@@ -958,11 +945,10 @@
 <h2 id="overview">Overview</h2>
 <ul>
 <li><a href="#search-for-phone-numbers">Searching for new Phone Numbers</a></li>
-<li><a href="#reserving-phone-numbers">Reserving Phone Numbers</a></li>
 <li><a href="#order-phone-numbers">Ordering Phone Numbers</a></li>
 <li><a href="#get-order-info">Fetching Order Info</a></li>
-<li><a href="#disconnect-phone-number">Deactivating a Phone Number</a></li>
-<li><a href="#get-disconnect-info">Fetching Deactivation Info</a></li>
+<li><a href="#disconnect-phone-number">Disconnecting a Phone Number</a></li>
+<li><a href="#get-disconnect-info">Fetching Disconnect Info</a></li>
 </ul>
 <h2 id="search-for-phone-numbers">Searching For Phone Numbers </h2>
 <p>Finding numbers can be achieved by searching the Bandwidth inventory.</p>
@@ -1071,69 +1057,6 @@
 <blockquote>
 <p> &#x2139;&#xFE0F;  Notice that only 7 of 10 were returned = that is all that were currently available in that npanxx combination.  Any of these numbers can be reserved or immediately ordered</p>
 </blockquote>
-</div></div></div>
-
-<h2 id="reserving-phone-numbers">Reserve Phone Numbers </h2>
-<p>In the example below, we reserve a number returned by the search, preventing other accounts from ordering that available number before the number is activated on the account.  This is intended to manage the delays that occur in the customer &#x201C;buy-flow&#x201D;, permitting the number to be discarded unless a purchase confirmation is returned by the end user.</p>
-<p>A reserved telephone number or a set of reserved telephone numbers are reserved for a default time of 4 hours. A successful reservation returns a location header that can be used to retrieve the reservation at a later time.</p>
-<h3 id="base-url">Base URL</h3>
-<p><code class="post">POST</code><code>https://dashboard.bandwidth.com/api/accounts/{{accountId}}/tnreservation</code></p>
-<div class="api-method"><div class="api-method-definition"><div class="api-definition-top"></div><h3 id="body-parameters">Body Parameters</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Parameter</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><code>ReservedTn</code></td>
-<td style="text-align:left">The Desired Phone Number to reserve <br> You can only reserve a <strong>single</strong> phone number at a time!  If multiple <code>&lt;ReservedTn&gt;</code> are sent, only the last <code>&lt;ReservedTn&gt;</code> will be reserved</td>
-</tr>
-</tbody>
-</table>
-</div><div class="api-method-code mm-method-code"><div class="api-method-example"><h3 id="example-reserve-a-phone-number">Example: Reserve a Phone Number</h3>
-<pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">https://dashboard.bandwidth.com/api/accounts/{{accountId}}/tnreservation</span> HTTP/1.1
-<span class="hljs-attribute">Content-Type</span>: application/xml; charset=utf-8
-<span class="hljs-attribute">Authorization</span>: {user:password}
-
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Reservation</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">ReservedTn</span>&gt;</span>5405514342<span class="hljs-tag">&lt;/<span class="hljs-name">ReservedTn</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">Reservation</span>&gt;</span>
-</span></code></pre>
-<h3 id="response">Response</h3>
-<pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">201</span> Created
-<span class="hljs-attribute">Content-Type</span>: application/xml; charset=utf-8
-<span class="hljs-attribute">Location</span>: https://dashboard.bandwidth.com/api/accounts/{{accountId}}/tnreservation/8dddbd6f-77ca-4a17-97ca-83d334fc404e
-</code></pre>
-</div></div></div>
-
-<h2 id="get-reserved-phone-numbers">Check existing Phone Numbers Reservation </h2>
-<p>Retrieves a TN reservation&apos;s information.</p>
-<h3 id="base-url">Base URL</h3>
-<p><code class="get">GET</code><code>https://dashboard.bandwidth.com/api/accounts/{{accountId}}/tnreservation/{{reservationId}}</code></p>
-<h3 id="query-parameters">Query Parameters</h3>
-<p>There are no query parameters for fetching information about an existing reservation</p>
-<div class="api-method"><div class="api-method-definition"><div class="api-definition-top"></div></div><div class="api-method-code mm-method-code"><div class="api-method-example"><h3 id="example-fetch-an-existing-reservation">Example: Fetch an existing Reservation</h3>
-<pre><code class="lang-http"><span class="hljs-keyword">GET</span> <span class="hljs-string">https://dashboard.bandwidth.com/api/accounts/{{accountId}}/tnreservation/8dddbd6f-77ca-4a17-97ca-83d334fc404e</span> HTTP/1.1
-<span class="hljs-attribute">Content-Type</span>: application/xml; charset=utf-8
-<span class="hljs-attribute">Authorization</span>: {user:password}
-</code></pre>
-<h3 id="response">Response</h3>
-<pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">200</span> OK
-<span class="hljs-attribute">Content-Type</span>: application/xml; charset=utf-8
-
-<span class="xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span> standalone=<span class="hljs-string">&quot;yes&quot;</span><span class="hljs-meta">?&gt;</span></span>
-<span class="hljs-tag">&lt;<span class="hljs-name">ReservationResponse</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">Reservation</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">ReservationId</span>&gt;</span>8dddbd6f-77ca-4a17-97ca-83d334fc404e<span class="hljs-tag">&lt;/<span class="hljs-name">ReservationId</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">AccountId</span>&gt;</span>9500012<span class="hljs-tag">&lt;/<span class="hljs-name">AccountId</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">ReservationExpires</span>&gt;</span>14293<span class="hljs-tag">&lt;/<span class="hljs-name">ReservationExpires</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">ReservedTn</span>&gt;</span>5405514342<span class="hljs-tag">&lt;/<span class="hljs-name">ReservedTn</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">Reservation</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">ReservationResponse</span>&gt;</span>
-</span></code></pre>
 </div></div></div>
 
 <h2 id="order-phone-numbers">Order Phone Numbers </h2>
@@ -1260,57 +1183,7 @@
 </tr>
 </tbody>
 </table>
-</div><div class="api-method-code mm-method-code"><div class="api-method-example"><h3 id="example-1-of-2-order-previously-reserved-phone-numbers-from-a-reservation">Example 1 of 2: Order Previously Reserved Phone Numbers from a Reservation</h3>
-<pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">https://dashboard.bandwidth.com/api/accounts/{{accountId}}/orders</span> HTTP/1.1
-<span class="hljs-attribute">Content-Type</span>: application/xml; charset=utf-8
-<span class="hljs-attribute">Authorization</span>: {user:password}
-
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Order</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">Name</span>&gt;</span>Available Telephone Number order<span class="hljs-tag">&lt;/<span class="hljs-name">Name</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">SiteId</span>&gt;</span>461<span class="hljs-tag">&lt;/<span class="hljs-name">SiteId</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">CustomerOrderId</span>&gt;</span>SJMres001<span class="hljs-tag">&lt;/<span class="hljs-name">CustomerOrderId</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">ExistingTelephoneNumberOrderType</span>&gt;</span>
-       <span class="hljs-tag">&lt;<span class="hljs-name">TelephoneNumberList</span>&gt;</span>
-           <span class="hljs-tag">&lt;<span class="hljs-name">TelephoneNumber</span>&gt;</span>7034343704<span class="hljs-tag">&lt;/<span class="hljs-name">TelephoneNumber</span>&gt;</span>
-           <span class="hljs-tag">&lt;<span class="hljs-name">TelephoneNumber</span>&gt;</span>5405514342<span class="hljs-tag">&lt;/<span class="hljs-name">TelephoneNumber</span>&gt;</span>
-       <span class="hljs-tag">&lt;/<span class="hljs-name">TelephoneNumberList</span>&gt;</span>
-       <span class="hljs-tag">&lt;<span class="hljs-name">ReservationIdList</span>&gt;</span>
-           <span class="hljs-tag">&lt;<span class="hljs-name">ReservationId</span>&gt;</span>3150268b-b7e8-421f-8cc8-9ad9f2e8fd24<span class="hljs-tag">&lt;/<span class="hljs-name">ReservationId</span>&gt;</span>
-           <span class="hljs-tag">&lt;<span class="hljs-name">ReservationId</span>&gt;</span>8dddbd6f-77ca-4a17-97ca-83d334fc404e<span class="hljs-tag">&lt;/<span class="hljs-name">ReservationId</span>&gt;</span>
-       <span class="hljs-tag">&lt;/<span class="hljs-name">ReservationIdList</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">ExistingTelephoneNumberOrderType</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">Order</span>&gt;</span>
-</span></code></pre>
-<h3 id="response">Response</h3>
-<pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">201</span> Created
-<span class="hljs-attribute">Content-Type</span>: application/xml; charset=utf-8
-<span class="hljs-attribute">Location</span>: https://dashboard.bandwidth.com/api/accounts/{{accountId}}/orders/d30eda5a-ce10-456e-8cb9-eb13b9f14cfd
-
-<span class="xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span> standalone=<span class="hljs-string">&quot;yes&quot;</span><span class="hljs-meta">?&gt;</span></span>
-<span class="hljs-tag">&lt;<span class="hljs-name">OrderResponse</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">Order</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">CustomerOrderId</span>&gt;</span>SJMres001<span class="hljs-tag">&lt;/<span class="hljs-name">CustomerOrderId</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">Name</span>&gt;</span>Available Telephone Number order<span class="hljs-tag">&lt;/<span class="hljs-name">Name</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">OrderCreateDate</span>&gt;</span>2015-01-20T20:58:39.365Z<span class="hljs-tag">&lt;/<span class="hljs-name">OrderCreateDate</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">BackOrderRequested</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-name">BackOrderRequested</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>d30eda5a-ce10-456e-8cb9-eb13b9f14cfd<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">ExistingTelephoneNumberOrderType</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">ReservationIdList</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">ReservationId</span>&gt;</span>3150268b-b7e8-421f-8cc8-9ad9f2e8fd24<span class="hljs-tag">&lt;/<span class="hljs-name">ReservationId</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">ReservationId</span>&gt;</span>8dddbd6f-77ca-4a17-97ca-83d334fc404e<span class="hljs-tag">&lt;/<span class="hljs-name">ReservationId</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">ReservationIdList</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">TelephoneNumberList</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">TelephoneNumber</span>&gt;</span>7034343704<span class="hljs-tag">&lt;/<span class="hljs-name">TelephoneNumber</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">TelephoneNumber</span>&gt;</span>5405514342<span class="hljs-tag">&lt;/<span class="hljs-name">TelephoneNumber</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">TelephoneNumberList</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">ExistingTelephoneNumberOrderType</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">PartialAllowed</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">PartialAllowed</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">SiteId</span>&gt;</span>461<span class="hljs-tag">&lt;/<span class="hljs-name">SiteId</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">Order</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">OrderStatus</span>&gt;</span>RECEIVED<span class="hljs-tag">&lt;/<span class="hljs-name">OrderStatus</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">OrderResponse</span>&gt;</span>
-</span></code></pre>
-<h3 id="example-2-of-2-search-and-order-1-number-in-area-code">Example 2 of 2: Search <strong>AND</strong> Order 1 Number in Area Code</h3>
+</div><div class="api-method-code mm-method-code"><div class="api-method-example"><h3 id="example-search-and-order-1-number-in-area-code">Example: Search <strong>AND</strong> Order 1 Number in Area Code</h3>
 <pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">https://dashboard.bandwidth.com/api/accounts/{{accountId}}/orders</span> HTTP/1.1
 <span class="hljs-attribute">Content-Type</span>: application/xml; charset=utf-8
 <span class="hljs-attribute">Authorization</span>: {user:password}
@@ -1363,29 +1236,28 @@
 
 <span class="xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span> standalone=<span class="hljs-string">&quot;yes&quot;</span><span class="hljs-meta">?&gt;</span></span>
 <span class="hljs-tag">&lt;<span class="hljs-name">OrderResponse</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">CompletedQuantity</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">CompletedQuantity</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">CompletedQuantity</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">CompletedQuantity</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">CreatedByUser</span>&gt;</span>jbm<span class="hljs-tag">&lt;/<span class="hljs-name">CreatedByUser</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">LastModifiedDate</span>&gt;</span>2015-01-20T20:58:39.549Z<span class="hljs-tag">&lt;/<span class="hljs-name">LastModifiedDate</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">OrderCompleteDate</span>&gt;</span>2015-01-20T20:58:39.549Z<span class="hljs-tag">&lt;/<span class="hljs-name">OrderCompleteDate</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">LastModifiedDate</span>&gt;</span>2018-01-23T19:56:29.782Z<span class="hljs-tag">&lt;/<span class="hljs-name">LastModifiedDate</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">OrderCompleteDate</span>&gt;</span>2018-01-23T19:56:29.782Z<span class="hljs-tag">&lt;/<span class="hljs-name">OrderCompleteDate</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">Order</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">CustomerOrderId</span>&gt;</span>SJMres001<span class="hljs-tag">&lt;/<span class="hljs-name">CustomerOrderId</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">Name</span>&gt;</span>Available Telephone Number order<span class="hljs-tag">&lt;/<span class="hljs-name">Name</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">OrderCreateDate</span>&gt;</span>2015-01-20T20:58:39.365Z<span class="hljs-tag">&lt;/<span class="hljs-name">OrderCreateDate</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">PeerId</span>&gt;</span>1927<span class="hljs-tag">&lt;/<span class="hljs-name">PeerId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">OrderCreateDate</span>&gt;</span>2018-01-23T19:56:29.678Z<span class="hljs-tag">&lt;/<span class="hljs-name">OrderCreateDate</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">PeerId</span>&gt;</span>651681<span class="hljs-tag">&lt;/<span class="hljs-name">PeerId</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">BackOrderRequested</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-name">BackOrderRequested</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">ExistingTelephoneNumberOrderType</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">AreaCodeSearchAndOrderType</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">AreaCode</span>&gt;</span>910<span class="hljs-tag">&lt;/<span class="hljs-name">AreaCode</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Quantity</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">Quantity</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">AreaCodeSearchAndOrderType</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">PartialAllowed</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">PartialAllowed</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">SiteId</span>&gt;</span>461<span class="hljs-tag">&lt;/<span class="hljs-name">SiteId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">SiteId</span>&gt;</span>24717<span class="hljs-tag">&lt;/<span class="hljs-name">SiteId</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">Order</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">OrderStatus</span>&gt;</span>COMPLETE<span class="hljs-tag">&lt;/<span class="hljs-name">OrderStatus</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">CompletedNumbers</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">TelephoneNumber</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">FullNumber</span>&gt;</span>5405514342<span class="hljs-tag">&lt;/<span class="hljs-name">FullNumber</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">TelephoneNumber</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">TelephoneNumber</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">FullNumber</span>&gt;</span>7034343704<span class="hljs-tag">&lt;/<span class="hljs-name">FullNumber</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">FullNumber</span>&gt;</span>9102414365<span class="hljs-tag">&lt;/<span class="hljs-name">FullNumber</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">TelephoneNumber</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">CompletedNumbers</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Summary</span>&gt;</span>1 number ordered in (910)<span class="hljs-tag">&lt;/<span class="hljs-name">Summary</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">FailedQuantity</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">FailedQuantity</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">OrderResponse</span>&gt;</span>
 </span></code></pre>
@@ -1535,7 +1407,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Order Phone Numbers","level":"2.2","depth":1,"next":{"title":"Search For Phone Numbers","level":"2.2.1","depth":2,"anchor":"#search-for-phone-numbers","path":"concepts/numberOrderingSummary.md","ref":"concepts/numberOrderingSummary.md#search-for-phone-numbers","articles":[]},"previous":{"title":"Messaging 2.0 Specifics","level":"2.1","depth":1,"path":"concepts.md","ref":"concepts.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.7.14","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"concepts/numberOrderingSummary.md","mtime":"2018-01-23T22:04:48.241Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-23T22:05:55.392Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Order Phone Numbers","level":"2.2","depth":1,"next":{"title":"Search For Phone Numbers","level":"2.2.1","depth":2,"anchor":"#search-for-phone-numbers","path":"concepts/numberOrderingSummary.md","ref":"concepts/numberOrderingSummary.md#search-for-phone-numbers","articles":[]},"previous":{"title":"Messaging 2.0 Specifics","level":"2.1","depth":1,"path":"concepts.md","ref":"concepts.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.7.14","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"concepts/numberOrderingSummary.md","mtime":"2018-01-24T15:26:38.086Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-24T15:28:40.311Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
