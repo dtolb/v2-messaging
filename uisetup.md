@@ -26,7 +26,7 @@ Fill out the form on the [Postman](postman.md) page to download the Messaging 2.
 
 ## Get your account ID {#get-your-account-id}
 
-1. Log into the [Bandwidth Phone Number Dashboard](https://dashboard.bandwdith.com)
+1. Log into the [Bandwidth Phone Number Dashboard](https://dashboard.bandwidth.com)
 2. Click the **Account** tab in the menu section to go to your **Account Overview**
 3. Under the **Account overview** section you should see your account ID.
 
