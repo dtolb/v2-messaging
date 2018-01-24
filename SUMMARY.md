@@ -10,7 +10,6 @@
 * [Messaging 2.0 Specifics](concepts.md)
 * [Order Phone Numbers](concepts/numberOrderingSummary.md)
 	* [Search For Phone Numbers](concepts/numberOrderingSummary.md#search-for-phone-numbers)
-	* [Reserve Phone Numbers](concepts/numberOrderingSummary.md#reserving-phone-numbers))
 	* [Order Phone Numbers](concepts/numberOrderingSummary.md#order-phone-numbers)
 	* [Fetch Order Info](concepts/numberOrderingSummary.md#get-order-info)
 	* [Disconnect a Phone Number](concepts/numberOrderingSummary.md#disconnect-phone-number)

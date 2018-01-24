@@ -10,10 +10,11 @@ This guide will take you through the _basics_ of searching and ordering phone nu
 
 ## Overview
 * [Searching for new Phone Numbers](#search-for-phone-numbers)
+* [Reserving Phone Numbers](#reserving-phone-numbers)
 * [Ordering Phone Numbers](#order-phone-numbers)
 * [Fetching Order Info](#get-order-info)
-* [Disconnecting a Phone Number](#disconnect-phone-number)
-* [Fetching Disconnect Info](#get-disconnect-info)
+* [Deactivating a Phone Number](#disconnect-phone-number)
+* [Fetching Deactivation Info](#get-disconnect-info)
 
 ## Searching For Phone Numbers {#search-for-phone-numbers}
 Finding numbers can be achieved by searching the Bandwidth inventory.
@@ -83,6 +84,90 @@ Content-Type: application/xml; charset=utf-8
 
 {% endextendmethod %}
 
+## Reserve Phone Numbers {#reserving-phone-numbers}
+
+In the example below, we reserve a number returned by the search, preventing other accounts from ordering that available number before the number is activated on the account.  This is intended to manage the delays that occur in the customer “buy-flow”, permitting the number to be discarded unless a purchase confirmation is returned by the end user.
+
+A reserved telephone number or a set of reserved telephone numbers are reserved for a default time of 4 hours. A successful reservation returns a location header that can be used to retrieve the reservation at a later time.
+
+### Base URL
+<code class="post">POST</code>`https://dashboard.bandwidth.com/api/accounts/{{accountId}}/tnreservation`
+
+{% extendmethod %}
+
+### Body Parameters
+
+| Parameter    | Description                         |
+|:-------------|:------------------------------------|
+| `ReservedTn` | The Desired Phone Number to reserve <br> You can only reserve a **single** phone number at a time!  If multiple `<ReservedTn>` are sent, only the last `<ReservedTn>` will be reserved |
+
+
+{% common %}
+
+### Example: Reserve a Phone Number
+
+```http
+POST https://dashboard.bandwidth.com/api/accounts/{{accountId}}/tnreservation HTTP/1.1
+Content-Type: application/xml; charset=utf-8
+Authorization: {user:password}
+
+<Reservation>
+    <ReservedTn>5405514342</ReservedTn>
+</Reservation>
+```
+
+### Response
+
+```http
+HTTP/1.1 201 Created
+Content-Type: application/xml; charset=utf-8
+Location: https://dashboard.bandwidth.com/api/accounts/{{accountId}}/tnreservation/8dddbd6f-77ca-4a17-97ca-83d334fc404e
+```
+
+{% endextendmethod %}
+
+## Check existing Phone Numbers Reservation {#get-reserved-phone-numbers}
+
+Retrieves a TN reservation's information.
+
+### Base URL
+<code class="get">GET</code>`https://dashboard.bandwidth.com/api/accounts/{{accountId}}/tnreservation/{{reservationId}}`
+
+### Query Parameters
+
+There are no query parameters for fetching information about an existing reservation
+
+{% extendmethod %}
+
+{% common %}
+
+### Example: Fetch an existing Reservation
+
+```http
+GET https://dashboard.bandwidth.com/api/accounts/{{accountId}}/tnreservation/8dddbd6f-77ca-4a17-97ca-83d334fc404e HTTP/1.1
+Content-Type: application/xml; charset=utf-8
+Authorization: {user:password}
+```
+
+### Response
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/xml; charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ReservationResponse>
+  <Reservation>
+    <ReservationId>8dddbd6f-77ca-4a17-97ca-83d334fc404e</ReservationId>
+    <AccountId>9500012</AccountId>
+    <ReservationExpires>14293</ReservationExpires>
+    <ReservedTn>5405514342</ReservedTn>
+  </Reservation>
+</ReservationResponse>
+```
+
+{% endextendmethod %}
+
 ## Order Phone Numbers {#order-phone-numbers}
 
 Ordering Phone Numbers for use with the network uses requires you to order specific phone numbers that have been discovered in a search.   This is only **one** of a number of ways to acquire and activate phone numbers.
@@ -131,7 +216,63 @@ These parameters _may or may not_ be required based on the type of order.  Check
 
 {% common %}
 
-### Example: Search **AND** Order 1 Number in Area Code
+### Example 1 of 2: Order Previously Reserved Phone Numbers from a Reservation
+
+```http
+POST https://dashboard.bandwidth.com/api/accounts/{{accountId}}/orders HTTP/1.1
+Content-Type: application/xml; charset=utf-8
+Authorization: {user:password}
+
+<Order>
+    <Name>Available Telephone Number order</Name>
+    <SiteId>461</SiteId>
+    <CustomerOrderId>SJMres001</CustomerOrderId>
+    <ExistingTelephoneNumberOrderType>
+       <TelephoneNumberList>
+           <TelephoneNumber>7034343704</TelephoneNumber>
+           <TelephoneNumber>5405514342</TelephoneNumber>
+       </TelephoneNumberList>
+       <ReservationIdList>
+           <ReservationId>3150268b-b7e8-421f-8cc8-9ad9f2e8fd24</ReservationId>
+           <ReservationId>8dddbd6f-77ca-4a17-97ca-83d334fc404e</ReservationId>
+       </ReservationIdList>
+    </ExistingTelephoneNumberOrderType>
+</Order>
+```
+
+### Response
+
+```http
+HTTP/1.1 201 Created
+Content-Type: application/xml; charset=utf-8
+Location: https://dashboard.bandwidth.com/api/accounts/{{accountId}}/orders/d30eda5a-ce10-456e-8cb9-eb13b9f14cfd
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OrderResponse>
+    <Order>
+        <CustomerOrderId>SJMres001</CustomerOrderId>
+        <Name>Available Telephone Number order</Name>
+        <OrderCreateDate>2015-01-20T20:58:39.365Z</OrderCreateDate>
+        <BackOrderRequested>false</BackOrderRequested>
+        <id>d30eda5a-ce10-456e-8cb9-eb13b9f14cfd</id>
+        <ExistingTelephoneNumberOrderType>
+            <ReservationIdList>
+                <ReservationId>3150268b-b7e8-421f-8cc8-9ad9f2e8fd24</ReservationId>
+                <ReservationId>8dddbd6f-77ca-4a17-97ca-83d334fc404e</ReservationId>
+            </ReservationIdList>
+            <TelephoneNumberList>
+                <TelephoneNumber>7034343704</TelephoneNumber>
+                <TelephoneNumber>5405514342</TelephoneNumber>
+            </TelephoneNumberList>
+        </ExistingTelephoneNumberOrderType>
+        <PartialAllowed>true</PartialAllowed>
+        <SiteId>461</SiteId>
+    </Order>
+    <OrderStatus>RECEIVED</OrderStatus>
+</OrderResponse>
+```
+
+### Example 2 of 2: Search **AND** Order 1 Number in Area Code
 
 ```http
 POST https://dashboard.bandwidth.com/api/accounts/{{accountId}}/orders HTTP/1.1
@@ -205,28 +346,29 @@ Content-Type: application/xml; charset=utf-8
 
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <OrderResponse>
-    <CompletedQuantity>1</CompletedQuantity>
+    <CompletedQuantity>2</CompletedQuantity>
     <CreatedByUser>jbm</CreatedByUser>
-    <LastModifiedDate>2018-01-23T19:56:29.782Z</LastModifiedDate>
-    <OrderCompleteDate>2018-01-23T19:56:29.782Z</OrderCompleteDate>
+    <LastModifiedDate>2015-01-20T20:58:39.549Z</LastModifiedDate>
+    <OrderCompleteDate>2015-01-20T20:58:39.549Z</OrderCompleteDate>
     <Order>
-        <OrderCreateDate>2018-01-23T19:56:29.678Z</OrderCreateDate>
-        <PeerId>651681</PeerId>
+        <CustomerOrderId>SJMres001</CustomerOrderId>
+        <Name>Available Telephone Number order</Name>
+        <OrderCreateDate>2015-01-20T20:58:39.365Z</OrderCreateDate>
+        <PeerId>1927</PeerId>
         <BackOrderRequested>false</BackOrderRequested>
-        <AreaCodeSearchAndOrderType>
-            <AreaCode>910</AreaCode>
-            <Quantity>1</Quantity>
-        </AreaCodeSearchAndOrderType>
+        <ExistingTelephoneNumberOrderType/>
         <PartialAllowed>true</PartialAllowed>
-        <SiteId>24717</SiteId>
+        <SiteId>461</SiteId>
     </Order>
     <OrderStatus>COMPLETE</OrderStatus>
     <CompletedNumbers>
         <TelephoneNumber>
-            <FullNumber>9102414365</FullNumber>
+            <FullNumber>5405514342</FullNumber>
+        </TelephoneNumber>
+        <TelephoneNumber>
+            <FullNumber>7034343704</FullNumber>
         </TelephoneNumber>
     </CompletedNumbers>
-    <Summary>1 number ordered in (910)</Summary>
     <FailedQuantity>0</FailedQuantity>
 </OrderResponse>
 ```
