@@ -48,7 +48,8 @@ User-Agent: BandwidthAPI/v2
         "https://api.catapult.inetwork.com/v1/users/{userId}/media/14762070468292kw2fuqty55yp2b2/0/bw.png"
         ],
       "owner"         : "+12345678902",
-      "direction"     : "in"
+      "direction"     : "in",
+      "segmentCount": 1
     }
   }
 ]
@@ -83,7 +84,8 @@ User-Agent: BandwidthAPI/v2
         "https://api.catapult.inetwork.com/v1/users/{userId}/media/14762070468292kw2fuqty55yp2b2/2/Bandwidth_Contact.png"
       ],
       "owner"         : "+12345678902",
-      "direction"     : "in"
+      "direction"     : "in",
+      "segmentCount": 1
     }
   }
 ]

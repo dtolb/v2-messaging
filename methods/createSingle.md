@@ -205,7 +205,8 @@ Content-Type: application/json; charset=utf-8
   "media": [
     "https://s3.amazonaws.com/bw-v2-api/demo.jpg"
   ],
-  "direction": "out"
+  "direction": "out",
+  "segmentCount": 1
 }
 ```
 
@@ -306,7 +307,8 @@ Content-Type: application/json; charset=utf-8
     "https://s3.amazonaws.com/bw-v2-api/demo.jpg",
     "https://s3.amazonaws.com/bw-v2-api/demo2.jpg"
   ],
-  "direction" : "out"
+  "direction" : "out",
+  "segmentCount": 1
 }
 ```
 
