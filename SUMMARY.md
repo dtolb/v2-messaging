@@ -54,7 +54,6 @@
 * [About Message Events/Callbacks](events/messageEvents.md)
 * [Incoming SMS/MMS Message](events/incomingSingle.md)
 * [Incoming Group Message](events/incomingGroup.md)
-* [Message Sent](events/outSent.md)
 * [Message Delivered](events/msgDelivered.md)
 * [Message Failed](events/messageFailed.md)
 
