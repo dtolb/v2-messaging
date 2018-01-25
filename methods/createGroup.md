@@ -112,7 +112,8 @@ Content-Type: application/json; charset=utf-8
   "applicationId" : "93de2206-9669-4e07-948d-329f4b722ee2",
   "tag"           : "test message",
   "owner"         : "+12345678901",
-  "direction"     : "out"
+  "direction"     : "out",
+  "segmentCount": 1
 }
 ```
 
@@ -217,7 +218,8 @@ Content-Type: application/json; charset=utf-8
   "media"         : [
     "https://s3.amazonaws.com/bw-v2-api/demo.jpg"
   ],
-  "direction"     : "out"
+  "direction"     : "out",
+  "segmentCount": 1
 }
 ```
 {% endmethod %}

@@ -53,7 +53,8 @@ User-Agent: BandwidthAPI/v2
         "https://s3.amazonaws.com/bw-v2-api/demo.jpg"
       ],
     "owner"         : "+12345678901",
-    "direction"     : "out"
+    "direction"     : "out",
+    "segmentCount": 1
     }
   }
 ]
