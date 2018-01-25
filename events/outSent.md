@@ -20,6 +20,7 @@ In order to receive message events, you need to ensure you have set up your appl
 | message.applicationId | `string` | The ID of the Application your `from` number is associated with in the Bandwidth Phone Number Dashboard.                                                                                                                                                                                                                                                            |
 | message.media         | `array`  | A list of URLs to include as media attachments as part of the message                                                                                                                                                                                                                                                                                               |
 | message.tag           | `string` | An custom String that you can use to track this particular message                                                                                                                                                                                                                                                                                                  |
+| message.segmentCount  | `integer`| The number of segments that compose the message.                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 
 {% common %}
 ### Outgoing message sent notification
@@ -50,7 +51,8 @@ User-Agent: BandwidthAPI/v2
         "https://s3.amazonaws.com/bw-v2-api/demo.jpg"
       ],
       "owner": "+12345678902",
-      "direction": "in"
+      "direction": "in".
+      "segmentCount"  : 1
     }
   }
 ]

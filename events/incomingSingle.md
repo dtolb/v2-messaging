@@ -20,6 +20,7 @@ In order to receive text messages events, you need to ensure you have set up you
 | message.applicationId | `string` | The ID of the Application your `from` number is associated with in the Bandwidth Phone Number Dashboard.                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | message.media         | `array`  | A list of URLs to include as media attachments as part of the message. <br> Using the [v1 media api](http://dev.bandwidth.com/ap-docs/methods/media/getMediaMediaName.html) you can download the media **WITHIN 30 DAYS** <br><br> The URL will look something like: <br> `https://api.catapult.inetwork.com/v1/users/{userId}/media/{messageId}/{index}/{filename}` <br><br> Where `messageId` is the ID of the incoming message that had the media, `index` is the index of that media in the message (starting from `0`) and `filename` is the original filename |
 | message.tag           | `string` | An custom String that you can use to track this particular message                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| message.segmentCount  | `integer`| The number of segments that compose the message.                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 
 {% common %}
 ### Example 1 of 2: Incoming text message with single media
@@ -48,6 +49,7 @@ User-Agent: BandwidthAPI/v2
         "https://api.catapult.inetwork.com/v1/users/{userId}/media/14762070468292kw2fuqty55yp2b2/0/bw.png"
         ],
       "owner"         : "+12345678902",
+      "segmentCount"  : 1,
       "direction"     : "in"
     }
   }
@@ -83,6 +85,7 @@ User-Agent: BandwidthAPI/v2
         "https://api.catapult.inetwork.com/v1/users/{userId}/media/14762070468292kw2fuqty55yp2b2/2/Bandwidth_Contact.png"
       ],
       "owner"         : "+12345678902",
+      "segmentCount"  : 1,
       "direction"     : "in"
     }
   }
