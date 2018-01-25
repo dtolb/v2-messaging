@@ -24,6 +24,7 @@ Only for messages <b>WITHOUT</b> Media, with <b>ONE</b> recipient
 | message.applicationId | `string` | The ID of the Application your `from` number is associated with in the Bandwidth Phone Number Dashboard.                                                                                                                                                                                                                                                            |
 | message.media         | `array`  | A list of URLs to include as media attachments as part of the message                                                                                                                                                                                                                                                                                               |
 | message.tag           | `string` | An custom String that you can use to track this particular message                                                                                                                                                                                                                                                                                                  |
+| message.segmentCount  | `integer`| The number of segments that compose the message
 
 {% common %}
 ### Message delivered to carrier
@@ -51,7 +52,8 @@ User-Agent: BandwidthAPI/v2
       "text": "Hey, check this out!",
       "applicationId": "93de2206-9669-4e07-948d-329f4b722ee2",
       "owner": "+12345678902",
-      "direction": "in"
+      "direction": "out",
+      "segmentCount"  : 1
     }
   }
 ]
