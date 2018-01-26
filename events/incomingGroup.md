@@ -39,21 +39,21 @@ User-Agent: BandwidthAPI/v2
     "description"   : "Incoming message received",
     "to"            : "+12345678902",
     "message"       : {
-    "id"            : "14762070468292kw2fuqty55yp2b2",
-    "time"          : "2016-09-14T18:20:16Z",
-    "to"            : [
-        "+12345678902",
-        "+12345678903"
-      ],
-    "from"          : "+12345678901",
-    "text"          : "Hey, check this out!",
-    "applicationId" : "93de2206-9669-4e07-948d-329f4b722ee2",
-    "media"         : [
-      "https://api.catapult.inetwork.com/v1/users/{userId}/media/14762070468292kw2fuqty55yp2b2/0/bw.png"
-      ],
-    "owner"         : "+12345678902",
-    "direction"     : "in",
-    "segmentCount"  : "1"
+      "id"            : "14762070468292kw2fuqty55yp2b2",
+      "time"          : "2016-09-14T18:20:16Z",
+      "to"            : [
+          "+12345678902",
+          "+12345678903"
+        ],
+      "from"          : "+12345678901",
+      "text"          : "Hey, check this out!",
+      "applicationId" : "93de2206-9669-4e07-948d-329f4b722ee2",
+      "media"         : [
+        "https://api.catapult.inetwork.com/v1/users/{userId}/media/14762070468292kw2fuqty55yp2b2/0/bw.png"
+        ],
+      "owner"         : "+12345678902",
+      "direction"     : "in",
+      "segmentCount"  : "1"
     }
   }
 ]
@@ -77,23 +77,23 @@ User-Agent: BandwidthAPI/v2
     "description"   : "Incoming message received",
     "to"            : "+12345678902",
     "message"       : {
-    "id"            : "14762070468292kw2fuqty55yp2b2",
-    "time"          : "2016-09-14T18:20:16Z",
-    "to"            : [
-        "+12345678902",
-        "+12345678903"
-      ],
-    "from"          : "+12345678901",
-    "text"          : "Hey, check this out!",
-    "applicationId" : "93de2206-9669-4e07-948d-329f4b722ee2",
-    "media"         : [
-      "https://api.catapult.inetwork.com/v1/users/{userId}/media/14762070468292kw2fuqty55yp2b2/0/bw.png",
-      "https://api.catapult.inetwork.com/v1/users/{userId}/media/14762070468292kw2fuqty55yp2b2/1/bandwidth_logo.png",
-      "https://api.catapult.inetwork.com/v1/users/{userId}/media/14762070468292kw2fuqty55yp2b2/2/Bandwidth_Contact.png"
-      ],
-    "owner"         : "+12345678902",
-    "direction"     : "in",
-    "segmentCount"  : 1
+      "id"            : "14762070468292kw2fuqty55yp2b2",
+      "time"          : "2016-09-14T18:20:16Z",
+      "to"            : [
+          "+12345678902",
+          "+12345678903"
+        ],
+      "from"          : "+12345678901",
+      "text"          : "Hey, check this out!",
+      "applicationId" : "93de2206-9669-4e07-948d-329f4b722ee2",
+      "media"         : [
+        "https://api.catapult.inetwork.com/v1/users/{userId}/media/14762070468292kw2fuqty55yp2b2/0/bw.png",
+        "https://api.catapult.inetwork.com/v1/users/{userId}/media/14762070468292kw2fuqty55yp2b2/1/bandwidth_logo.png",
+        "https://api.catapult.inetwork.com/v1/users/{userId}/media/14762070468292kw2fuqty55yp2b2/2/Bandwidth_Contact.png"
+        ],
+      "owner"         : "+12345678902",
+      "direction"     : "in",
+      "segmentCount"  : 1
     }
   }
 ]
