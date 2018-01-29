@@ -2,7 +2,11 @@
 
 ## Send Group MMS
 
-Send a group text message or picture message
+Send a group text message or picture message.
+
+### Invalid Phone Number handing
+
+When sending a group message to an invalid phone number, you may receive extraneous [callback events](../events/messageEvents.md).  You can read me on the [Messaging API concepts page](../concepts.md#group-message-invalid).
 
 ### Request URL
 
@@ -29,17 +33,17 @@ Send a group text message or picture message
 ```http
 POST https://api.catapult.inetwork.com/v2/users/{userId}/messages HTTP/1.1
 Content-Type: application/json; charset=utf-8
-Authorization: Basic dc123
+Authorization: {apiToken:apiSecret}
 
 {
-    "to"  :[
+    "to"            : [
       "+12345678902",
       "+12345678903"
     ],
-    "from":"+12345678901",
-    "text":"Hey, check this out!",
-    "applicationId": "93de2206-9669-4e07-948d-329f4b722ee2",
-    "tag" :"test message"
+    "from"          : "+12345678901",
+    "text"          : "Hey, check this out!",
+    "applicationId" : "93de2206-9669-4e07-948d-329f4b722ee2",
+    "tag"           : "test message"
 }
 
 ```
@@ -49,7 +53,7 @@ Authorization: Basic dc123
 ```bash
 curl --request POST \
     --url https://api.catapult.inetwork.com/v2/users/{{userId}}/messages \
-    --user {token}:{secret} \
+    --user {apiToken}:{apiSecret} \
     --header 'content-type: application/json' \
     --data '
     {
@@ -74,8 +78,8 @@ var options = { method: 'POST',
   url: 'https://api.catapult.inetwork.com/v2/users/{{userId}}/messages',
   headers: { 'content-type': 'application/json' },
   auth: {
-    user: '{{token}}',
-    pass: '{{secret}}'
+    user: '{{apiToken}}',
+    pass: '{{apiSecret}}'
   },
   body:
    { to: [ '+12345678902', '+12345678903'],
@@ -122,7 +126,7 @@ Content-Type: application/json; charset=utf-8
 ```http
 POST https://api.catapult.inetwork.com/v2/users/{userId}/messages HTTP/1.1
 Content-Type: application/json; charset=utf-8
-Authorization: Basic dc123
+Authorization: {apiToken:apiSecret}
 
 {
     "to"            : [
@@ -145,7 +149,7 @@ Authorization: Basic dc123
 ```bash
 curl --request POST \
     --url https://api.catapult.inetwork.com/v2/users/{{userId}}/messages \
-    --user {token}:{secret} \
+    --user {apiToken}:{apiSecret} \
     --header 'content-type: application/json' \
     --data '
     {
@@ -173,8 +177,8 @@ var options = { method: 'POST',
   url: 'https://api.catapult.inetwork.com/v2/users/{{userId}}/messages',
   headers: { 'content-type': 'application/json' },
   auth: {
-    user: '{{token}}',
-    pass: '{{secret}}'
+    user: '{{apiToken}}',
+    pass: '{{apiSecret}}'
   },
   body:
    { to          : [ '+12345678902', '+12345678903'],

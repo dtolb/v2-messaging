@@ -2,7 +2,7 @@
 
 ## Completely Update Application
 
-⚠️ `PUT` update will replace **ALL** existing fields ⚠️
+<code class="put">PUT</code> update will replace **ALL** existing fields.
 
 ### Request URL
 

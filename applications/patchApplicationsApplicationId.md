@@ -2,7 +2,7 @@
 
 ## Partial Update Application
 
-⚠️ `PATCH` update will only update the specified field ⚠️
+<code class="patch">PATCH</code> update will only update the specified field
 
 ### Request URL
 
