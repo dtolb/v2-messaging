@@ -32,14 +32,14 @@ Content-Type: application/json; charset=utf-8
 Authorization: Basic dc123
 
 {
-    "to"  :[
+    "to"            : [
       "+12345678902",
       "+12345678903"
     ],
-    "from":"+12345678901",
-    "text":"Hey, check this out!",
-    "applicationId": "93de2206-9669-4e07-948d-329f4b722ee2",
-    "tag" :"test message"
+    "from"          : "+12345678901",
+    "text"          : "Hey, check this out!",
+    "applicationId" : "93de2206-9669-4e07-948d-329f4b722ee2",
+    "tag"           : "test message"
 }
 
 ```
@@ -53,14 +53,14 @@ curl --request POST \
     --header 'content-type: application/json' \
     --data '
     {
-        "to"  :[
+        "to"            : [
           "+12345678902",
           "+12345678903"
         ],
-        "from":"+12345678901",
-        "text":"Hey, check this out!",
-        "applicationId": "93de2206-9669-4e07-948d-329f4b722ee2",
-        "tag" :"test message"
+        "from"          : "+12345678901",
+        "text"          : "Hey, check this out!",
+        "applicationId" : "93de2206-9669-4e07-948d-329f4b722ee2",
+        "tag"           : "test message"
     }
   '
 ```
@@ -219,7 +219,7 @@ Content-Type: application/json; charset=utf-8
     "https://s3.amazonaws.com/bw-v2-api/demo.jpg"
   ],
   "direction"     : "out",
-  "segmentCount": 1
+  "segmentCount"  : 1
 }
 ```
 {% endmethod %}

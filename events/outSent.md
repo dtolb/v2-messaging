@@ -33,24 +33,24 @@ User-Agent: BandwidthAPI/v2
 
 [
   {
-    "type": "message-sent",
-    "time": "2016-09-14T18:20:16Z",
-    "description": "Outgoing message sent",
-    "message": {
-      "id": "14762070468292kw2fuqty55yp2b2",
-      "time": "2016-09-14T18:20:16Z",
-      "to": [
-        "+12345678902",
-        "+12345678903"
-      ],
-      "from": "+12345678901",
-      "text": "Hey, check this out!",
-      "applicationId": "93de2206-9669-4e07-948d-329f4b722ee2",
-      "media": [
+    "type"          : "message-sent",
+    "time"          : "2016-09-14T18:20:16Z",
+    "description"   : "Outgoing message sent",
+    "message"       : {
+      "id"            : "14762070468292kw2fuqty55yp2b2",
+      "time"          : "2016-09-14T18:20:16Z",
+      "to"            : [
+          "+12345678902",
+          "+12345678903"
+        ],
+      "from"          : "+12345678901",
+      "text"          : "Hey, check this out!",
+      "applicationId" : "93de2206-9669-4e07-948d-329f4b722ee2",
+      "media"         : [
         "https://s3.amazonaws.com/bw-v2-api/demo.jpg"
-      ],
-      "owner": "+12345678902",
-      "direction": "in"
+        ],
+      "owner"         : "+12345678902",
+      "direction"     : "in"
     }
   }
 ]

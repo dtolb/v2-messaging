@@ -50,7 +50,7 @@ User-Agent: BandwidthAPI/v2
         ],
       "owner"         : "+12345678902",
       "direction"     : "in",
-      "segmentCount": 1
+      "segmentCount"  : 1
     }
   }
 ]
@@ -86,7 +86,7 @@ User-Agent: BandwidthAPI/v2
       ],
       "owner"         : "+12345678902",
       "direction"     : "in",
-      "segmentCount": 1
+      "segmentCount"  : 1
     }
   }
 ]
