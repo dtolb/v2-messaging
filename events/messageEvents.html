@@ -725,20 +725,7 @@
             
         </li>
     
-        <li class="chapter " data-level="6.4" data-path="outSent.html">
-            
-                <a href="outSent.html">
-            
-                    
-                    Message Sent
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="6.5" data-path="msgDelivered.html">
+        <li class="chapter " data-level="6.4" data-path="msgDelivered.html">
             
                 <a href="msgDelivered.html">
             
@@ -751,7 +738,7 @@
             
         </li>
     
-        <li class="chapter " data-level="6.6" data-path="messageFailed.html">
+        <li class="chapter " data-level="6.5" data-path="messageFailed.html">
             
                 <a href="messageFailed.html">
             
@@ -942,6 +929,7 @@
 <li>You will get a callback for any event related to that message. For example, you will get an HTTP callback if your message was sent, delivered, or blocked. In addition, you will get an event for any kind of Delivery Receipt that the destination carrier sends back, regarding the delivery of your message.</li>
 <li>For incoming messages sent to your numbers, a callback will also be received, notifying your Application of the incoming message. For group messages where you own multiple recipient phone numbers, you will receive a distinct event and <code>messageId</code> for each individual recipient.</li>
 <li>You <strong>MUST</strong> Reply with a <code>HTTP 2xx</code> status code for <em>every</em> callback/delivery receipt.  Bandwidth will retry <em>every</em> callback over the next 24 hours until a <code>HTTP 2xx</code> code is received for the callback.  After 24 hours, Bandwidth will no longer try to send the callback</li>
+<li>Because we guarantee &quot;at least once delivery&quot; of events, it is possible (but not common) to receive duplicate message events. Your server should be able to handle duplicates.</li>
 </ul>
 <table>
 <thead>
@@ -961,11 +949,8 @@
 </tr>
 <tr>
 <td style="text-align:left"><a href="msgDelivered.html">Message Delivered</a></td>
-<td style="text-align:left">Bandwidth sends this event when the text is <em>delivered</em> to the downstream carrier. <strong>ONLY FOR MESSAGES WITHOUT MEDIA</strong></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="outSent.html">Outbound Messaging Sent</a></td>
-<td style="text-align:left">Bandwidth sends this event when the outbound message has been sent to the downstream carrier</td>
+<td style="text-align:left">Bandwidth sends this event when the text is delivered to the downstream carrier. <strong>ONLY FOR NON-MMS MESSAGES</strong></td>
+<td></td>
 </tr>
 <tr>
 <td style="text-align:left"><a href="messageFailed.html">Message Failed</a></td>
@@ -1006,7 +991,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"About Message Events/Callbacks","level":"6.1","depth":1,"next":{"title":"Incoming SMS/MMS Message","level":"6.2","depth":1,"path":"events/incomingSingle.md","ref":"events/incomingSingle.md","articles":[]},"previous":{"title":"Group Message","level":"5.3","depth":1,"path":"methods/createGroup.md","ref":"methods/createGroup.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.7.14","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"events/messageEvents.md","mtime":"2018-01-24T20:46:41.310Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-24T20:48:17.890Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"About Message Events/Callbacks","level":"6.1","depth":1,"next":{"title":"Incoming SMS/MMS Message","level":"6.2","depth":1,"path":"events/incomingSingle.md","ref":"events/incomingSingle.md","articles":[]},"previous":{"title":"Group Message","level":"5.3","depth":1,"path":"methods/createGroup.md","ref":"methods/createGroup.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.7.14","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"events/messageEvents.md","mtime":"2018-01-29T16:43:52.971Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-29T16:45:22.499Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
