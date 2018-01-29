@@ -22,6 +22,10 @@ After 24 hours, if your server has not returned a `HTTP 2xx` code, Bandwidth wil
 
 The messaging 2.0 API works off of an internal queuing system.  As such, when you <code class="post">POST</code> to the `v2/.../messages` to [create a new message](methods/sendMessages.md), Bandwidth will reply with an `HTTP 202 - Accepted`.  This indicates that the message has been placed on the queue
 
-As the message progresses through the internal system you will receive a [Message Sent](events/outSent.md) callback when the message has been dequeued and on the way to the downstream carrier.  You will then receive a [Message Delivered](events/msgDelivered.md) callback when the message has been handed off to the downstream carrier.  ⚠️ MMS messages (including Group messages) **DO NOT** support message delivery receipts, as such, you will only receive the [Message Sent](events/outSent.md) callback.
+As the message progresses through the internal system you will receive a  a [Message Delivered](events/.md) callback when the message has been handed off to the downstream carrier.
 
 If at any-point through the process the message fails, you will receive a detailed [Message Failed](events/messageFailed.md) callback with an [error code](codes.md) describing the reason for failure.
+
+### Important note about MMS and Group Messages
+
+MMS and Group messages **don’t** currently support delivery receipts. However, you will still receive a message delivered event when the message is sent. For _only MMS and Group Messages_ this means that your message has been handed off to the Bandwidth core network, but has not been confirmed at the downstream carrier. We are actively working to support true delivery receipts for the v2 Messaging API.

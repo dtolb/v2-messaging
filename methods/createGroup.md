@@ -29,7 +29,7 @@ Send a group text message or picture message
 ```http
 POST https://api.catapult.inetwork.com/v2/users/{userId}/messages HTTP/1.1
 Content-Type: application/json; charset=utf-8
-Authorization: Basic dc123
+Authorization: {apiToken:apiSecret}
 
 {
     "to"  :[
@@ -49,7 +49,7 @@ Authorization: Basic dc123
 ```bash
 curl --request POST \
     --url https://api.catapult.inetwork.com/v2/users/{{userId}}/messages \
-    --user {token}:{secret} \
+    --user {apiToken}:{apiSecret} \
     --header 'content-type: application/json' \
     --data '
     {
@@ -74,8 +74,8 @@ var options = { method: 'POST',
   url: 'https://api.catapult.inetwork.com/v2/users/{{userId}}/messages',
   headers: { 'content-type': 'application/json' },
   auth: {
-    user: '{{token}}',
-    pass: '{{secret}}'
+    user: '{{apiToken}}',
+    pass: '{{apiSecret}}'
   },
   body:
    { to: [ '+12345678902', '+12345678903'],
@@ -122,7 +122,7 @@ Content-Type: application/json; charset=utf-8
 ```http
 POST https://api.catapult.inetwork.com/v2/users/{userId}/messages HTTP/1.1
 Content-Type: application/json; charset=utf-8
-Authorization: Basic dc123
+Authorization: {apiToken:apiSecret}
 
 {
     "to"            : [
@@ -145,7 +145,7 @@ Authorization: Basic dc123
 ```bash
 curl --request POST \
     --url https://api.catapult.inetwork.com/v2/users/{{userId}}/messages \
-    --user {token}:{secret} \
+    --user {apiToken}:{apiSecret} \
     --header 'content-type: application/json' \
     --data '
     {
@@ -173,8 +173,8 @@ var options = { method: 'POST',
   url: 'https://api.catapult.inetwork.com/v2/users/{{userId}}/messages',
   headers: { 'content-type': 'application/json' },
   auth: {
-    user: '{{token}}',
-    pass: '{{secret}}'
+    user: '{{apiToken}}',
+    pass: '{{apiSecret}}'
   },
   body:
    { to          : [ '+12345678902', '+12345678903'],

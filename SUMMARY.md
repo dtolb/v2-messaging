@@ -3,18 +3,9 @@
 ## Overview
 * [About](README.md)
 * [Account Credentials](accountCredentials.md)
-* [Migration Guide](messaging2Migration.md)
 * [Postman Collection](postman.md)
-
-## Concepts
-* [Messaging 2.0 Specifics](concepts.md)
-* [Order Phone Numbers](concepts/numberOrderingSummary.md)
-	* [Search For Phone Numbers](concepts/numberOrderingSummary.md#search-for-phone-numbers)
-	* [Order Phone Numbers](concepts/numberOrderingSummary.md#order-phone-numbers)
-	* [Fetch Order Info](concepts/numberOrderingSummary.md#get-order-info)
-	* [Disconnect a Phone Number](concepts/numberOrderingSummary.md#disconnect-phone-number)
-	* [Fetch Disconnect Info](concepts/numberOrderingSummary.md#get-disconnect-info)
-
+* [Messaging API Concepts](concepts.md)
+* [v1 → v2 Migration Guide](messaging2Migration.md)
 
 ## Initial Account Setup
 * [via UI](uisetup.md)
@@ -35,20 +26,28 @@
 	* [8. Send Text Message](apisetup.md#sending-messages)
 * [Video walkthrough](videosetup.md)
 
-## Application Setup
-* [About Applications](applications/about.md)
-* [Create Application](applications/postApplications.md)
-* [List Applications](applications/getApplications.md)
-* [Fetch Application info](applications/getApplicationsApplicationId.md)
-* [Partial Update Application](applications/patchApplicationsApplicationId.md)
-* [Completely Update Application](applications/putApplicationsApplicationId.md)
-* [Remove Application](applications/deleteApplicationsApplicationId.md)
-* [List Associated Sippeers](applications/getApplicationsApplicationIdSippeers.md)
+## Phone Number Management
+* [Order Phone Numbers](concepts/numberOrderingSummary.md)
+	* [Search For Phone Numbers](concepts/numberOrderingSummary.md#search-for-phone-numbers)
+	* [Order Phone Numbers](concepts/numberOrderingSummary.md#order-phone-numbers)
+	* [Fetch Order Info](concepts/numberOrderingSummary.md#get-order-info)
+	* [Disconnect a Phone Number](concepts/numberOrderingSummary.md#disconnect-phone-number)
+	* [Fetch Disconnect Info](concepts/numberOrderingSummary.md#get-disconnect-info)
 
-## Send Messages
-* [About Messages](methods/sendMessages.md)
-* [Single Message](methods/createSingle.md)
-* [Group Message](methods/createGroup.md)
+## Application API & Setup
+* [Applications Overview](applications/about.md)
+* [POST Create Application](applications/postApplications.md)
+* [GET List Applications](applications/getApplications.md)
+* [GET Fetch Application info](applications/getApplicationsApplicationId.md)
+* [PATCH Partial Update Application](applications/patchApplicationsApplicationId.md)
+* [PUT Completely Update Application](applications/putApplicationsApplicationId.md)
+* [DELETE Remove Application](applications/deleteApplicationsApplicationId.md)
+* [GET List Associated Sippeers](applications/getApplicationsApplicationIdSippeers.md)
+
+## Messaging API
+* [Messages Overview](methods/sendMessages.md)
+* [POST Send Message](methods/createSingle.md)
+* [POST Send Group Message](methods/createGroup.md)
 
 ## Message Callbacks
 * [About Message Events/Callbacks](events/messageEvents.md)
@@ -57,14 +56,12 @@
 * [Message Delivered](events/msgDelivered.md)
 * [Message Failed](events/messageFailed.md)
 
-## Api Error Response
+## Error Codes & Responses
+* [Message Error Codes](codes.md)
 * [400 - Bad Request](errors/badRequest.md)
 * [401 - Unauthorized](errors/unauth.md)
 * [403 - Forbidden](errors/forbidden.md)
 * [429 - Too Many Requests](errors/tooManyReq.md)
-
-## Message Error Codes
-* [Error Codes](codes.md)
 
 ## SDKs
 * [NodeJS](https://github.com/bandwidthcom/node-bandwidth#using-messaging-v2-api)

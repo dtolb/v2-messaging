@@ -18,7 +18,7 @@ module.exports = function ($) {
 			li.children().first().html(newTxt);
 		}
 		else if (li.text().indexOf('PATCH') > 0) {
-			var newTxt = li.children().first().html().replace("PUT", "<code class=\"patch\">PATCH </code>");
+			var newTxt = li.children().first().html().replace("PATCH", "<code class=\"patch\">PAT </code>");
 			li.children().first().html(newTxt);
 		}
 	});
