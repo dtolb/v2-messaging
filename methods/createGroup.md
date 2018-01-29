@@ -2,7 +2,11 @@
 
 ## Send Group MMS
 
-Send a group text message or picture message
+Send a group text message or picture message.
+
+### Invalid Phone Number handing
+
+When sending a group message to an invalid phone number, you may receive extraneous [callback events](../events/messageEvents.md).  You can read me on the [Messaging API concepts page](../concepts.md#group-message-invalid).
 
 ### Request URL
 
@@ -32,14 +36,14 @@ Content-Type: application/json; charset=utf-8
 Authorization: {apiToken:apiSecret}
 
 {
-    "to"  :[
+    "to"            : [
       "+12345678902",
       "+12345678903"
     ],
-    "from":"+12345678901",
-    "text":"Hey, check this out!",
-    "applicationId": "93de2206-9669-4e07-948d-329f4b722ee2",
-    "tag" :"test message"
+    "from"          : "+12345678901",
+    "text"          : "Hey, check this out!",
+    "applicationId" : "93de2206-9669-4e07-948d-329f4b722ee2",
+    "tag"           : "test message"
 }
 
 ```

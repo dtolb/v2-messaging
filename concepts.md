@@ -5,6 +5,8 @@ There are a few concepts that are important to understand how Bandwidth's new me
 1. [Message Storage](#manage-storage)
 2. [Message Callbacks](#message-callbacks)
 3. [Message Creation](#message-creation)
+4. [MMS and Group Message Delivery Receipts](#mms-dlr)
+5. [Group Message Invalid Number Behavior](#group-message-invalid)
 
 ## Message Storage IE `GET /messages` {#manage-storage}
 
@@ -26,6 +28,16 @@ As the message progresses through the internal system you will receive a  a [Mes
 
 If at any-point through the process the message fails, you will receive a detailed [Message Failed](events/messageFailed.md) callback with an [error code](codes.md) describing the reason for failure.
 
-### Important note about MMS and Group Messages
+## MMS and Group Message Delivery Receipts {#mms-dlr}
 
 MMS and Group messages **don’t** currently support delivery receipts. However, you will still receive a message delivered event when the message is sent. For _only MMS and Group Messages_ this means that your message has been handed off to the Bandwidth core network, but has not been confirmed at the downstream carrier. We are actively working to support true delivery receipts for the v2 Messaging API.
+
+## Invalid Phone Numbers and Group Messaging Behavior {#group-message-invalid}
+
+#### Current Behavior
+
+You will receive the [`message-failed`](events/messageFailed.md) event for the invalid number, but then you get the [`message-delivered`](events/msgDelivered.md) event for _each_ of the `to` numbers including the ones for which you _already_ got `message-failed` with the [invalid-to-number](codes.md) code. So you would get both a failed **and** a success callback for the invalid ones, and just the success one for the success ones.
+
+#### Correct Behavior
+
+You will exactly one [callback](events/messageEvents.md) per `to` number. The ones that are invalid are [`message-failed`](events/messageFailed.md) with an error code that means [invalid-to-number](codes.md), and the ones that are valid will receive the [`message-delivered`](events/msgDelivered.md) event.

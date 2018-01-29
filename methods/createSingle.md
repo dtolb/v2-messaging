@@ -30,7 +30,7 @@ Send a text message or picture message.
 ```http
 POST https://api.catapult.inetwork.com/v2/users/{userId}/messages HTTP/1.1
 Content-Type: application/json; charset=utf-8
-    --user {apiToken}:{apiSecret} \
+Authorization: {apiToken:apiSecret}
 
 {
     "to"            : ["+12345678902"],
@@ -120,14 +120,14 @@ Content-Type: application/json; charset=utf-8
 Authorization: {apiToken:apiSecret}
 
 {
-    "to"  :["+12345678902"],
-    "from":"+12345678901",
-    "text":"Hey, check this out!",
-    "applicationId": "93de2206-9669-4e07-948d-329f4b722ee2",
-    "media": [
+    "to"            : ["+12345678902"],
+    "from"          : "+12345678901",
+    "text"          : "Hey, check this out!",
+    "applicationId" : "93de2206-9669-4e07-948d-329f4b722ee2",
+    "media"         : [
       "https://s3.amazonaws.com/bw-v2-api/demo.jpg"
     ],
-    "tag" :"test message"
+    "tag"           : "test message"
 }
 
 ```
