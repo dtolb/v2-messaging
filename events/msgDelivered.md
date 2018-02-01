@@ -1,10 +1,17 @@
 {% method %}
-# Message Delivered to Carrier Event
+# Message Delivered Event
 In order to receive message events, you need to ensure you have set up your application to send callbacks to your server's URL.
 
-<aside class="alert general small">
-Only for messages <b>WITHOUT</b> Media, with <b>ONE</b> recipient
+{% raw %}
+
+<aside class="alert general">
+<p><b>
+IMPORTANT NOTE ABOUT MMS AND GROUP MESSAGES!
+</p></b>
+MMS and Group messages <b>don’t</b> currently support delivery receipts. However, you will still receive a message delivered event when the message is sent. For only MMS and Group Messages this means that your message has been handed off to the Bandwidth core network, but has not been confirmed at the downstream carrier. We are actively working to support true delivery receipts for the v2 Messaging API.
 </aside>
+
+{% endraw %}
 
 ### Parameters
 | Parameter             | Type     | Description                                                                                                                                                                                                                                                                                                                                                         |

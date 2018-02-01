@@ -6,7 +6,7 @@
 * You have a storage solution for message recall that meets your needs.
 
 ### API Credentials
-* API Credentials work the same way they do in the V1 Messaging API. Use your API Token and Secret with Basic Auth when making API requests to send messages. [See here for more details](http://dev.bandwidth.com/security.html).
+* API Credentials work the same way they do in the V1 Messaging API. Use your API Token and Secret with Basic Auth when making API requests to send messages. [See here for more details](accountCredentials.md).
 
 ## Key Differentiators
 
