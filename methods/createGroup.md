@@ -117,7 +117,7 @@ Content-Type: application/json; charset=utf-8
   "tag"           : "test message",
   "owner"         : "+12345678901",
   "direction"     : "out",
-  "segmentCount": 1
+  "segmentCount"  : 1
 }
 ```
 
