@@ -38,7 +38,7 @@
 | 5101 | Application Error                               |
 | 5111 | Application Error                               |
 | 5112 | Application Error                               |
-| 5143 | Application Error                               |
+| 5143 | Application Error update                              |
 | 5144 | Application Error                               |
 | 5146 | Application Error                               |
 | 5201 | Application Error                               |
@@ -54,4 +54,4 @@
 | 5630 | Carrier Application Error                       |
 | 5650 | Carrier Service Failure                         |
 | 5999 | Unknown error from downstream                   |
-
+| new code | new code info |
