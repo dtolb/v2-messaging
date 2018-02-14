@@ -58,6 +58,14 @@
 
 ## Error Codes & Responses
 * [Message Error Codes](codes.md)
+	* [Message Error Reporting](codes.md#error-reporting)
+	* [Error Code Schema](codes.md#error-code-schema)
+	* [Error Code Table](codes.md#error-codes)
+		* [Bandwidth Detected Client Errors](codes.md#client-errors)
+		* [Carrier Reported Client Errors](codes.md#carrier-client)
+		* [Bandwidth Service Failures](codes.md#service-errors)
+		* [Carrier Reported Service Failures](codes.md#carrier-service-errors)
+		* [Carrier Errors with Ambiguous Cause](codes.md#carrier-ambiguous-errors)
 * [400 - Bad Request](errors/badRequest.md)
 * [401 - Unauthorized](errors/unauth.md)
 * [403 - Forbidden](errors/forbidden.md)
