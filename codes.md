@@ -54,4 +54,5 @@
 | 5630 | Carrier Application Error                       |
 | 5650 | Carrier Service Failure                         |
 | 5999 | Unknown error from downstream                   |
+| 5    | New error code |
 
