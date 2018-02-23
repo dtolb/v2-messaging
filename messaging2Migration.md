@@ -57,14 +57,15 @@ Content-Type: application/json; charset=utf-8
 
 {
     "to"            : ["+12345678902"],
+    "id"            : "15193977746843c4za6izq4wbigq2"
+    "time"          : "2018-02-23T14:56:14.684Z",
     "from"          : "+12345678901",
+    "owner"         : "+12345678901",
     "text"          : "Hey, check this out!",
     "applicationId" : "93de2206-9669-4e07-948d-329f4b722ee2",
     "tag"           : "test message"
 }
 {%- endcodetabs %}
-
-
 
 ### Callback Example
 
