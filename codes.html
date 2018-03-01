@@ -71,7 +71,7 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="errors/badRequest.html">
+    <link rel="next" href="codes.html">
     
     
     <link rel="prev" href="events/messageFailed.html">
@@ -766,7 +766,7 @@
     
         <li class="chapter active" data-level="7.1" data-path="codes.html">
             
-                <a href="codes.html">
+                <a href="codes.html#top">
             
                     
                     Message Error Codes
@@ -774,6 +774,122 @@
                 </a>
             
 
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1.1" data-path="codes.html">
+            
+                <a href="codes.html#error-reporting">
+            
+                    
+                    Message Error Reporting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.2" data-path="codes.html">
+            
+                <a href="codes.html#error-code-schema">
+            
+                    
+                    Error Code Schema
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.3" data-path="codes.html">
+            
+                <a href="codes.html#error-codes">
+            
+                    
+                    Error Code Table
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1.3.1" data-path="codes.html">
+            
+                <a href="codes.html#client-errors">
+            
+                    
+                    Bandwidth Detected Client Errors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.3.2" data-path="codes.html">
+            
+                <a href="codes.html#carrier-client">
+            
+                    
+                    Carrier Reported Client Errors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.3.3" data-path="codes.html">
+            
+                <a href="codes.html#service-errors">
+            
+                    
+                    Bandwidth Service Failures
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.3.4" data-path="codes.html">
+            
+                <a href="codes.html#carrier-service-errors">
+            
+                    
+                    Carrier Reported Service Failures
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.3.5" data-path="codes.html">
+            
+                <a href="codes.html#carrier-ambiguous-errors">
+            
+                    
+                    Carrier Errors with Ambiguous Cause
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -920,7 +1036,167 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="message-delivery-code">Message Delivery Code</h1>
+                                <h1 id="top">Bandwidth Messaging V2 API Error Reporting and Codes </h1>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="#error-reporting">Message Error Reporting</a></li>
+<li><a href="codes.html#error-code-schema">Error Code Schema</a></li>
+<li><a href="codes.html#error-codes">Error Code Table</a><ul>
+<li><a href="#client-errors">Bandwidth Detected Client Errors</a></li>
+<li><a href="#carrier-client">Carrier Reported Client Errors</a></li>
+<li><a href="#service-errors">Bandwidth Service Failures</a></li>
+<li><a href="#carrier-service-errors">Carrier Reported Service Failures</a></li>
+<li><a href="#carrier-ambiguous-errors">Carrier Errors with Ambiguous Cause</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="error-reporting">Error Reporting </h2>
+<p>The Bandwidth V2 messaging API presents errors on the <a href="events/messageEvents.html">callback URL</a> using the <a href="events/messageFailed.html"><code>message-failed</code></a> type in the payload body along with an errorCode and description.   An example is as follows:</p>
+<pre><code class="lang-json">[
+  {
+    <span class="hljs-attr">&quot;type&quot;</span>          : <span class="hljs-string">&quot;message-failed&quot;</span>,
+    <span class="hljs-attr">&quot;time&quot;</span>          : <span class="hljs-string">&quot;2016-09-14T18:20:16Z&quot;</span>,
+    <span class="hljs-attr">&quot;description&quot;</span>   : <span class="hljs-string">&quot;forbidden to country&quot;</span>,
+    <span class="hljs-attr">&quot;errorCode&quot;</span>     : <span class="hljs-number">4432</span>,
+    <span class="hljs-attr">&quot;to&quot;</span>            : <span class="hljs-string">&quot;+52345678903&quot;</span>,
+    <span class="hljs-attr">&quot;message&quot;</span>       : {
+    <span class="hljs-attr">&quot;id&quot;</span>            : <span class="hljs-string">&quot;14762070468292kw2fuqty55yp2b2&quot;</span>,
+    <span class="hljs-attr">&quot;time&quot;</span>          : <span class="hljs-string">&quot;2016-09-14T18:20:16Z&quot;</span>,
+    <span class="hljs-attr">&quot;to&quot;</span>            : [
+        <span class="hljs-string">&quot;+12345678902&quot;</span>,
+        <span class="hljs-string">&quot;+52345678903&quot;</span>
+      ],
+    <span class="hljs-attr">&quot;from&quot;</span>          : <span class="hljs-string">&quot;+12345678901&quot;</span>,
+    <span class="hljs-attr">&quot;text&quot;</span>          : <span class="hljs-string">&quot;Hey, check this out!&quot;</span>,
+    <span class="hljs-attr">&quot;applicationId&quot;</span> : <span class="hljs-string">&quot;93de2206-9669-4e07-948d-329f4b722ee2&quot;</span>,
+    <span class="hljs-attr">&quot;media&quot;</span>         : [
+      <span class="hljs-string">&quot;https://s3.amazonaws.com/bw-v2-api/demo.jpg&quot;</span>
+      ],
+    <span class="hljs-attr">&quot;owner&quot;</span>         : <span class="hljs-string">&quot;+12345678901&quot;</span>,
+    <span class="hljs-attr">&quot;direction&quot;</span>     : <span class="hljs-string">&quot;out&quot;</span>
+    }
+  }
+]
+</code></pre>
+<p>The description is purely informative and should not be utilized in error handling routines.  Only the <a href="#error-codes">errorCode</a> should be used.</p>
+<h2 id="error-code-schema">Error Code Schema </h2>
+<p>Bandwidth&#x2019;s error code schema for messaging V2 is comprised of a 4 digit code.  As shown in the table below, the most significant digit indicates whether the error is client (customer) or server in nature while the second most significant indicates whether the error was reported by Bandwidth or the downstream carrier.  The last 2 are Bandwidth specific codes or bandwidth normalization of carrier specific codes.</p>
+<table>
+   <tbody>
+      <tr>
+         <td colspan="2" rowspan="1">
+            <p><span>Client / Server</span></p>
+            <p><span>Digit</span></p>
+         </td>
+         <td colspan="2" rowspan="1">
+            <p><span>Bandwidth / carrier</span></p>
+            <p><span>Digit</span></p>
+         </td>
+         <td colspan="1" rowspan="1">
+            <p><span>X</span></p>
+         </td>
+         <td colspan="1" rowspan="1">
+            <p><span>X</span></p>
+         </td>
+      </tr>
+      <tr>
+         <td colspan="1" rowspan="4">
+            <p> </p>
+            <p><span>4</span></p>
+         </td>
+         <td colspan="1" rowspan="4">
+            <p> </p>
+            <p><span>Client error</span></p>
+         </td>
+         <td colspan="1" rowspan="1">
+            <p><span>1</span></p>
+         </td>
+         <td colspan="1" rowspan="3">
+            <p> </p>
+            <p><span>Bandwidth Rejected</span></p>
+         </td>
+         <td colspan="2" rowspan="3">
+            <p> </p>
+            <p><span>Bandwidth Specific</span></p>
+         </td>
+      </tr>
+      <tr>
+         <td colspan="1" rowspan="1">
+            <p><span>3</span></p>
+         </td>
+      </tr>
+      <tr>
+         <td colspan="1" rowspan="1">
+            <p><span>4</span></p>
+         </td>
+      </tr>
+      <tr>
+         <td colspan="1" rowspan="1">
+            <p><span>7</span></p>
+         </td>
+         <td colspan="1" rowspan="1">
+            <p><span>Carrier Rejected</span></p>
+         </td>
+         <td colspan="2" rowspan="1">
+            <p><span>Carrier Normalized</span></p>
+         </td>
+      </tr>
+      <tr>
+         <td colspan="1" rowspan="4">
+            <p><span>5</span></p>
+         </td>
+         <td colspan="1" rowspan="4">
+            <p><span>Server Error</span></p>
+         </td>
+         <td colspan="1" rowspan="1">
+            <p><span>1</span></p>
+         </td>
+         <td colspan="1" rowspan="3">
+            <p><span>Bandwidth Server Error</span></p>
+         </td>
+         <td colspan="2" rowspan="3">
+            <p><span>Bandwidth Specific</span></p>
+         </td>
+      </tr>
+      <tr>
+         <td colspan="1" rowspan="1">
+            <p><span>2</span></p>
+         </td>
+      </tr>
+      <tr>
+         <td colspan="1" rowspan="1">
+            <p><span>5</span></p>
+         </td>
+      </tr>
+      <tr>
+         <td colspan="1" rowspan="1">
+            <p><span>6</span></p>
+         </td>
+         <td colspan="1" rowspan="1">
+            <p><span>Carrier Reported Service Failure</span></p>
+         </td>
+         <td colspan="2" rowspan="1">
+            <p><span>Carrier Normalized</span></p>
+         </td>
+      </tr>
+      <tr>
+         <td colspan="1" rowspan="1">
+            <p><span>9</span></p>
+         </td>
+         <td colspan="1" rowspan="1">
+            <p><span>Ambiguous Error</span></p>
+         </td>
+         <td colspan="4" rowspan="1">
+            <p><span>The error is related to downstream failures, but the specific reason for failure is unclear. </span></p>
+         </td>
+      </tr>
+   </tbody>
+</table>
+
+
+<h2 id="error-codes">Message Delivery Codes Table </h2>
+<h3 id="client-errors">Bandwidth Detected Client Errors </h3>
+<p>A 4xx code indicates that Bandwidth or the downstream carrier has identified some element of the message request unacceptable.  Repeating the request will produce the same result.</p>
 <table>
 <thead>
 <tr>
@@ -929,6 +1205,10 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align:left">4001</td>
+<td style="text-align:left">Message was rejected for reasons other than those covered by other 4xxx codes</td>
+</tr>
 <tr>
 <td style="text-align:left">4121</td>
 <td style="text-align:left">Rejected as SPAM</td>
@@ -1029,6 +1309,17 @@
 <td style="text-align:left">4493</td>
 <td style="text-align:left">Unauthorized</td>
 </tr>
+</tbody>
+</table>
+<h3 id="carrier-client">Carrier Reported Client Errors </h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Code</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td style="text-align:left">4700</td>
 <td style="text-align:left">Carrier Rejected as Invalid Service Type</td>
@@ -1057,6 +1348,18 @@
 <td style="text-align:left">4775</td>
 <td style="text-align:left">Carrier Rejected due to user opt out</td>
 </tr>
+</tbody>
+</table>
+<h3 id="service-errors">Bandwidth Service Failures </h3>
+<p>A 5xx code indicates that either Bandwidth or the downstream carrier has reported a service failure.   For Bandwidth failures, the customer can retry the request and expect a different result.   For carrier errors a retry may also yield a different result however the customer should limit to a single retry attempt as the error encoding schema and strategy varies greatly by carrier and while Bandwidth endeavors to normalize carrier codes into predictable values there can be exceptions.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Code</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td style="text-align:left">5100</td>
 <td style="text-align:left">Application Error</td>
@@ -1113,6 +1416,17 @@
 <td style="text-align:left">5503</td>
 <td style="text-align:left">Service Unavailable</td>
 </tr>
+</tbody>
+</table>
+<h3 id="carrier-service-errors">Carrier Reported Service Failures </h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Code</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td style="text-align:left">5600</td>
 <td style="text-align:left">Carrier Service Unavailable</td>
@@ -1136,6 +1450,25 @@
 <tr>
 <td style="text-align:left">5999</td>
 <td style="text-align:left">Unknown error from downstream</td>
+</tr>
+</tbody>
+</table>
+<h3 id="carrier-ambiguous-errors">Carrier Errors with Ambiguous Cause </h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Code</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">9902</td>
+<td style="text-align:left">Timed out waiting for delivery receipt. The reason a delivery receipt was not received is not known.</td>
+</tr>
+<tr>
+<td style="text-align:left">9999</td>
+<td style="text-align:left">Unknown error from downstream.  Carrier reported a failure code that is unknown to Bandwidth.</td>
 </tr>
 </tbody>
 </table>
@@ -1172,7 +1505,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Message Error Codes","level":"7.1","depth":1,"next":{"title":"400 - Bad Request","level":"7.2","depth":1,"path":"errors/badRequest.md","ref":"errors/badRequest.md","articles":[]},"previous":{"title":"Message Failed","level":"6.5","depth":1,"path":"events/messageFailed.md","ref":"events/messageFailed.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.9.1","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"codes.md","mtime":"2018-03-01T15:23:37.101Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-01T15:24:47.014Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Message Error Codes","level":"7.1","depth":1,"next":{"title":"Message Error Reporting","level":"7.1.1","depth":2,"anchor":"#error-reporting","path":"codes.md","ref":"codes.md#error-reporting","articles":[]},"previous":{"title":"Message Failed","level":"6.5","depth":1,"path":"events/messageFailed.md","ref":"events/messageFailed.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.9.1","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"codes.md","mtime":"2018-03-01T15:27:16.732Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-01T15:28:32.820Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
