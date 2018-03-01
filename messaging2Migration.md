@@ -25,7 +25,7 @@
 {% codetabs name="v1/messages", type="http" -%}
 POST https://api.catapult.inetwork.com/v1/users/{userId}/messages HTTP/1.1
 Content-Type: application/json; charset=utf-8
-Authorization: Basic Base64_Encoded_Token_Secret
+Authorization: {apiToken:apiSecret}
 
 {
     "from" : "+12525089000",
@@ -35,7 +35,7 @@ Authorization: Basic Base64_Encoded_Token_Secret
 {%- language name="v2/messages", type="http" -%}
 POST https://api.catapult.inetwork.com/v2/users/{userId}/messages HTTP/1.1
 Content-Type: application/json; charset=utf-8
-Authorization: Basic Base64_Encoded_Token_Secret
+Authorization: {apiToken:apiSecret}
 
 {
     "to"            : ["+12345678902"],
@@ -52,19 +52,23 @@ Authorization: Basic Base64_Encoded_Token_Secret
 HTTP/1.1 201 Created
 Location: https://api.catapult.inetwork.com/v1/users/{userId}/messages/{message-id}
 {%- language name="v2/messages response", type="http" -%}
-POST https://api.catapult.inetwork.com/v2/users/{userId}/messages HTTP/1.1
+Status: 202 Accepted
 Content-Type: application/json; charset=utf-8
 
 {
-    "to"            : ["+12345678902"],
-    "id"            : "15193977746843c4za6izq4wbigq2",
-    "time"          : "2018-02-23T14:56:14.684Z",
-    "from"          : "+12345678901",
-    "owner"         : "+12345678901",
-    "text"          : "Hey, check this out!",
-    "applicationId" : "93de2206-9669-4e07-948d-329f4b722ee2",
-    "tag"           : "test message"
-    "segmentCount"  : 1
+  "id"            : "14762070468292kw2fuqty55yp2b2",
+  "time"          : "2016-09-14T18:20:16Z",
+  "to"            : [
+    "+12345678902",
+    "+12345678903"
+  ],
+  "from"          : "+12345678901",
+  "text"          : "Hey, check this out!",
+  "applicationId" : "93de2206-9669-4e07-948d-329f4b722ee2",
+  "tag"           : "test message",
+  "owner"         : "+12345678901",
+  "direction"     : "out"
+  "segmentCount"  : 1
 }
 {%- endcodetabs %}
 
