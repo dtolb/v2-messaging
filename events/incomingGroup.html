@@ -1007,6 +1007,11 @@
 <td style="text-align:left"><code>string</code></td>
 <td style="text-align:left">An custom String that you can use to track this particular message</td>
 </tr>
+<tr>
+<td style="text-align:left">message.segmentCount</td>
+<td style="text-align:left"><code>int</code></td>
+<td style="text-align:left">This indicates the number of segments the original message from the user is broken into before sending over to carrier networks. Segmentation of messages depends on the size and encoding. Bandwidth will segment the message if the character count is over the below limits: <br><br> - 160 for GSM-7 <br> - 70 for UCS-2 <br> <br> For MMS messages the segment count will always be set to 1</td>
+</tr>
 </tbody>
 </table>
 </div><div class="api-method-code"><div class="api-code-top"></div><div class="api-method-example"><h3 id="example-1-of-2-incoming-group-message-with-single-media">Example 1 of 2: Incoming group message with single media</h3>
@@ -1016,25 +1021,26 @@
 
 <span class="json">[
   {
-    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;message-received&quot;</span>,
-    <span class="hljs-attr">&quot;time&quot;</span>: <span class="hljs-string">&quot;2016-09-14T18:20:16Z&quot;</span>,
-    <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;Incoming message received&quot;</span>,
-    <span class="hljs-attr">&quot;to&quot;</span>: <span class="hljs-string">&quot;+12345678902&quot;</span>,
-    <span class="hljs-attr">&quot;message&quot;</span>: {
-      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;14762070468292kw2fuqty55yp2b2&quot;</span>,
-      <span class="hljs-attr">&quot;time&quot;</span>: <span class="hljs-string">&quot;2016-09-14T18:20:16Z&quot;</span>,
-      <span class="hljs-attr">&quot;to&quot;</span>: [
-        <span class="hljs-string">&quot;+12345678902&quot;</span>,
-        <span class="hljs-string">&quot;+12345678903&quot;</span>
-      ],
-      <span class="hljs-attr">&quot;from&quot;</span>: <span class="hljs-string">&quot;+12345678901&quot;</span>,
-      <span class="hljs-attr">&quot;text&quot;</span>: <span class="hljs-string">&quot;Hey, check this out!&quot;</span>,
-      <span class="hljs-attr">&quot;applicationId&quot;</span>: <span class="hljs-string">&quot;93de2206-9669-4e07-948d-329f4b722ee2&quot;</span>,
-      <span class="hljs-attr">&quot;media&quot;</span>: [
+    <span class="hljs-attr">&quot;type&quot;</span>          : <span class="hljs-string">&quot;message-received&quot;</span>,
+    <span class="hljs-attr">&quot;time&quot;</span>          : <span class="hljs-string">&quot;2016-09-14T18:20:16Z&quot;</span>,
+    <span class="hljs-attr">&quot;description&quot;</span>   : <span class="hljs-string">&quot;Incoming message received&quot;</span>,
+    <span class="hljs-attr">&quot;to&quot;</span>            : <span class="hljs-string">&quot;+12345678902&quot;</span>,
+    <span class="hljs-attr">&quot;message&quot;</span>       : {
+      <span class="hljs-attr">&quot;id&quot;</span>            : <span class="hljs-string">&quot;14762070468292kw2fuqty55yp2b2&quot;</span>,
+      <span class="hljs-attr">&quot;time&quot;</span>          : <span class="hljs-string">&quot;2016-09-14T18:20:16Z&quot;</span>,
+      <span class="hljs-attr">&quot;to&quot;</span>            : [
+          <span class="hljs-string">&quot;+12345678902&quot;</span>,
+          <span class="hljs-string">&quot;+12345678903&quot;</span>
+        ],
+      <span class="hljs-attr">&quot;from&quot;</span>          : <span class="hljs-string">&quot;+12345678901&quot;</span>,
+      <span class="hljs-attr">&quot;text&quot;</span>          : <span class="hljs-string">&quot;Hey, check this out!&quot;</span>,
+      <span class="hljs-attr">&quot;applicationId&quot;</span> : <span class="hljs-string">&quot;93de2206-9669-4e07-948d-329f4b722ee2&quot;</span>,
+      <span class="hljs-attr">&quot;media&quot;</span>         : [
         <span class="hljs-string">&quot;https://api.catapult.inetwork.com/v1/users/{userId}/media/14762070468292kw2fuqty55yp2b2/0/bw.png&quot;</span>
-      ],
-      <span class="hljs-attr">&quot;owner&quot;</span>: <span class="hljs-string">&quot;+12345678902&quot;</span>,
-      <span class="hljs-attr">&quot;direction&quot;</span>: <span class="hljs-string">&quot;in&quot;</span>
+        ],
+      <span class="hljs-attr">&quot;owner&quot;</span>         : <span class="hljs-string">&quot;+12345678902&quot;</span>,
+      <span class="hljs-attr">&quot;direction&quot;</span>     : <span class="hljs-string">&quot;in&quot;</span>,
+      <span class="hljs-attr">&quot;segmentCount&quot;</span>  : <span class="hljs-string">&quot;1&quot;</span>
     }
   }
 ]
@@ -1046,27 +1052,28 @@
 
 <span class="json">[
   {
-    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;message-received&quot;</span>,
-    <span class="hljs-attr">&quot;time&quot;</span>: <span class="hljs-string">&quot;2016-09-14T18:20:16Z&quot;</span>,
-    <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;Incoming message received&quot;</span>,
-    <span class="hljs-attr">&quot;to&quot;</span>: <span class="hljs-string">&quot;+12345678902&quot;</span>,
-    <span class="hljs-attr">&quot;message&quot;</span>: {
-      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;14762070468292kw2fuqty55yp2b2&quot;</span>,
-      <span class="hljs-attr">&quot;time&quot;</span>: <span class="hljs-string">&quot;2016-09-14T18:20:16Z&quot;</span>,
-      <span class="hljs-attr">&quot;to&quot;</span>: [
-        <span class="hljs-string">&quot;+12345678902&quot;</span>,
-        <span class="hljs-string">&quot;+12345678903&quot;</span>
-      ],
-      <span class="hljs-attr">&quot;from&quot;</span>: <span class="hljs-string">&quot;+12345678901&quot;</span>,
-      <span class="hljs-attr">&quot;text&quot;</span>: <span class="hljs-string">&quot;Hey, check this out!&quot;</span>,
-      <span class="hljs-attr">&quot;applicationId&quot;</span>: <span class="hljs-string">&quot;93de2206-9669-4e07-948d-329f4b722ee2&quot;</span>,
-      <span class="hljs-attr">&quot;media&quot;</span>: [
+    <span class="hljs-attr">&quot;type&quot;</span>          : <span class="hljs-string">&quot;message-received&quot;</span>,
+    <span class="hljs-attr">&quot;time&quot;</span>          : <span class="hljs-string">&quot;2016-09-14T18:20:16Z&quot;</span>,
+    <span class="hljs-attr">&quot;description&quot;</span>   : <span class="hljs-string">&quot;Incoming message received&quot;</span>,
+    <span class="hljs-attr">&quot;to&quot;</span>            : <span class="hljs-string">&quot;+12345678902&quot;</span>,
+    <span class="hljs-attr">&quot;message&quot;</span>       : {
+      <span class="hljs-attr">&quot;id&quot;</span>            : <span class="hljs-string">&quot;14762070468292kw2fuqty55yp2b2&quot;</span>,
+      <span class="hljs-attr">&quot;time&quot;</span>          : <span class="hljs-string">&quot;2016-09-14T18:20:16Z&quot;</span>,
+      <span class="hljs-attr">&quot;to&quot;</span>            : [
+          <span class="hljs-string">&quot;+12345678902&quot;</span>,
+          <span class="hljs-string">&quot;+12345678903&quot;</span>
+        ],
+      <span class="hljs-attr">&quot;from&quot;</span>          : <span class="hljs-string">&quot;+12345678901&quot;</span>,
+      <span class="hljs-attr">&quot;text&quot;</span>          : <span class="hljs-string">&quot;Hey, check this out!&quot;</span>,
+      <span class="hljs-attr">&quot;applicationId&quot;</span> : <span class="hljs-string">&quot;93de2206-9669-4e07-948d-329f4b722ee2&quot;</span>,
+      <span class="hljs-attr">&quot;media&quot;</span>         : [
         <span class="hljs-string">&quot;https://api.catapult.inetwork.com/v1/users/{userId}/media/14762070468292kw2fuqty55yp2b2/0/bw.png&quot;</span>,
         <span class="hljs-string">&quot;https://api.catapult.inetwork.com/v1/users/{userId}/media/14762070468292kw2fuqty55yp2b2/1/bandwidth_logo.png&quot;</span>,
         <span class="hljs-string">&quot;https://api.catapult.inetwork.com/v1/users/{userId}/media/14762070468292kw2fuqty55yp2b2/2/Bandwidth_Contact.png&quot;</span>
-      ],
-      <span class="hljs-attr">&quot;owner&quot;</span>: <span class="hljs-string">&quot;+12345678902&quot;</span>,
-      <span class="hljs-attr">&quot;direction&quot;</span>: <span class="hljs-string">&quot;in&quot;</span>
+        ],
+      <span class="hljs-attr">&quot;owner&quot;</span>         : <span class="hljs-string">&quot;+12345678902&quot;</span>,
+      <span class="hljs-attr">&quot;direction&quot;</span>     : <span class="hljs-string">&quot;in&quot;</span>,
+      <span class="hljs-attr">&quot;segmentCount&quot;</span>  : <span class="hljs-number">1</span>
     }
   }
 ]
@@ -1105,7 +1112,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Incoming Group Message","level":"6.3","depth":1,"next":{"title":"Message Delivered","level":"6.4","depth":1,"path":"events/msgDelivered.md","ref":"events/msgDelivered.md","articles":[]},"previous":{"title":"Incoming SMS/MMS Message","level":"6.2","depth":1,"path":"events/incomingSingle.md","ref":"events/incomingSingle.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.9.1","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"events/incomingGroup.md","mtime":"2018-02-23T15:07:38.836Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-23T15:08:51.532Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Incoming Group Message","level":"6.3","depth":1,"next":{"title":"Message Delivered","level":"6.4","depth":1,"path":"events/msgDelivered.md","ref":"events/msgDelivered.md","articles":[]},"previous":{"title":"Incoming SMS/MMS Message","level":"6.2","depth":1,"path":"events/incomingSingle.md","ref":"events/incomingSingle.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.9.1","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"images/favicon.ico","bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"events/incomingGroup.md","mtime":"2018-03-01T15:23:37.105Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-01T15:24:47.014Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
