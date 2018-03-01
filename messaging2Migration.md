@@ -25,7 +25,7 @@
 {% codetabs name="v1/messages", type="http" -%}
 POST https://api.catapult.inetwork.com/v1/users/{userId}/messages HTTP/1.1
 Content-Type: application/json; charset=utf-8
-Authorization: Basic Base64_Encoded_Token_Secret
+Authorization: {apiToken:apiSecret}
 
 {
     "from" : "+12525089000",
@@ -35,7 +35,7 @@ Authorization: Basic Base64_Encoded_Token_Secret
 {%- language name="v2/messages", type="http" -%}
 POST https://api.catapult.inetwork.com/v2/users/{userId}/messages HTTP/1.1
 Content-Type: application/json; charset=utf-8
-Authorization: Basic Base64_Encoded_Token_Secret
+Authorization: {apiToken:apiSecret}
 
 {
     "to"            : ["+12345678902"],
@@ -68,10 +68,9 @@ Content-Type: application/json; charset=utf-8
   "tag"           : "test message",
   "owner"         : "+12345678901",
   "direction"     : "out"
+  "segmentCount"  : 1
 }
 {%- endcodetabs %}
-
-
 
 ### Callback Example
 
@@ -115,7 +114,8 @@ User-Agent: BandwidthAPI/v2
         "https://api.catapult.inetwork.com/v1/users/{userId}/media/14762070468292kw2fuqty55yp2b2/2/Bandwidth_Contact.png"
       ],
       "owner"         : "+12345678902",
-      "direction"     : "in"
+      "direction"     : "in",
+      "segmentCount"  : 1
     }
   }
 ]

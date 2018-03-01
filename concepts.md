@@ -2,11 +2,12 @@
 
 There are a few concepts that are important to understand how Bandwidth's new messaging API functions:
 
-1. [Message Storage](#manage-storage)
-2. [Message Callbacks](#message-callbacks)
-3. [Message Creation](#message-creation)
-4. [MMS and Group Message Delivery Receipts](#mms-dlr)
-5. [Group Message Invalid Number Behavior](#group-message-invalid)
+* [Message Storage](#manage-storage)
+* [Message Callbacks](#message-callbacks)
+* [Message Creation](#message-creation)
+* [Segment Counts](#segment-counts)
+* [MMS and Group Message Delivery Receipts](#mms-dlr)
+* [Group Message Invalid Number Behavior](#group-message-invalid)
 
 ## Message Storage IE `GET /messages` {#manage-storage}
 
@@ -27,6 +28,16 @@ The messaging 2.0 API works off of an internal queuing system.  As such, when yo
 As the message progresses through the internal system you will receive a  a [Message Delivered](events/.md) callback when the message has been handed off to the downstream carrier.
 
 If at any-point through the process the message fails, you will receive a detailed [Message Failed](events/messageFailed.md) callback with an [error code](codes.md) describing the reason for failure.
+
+## Message Segment Counts {#segment-counts}
+
+This indicates the number of segments the original message from the user is broken into before sending over to carrier networks. Segmentation of messages depends on the size and encoding. Bandwidth will segment the message if the character count is over the below limits:
+
+* 160 for GSM-7
+* 70 for UCS-2
+* For MMS messages the segment count will always be set to 1.
+
+The value `segmentCount` is returned in the [callback events](events/messageEvents.md) and the response when [creating the message](methods/sendMessages.md).
 
 ## MMS and Group Message Delivery Receipts {#mms-dlr}
 
