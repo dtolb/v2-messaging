@@ -107,6 +107,7 @@ Content-Type: application/json; charset=utf-8
   "tag"           : "test message",
   "owner"         : "+12345678901",
   "direction"     : "out"
+  "segmentCount"  : 1
 }
 ```
 
@@ -141,14 +142,14 @@ curl --request POST \
     --header 'content-type: application/json' \
     --data '
     {
-        "to"  :["+12345678902"],
-        "from":"+12345678901",
-        "text":"Hey, check this out!",
-        "applicationId": "93de2206-9669-4e07-948d-329f4b722ee2",
-        "media": [
+        "to"            : ["+12345678902"],
+        "from"          : "+12345678901",
+        "text"          : "Hey, check this out!",
+        "applicationId" : "93de2206-9669-4e07-948d-329f4b722ee2",
+        "media"         : [
           "https://s3.amazonaws.com/bw-v2-api/demo.jpg"
           ],
-        "tag" :"test message"
+        "tag"           : "test message"
     }
   '
 ```
@@ -192,20 +193,21 @@ Status: 202 Accepted
 Content-Type: application/json; charset=utf-8
 
 {
-  "id": "14762070468292kw2fuqty55yp2b2",
-  "time": "2016-09-14T18:20:16Z",
-  "to": [
+  "id"            : "14762070468292kw2fuqty55yp2b2",
+  "time"          : "2016-09-14T18:20:16Z",
+  "to"            : [
     "+12345678902",
   ],
-  "from": "+12345678901",
-  "text": "Hey, check this out!",
-  "applicationId": "93de2206-9669-4e07-948d-329f4b722ee2",
-  "tag": "test message",
-  "owner": "+12345678901",
-  "media": [
+  "from"          : "+12345678901",
+  "text"          : "Hey, check this out!",
+  "applicationId" : "93de2206-9669-4e07-948d-329f4b722ee2",
+  "tag"           : "test message",
+  "owner"         : "+12345678901",
+  "media"         : [
     "https://s3.amazonaws.com/bw-v2-api/demo.jpg"
   ],
-  "direction": "out"
+  "direction"     : "out",
+  "segmentCount"  : 1
 }
 ```
 
@@ -293,20 +295,21 @@ Status: 202 Accepted
 Content-Type: application/json; charset=utf-8
 
 {
-  "id"        : "14762070468292kw2fuqty55yp2b2",
-  "time"      : "2016-09-14T18:20:16Z",
-  "to"        : [
+  "id"           : "14762070468292kw2fuqty55yp2b2",
+  "time"         : "2016-09-14T18:20:16Z",
+  "to"           : [
     "+12345678902",
   ],
-  "from"      : "+12345678901",
-  "text"      : "Hey, check this out!",
-  "tag"       : "test message",
-  "owner"     : "+12345678901",
-  "media"     : [
-    "https://s3.amazonaws.com/bw-v2-api/demo.jpg",
-    "https://s3.amazonaws.com/bw-v2-api/demo2.jpg"
+  "from"         : "+12345678901",
+  "text"         : "Hey, check this out!",
+  "tag"          : "test message",
+  "owner"        : "+12345678901",
+  "media"        : [
+   "https://s3.amazonaws.com/bw-v2-api/demo.jpg",
+   "https://s3.amazonaws.com/bw-v2-api/demo2.jpg"
   ],
-  "direction" : "out"
+  "direction"    : "out",
+  "segmentCount" : 1
 }
 ```
 

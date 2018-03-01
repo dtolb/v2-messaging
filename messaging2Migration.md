@@ -64,6 +64,7 @@ Content-Type: application/json; charset=utf-8
     "text"          : "Hey, check this out!",
     "applicationId" : "93de2206-9669-4e07-948d-329f4b722ee2",
     "tag"           : "test message"
+    "segmentCount"  : 1
 }
 {%- endcodetabs %}
 
@@ -109,7 +110,8 @@ User-Agent: BandwidthAPI/v2
         "https://api.catapult.inetwork.com/v1/users/{userId}/media/14762070468292kw2fuqty55yp2b2/2/Bandwidth_Contact.png"
       ],
       "owner"         : "+12345678902",
-      "direction"     : "in"
+      "direction"     : "in",
+      "segmentCount"  : 1
     }
   }
 ]
