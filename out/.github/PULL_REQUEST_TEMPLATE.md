@@ -1,11 +1,4 @@
-## For the Committer
-
-- [ ] I made sure that the site looks great and functions perfectly live
-- [ ] I ran splell check
-- [ ] I'm ready for these changes to be made live
-
-## For the Reviewer
-
+As part of this pull request to update the documentation, I have made sure that:
 
 ### General Review
 
@@ -32,7 +25,4 @@
 - [ ] All code samples use the appropriate syntax highlighting.
 - [ ] Any examples re-use same phone numbers, uuids, variable names, etc... throughout (IE don't have something like `{from: '+19191231234', to: '+19191231234'}` unless it's meant to show the same phone number calling/texting itself ).
 
-## TL;DR
 
-- [ ] I did these things
-- [ ] I'm ready for these changes to be made live
