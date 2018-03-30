@@ -11,7 +11,8 @@
         "-highlight",
         "bandwidth-highlight",
         "codetabs",
-        "include-html@0.2.0"
+        "include-html@0.2.0",
+        "mouseflow"
     ],
     "pluginsConfig": {
         "theme-bandwidth": {
@@ -60,6 +61,9 @@
             "theme": "white",
             "family": "sans",
             "size": 2
+        },
+        "mouseflow": {
+            "projectId": "e48d3324-5985-479f-a9fc-7283fb266917"
         }
     }
 }
