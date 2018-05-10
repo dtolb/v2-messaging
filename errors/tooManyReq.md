@@ -1,6 +1,9 @@
 {% method %}
 # Too Many Requests Error - 429
 
+Concatenated messages are segmented into several individual SMS messages based on required character encoding and the SMPP protocol. Each of these SMS messages are sent individually to wireless carriers who then reassemble the individual messages for delivery to handsets. The per account rate limit calculations include each message segment as an individual message being sent to carriers.
+The number of segments a concatenated message will be broken up into can be found in the [message.segmentCount](https://dev.bandwidth.com/v2-messaging/events/incomingSingle.html) parameter in the callback for SMS.
+
 ### Parameters
 | Parameter               | Type     | Description                                      |
 |:------------------------|:---------|:-------------------------------------------------|
