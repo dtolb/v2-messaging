@@ -1,6 +1,12 @@
 {% method %}
 # Too Many Requests Error - 429
 
+Concatenated messages are segmented into several individual SMS messages based on required character encoding and the SMPP protocol. Each of these SMS messages are sent individually to wireless carriers who then reassemble them and deliver to handsets.
+
+The calculations for rate limits include each message segment as an individual message being sent to carriers. This means if you continuously send very large messages at high rates, then you may encounter the 429 Error Code. 
+
+The number of segments a concatenated message will be broken up into can be found in the [message.segmentCount](https://dev.bandwidth.com/v2-messaging/events/incomingSingle.html) parameter in the callback for SMS.
+
 ### Parameters
 | Parameter               | Type     | Description                                      |
 |:------------------------|:---------|:-------------------------------------------------|
