@@ -2,10 +2,10 @@
 # Forbidden Error - 403
 
 ### Parameters
-| Parameter   | Type     | Description           |
-|:------------|:---------|:----------------------|
-| type        | `string` | Error type            |
-| description | `string` | Error description     |
+| Parameter   | Type     | Description                                      |
+|:------------|:---------|:-------------------------------------------------|
+| type        | `string` | Type of Error                                    |
+| description | `string` | A detailed description of why the error occurred |
 
 {% common %}
 
