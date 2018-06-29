@@ -1,8 +1,11 @@
-# Bandwidth Messaging 2.0 Beta
+# Bandwidth Messaging 2.0 - Closed Beta
 
-<h3> 👉 <a href="https://go.bandwidth.com/messaging-v2-api.html">Request Access to Beta</a> 👈</h3>
+<h3> 👉 <a href="https://go.bandwidth.com/messaging-v2-api.html">Request Access to Closed Beta</a> 👈</h3>
 
-The Messaging 2.0 API is an all new way to send and receive SMS, MMS, and Group Messages on the Bandwidth network. It works with your numbers you already have in the Number Management section of the Bandwidth Phone Number Dashboard.
+**PLEASE READ**: This is the home for customers using Bandwidth's closed Messaging v2 beta. If you don't know which version of the messaging API to use, you're probably on our Messaging v1 API [(see link)](https://dev.bandwidth.com/ap-docs/methods/restApi.html).
+
+
+If you have signed up for a free trial, you are using the Messaging v1 API, [which can be found here](https://dev.bandwidth.com/ap-docs/methods/restApi.html).
 
 <div class="alert alert--general"><p>Messaging 2.0 Does not store <b>ANY</b> messages or records for fetching later. If you need message history you need to implement a storage solution that meets your needs.</p></div>
 
