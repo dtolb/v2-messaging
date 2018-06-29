@@ -1,7 +1,5 @@
 # Bandwidth Messaging 2.0 - Closed Beta
 
-<h3> 👉 <a href="https://go.bandwidth.com/messaging-v2-api.html">Request Access to Closed Beta</a> 👈</h3>
-
 **PLEASE READ**: This is the home for customers using Bandwidth's closed Messaging v2 beta. If you don't know which version of the messaging API to use, you're probably on our Messaging v1 API [(see link)](https://dev.bandwidth.com/ap-docs/methods/restApi.html).
 
 
