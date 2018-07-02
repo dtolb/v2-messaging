@@ -1,6 +1,6 @@
 # Bandwidth Messaging 2.0 - Closed Beta
 
-**PLEASE READ**: This is the home for customers using Bandwidth's closed Messaging v2 beta. If you don't know which version of the messaging API to use, you're probably on our Messaging v1 API [(see link)](https://dev.bandwidth.com/ap-docs/methods/restApi.html).
+**PLEASE READ**: This is the home for customers using Bandwidth's closed Messaging v2 beta. If you don't know which version of the messaging API to use, you're probably on our Messaging v1 API [(see docs)](https://dev.bandwidth.com/ap-docs/methods/restApi.html).
 
 
 If you have signed up for a free trial, you are using the Messaging v1 API, [which can be found here](https://dev.bandwidth.com/ap-docs/methods/restApi.html).
