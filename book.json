@@ -12,7 +12,8 @@
         "bandwidth-highlight",
         "codetabs",
         "include-html@0.2.0",
-        "mouseflow"
+        "mouseflow",
+        "usabilla"
     ],
     "pluginsConfig": {
         "theme-bandwidth": {
@@ -64,6 +65,9 @@
         },
         "mouseflow": {
             "projectId": "e48d3324-5985-479f-a9fc-7283fb266917"
+        },
+        "usabilla" : {
+            "usabillaId" : "73009503da29"
         }
     }
 }
