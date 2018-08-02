@@ -2,13 +2,10 @@
 # Forbidden Error - 403
 
 ### Parameters
-| Parameter | Type     | Description             |
-|:----------|:---------|:------------------------|
-| timestamp | `string` | The time of the error   |
-| status    | `int`    | The http status code    |
-| error     | `string` | Error Type              |
-| message   | `string` | Error Message           |
-| path      | `string` | Relative path for error |
+| Parameter   | Type     | Description                                      |
+|:------------|:---------|:-------------------------------------------------|
+| type        | `string` | Type of Error                                    |
+| description | `string` | A detailed description of why the error occurred |
 
 {% common %}
 
@@ -21,11 +18,8 @@ Status: 403 Forbidden
 Content-Type: application/json; charset=utf-8
 
 {
-  "timestamp": "2017-01-11T18:25:27.047+0000",
-  "status": 403,
-  "error": "Forbidden",
-  "message": "Access is denied",
-  "path": "/v2/users/u-abc123/messages"
+    "type": "unauthorized",
+    "description": "Access is denied."
 }
 ```
 
