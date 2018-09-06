@@ -68,7 +68,8 @@
 		* [Carrier Errors with Ambiguous Cause](codes.md#carrier-ambiguous-errors)
 * [400 - Bad Request](errors/badRequest.md)
 * [401 - Unauthorized](errors/unauth.md)
-* [403 - Forbidden](errors/forbidden.md)
+* [403 - Forbidden](errors/forbidden.md)  
+* [415 - Unsupported Content Type](errors/unsupportedContentType.md)
 * [429 - Too Many Requests](errors/tooManyReq.md)
 
 ## SDKs
