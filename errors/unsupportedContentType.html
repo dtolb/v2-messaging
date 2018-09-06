@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Messages Overview</title>
+        <title>415 - Unsupported Content Type</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -72,10 +72,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="createSingle.html">
+    <link rel="next" href="tooManyReq.html">
     
     
-    <link rel="prev" href="../applications/getApplicationsApplicationIdSippeers.html">
+    <link rel="prev" href="forbidden.html">
     
 
     <meta name="google-site-verification" content="zCASWBBoL4U7H-I0oVhlzfdosxVxPEK1dIxD4GqsW9E">
@@ -678,9 +678,9 @@
         
         
     
-        <li class="chapter active" data-level="5.1" data-path="sendMessages.html">
+        <li class="chapter " data-level="5.1" data-path="../methods/sendMessages.html">
             
-                <a href="sendMessages.html">
+                <a href="../methods/sendMessages.html">
             
                     
                     Messages Overview
@@ -691,9 +691,9 @@
             
         </li>
     
-        <li class="chapter " data-level="5.2" data-path="createSingle.html">
+        <li class="chapter " data-level="5.2" data-path="../methods/createSingle.html">
             
-                <a href="createSingle.html">
+                <a href="../methods/createSingle.html">
             
                     
                     <code class="post">POST</code> Send Message
@@ -704,9 +704,9 @@
             
         </li>
     
-        <li class="chapter " data-level="5.3" data-path="createGroup.html">
+        <li class="chapter " data-level="5.3" data-path="../methods/createGroup.html">
             
-                <a href="createGroup.html">
+                <a href="../methods/createGroup.html">
             
                     
                     <code class="post">POST</code> Send Group Message
@@ -925,9 +925,9 @@
             
         </li>
     
-        <li class="chapter " data-level="7.2" data-path="../errors/badRequest.html">
+        <li class="chapter " data-level="7.2" data-path="badRequest.html">
             
-                <a href="../errors/badRequest.html">
+                <a href="badRequest.html">
             
                     
                     400 - Bad Request
@@ -938,9 +938,9 @@
             
         </li>
     
-        <li class="chapter " data-level="7.3" data-path="../errors/unauth.html">
+        <li class="chapter " data-level="7.3" data-path="unauth.html">
             
-                <a href="../errors/unauth.html">
+                <a href="unauth.html">
             
                     
                     401 - Unauthorized
@@ -951,9 +951,9 @@
             
         </li>
     
-        <li class="chapter " data-level="7.4" data-path="../errors/forbidden.html">
+        <li class="chapter " data-level="7.4" data-path="forbidden.html">
             
-                <a href="../errors/forbidden.html">
+                <a href="forbidden.html">
             
                     
                     403 - Forbidden
@@ -964,9 +964,9 @@
             
         </li>
     
-        <li class="chapter " data-level="7.5" data-path="../errors/unsupportedContentType.html">
+        <li class="chapter active" data-level="7.5" data-path="unsupportedContentType.html">
             
-                <a href="../errors/unsupportedContentType.html">
+                <a href="unsupportedContentType.html">
             
                     
                     415 - Unsupported Content Type
@@ -977,9 +977,9 @@
             
         </li>
     
-        <li class="chapter " data-level="7.6" data-path="../errors/tooManyReq.html">
+        <li class="chapter " data-level="7.6" data-path="tooManyReq.html">
             
-                <a href="../errors/tooManyReq.html">
+                <a href="tooManyReq.html">
             
                     
                     429 - Too Many Requests
@@ -1066,7 +1066,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="..">Messages Overview</a>
+        <a href="..">415 - Unsupported Content Type</a>
     </h1>
 </div>
 
@@ -1081,34 +1081,39 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="bandwidth-messaging-20">Bandwidth Messaging 2.0</h1>
-<p>The Messages resource lets you send both single SMS/MMS messages as well as Group SMS/MMS Messages.</p>
-<h4 id="receive-incoming-messages">Receive Incoming Messages</h4>
-<p>To recieve <a href="../events/messageEvents.html">events/callbacks</a> for incoming and outgoing text messages (both SMS and MMS). You need to have a <a href="../applications/about.html">Bandwidth Application</a> configured to send callbacks to your server.</p>
-<h3 id="base-url">Base URL</h3>
-<p><code>https://api.catapult.inetwork.com/v2/users/{userId}/messages</code></p>
-<h3 id="capabilities">Capabilities</h3>
+                                <div class="api-method"><div class="api-method-definition"><div class="api-definition-top"></div><h1 id="unsupported-content-type---415">Unsupported Content Type - 415</h1>
+<h3 id="parameters">Parameters</h3>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">Verb</th>
-<th style="text-align:left">Path</th>
-<th style="text-align:left">about</th>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><code class="post">POST</code></td>
-<td style="text-align:left"><a href="createSingle.html"><code>/v2/users/{userId}/messages</code></a></td>
-<td style="text-align:left">Send a text message to a single number</td>
+<td style="text-align:left">type</td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left">Type of Error</td>
 </tr>
 <tr>
-<td style="text-align:left"><code class="post">POST</code></td>
-<td style="text-align:left"><a href="createGroup.html"><code>/v2/users/{userId}/messages</code></a></td>
-<td style="text-align:left">Send a text message to a group MMS</td>
+<td style="text-align:left">description</td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left">A detailed description of why the error occurred</td>
 </tr>
 </tbody>
 </table>
+</div><div class="api-method-code"><div class="api-code-top"></div><div class="api-method-example"><h3 id="unauthorized">Unauthorized</h3>
+</div><div class="api-method-sample" data-lang="http" data-name="HTTP"><pre><code class="lang-http"><span class="hljs-attribute">Status</span>: 415 Unsupported Media Type
+<span class="hljs-attribute">Content-Type</span>: application/json; charset=utf-8
+
+<span class="json">{
+    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;unsupported-content-type&quot;</span>,
+    <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;Content type &apos;text/plain;charset=UTF-8&apos; not supported. Please use &apos;application/json&apos;&quot;</span>
+}
+</span></code></pre>
+</div></div></div>
 
                                 
                                 </section>
@@ -1142,7 +1147,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Messages Overview","level":"5.1","depth":1,"next":{"title":"POST Send Message","level":"5.2","depth":1,"path":"methods/createSingle.md","ref":"methods/createSingle.md","articles":[]},"previous":{"title":"GET List Associated Sippeers","level":"4.8","depth":1,"path":"applications/getApplicationsApplicationIdSippeers.md","ref":"applications/getApplicationsApplicationIdSippeers.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.9.11","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0","mouseflow","usabilla"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"mouseflow":{"projectId":"e48d3324-5985-479f-a9fc-7283fb266917"},"favicon":"images/favicon.ico","usabilla":{"usabillaId":"73009503da29"},"bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"methods/sendMessages.md","mtime":"2018-09-06T16:30:42.107Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-06T16:31:49.588Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"415 - Unsupported Content Type","level":"7.5","depth":1,"next":{"title":"429 - Too Many Requests","level":"7.6","depth":1,"path":"errors/tooManyReq.md","ref":"errors/tooManyReq.md","articles":[]},"previous":{"title":"403 - Forbidden","level":"7.4","depth":1,"path":"errors/forbidden.md","ref":"errors/forbidden.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.9.11","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0","mouseflow","usabilla"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"mouseflow":{"projectId":"e48d3324-5985-479f-a9fc-7283fb266917"},"favicon":"images/favicon.ico","usabilla":{"usabillaId":"73009503da29"},"bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"errors/unsupportedContentType.md","mtime":"2018-09-06T16:30:42.015Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-06T16:31:49.588Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
