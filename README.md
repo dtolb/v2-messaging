@@ -1,6 +1,6 @@
-# Bandwidth Messaging 2.0 - Closed Beta
+# Bandwidth Messaging 2.0 - Beta
 
-**PLEASE READ**: This is the home for customers using Bandwidth's closed Messaging v2 beta. If you don't know which version of the messaging API to use, or if you are using our free trial, you're probably on our Messaging v1 API [(see docs)](https://dev.bandwidth.com/ap-docs/methods/restApi.html).
+**PLEASE READ**: This is the home for customers using Bandwidth's Messaging v2 beta. If you don't know which version of the messaging API to use, or if you are using our free trial, you're probably on our Messaging v1 API [(see docs)](https://dev.bandwidth.com/ap-docs/methods/restApi.html). But we are currently accepting requests to join the beta. Just fill out our [request form](https://dev.bandwidth.com/v2-messaging/).
 
 <div class="alert alert--general"><p>Messaging 2.0 Does not store <b>ANY</b> messages or records for fetching later. If you need message history you need to implement a storage solution that meets your needs.</p></div>
 
