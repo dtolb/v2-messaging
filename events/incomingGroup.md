@@ -1,6 +1,9 @@
 {% method %}
 # Incoming Group Message Event
+
 In order to receive message events, you need to ensure you have set up your application to send callbacks to your server's URL.
+
+For sending and receiving Group Messages, there is a maximum of 10 participants in a Group.
 
 ### Parameters
 | Parameter             | Type     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
