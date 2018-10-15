@@ -1,8 +1,8 @@
-# Bandwidth Messaging 2.0 - Beta
+# Bandwidth Messaging v2
 
-**PLEASE READ**: This is the home for customers using Bandwidth's Messaging v2 beta. If you don't know which version of the messaging API to use, or if you are using our free trial, you're probably on our Messaging v1 API [(see docs)](https://dev.bandwidth.com/ap-docs/methods/restApi.html). But we are currently accepting requests to join the beta. Just fill out our [request form](https://go.bandwidth.com/messaging-v2-api.html).
+**PLEASE READ**: This is the home for customers using Bandwidth's Messaging v2. If you don't know which version of the messaging API to use, or if you are using our free trial, you're probably on our Messaging v1 API [(see docs)](https://dev.bandwidth.com/ap-docs/methods/restApi.html). Interested in our Messaging v2 API? Request access [here](https://go.bandwidth.com/messaging-v2-api.html).
 
-<div class="alert alert--general"><p>Messaging 2.0 Does not store <b>ANY</b> messages or records for fetching later. If you need message history you need to implement a storage solution that meets your needs.</p></div>
+<div class="alert alert--general"><p>Bandwidth's Messaging v2 does not store <b>ANY</b> messages or records for fetching later. If you need message history you need to implement a storage solution that meets your needs.</p></div>
 
 ## Account Configuration and Overview
 
