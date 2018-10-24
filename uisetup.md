@@ -35,7 +35,7 @@ Fill out the form on the [Postman](postman.md) page to download the Messaging 2.
 
 ## Create your first Application {#setup-your-application}
 
-ℹ️ Learn more about [Applications](applicatons/about.md) ℹ️
+ℹ️ Learn more about [Applications](applications/about.md) ℹ️
 
 The Application contains the HTTP URL you want to use for both inbound and outbound messages.
 
