@@ -15,9 +15,9 @@ Create a new [application](about.md)
 | `ServiceType`            | Yes       | The type of service the application will be used for `Messaging-V2` is the only valid service type as of February 15, 2018 |
 | `AppName`                | Yes       | Plain text name of the application                                                                                         |
 | `CallbackUrl`            | Yes       | Url to recieve _all_ [message events](../events/messageEvents.md)                                                          |
-| `CallBackCreds`          | No        | Basic auth credentials to apply to your [message events](../events/messageEvents.md)                                       |
-| `CallBackCreds.UserId`   | No        | Basic auth `UserId`                                                                                                        |
-| `CallBackCreds.Password` | No        | Basic auth `Password`                                                                                                      |
+| `CallbackCreds`          | No        | Basic auth credentials to apply to your [message events](../events/messageEvents.md)                                       |
+| `CallbackCreds.UserId`   | No        | Basic auth `UserId`                                                                                                        |
+| `CallbackCreds.Password` | No        | Basic auth `Password`                                                                                                      |
 
 
 {% common %}
