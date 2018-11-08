@@ -166,86 +166,83 @@ Bandwidth’s error code schema for messaging V2 is comprised of a 4 digit code.
 
 A 4xx code indicates that Bandwidth or the downstream carrier has identified some element of the message request unacceptable.  Repeating the request will produce the same result.
 
-| Code | Description                                                                   |
-|:-----|:------------------------------------------------------------------------------|
-| 4001 | Message was rejected for reasons other than those covered by other 4xxx codes |
-| 4121 | Rejected as SPAM                                                              |
-| 4301 | Malformed message encoding                                                    |
-| 4302 | Malformed From number                                                         |
-| 4303 | Malformed To Number                                                           |
-| 4350 | Malformed message encoding                                                    |
-| 4401 | Message is looping from carrier back to BW                                    |
-| 4403 | Messaging forbidden on From number                                            |
-| 4404 | Messaging forbidden on To number                                              |
-| 4405 | Unallocated from number                                                       |
-| 4406 | Unallocated to number                                                         |
-| 4410 | Could not download media                                                      |
-| 4411 | Combined size of media too large                                              |
-| 4420 | No Route to Destination Carrier                                               |
-| 4421 | No Route to Destination Carrier                                               |
-| 4431 | Messaging on shortcode forbidden                                              |
-| 4432 | Messaging to country forbidden                                                |
-| 4433 | Messaging on Toll Free Number Forbidden                                       |
-| 4434 | Messaging to Toll Free Number Forbidden                                       |
-| 4451 | Invalid User Id                                                               |
-| 4452 | Invalid Application Id                                                        |
-| 4470 | Rejected as SPAM (future)                                                     |
-| 4481 | From Number in black list                                                     |
-| 4482 | To Number in black list                                                       |
-| 4492 | Message to emergency number forbidden                                         |
-| 4493 | Unauthorized                                                                  |
+| Code | Description                                                                   | Billable                              |
+|:-----|:------------------------------------------------------------------------------|:--------------------------------------|
+| 4001 | Message was rejected for reasons other than those covered by other 4xxx codes | NO                                    |
+| 4121 | Rejected as SPAM                                                              | YES                                   |
+| 4301 | Malformed message encoding                                                    | NO                                    |
+| 4302 | Malformed From number                                                         | NO                                    |
+| 4303 | Malformed To Number                                                           | NO                                    |
+| 4350 | Malformed message encoding                                                    | NO                                    |
+| 4401 | Message is looping from carrier back to BW                                    | NO                                    |
+| 4403 | Messaging forbidden on From number                                            | NO                                    |
+| 4404 | Messaging forbidden on To number                                              | NO                                    |
+| 4405 | Unallocated from number                                                       | NO                                    |
+| 4406 | Unallocated to number                                                         | NO                                    |
+| 4410 | Could not download media                                                      | NO                                    |
+| 4411 | Combined size of media too large                                              | NO                                    |
+| 4420 | No Route to Destination Carrier                                               | NO                                    |
+| 4421 | No Route to Destination Carrier                                               | NO                                    |
+| 4431 | Messaging on shortcode forbidden                                              | NO                                    |
+| 4432 | Messaging to country forbidden                                                | NO                                    |
+| 4433 | Messaging on Toll Free Number Forbidden                                       | NO                                    |
+| 4434 | Messaging to Toll Free Number Forbidden                                       | NO                                    |
+| 4451 | Invalid User Id                                                               | NO                                    |
+| 4452 | Invalid Application Id                                                        | NO                                    |
+| 4470 | Rejected as SPAM (future)                                                     | YES                                   |
+| 4481 | From Number in black list                                                     | NO                                    |
+| 4482 | To Number in black list                                                       | NO                                    |
+| 4492 | Message to emergency number forbidden                                         | NO                                    |
+| 4493 | Unauthorized                                                                  | NO                                    |
 
 ### Carrier Reported Client Errors {#carrier-client}
 
-| Code | Description                                     |
-|:-----|:------------------------------------------------|
-| 4700 | Carrier Rejected as Invalid Service Type        |
-| 4720 | Carrier Rejected as Invalid Destination Address |
-| 4740 | Carrier Rejected as Invalid Source Address      |
-| 4750 | Carrier Rejected Message                        |
-| 4751 | Message too long for carrier                    |
-| 4770 | Carrier Rejected as SPAM                        |
-| 4775 | Carrier Rejected due to user opt out            |
+| Code | Description                                                                   | Billable                              |
+|:-----|:------------------------------------------------------------------------------|:--------------------------------------|
+| 4700 | Carrier Rejected as Invalid Service Type                                      | YES                                   |
+| 4720 | Carrier Rejected as Invalid Destination Address                               | YES                                   |
+| 4740 | Carrier Rejected as Invalid Source Address                                    | YES                                   |
+| 4750 | Carrier Rejected Message                                                      | YES                                   |
+| 4751 | Message too long for carrier                                                  | YES                                   |
+| 4770 | Carrier Rejected as SPAM                                                      | YES                                   |
+| 4775 | Carrier Rejected due to user opt out                                          | YES                                   |
 
 ### Bandwidth Service Failures {#service-errors}
 
 A 5xx code indicates that either Bandwidth or the downstream carrier has reported a service failure.   For Bandwidth failures, the customer can retry the request and expect a different result.   For carrier errors a retry may also yield a different result however the customer should limit to a single retry attempt as the error encoding schema and strategy varies greatly by carrier and while Bandwidth endeavors to normalize carrier codes into predictable values there can be exceptions.
 
 
-| Code | Description                                     |
-|:-----|:------------------------------------------------|
-| 5100 | Application Error                               |
-| 5101 | Application Error                               |
-| 5111 | Application Error                               |
-| 5112 | Application Error                               |
-| 5143 | Application Error                               |
-| 5144 | Application Error                               |
-| 5146 | Application Error                               |
-| 5201 | Application Error                               |
-| 5211 | Application Error                               |
-| 5220 | Application Error                               |
-| 5231 | Application Error                               |
-| 5500 | General Message Send Failure                    |
-| 5501 | General Message Send Failure                    |
-| 5503 | Service Unavailable                             |
+| Code | Description                                                                   | Billable                              |
+|:-----|:------------------------------------------------------------------------------|:--------------------------------------|
+| 5100 | Application Error                                                             | NO                                    |
+| 5101 | Application Error                                                             | NO                                    |
+| 5111 | Application Error                                                             | NO                                    |
+| 5112 | Application Error                                                             | NO                                    |
+| 5143 | Application Error                                                             | NO                                    |
+| 5144 | Application Error                                                             | NO                                    |
+| 5146 | Application Error                                                             | NO                                    |
+| 5201 | Application Error                                                             | NO                                    |
+| 5211 | Application Error                                                             | NO                                    |
+| 5220 | Application Error                                                             | NO                                    |
+| 5231 | Application Error                                                             | NO                                    |
+| 5500 | General Message Send Failure                                                  | NO                                    |
+| 5501 | General Message Send Failure                                                  | NO                                    |
+| 5503 | Service Unavailable                                                           | NO                                    |
 
 ### Carrier Reported Service Failures {#carrier-service-errors}
 
-| Code | Description                                     |
-|:-----|:------------------------------------------------|
-| 5600 | Carrier Service Unavailable                     |
-| 5610 | Carrier Service Failure                         |
-| 5620 | Carrier Application Error                       |
-| 5630 | Carrier Application Error                       |
-| 5650 | Carrier Service Failure                         |
-| 5999 | Unknown error from downstream                   |
+| Code | Description                                                                   | Billable                              |
+|:-----|:------------------------------------------------------------------------------|:--------------------------------------|
+| 5600 | Carrier Service Unavailable                                                   | YES                                   |
+| 5610 | Carrier Service Failure                                                       | YES                                   |
+| 5620 | Carrier Application Error                                                     | YES                                   |
+| 5630 | Carrier Application Error                                                     | YES                                   |
+| 5650 | Carrier Service Failure                                                       | YES                                   |
+| 5999 | Unknown error from downstream                                                 | YES                                   |
 
 ### Carrier Errors with Ambiguous Cause {#carrier-ambiguous-errors}
 
-| Code | Description                                                                                          |
-|:-----|:-----------------------------------------------------------------------------------------------------|
-| 9902 | Timed out waiting for delivery receipt. The reason a delivery receipt was not received is not known. |
-| 9999 | Unknown error from downstream.  Carrier reported a failure code that is unknown to Bandwidth.        |
-
-
-
+| Code | Description                                                                                          | Billable                              |
+|:-----|:-----------------------------------------------------------------------------------------------------|:--------------------------------------|
+| 9902 | Timed out waiting for delivery receipt. The reason a delivery receipt was not received is not known. | YES                                   |
+| 9999 | Unknown error from downstream.  Carrier reported a failure code that is unknown to Bandwidth.        | YES                                   |
