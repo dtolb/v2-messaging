@@ -27,12 +27,12 @@
 * [Video walkthrough](videosetup.md)
 
 ## Phone Number Management
-* [Order Phone Numbers](concepts/numberOrderingSummary.md)
-	* [Search For Phone Numbers](concepts/numberOrderingSummary.md#search-for-phone-numbers)
-	* [Order Phone Numbers](concepts/numberOrderingSummary.md#order-phone-numbers)
-	* [Fetch Order Info](concepts/numberOrderingSummary.md#get-order-info)
-	* [Disconnect a Phone Number](concepts/numberOrderingSummary.md#disconnect-phone-number)
-	* [Fetch Disconnect Info](concepts/numberOrderingSummary.md#get-disconnect-info)
+* [Ordering Phone Numbers Overview](concepts/numberOrderingSummary.md)
+* [GET Search For Phone Numbers](concepts/numberOrderingSummary.md#search-for-phone-numbers)
+* [POST Order Phone Numbers](concepts/numberOrderingSummary.md#order-phone-numbers)
+* [GET Fetch Order Info](concepts/numberOrderingSummary.md#get-order-info)
+* [POST Disconnect a Phone Number](concepts/numberOrderingSummary.md#disconnect-phone-number)
+* [GET Fetch Disconnect Info](concepts/numberOrderingSummary.md#get-disconnect-info)
 
 ## Application API & Setup
 * [Applications Overview](applications/about.md)

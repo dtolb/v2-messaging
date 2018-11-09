@@ -6,7 +6,6 @@ This guide is entirely focused on setup with the UI.  If you'd like to follow al
 ## Assumptions
 
 * You have downloaded [Postman](https://www.getpostman.com/) -or- have the ability to make an API request.
-    * ⚠️ During the Beta, you **MUST** use Postman, [curl](https://curl.haxx.se/), [hurl.it](https://www.hurl.it/) or other http tool to create your [application](applications/about.md) ⚠️
 * You have your [Voice and Messaging API](https://app.bandwidth.com) `userId`, `token`, `secret`
 * You have your [Phone Number API](https://dashboard.bandwidth.com) `username` and `password`
 * You have contacted [Support](http://support.bandwidth.com) to link your [Voice and Messaging API](https://app.bandwidth.com) and [Phone Number API](https://dashboard.bandwidth.com)
