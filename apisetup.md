@@ -53,7 +53,7 @@ The Application contains the HTTP URL you want to use for both inbound and outbo
 |:-------------------------|:----------|:---------------------------------------------------------------------------------------------------------------------------|
 | `ServiceType`            | Yes       | The type of service the application will be used for `Messaging-V2` is the only valid service type as of February 15, 2018 |
 | `AppName`                | Yes       | Plain text name of the application                                                                                         |
-| `CallbackUrl`            | Yes       | Url to recieve _all_ [message events](events/messageEvents.md)                                                             |
+| `CallbackUrl`            | Yes       | Url to receive _all_ [message events](events/messageEvents.md)                                                             |
 | `CallBackCreds`          | No        | Basic auth credentials to apply to your [message events](events/messageEvents.md)                                          |
 | `CallBackCreds.UserId`   | No        | Basic auth `UserId`                                                                                                        |
 | `CallBackCreds.Password` | No        | Basic auth `Password`                                                                                                      |
@@ -187,7 +187,7 @@ In order to use messaging 2.0 in your account, you need to enable SMS and MMS on
 | `Zone3`       | Yes       | **MUST BE SET TO**: `false`                                                                           |
 | `Zone4`       | Yes       | **MUST BE SET TO**: `false`                                                                           |
 | `Zone5`       | Yes       | **MUST BE SET TO**: `false`                                                                           |
-| `ProxyPeerId` | Yest      | **MUST BE SET TO**: `539692`                                                                          |
+| `ProxyPeerId` | Yes      | **MUST BE SET TO**: `539692`                                                                          |
 
 {% common %}
 
@@ -252,7 +252,7 @@ Content-Type: application/xml; charset=utf-8
 
 ## Enable MMS on Location (_sippeer_) {#enable-mms-on-location}
 
-In addition to enabling SMS, you must also enable MMS to recieve picture messages and other multi-media messages.
+In addition to enabling SMS, you must also enable MMS to receive picture messages and other multi-media messages.
 
 {% extendmethod %}
 
@@ -265,7 +265,7 @@ In addition to enabling SMS, you must also enable MMS to recieve picture message
 | Parameters    | Mandatory | Description                                                       |
 |:--------------|:----------|:------------------------------------------------------------------|
 | `protocol`    | Yes       | **MUST BE SET TO** `HTTP` <br> _Notice the lower case `protocol`_ |
-| `ProxyPeerId` | Yest      | **MUST BE SET TO**: `539692`                                      |
+| `ProxyPeerId` | Yes      | **MUST BE SET TO**: `539692`                                      |
 
 {% common %}
 
