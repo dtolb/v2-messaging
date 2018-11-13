@@ -12,7 +12,7 @@
 | Parameters               | Mandatory | Description                                                                          |
 |:-------------------------|:----------|:-------------------------------------------------------------------------------------|
 | `AppName`                | Yes        | Plain text name of the application                                                   |
-| `CallbackUrl`            | Yes        | Url to recieve _all_ [message events](../events/messageEvents.md)                    |
+| `CallbackUrl`            | Yes        | Url to receive _all_ [message events](../events/messageEvents.md)                    |
 | `CallbackCreds`          | No        | Basic auth credentials to apply to your [message events](../events/messageEvents.md) |
 | `CallbackCreds.UserId`   | No        | Basic auth `UserId`                                                                  |
 | `CallbackCreds.Password` | No        | Basic auth `Password`                                                                |
