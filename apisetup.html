@@ -362,10 +362,10 @@
     
         <li class="chapter " data-level="2.2.2" data-path="apisetup.html">
             
-                <a href="apisetup.html#create-location">
+                <a href="apisetup.html#create-subaccount-site">
             
                     
-                    2. Create location (sippeer)
+                    2. Create subaccount (site)
             
                 </a>
             
@@ -375,10 +375,10 @@
     
         <li class="chapter " data-level="2.2.3" data-path="apisetup.html">
             
-                <a href="apisetup.html#enable-sms-on-location">
+                <a href="apisetup.html#create-location">
             
                     
-                    3. Enable SMS on Location (sippeer)
+                    3. Create location (sippeer)
             
                 </a>
             
@@ -388,10 +388,10 @@
     
         <li class="chapter " data-level="2.2.4" data-path="apisetup.html">
             
-                <a href="apisetup.html#enable-mms-on-location">
+                <a href="apisetup.html#enable-sms-on-location">
             
                     
-                    4. Enable MMS on Location (sippeer)
+                    4. Enable SMS on Location (sippeer)
             
                 </a>
             
@@ -401,10 +401,10 @@
     
         <li class="chapter " data-level="2.2.5" data-path="apisetup.html">
             
-                <a href="apisetup.html#assign-application-to-location">
+                <a href="apisetup.html#enable-mms-on-location">
             
                     
-                    5. Assign Application to Location (sippeer)
+                    5. Enable MMS on Location (sippeer)
             
                 </a>
             
@@ -414,10 +414,10 @@
     
         <li class="chapter " data-level="2.2.6" data-path="apisetup.html">
             
-                <a href="apisetup.html#order-numbers">
+                <a href="apisetup.html#assign-application-to-location">
             
                     
-                    6. Order Available Numbers
+                    6. Assign Application to Location (sippeer)
             
                 </a>
             
@@ -427,10 +427,10 @@
     
         <li class="chapter " data-level="2.2.7" data-path="apisetup.html">
             
-                <a href="apisetup.html#check-order-status">
+                <a href="apisetup.html#order-numbers">
             
                     
-                    7. Check Order Status
+                    7. Order Available Numbers
             
                 </a>
             
@@ -440,10 +440,23 @@
     
         <li class="chapter " data-level="2.2.8" data-path="apisetup.html">
             
+                <a href="apisetup.html#check-order-status">
+            
+                    
+                    8. Check Order Status
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.9" data-path="apisetup.html">
+            
                 <a href="apisetup.html#sending-messages">
             
                     
-                    8. Send Text Message
+                    9. Send Text Message
             
                 </a>
             
@@ -1094,6 +1107,7 @@ This guide is entirely focused on setup with the API.  If you&apos;d like to fol
 <h2 id="getting-started">Getting Started</h2>
 <ol>
 <li><a href="#create-application">Create application</a></li>
+<li><a href="#create-subaccount-site">Create subaccount (<em>site</em>)</a></li>
 <li><a href="#create-location">Create location (<em>sippeer</em>)</a></li>
 <li><a href="#enable-sms-on-location">Enable SMS on Location (<em>sippeer</em>)</a></li>
 <li><a href="#enable-mms-on-location">Enable MMS on Location (<em>sippeer</em>)</a></li>
@@ -1190,6 +1204,100 @@ Save the <code>Application Id</code> After creating the application.
 </div></div></div>
 
 <hr>
+<h2 id="create-subaccount-site">Create Sub-Account (<em>site</em>) </h2>
+<p>This endpoint can be used to create a subaccount (AKA site) on your account</p>
+<div class="api-method"><div class="api-method-definition"><div class="api-definition-top"></div><h4 id="subaccount-parameters">Subaccount Parameters</h4>
+<h4 id="request-url">Request URL</h4>
+<p><code class="post">POST</code><code>https://dashboard.bandwidth.com/api/accounts/{{accountId}}/sites</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameters</th>
+<th style="text-align:left">Mandatory</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>Name</code></td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">The name of the site. Max length of 10 characters</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Description</code></td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">The description of the site</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Address</code></td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">The address of the site</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>CustomerProvidedID</code></td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">Optional custom ID to assign to your application. Max length of 10 characters</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>CustomerName</code></td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">Optional custom name to assign to your application. Max length of 50 characters</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>UcTrunkingConfiguration</code></td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">For UC Trunking accounts the UcTrunkingConfiguration element describes the kind of UC trunking that is provided. The Type parameter is one of Seats, Premise, or Cloud, and the UsageCategory parameter is one of UC250, UC500 or UC1000</td>
+</tr>
+</tbody>
+</table>
+</div><div class="api-method-code mm-method-code"><div class="api-method-example"><h3 id="create-sub-account">Create Sub-Account</h3>
+</div><div class="api-method-sample" data-lang="http" data-name="HTTP"><pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">https://dashboard.bandwidth.com/api/accounts/{{accountId}}/sites</span> HTTP/1.1
+<span class="hljs-attribute">Content-Type</span>: application/xml; charset=utf-8
+<span class="hljs-attribute">Authorization</span>: {user:password}
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Site</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Name</span>&gt;</span>Raleigh<span class="hljs-tag">&lt;/<span class="hljs-name">Name</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Description</span>&gt;</span>Test Gateway<span class="hljs-tag">&lt;/<span class="hljs-name">Description</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">CustomerName</span>&gt;</span>BW<span class="hljs-tag">&lt;/<span class="hljs-name">CustomerName</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Address</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">HouseNumber</span>&gt;</span>1600<span class="hljs-tag">&lt;/<span class="hljs-name">HouseNumber</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StreetName</span>&gt;</span>PENNSYLVANIA<span class="hljs-tag">&lt;/<span class="hljs-name">StreetName</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StreetSuffix</span>&gt;</span>AVE<span class="hljs-tag">&lt;/<span class="hljs-name">StreetSuffix</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">PostDirectional</span>&gt;</span>NW<span class="hljs-tag">&lt;/<span class="hljs-name">PostDirectional</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">City</span>&gt;</span>WASHINGTON<span class="hljs-tag">&lt;/<span class="hljs-name">City</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StateCode</span>&gt;</span>DC<span class="hljs-tag">&lt;/<span class="hljs-name">StateCode</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Zip</span>&gt;</span>20006<span class="hljs-tag">&lt;/<span class="hljs-name">Zip</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Country</span>&gt;</span>US<span class="hljs-tag">&lt;/<span class="hljs-name">Country</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Address</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">Site</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- and for a UC account ... --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">Site</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Name</span>&gt;</span>Raleigh<span class="hljs-tag">&lt;/<span class="hljs-name">Name</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Description</span>&gt;</span>Test Gateway<span class="hljs-tag">&lt;/<span class="hljs-name">Description</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">CustomerName</span>&gt;</span>BW<span class="hljs-tag">&lt;/<span class="hljs-name">CustomerName</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Address</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">HouseNumber</span>&gt;</span>1600<span class="hljs-tag">&lt;/<span class="hljs-name">HouseNumber</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StreetName</span>&gt;</span>PENNSYLVANIA<span class="hljs-tag">&lt;/<span class="hljs-name">StreetName</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StreetSuffix</span>&gt;</span>AVE<span class="hljs-tag">&lt;/<span class="hljs-name">StreetSuffix</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">PostDirectional</span>&gt;</span>NW<span class="hljs-tag">&lt;/<span class="hljs-name">PostDirectional</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">City</span>&gt;</span>WASHINGTON<span class="hljs-tag">&lt;/<span class="hljs-name">City</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">StateCode</span>&gt;</span>DC<span class="hljs-tag">&lt;/<span class="hljs-name">StateCode</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Zip</span>&gt;</span>20006<span class="hljs-tag">&lt;/<span class="hljs-name">Zip</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Country</span>&gt;</span>US<span class="hljs-tag">&lt;/<span class="hljs-name">Country</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Address</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">UcTrunkingConfiguration</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Type</span>&gt;</span>Seats<span class="hljs-tag">&lt;/<span class="hljs-name">Type</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">UsageCategory</span>&gt;</span>UC500<span class="hljs-tag">&lt;/<span class="hljs-name">UsageCategory</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">UcTrunkingConfiguration</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">Site</span>&gt;</span>
+</span></code></pre>
+</div><div class="api-method-example"><h3 id="response">Response</h3>
+<pre><code class="lang-http">HTTP/1.1 <span class="hljs-number">201</span> Created
+
+<span class="armasm"><span class="hljs-symbol">The</span> site has <span class="hljs-keyword">been </span>successfully <span class="hljs-keyword">added </span>to the account
+</span></code></pre>
+</div></div></div>
+
 <h2 id="create-location">Create location (<em>sippeer</em>) </h2>
 <aside class="alert general small">
 <p>
@@ -1714,7 +1822,7 @@ When the <code>Order Status</code> is <code>COMPLETE</code>&#xA0;:&#xA0;<code>&l
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"via API","level":"2.2","depth":1,"next":{"title":"1. Create application","level":"2.2.1","depth":2,"anchor":"#create-application","path":"apisetup.md","ref":"apisetup.md#create-application","articles":[]},"previous":{"title":"6. Sending Messages","level":"2.1.6","depth":2,"anchor":"#sending-messages","path":"uisetup.md","ref":"uisetup.md#sending-messages","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.9.11","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0","mouseflow","usabilla"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"mouseflow":{"projectId":"e48d3324-5985-479f-a9fc-7283fb266917"},"favicon":"images/favicon.ico","usabilla":{"usabillaId":"73009503da29"},"bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"apisetup.md","mtime":"2018-11-09T15:19:36.191Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-09T15:20:53.652Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"via API","level":"2.2","depth":1,"next":{"title":"1. Create application","level":"2.2.1","depth":2,"anchor":"#create-application","path":"apisetup.md","ref":"apisetup.md#create-application","articles":[]},"previous":{"title":"6. Sending Messages","level":"2.1.6","depth":2,"anchor":"#sending-messages","path":"uisetup.md","ref":"uisetup.md#sending-messages","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.9.11","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0","mouseflow","usabilla"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"mouseflow":{"projectId":"e48d3324-5985-479f-a9fc-7283fb266917"},"favicon":"images/favicon.ico","usabilla":{"usabillaId":"73009503da29"},"bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"apisetup.md","mtime":"2018-11-13T16:03:49.078Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-13T16:05:12.002Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
