@@ -9,7 +9,6 @@ This guide is entirely focused on setup with the API.  If you'd like to follow a
 ## Assumptions
 
 * You have downloaded [Postman](https://www.getpostman.com/) -or- have the ability to make an API request.
-    * ⚠️ During the Beta, you will **HAVE** to use Postman, [curl](https://curl.haxx.se/), [hurl.it](https://www.hurl.it/) or other http tool to create your [application](applications/about.md) ⚠️
 * You have your [Voice and Messaging API](https://app.bandwidth.com) `userId`, `token`, `secret`
 * You have your [Phone Number API](https://dashboard.bandwidth.com) `username` and `password`
 * You have contacted [Support](http://support.bandwidth.com) to link your [Voice and Messaging API](https://app.bandwidth.com) and [Phone Number API](https://dashboard.bandwidth.com)
@@ -23,13 +22,14 @@ Fill out the form on the [Postman](postman.md) page to download the Messaging 2.
 ## Getting Started
 
 1. [Create application](#create-application)
-2. [Create location (_sippeer_)](#create-location)
-3. [Enable SMS on Location (_sippeer_)](#enable-sms-on-location)
-4. [Enable MMS on Location (_sippeer_)](#enable-mms-on-location)
-5. [Assign Application to Location (_sippeer_)](#assign-application-to-location)
-6. [Order Available Numbers](#order-numbers)
-7. [Check Order Status](#check-order-status)
-8. [Send Text Message](#sending-messages)
+2. [Create subaccount (_site_)](#create-subaccount-site)
+3. [Create location (_sippeer_)](#create-location)
+4. [Enable SMS on Location (_sippeer_)](#enable-sms-on-location)
+5. [Enable MMS on Location (_sippeer_)](#enable-mms-on-location)
+6. [Assign Application to Location (_sippeer_)](#assign-application-to-location)
+7. [Order Available Numbers](#order-numbers)
+8. [Check Order Status](#check-order-status)
+9. [Send Text Message](#sending-messages)
 
 
 ## Create application {#create-application}
@@ -106,6 +106,85 @@ Content-Type: application/xml
 {% endextendmethod %}
 
 ---
+
+## Create Sub-Account (_site_) {#create-subaccount-site}
+
+This endpoint can be used to create a subaccount (AKA site) on your account
+
+{% extendmethod %}
+
+#### Subaccount Parameters
+
+#### Request URL
+<code class="post">POST</code>`https://dashboard.bandwidth.com/api/accounts/{{accountId}}/sites`
+
+| Parameters               | Mandatory | Description                                                                                                                |
+|:-------------------------|:----------|:---------------------------------------------------------------------------------------------------------------------------|
+| `Name` | Yes | The name of the site. Max length of 10 characters |
+| `Description` | No | The description of the site |
+| `Address` | Yes | The address of the site |
+| `CustomerProvidedID` | No | Optional custom ID to assign to your application. Max length of 10 characters |
+| `CustomerName` | No | Optional custom name to assign to your application. Max length of 50 characters |
+| `UcTrunkingConfiguration` | No | For UC Trunking accounts the UcTrunkingConfiguration element describes the kind of UC trunking that is provided. The Type parameter is one of Seats, Premise, or Cloud, and the UsageCategory parameter is one of UC250, UC500 or UC1000 |
+
+{% common %}
+
+### Create Sub-Account
+
+{% sample lang="http" %}
+
+```http
+POST https://dashboard.bandwidth.com/api/accounts/{{accountId}}/sites HTTP/1.1
+Content-Type: application/xml; charset=utf-8
+Authorization: {user:password}
+
+<Site>
+    <Name>Raleigh</Name>
+    <Description>Test Gateway</Description>
+    <CustomerName>BW</CustomerName>
+    <Address>
+        <HouseNumber>1600</HouseNumber>
+        <StreetName>PENNSYLVANIA</StreetName>
+        <StreetSuffix>AVE</StreetSuffix>
+        <PostDirectional>NW</PostDirectional>
+        <City>WASHINGTON</City>
+        <StateCode>DC</StateCode>
+        <Zip>20006</Zip>
+        <Country>US</Country>
+    </Address>
+</Site>
+<!-- and for a UC account ... -->
+<Site>
+    <Name>Raleigh</Name>
+    <Description>Test Gateway</Description>
+    <CustomerName>BW</CustomerName>
+    <Address>
+        <HouseNumber>1600</HouseNumber>
+        <StreetName>PENNSYLVANIA</StreetName>
+        <StreetSuffix>AVE</StreetSuffix>
+        <PostDirectional>NW</PostDirectional>
+        <City>WASHINGTON</City>
+        <StateCode>DC</StateCode>
+        <Zip>20006</Zip>
+        <Country>US</Country>
+    </Address>
+    <UcTrunkingConfiguration>
+        <Type>Seats</Type>
+        <UsageCategory>UC500</UsageCategory>
+    </UcTrunkingConfiguration>
+</Site>
+```
+
+{% common %}
+
+### Response
+```http
+HTTP/1.1 201 Created
+
+The site has been successfully added to the account
+```
+
+{% endextendmethod %}
 
 ## Create location (_sippeer_) {#create-location}
 
@@ -187,7 +266,7 @@ In order to use messaging 2.0 in your account, you need to enable SMS and MMS on
 | `Zone3`       | Yes       | **MUST BE SET TO**: `false`                                                                           |
 | `Zone4`       | Yes       | **MUST BE SET TO**: `false`                                                                           |
 | `Zone5`       | Yes       | **MUST BE SET TO**: `false`                                                                           |
-| `ProxyPeerId` | Yest      | **MUST BE SET TO**: `539692`                                                                          |
+| `ProxyPeerId` | Yes      | **MUST BE SET TO**: `539692`                                                                          |
 
 {% common %}
 
@@ -252,7 +331,7 @@ Content-Type: application/xml; charset=utf-8
 
 ## Enable MMS on Location (_sippeer_) {#enable-mms-on-location}
 
-In addition to enabling SMS, you must also enable MMS to recieve picture messages and other multi-media messages.
+In addition to enabling SMS, you must also enable MMS to receive picture messages and other multi-media messages.
 
 {% extendmethod %}
 
@@ -265,7 +344,7 @@ In addition to enabling SMS, you must also enable MMS to recieve picture message
 | Parameters    | Mandatory | Description                                                       |
 |:--------------|:----------|:------------------------------------------------------------------|
 | `protocol`    | Yes       | **MUST BE SET TO** `HTTP` <br> _Notice the lower case `protocol`_ |
-| `ProxyPeerId` | Yest      | **MUST BE SET TO**: `539692`                                      |
+| `ProxyPeerId` | Yes      | **MUST BE SET TO**: `539692`                                      |
 
 {% common %}
 
