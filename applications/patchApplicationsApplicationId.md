@@ -13,9 +13,9 @@
 |:-------------------------|:----------|:-------------------------------------------------------------------------------------|
 | `AppName`                | No        | Plain text name of the application                                                   |
 | `CallbackUrl`            | No        | Url to receive _all_ [message events](../events/messageEvents.md)                    |
-| `CallBackCreds`          | No        | Basic auth credentials to apply to your [message events](../events/messageEvents.md) |
-| `CallBackCreds.UserId`   | No        | Basic auth `UserId`                                                                  |
-| `CallBackCreds.Password` | No        | Basic auth `Password`                                                                |
+| `CallbackCreds`          | No        | Basic auth credentials to apply to your [message events](../events/messageEvents.md) |
+| `CallbackCreds.UserId`   | No        | Basic auth `UserId`                                                                  |
+| `CallbackCreds.Password` | No        | Basic auth `Password`                                                                |
 
 
 {% common %}
