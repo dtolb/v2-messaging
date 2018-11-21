@@ -10,7 +10,7 @@ Endpoint for sending text messages and picture messages using V2 messaging.
 
 ### Invalid Phone Number handing
 
-When sending a group message to an invalid phone number, you may receive extraneous [callback events](../events/messageEvents.md).  You can read me on the [Messaging API concepts page](../concepts.md#group-message-invalid).
+When sending a group message to an invalid phone number, you may receive extraneous [callback events](../events/messageEvents.md).  You can read more on the [Messaging API concepts page](../concepts.md#group-message-invalid).
 
 ### Tags
 * If there is a need to identify individual outbound messages, or correlate them with an ID in your own application, the `tag` field can be set to any string. The custom `tag` will be included in all callbacks for an outbound message.
@@ -22,8 +22,10 @@ When sending a group message to an invalid phone number, you may receive extrane
 | to            | `string`<br>**-OR-**<br>`array` of `1` (one) or more `strings`                 | The phone number(s) the message should be sent to (must be in E.164 format, like `+19195551212`). <br><br> Example: <br> `"+19195551212"` <br> **-OR-**<br> `["+19195551212"]` <br> **-OR-**<br> `["+19195551212", "+19195554444", "+19192227777"]` <br><br> **If you supply more than one number, it will be sent as a group message.** | Yes       |
 | text          | `string`                                                              | The contents of the text message (must be 2048 characters or less).                                                                                                                                                                      | Yes       |
 | applicationId | `string`                                                              | The ID of the Application your `from` number is associated with in the Bandwidth Phone Number Dashboard.                                                                                                                                 | Yes       |
-| media         | `array`                                                               | A list of URLs to include as media attachments as part of the message. If this field is included, the message will be sent as MMS no matter the number of recipients.                                                                                                                                                                   | No        |
+| media*         | `array`                                                               | A list of URLs to include as media attachments as part of the message. If this field is included, the message will be sent as MMS no matter the number of recipients.                                                                                                                                                                   | No        |
 | tag           | `string`                                                              | Any string which will be included in the callback events of the message.                                                                                                                                                                 | No        |
+
+*Please check the [FAQ](https://dev.bandwidth.com/faq) for information on media size limits
 
 {% common %}
 
