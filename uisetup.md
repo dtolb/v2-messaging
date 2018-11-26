@@ -137,13 +137,24 @@ Content-Type: application/xml
 
 ## Order Phone numbers to location (_sippeer_) {#order-numbers-to-location}
 
-1. Navigate to the [**Order New Numbers**](https://dashboard.bandwidth.com/beta/#/newnumber) page
+1. Navigate to the [**Order New Numbers**](https://dashboard.bandwidth.com/) page
     * **Orders** > **Order New Numbers**
 
 * Once your application, sub-account (_site_), and location (_sippeer_) have been configured you're ready to start ordering phone numbers to use.
 * Using the UI, search for a number and order it to the sub-account (_site_) and location (_sippeer_) created above.
 
-![Order numbers](images/messaging-2/order_numbers.png)
+
+### Search and buy numbers
+
+![Search and buy numbers](images/order-number-screenshots/search-and-buy-numbers.png)
+
+### View available numbers
+
+![View available numbers](images/order-number-screenshots/view-available-numbers.png)
+
+### Place and purchase numbers
+
+![Place and purchase](images/order-number-screenshots/place-and-purchase.png)
 
 ---
 
