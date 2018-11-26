@@ -47,8 +47,7 @@
 
 ## Messaging API
 * [Messages Overview](methods/sendMessages.md)
-* [POST Send Message](methods/createSingle.md)
-* [POST Send Group Message](methods/createGroup.md)
+* [POST Send Message](methods/createMessage.md)
 
 ## Message Callbacks
 * [About Message Events/Callbacks](events/messageEvents.md)
