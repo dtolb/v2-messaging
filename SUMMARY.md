@@ -6,6 +6,7 @@
 * [Postman Collection](postman.md)
 * [Messaging API Concepts](concepts.md)
 * [v1 → v2 Migration Guide](messaging2Migration.md)
+* [Billing and MPS Guidelines](billingAndMpsGuidelines.md)
 
 ## Initial Account Setup
 * [via UI](uisetup.md)
