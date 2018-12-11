@@ -7,11 +7,6 @@
 * [Messaging API Concepts](concepts.md)
 * [v1 → v2 Migration Guide](messaging2Migration.md)
 * [Billing and MPS Guidelines](billingAndMpsGuidelines.md)
-	* [Billing information](billingAndMpsGuidelines.md#billing)
-	* [How Bandwidth Helps Messaging](billingAndMpsGuidelines.md#how-bandwidth-helps)
-	* [Default Rate Limits](billingAndMpsGuidelines.md#default-rate-limit)
-	* [Managing Messages](billingAndMpsGuidelines.md#managing-messages)
-
 
 ## Initial Account Setup
 * [via UI](uisetup.md)
@@ -74,7 +69,7 @@
 		* [Carrier Errors with Ambiguous Cause](codes.md#carrier-ambiguous-errors)
 * [400 - Bad Request](errors/badRequest.md)
 * [401 - Unauthorized](errors/unauth.md)
-* [403 - Forbidden](errors/forbidden.md)
+* [403 - Forbidden](errors/forbidden.md)  
 * [415 - Unsupported Content Type](errors/unsupportedContentType.md)
 * [429 - Too Many Requests](errors/tooManyReq.md)
 
