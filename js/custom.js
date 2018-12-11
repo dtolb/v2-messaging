@@ -27,8 +27,7 @@ module.exports = function ($) {
 		'uisetup.html',
 		'apisetup.html',
 		'numberOrderingSummary.html',
-		'codes.html',
-		'billingAndMpsGuidelines.html'
+		'codes.html'
 	];
 
 
