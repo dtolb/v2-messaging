@@ -6,7 +6,7 @@
 * [Postman Collection](postman.md)
 * [Messaging API Concepts](concepts.md)
 * [v1 → v2 Migration Guide](messaging2Migration.md)
-* [Billing and MPS Guidelines](billingAndMpsGuidelines.md#top)
+* [Billing and MPS Guidelines](billingAndMpsGuidelines.md)
 	* [Billing information](billingAndMpsGuidelines.md#billing)
 	* [How Bandwidth Helps Messaging](billingAndMpsGuidelines.md#how-bandwidth-helps)
 	* [Default Rate Limits](billingAndMpsGuidelines.md#default-rate-limit)
