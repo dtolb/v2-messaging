@@ -72,7 +72,7 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="uisetup.html">
+    <link rel="next" href="billingAndMpsGuidelines.html">
     
     
     <link rel="prev" href="messaging2Migration.html">
@@ -231,7 +231,7 @@
     
         <li class="chapter active" data-level="1.6" data-path="billingAndMpsGuidelines.html">
             
-                <a href="billingAndMpsGuidelines.html">
+                <a href="billingAndMpsGuidelines.html#top">
             
                     
                     Billing and MPS Guidelines
@@ -239,6 +239,64 @@
                 </a>
             
 
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="billingAndMpsGuidelines.html">
+            
+                <a href="billingAndMpsGuidelines.html#billing">
+            
+                    
+                    Billing information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="billingAndMpsGuidelines.html">
+            
+                <a href="billingAndMpsGuidelines.html#how-bandwidth-helps">
+            
+                    
+                    How Bandwidth Helps Messaging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="billingAndMpsGuidelines.html">
+            
+                <a href="billingAndMpsGuidelines.html#default-rate-limit">
+            
+                    
+                    Default Rate Limits
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="billingAndMpsGuidelines.html">
+            
+                <a href="billingAndMpsGuidelines.html#managing-messages">
+            
+                    
+                    Managing Messages
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -1088,9 +1146,237 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="v2-messaging-billing-and-mps-guidelines">V2 Messaging Billing and MPS Guidelines</h1>
-<p>Sending SMS and single recipient MMS are billed and added to your MPS (message per second) limit the same way in V2 messaging as they are in V1 messaging. Sending group MMS is billed and added to your MPS limit per recipient of the group MMS.</p>
-<p>V1 messaging rate limit documentation can be found <a href="https://dev.bandwidth.com/ap-docs/rateLimits/messageRateLimits.html" target="_blank">here</a>, and billing/pricing information can be found <a href="https://www.bandwidth.com/pricing/" target="_blank">here</a>.</p>
+                                <h1 id="top">V2 Messaging Billing and MPS Guidelines </h1>
+<h2 id="about">About </h2>
+<p>This guide will walk through the recommended approach to managing queues and rate limits for use with the Messaging API. Over the past years mobile telecom operators have begun to block what is deemed automated traffic (<strong>A2P</strong>) sent over standard local telephone numbers IE: (919)-430-5555. The amount of messages sent in this way have increased due to spreading automated traffic (A2P) across multiple local telephone numbers to bypass volumetric filters. This process is called &quot;snowshoeing&quot; and as a result, the mobile operators are not only blocking volumetrically, but are also finger-printing content and preemptively blocking messages even from a &quot;fresh&quot; phone number.</p>
+<h2 id="assumptions">Assumptions</h2>
+<ul>
+<li>You have signed up for the <a href="https://app.bandwidth.com/" target="_blank">Bandwidth Messaging API</a></li>
+<li>You are familiar with:<ul>
+<li><a href="https://api.ctia.org/docs/default-source/default-document-library/170119-ctia-messaging-principles-and-best-practices.pdf" target="_blank">2017 CTIA Best Practices</a></li>
+<li><a href="https://transition.fcc.gov/cgb/policy/TCPA-Rules.pdf" target="_blank">The TCPA <em>Telephone Consumer Protection Act</em></a></li>
+<li><a href="accountCredentials.html">Your API Credentials</a></li>
+<li><a href="methods/sendMessages.html">Sending SMS &amp; MMS</a></li>
+<li><a href="events/messageEvents.html">Receiving HTTP Callbacks/Webhooks</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="overview">Overview</h2>
+<ul>
+<li><a href="#billing">Billing information</a></li>
+<li><a href="#how-bandwidth-helps">How Bandwidth Helps</a><ul>
+<li><a href="#a2p-best-practices">A2P Best Practices</a></li>
+</ul>
+</li>
+<li><a href="#default-rate-limit">Default Rate Limits</a></li>
+<li><a href="#managing-messages">Managing Messages</a><ul>
+<li><a href="#backoff-and-retry">Back-off and Retry</a></li>
+<li><a href="#throttle">Throttling</a></li>
+<li><a href="#queue-management">Queue Management</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="billing">Billing </h2>
+<p>Sending SMS and single recipient MMS are billed and added to your MPS (message per second) limit. Sending group MMS is billed and added to your MPS limit <strong>per recipient of the group MMS</strong>.</p>
+<p>Billing/pricing information can be found at <a href="https://www.bandwidth.com/pricing/" target="_blank">Bandwidth&apos;s home page</a>.</p>
+<hr>
+<h2 id="how-bandwidth-helps">How Bandwidth Helps </h2>
+<p>In response to the ever changing (&amp; unregulated) landscape of telecommunications and text messaging, Bandwidth has implemented a new rate-limit process and look-ahead Spam filtering service to help our customers ensure deliver-ability of their messages.</p>
+<p>We have broken up our messaging classifications into two categories:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Category</th>
+<th style="text-align:left">About</th>
+<th style="text-align:left">Attributes</th>
+<th style="text-align:left">Common Use-cases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>P2P</strong> - Conversational Person to Person</td>
+<td style="text-align:left">Person-to-Person (P2P) generally describes the low-volume exchange of wireless messages between end users... the concept of consistent with typical human operation defines P2P traffic to distinguish P2P from A2P traffic</td>
+<td style="text-align:left"><strong>Per Number</strong> <br> - 15-60 messages/minute <br> - 1,000-2,000 messages/day <br> - ~200 unique recipients <br> - Close to 1:1 inbound messages to outbound messages</td>
+<td style="text-align:left">- Support over SMS <br> - Chat Bots <br> - Over-the-top (OTT) tel-co application <br> - Private Phone Numbers</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>A2P</strong> - Automated message to Person</td>
+<td style="text-align:left">A2P traffic is <strong>all</strong> messaging that falls outside the definition of P2P (i.e., <strong>traffic that is not consistent with typical human operation)</strong></td>
+<td style="text-align:left"><strong>Per Number</strong> <br> - Bounded only by account permissions <br> - Sent with a <strong>toll-free phone number</strong> <br> - Typically much higher ratio of outbound messages vs inbound <br></td>
+<td style="text-align:left">- Appointment Reminders <br> - Shipping &amp; Order Alerts <br> - Outbound Mass Communications</td>
+</tr>
+</tbody>
+</table>
+<h3 id="look-ahead-spam-filtering">Look-ahead Spam filtering</h3>
+<p>Bandwidth uses the same <a href="https://www.adaptivemobile.com/" target="_blank">Adaptive</a> network protection technology as the mobile telco operators. This allows us to screen messages before they&apos;re sent to the downstream carrier. By checking before Bandwidth passes the message along, we&apos;re able to work with you to understand and fix any potential issues with the message. This maintains your telephone number deliverability reputation and helps build predictable traffic patterns. If the message is marked as Spam we will send a notification to the <code>application</code> specified in the <a href="methods/sendMessages.html">create message</a> request.</p>
+<h3 id="a2p-best-practices">Toll-Free A2P Best Practices </h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Principle</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Consent</strong> <br> The consumer must give appropriate consent</td>
+<td style="text-align:left">The single most important practice is ensuring you have accurate, reliable consumer opt-in specific to the type of messages you are sending consumers.  It is expected that opt-out rates are consistently low when you have obtained reliable and clear consumer opt-in consent.  At anytime, Bandwidth or wireless carriers may request from you evidence of written opt-in consent for a particular message.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Single Number Use</strong> <br> Utilize single number for identity</td>
+<td style="text-align:left">Each campaign should use one primary phone number. Using a single number for both text and voice calls is recommended.  Avoid using spreading messages across many source phone numbers, specifically to dilute reputation metrics and evade filters.  This is referred to as &#x201C;snowshoeing&#x201D; and can result in your content being blocked.   If your messaging use case requires the use of multiple numbers to distribute &#x201C;similar&#x201D; or &#x201C;like&#x201D; content, please discuss with your onboarding team.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Identify Brand</strong> <br> Identify the brand or business in the body of the message</td>
+<td style="text-align:left">Your application, service or business name should be included in the content of the body. <br><br> For example: &#x201C;Your Business Name: You have an appointment for Tuesday 3:00PM, reply YES to confirm, NO to reschedule.  Reply STOP to unsubscribe&#x201D;</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Opt-In Confirmation</strong></td>
+<td style="text-align:left">Upon successful opt-in by a mobile subscriber, an opt-in confirmation message will immediately be sent to the mobile subscriber number.   Per CTIA guidelines - a single opt-in confirmation message displaying information verifying the customer&#x2019;s enrollment in the identified program and describing how to opt out.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Support for STOP</strong> <br> Use of Opt-Out language</td>
+<td style="text-align:left">The best practice is notifying the consumer of their ability to opt-out from future messages from the message sender. This is especially important when sending informational or promotional messages.<br><br> An example would be to include the sentence, &#x201C;Reply STOP to unsubscribe&#x201D; to the end of the initial message sent to the consumer, or &#x201C;reply STOP to cancel&#x201D;</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Processing STOP Keywords</strong> <br> Ensuring proper functioning of Opt-Out behavior - STOP keywords</td>
+<td style="text-align:left">Consumer opt-in and opt-out functionality is enforced at the network level via the STOP and UNSTOP keywords. This functionality cannot be disabled for service providers or message senders. <br> <br> Message senders have obligations to process the opted-out consumer phone number so it is removed from all distribution lists and be logged as &#x201C;opted out&#x201D; from SMS communications. This ensures that future messages are not attempted and consumer consent is honored.<br> <br> Examples of valid opt-out messages:  &#x201C;STOP&#x201D; &#x201C;Stop&#x201D; &#x201C;stop&#x201D; &#x201C;STop&#x201D;<br> <br> For Toll Free SMS, there is no need to send an acknowledgment to the consumer.  The opt-out confirmation message returned to a consumer is generic and gives instructions on how to opt back into service again with the message sender&#x2019;s phone number. Opt-out confirmation message:<br> <br> <strong>NETWORK MSG: You replied with the word &quot;STOP&quot; which blocks all texts sent from this number. Text back &quot;UNSTOP&quot; to receive messages again</strong>.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>UNSTOP</strong> <br> <strong>[Only for Toll Free A2P]</strong> <br> Processing Opt-In Keywords specific to Toll Free Texting</td>
+<td style="text-align:left">A consumer can opt back in at any time to receive messages by texting the keyword &#x201C;UNSTOP&#x201D; to a message sender&#x2019;s phone number. The keyword is not case sensitive and triggers an opt-in only when sent as a single word, with no punctuation or leading spaces (any trailing spaces are trimmed). If the consumer uses the opt-in keyword within a sentence an opt-in is not triggered.<br> <br> Examples of valid opt-ins: &#x201C;UNSTOP&#x201D;  &#x201C;Unstop&#x201D;  &#x201C;unstop&#x201D;  &#x201C;UNStop&#x201D;<br> <br> The message returned to a consumer is generic and informs the consumer they can start two-way texting with the message sender&#x2019;s phone number again.<br> <br> <strong>NETWORK MSG: You have replied &quot;unstop&quot; and will begin receiving messages again from this number.</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Single Domain</strong> - Associate URL</td>
+<td style="text-align:left">Each campaign should be associated with a single web domain owned by customer. Although a full domain is preferred, a URL shortener may be used to deliver custom links.  Avoid public / shared domain shorteners: <br> - bit.ly <br> - goo.gl <br> - tinyurl.com <br> - Tiny.cc <br> - lc.chat <br> - is.gd <br> - soo.gd <br> - s2r.co <br> - Clicky.me <br> - budurl.com <br> - bc.vc</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="default-rate-limit">Default Messaging Rate Limits and Queues </h2>
+<p>All Bandwidth messaging products are rate limited in some fashion. The default rate limit is the same for SMS and MMS. There are two different rate limits within the system:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Scope</th>
+<th style="text-align:left">Rate Limit</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Account</strong></td>
+<td style="text-align:left">Outbound <em>dequeue</em> rate</td>
+<td style="text-align:left">The rate that Bandwidth will send your messages to the downstream carriers across your entire account.</td>
+<td style="text-align:left">1 MPS</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Per-Number</strong></td>
+<td style="text-align:left">Outbound <em>dequeue</em> rate</td>
+<td style="text-align:left">The rate that Bandwidth will send your messages from a <strong>single phone number</strong> to the downstream carriers</td>
+<td style="text-align:left">P2P - 1 MPS <br> A2P - &#x221E;, up to account limit</td>
+</tr>
+</tbody>
+</table>
+<h3 id="queuing">Queuing</h3>
+<p>By default Bandwidth queues messages internally to be sent out. Once contracted, Bandwidth will enable a 15 minute queue across the entire account. The number of messages in the queue will depend on your <strong>account wide <em>dequeue</em> rate</strong>. It&apos;s important to note that the 15 minute queue (900 seconds) is across the entire account, and <strong>not</strong> per phone number.</p>
+<h4 id="example-calculating-queue-depth">Example: Calculating Queue Depth</h4>
+<p>An account has an <strong>Outbound <em>dequeue</em> rate</strong> of 5MPS.</p>
+<p><img src="images/queuemath.png" alt="Queue Math"></p>
+<h3 id="429-&#x2013;-too-many-requests">429 &#x2013; Too Many Requests</h3>
+<p>When your queue size has been exceeded you will receive a <a href="errors/tooManyReq.html">429 - Too Many Requests error.</a></p>
+<h3 id="sample-message-rate-limit-response">Sample Message Rate Limit Response</h3>
+<p>You will receive this error response if:</p>
+<ul>
+<li>Your <strong>per account</strong> queue is full</li>
+</ul>
+<pre><code class="lang-http"><span class="hljs-attribute">Status</span>: 429 Too Many Requests
+<span class="hljs-attribute">Content-Type</span>: application/json; charset=utf-8
+</code></pre>
+<pre><code class="lang-json">{
+  <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;max-message-queue-size-exceeded&quot;</span>,
+  <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;The SMS queue for your account is full and cannot accept more messages right now. Your allowed rate is 60 messages per minute. The capacity of this queue is 900 messages (15 minutes). Reduce your message sending rate, or contact support to increase your allowed rate.&quot;</span>
+}
+</code></pre>
+<h2 id="managing-messages">Managing Messages </h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Method</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Use-cases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Back-off and Retry</td>
+<td style="text-align:left">Try to send messages as quickly as possible to Bandwidth. When you hit the rate limit, add a small delay and try again. If it fails, then add some more delay and try again</td>
+<td style="text-align:left">Works best for use-cases that need to send lots of messages with no priority:<br> - Day before appointment reminders <br> - Receipts <br> - Opted-in Promotions</td>
+</tr>
+<tr>
+<td style="text-align:left">Throttle</td>
+<td style="text-align:left">Only send messages to Bandwidth as quickly as your dequeue rates</td>
+<td style="text-align:left">Works best with any use case, but favors pure P2P</td>
+</tr>
+<tr>
+<td style="text-align:left">Queue Management</td>
+<td style="text-align:left">Utilizing a queue system such as <a href="https://www.rabbitmq.com/" target="_blank">RabbitMQ</a> or <a href="https://mosquitto.org/" target="_blank">Mosquitto</a></td>
+<td style="text-align:left">Works best for use-cases that intermingle massive campaigns with realtime traffic. Enables full control over message priority and time-to-live</td>
+</tr>
+</tbody>
+</table>
+<h3 id="backoff-and-retry">Back-off and Retry </h3>
+<p>Back-off and Retry adaptively increases delay to attempt to find the quickest possible call pacing without hitting rate limits. The pseudocode below shows a simple example using a linear coefficient to adjust delay. Introducing randomness or &quot;jitter&quot; into the delay can help reduce successive collisions.</p>
+<pre><code class="lang-python">retries = <span class="hljs-number">0</span>
+coefficient = <span class="hljs-number">2</span> // coefficient to increase delay
+delay = some milliseconds (small amount)
+DO
+status = Get the result of the asynchronous operation.
+IF status = SUCCESS
+    retry = false
+ELSE IF status = TIMEOUT
+    retry = true
+    retries = retries + <span class="hljs-number">1</span>
+    WAIT delay
+    delay = coefficient * delay
+END IF
+WHILE (retry AND (retries &lt; MAX_RETRIES))
+</code></pre>
+<h3 id="throttle">Throttling </h3>
+<p>Throttling paces the asynchronous operations based on a specified time duration. Using a duration just longer than the rate limit will help ensure calls are completed as they are sent without having to resend due to rate limiting.</p>
+<pre><code class="lang-python">retries = <span class="hljs-number">0</span>
+DO
+status = Get the result of the asynchronous operation.
+IF status = SUCCESS
+    retry = false
+ELSE IF status = TIMEOUT
+    retry = true
+    retries = retries + <span class="hljs-number">1</span>
+    WAIT some milliseconds
+END IF
+WHILE (retry AND (retries &lt; MAX_RETRIES))
+</code></pre>
+<h3 id="queue-management">Queue Management </h3>
+<p>Queue Management requires configuring and maintaining a queue of asynchronous operations, http API calls for example, facilitating linear control over when the operation is executed. The pseudocode below shows a simple queuing solution. For complex queuing tasks, consider using a queue system such as <a href="https://www.rabbitmq.com/" target="_blank">RabbitMQ</a> or <a href="https://mosquitto.org/" target="_blank">Mosquitto</a>.</p>
+<pre><code class="lang-python"><span class="hljs-number">1.</span> CONFIGURE_QUEUE size, storage, etc
+<span class="hljs-number">2.</span> PUSH_TO_QUEUE add <span class="hljs-keyword">async</span> operation data to queue
+<span class="hljs-number">3.</span> SUBSCRIBE_TO_QUEUE get <span class="hljs-keyword">async</span> operation <span class="hljs-keyword">from</span> queue
+
+ BEGIN_HANDLER
+ DO
+   message = extracted <span class="hljs-keyword">from</span> queue of <span class="hljs-keyword">async</span> operations
+   status = execute <span class="hljs-keyword">async</span> operation <span class="hljs-keyword">with</span> message
+   IF status = SUCCESS
+      retry = false
+   ELSE IF status = TIMEOUT
+      retry = true
+      retries = retries + <span class="hljs-number">1</span>
+      WAIT delay
+   END IF
+ WHILE (retry AND (retries &lt; MAX_RETRIES))
+ END_HANDLER
+</code></pre>
 
                                 
                                 </section>
@@ -1124,7 +1410,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Billing and MPS Guidelines","level":"1.6","depth":1,"next":{"title":"via UI","level":"2.1","depth":1,"path":"uisetup.md","ref":"uisetup.md","articles":[{"title":"1. Get your account ID","level":"2.1.1","depth":2,"anchor":"#get-your-account-id","path":"uisetup.md","ref":"uisetup.md#get-your-account-id","articles":[]},{"title":"2. Setup your Application","level":"2.1.2","depth":2,"anchor":"#setup-your-application","path":"uisetup.md","ref":"uisetup.md#setup-your-application","articles":[]},{"title":"3. Create subaccount (site)","level":"2.1.3","depth":2,"anchor":"#create-subaccount-site","path":"uisetup.md","ref":"uisetup.md#create-subaccount-site","articles":[]},{"title":"4. Create location (sippeer) and assign the application","level":"2.1.4","depth":2,"anchor":"#create-location-sippeer-and-assign-the-application","path":"uisetup.md","ref":"uisetup.md#create-location-sippeer-and-assign-the-application","articles":[]},{"title":"5. Order Phone numbers to location (sippeer)","level":"2.1.5","depth":2,"anchor":"#order-numbers-to-location","path":"uisetup.md","ref":"uisetup.md#order-numbers-to-location","articles":[]},{"title":"6. Sending Messages","level":"2.1.6","depth":2,"anchor":"#sending-messages","path":"uisetup.md","ref":"uisetup.md#sending-messages","articles":[]}]},"previous":{"title":"v1 → v2 Migration Guide","level":"1.5","depth":1,"path":"messaging2Migration.md","ref":"messaging2Migration.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.9.11","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0","mouseflow","usabilla"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"mouseflow":{"projectId":"e48d3324-5985-479f-a9fc-7283fb266917"},"favicon":"images/favicon.ico","usabilla":{"usabillaId":"73009503da29"},"bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"billingAndMpsGuidelines.md","mtime":"2018-11-30T22:29:36.847Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-30T22:30:51.604Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Billing and MPS Guidelines","level":"1.6","depth":1,"next":{"title":"Billing information","level":"1.6.1","depth":2,"anchor":"#billing","path":"billingAndMpsGuidelines.md","ref":"billingAndMpsGuidelines.md#billing","articles":[]},"previous":{"title":"v1 → v2 Migration Guide","level":"1.5","depth":1,"path":"messaging2Migration.md","ref":"messaging2Migration.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.9.11","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0","mouseflow","usabilla"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"mouseflow":{"projectId":"e48d3324-5985-479f-a9fc-7283fb266917"},"favicon":"images/favicon.ico","usabilla":{"usabillaId":"73009503da29"},"bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"billingAndMpsGuidelines.md","mtime":"2018-12-11T19:43:11.384Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-11T19:44:30.278Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
