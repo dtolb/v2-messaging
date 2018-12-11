@@ -22,3 +22,4 @@ docs/.gitignore
 deploy_key.pub
 deploy_key
 my_project
+.DS_Store
