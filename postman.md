@@ -4,8 +4,8 @@
 
 ## Assumptions
 * You have downloaded [Postman](https://www.getpostman.com/)
-* You have your [Voice and Messaging API](https://app.bandwidth.com) `userId`, `token`, `secret`
-* You have your [Phone Number API](https://dashboard.bandwidth.com) `username` and `password`
+* You have your [Bandwidth Dashboard Account ID, Token and Secret](https://dashboard.bandwidth.com) `userId`, `token`, `secret`
+* You have your [Bandwidth Dashboard Username and Password](https://dashboard.bandwidth.com) `username` and `password`
 * You have at least one [`subaccount` or `site`](uisetup.md#create-subaccount-site) on your [Phone Number Dashboard](https://dashboard.bandwidth.com)
 
 ## Fill in the form then Click Run in Postman below to explore our V2 API Collection.
