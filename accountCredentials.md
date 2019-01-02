@@ -1,6 +1,6 @@
 # Account Credentials
 
-This guide will cover the difference credentials for use with [Bandwidth's Dashboard](https://dashboard.bandwidth.com).
+This guide will cover the different credentials for use with [Bandwidth's Dashboard](https://dashboard.bandwidth.com).
 
 Specific information for finding your credentials can be found [here](https://support.bandwidth.com/hc/en-us/articles/360014110974).
 
