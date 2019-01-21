@@ -260,13 +260,12 @@ In order to use messaging 2.0 in your account, you need to enable SMS and MMS on
 |:--------------|:----------|:------------------------------------------------------------------------------------------------------|
 | `TollFree`    | Yes       | Will enable texting to and from _toll-free phone numbers_. <br> Boolean: <br> * `true` <br> * `false` |
 | `ShortCode`   | Yes       | Will enable texting to and from _short codes_. <br> Boolean: <br> * `true` <br> * `false`             |
-| `Protocol`    | Yes       | **MUST BE SET TO** `HTTP` <br> _Notice the UPPER case `Protocol`_                                     |
+| `Protocol`    | Yes       | **MUST BE SET TO** `HTTP`                                     |
 | `Zone1`       | Yes       | **MUST BE SET TO**: `true`                                                                            |
 | `Zone2`       | Yes       | **MUST BE SET TO**: `false`                                                                           |
 | `Zone3`       | Yes       | **MUST BE SET TO**: `false`                                                                           |
 | `Zone4`       | Yes       | **MUST BE SET TO**: `false`                                                                           |
 | `Zone5`       | Yes       | **MUST BE SET TO**: `false`                                                                           |
-| `ProxyPeerId` | Yes      | **MUST BE SET TO**: `539692`                                                                          |
 
 {% common %}
 
@@ -290,9 +289,7 @@ Authorization: {user:password}
     <Zone4>false</Zone4>
     <Zone5>false</Zone5>
   </SipPeerSmsFeatureSettings>
-  <HttpSettings>
-    <ProxyPeerId>539692</ProxyPeerId>
-  </HttpSettings>
+  <HttpSettings />
 </SipPeerSmsFeature>
 ```
 
@@ -341,10 +338,9 @@ In addition to enabling SMS, you must also enable MMS to receive picture message
 
 <code class="post">POST</code>`https://dashboard.bandwidth.com/api/accounts/{{account}}/sites/{{subaccount}}/sippeers/{{location}}/products/messaging/features/mms`
 
-| Parameters    | Mandatory | Description                                                       |
-|:--------------|:----------|:------------------------------------------------------------------|
-| `protocol`    | Yes       | **MUST BE SET TO** `HTTP` <br> _Notice the lower case `protocol`_ |
-| `ProxyPeerId` | Yes      | **MUST BE SET TO**: `539692`                                      |
+| Parameters    | Mandatory | Description                 |
+|:--------------|:----------|:----------------------------|
+| `Protocol`    | Yes       | **MUST BE SET TO** `HTTP`   |
 
 {% common %}
 
@@ -359,13 +355,11 @@ Authorization: {user:password}
 
 <MmsFeature>
   <MmsSettings>
-    <protocol>HTTP</protocol>
+    <Protocol>HTTP</Protocol>
   </MmsSettings>
   <Protocols>
     <HTTP>
-      <HttpSettings>
-        <ProxyPeerId>539692</ProxyPeerId>
-      </HttpSettings>
+      <HttpSettings />
     </HTTP>
   </Protocols>
 </MmsFeature>
