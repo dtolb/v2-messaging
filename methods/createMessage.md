@@ -13,7 +13,7 @@ Endpoint for sending text messages and picture messages using V2 messaging.
 When sending a group message to an invalid phone number, you may receive extraneous [callback events](../events/messageEvents.md).  You can read more on the [Messaging API concepts page](../concepts.md#group-message-invalid).
 
 ### Tags
-* If there is a need to identify individual outbound messages, or correlate them with an ID in your own application, the `tag` field can be set to any string. The custom `tag` will be included in all callbacks for an outbound message.
+* If there is a need to identify individual outbound messages, or correlate them with an ID in your own application, the `tag` field can be set to any string (max 1024 chars). The custom `tag` will be included in all callbacks for an outbound message.
 
 ### Supported Parameters
 | Parameter     | Type                                                                  | Description                                                                                                                                                                                                                              | Mandatory |
@@ -23,7 +23,7 @@ When sending a group message to an invalid phone number, you may receive extrane
 | text          | `string`                                                              | The contents of the text message (must be 2048 characters or less).                                                                                                                                                                      | Yes       |
 | applicationId | `string`                                                              | The ID of the Application your `from` number is associated with in the Bandwidth Phone Number Dashboard.                                                                                                                                 | Yes       |
 | media*         | `array`                                                               | A list of URLs to include as media attachments as part of the message. If this field is included, the message will be sent as MMS no matter the number of recipients.                                                                                                                                                                   | No        |
-| tag           | `string`                                                              | Any string which will be included in the callback events of the message.                                                                                                                                                                 | No        |
+| tag           | `string`                                                              | Any string which will be included in the callback events of the message. (max 1024 Chars)                                                                                                                                                                 | No        |
 
 *Please check the [FAQ](https://dev.bandwidth.com/faq) for information on media size limits
 
