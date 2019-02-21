@@ -5,7 +5,7 @@ Gets a list of your media files. No query parameters are supported.
 
 ### Request URL
 
-<code class="get">GET</code>`https://api.catapult.inetwork.com/v1/users/{userId}/media`
+<code class="get">GET</code>`https://messaging.bandwidth.com/api/v2/users/{userId}/media`
 
 ---
 
@@ -38,17 +38,17 @@ curl -v -X GET https://messaging.bandwidth.com/api/v2/users/{userId}/media \
   {
     "contentLength": 561276,
     "mediaName": "{mediaName1}",
-    "content": "api.catapult.inetwork.com/.../media/{mediaName1}"
+    "content": "https://messaging.bandwidth.com/.../media/{mediaName1}"
   },
   {
     "contentLength": 2703360,
     "mediaName": "{mediaName2}",
-    "content": "https://api.catapult.inetwork.com/.../media/{mediaName2}"
+    "content": "https://messaging.bandwidth.com/.../media/{mediaName2}"
   },
   {
     "contentLength": 2257901,
     "mediaName": "{mediaName3}",
-        "content": "https://api.catapult.inetwork.com/.../media/{mediaName3}"
+        "content": "https://messaging.bandwidth.com/.../media/{mediaName3}"
   }
 ]
 ```

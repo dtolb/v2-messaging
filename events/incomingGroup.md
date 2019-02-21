@@ -21,7 +21,7 @@ For sending and receiving Group Messages, there is a maximum of 10 participants 
 | message.from          | `string` | The phone number the message was sent from                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | message.text          | `string` | The text content of the message                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | message.applicationId | `string` | The ID of the Application your `from` number is associated with in the Bandwidth Phone Number Dashboard.                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| message.media         | `array`  | A list of URLs to include as media attachments as part of the message. <br> Using the [v1 media api](http://dev.bandwidth.com/ap-docs/methods/media/getMediaMediaName.html) You can download the media **WITHIN 30 DAYS** <br><br> The URL will look something like: <br> `https://api.catapult.inetwork.com/v1/users/{userId}/media/{messageId}/{index}/{filename}` <br><br> Where `messageId` is the ID of the incoming message that had the media, `index` is the index of that media in the message (starting from `0`) and `filename` is the original filename |
+| message.media         | `array`  | A list of URLs to include as media attachments as part of the message. <br> Using the [v1 media api](http://dev.bandwidth.com/ap-docs/methods/media/getMediaMediaName.html) You can download the media **WITHIN 30 DAYS** <br><br> The URL will look something like: <br> `https://messaging.bandwidth.com/api/v2/users/{userId}/media/{messageId}/{index}/{filename}` <br><br> Where `messageId` is the ID of the incoming message that had the media, `index` is the index of that media in the message (starting from `0`) and `filename` is the original filename |
 | message.tag           | `string` | An custom String that you can use to track this particular message                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | message.segmentCount  | `int`    | This indicates the number of segments the original message from the user is broken into before sending over to carrier networks. Segmentation of messages depends on the size and encoding. Bandwidth will segment the message if the character count is over the below limits: <br><br> - 160 for GSM-7 <br> - 70 for UCS-2 <br> <br> For MMS messages the segment count will always be set to 1                                                                                                                                                                       |
 
@@ -52,7 +52,7 @@ User-Agent: BandwidthAPI/v2
       "text"          : "Hey, check this out!",
       "applicationId" : "93de2206-9669-4e07-948d-329f4b722ee2",
       "media"         : [
-        "https://api.catapult.inetwork.com/v1/users/{userId}/media/14762070468292kw2fuqty55yp2b2/0/bw.png"
+        "https://messaging.bandwidth.com/api/v2/users/{userId}/media/14762070468292kw2fuqty55yp2b2/0/bw.png"
         ],
       "owner"         : "+12345678902",
       "direction"     : "in",
@@ -90,9 +90,9 @@ User-Agent: BandwidthAPI/v2
       "text"          : "Hey, check this out!",
       "applicationId" : "93de2206-9669-4e07-948d-329f4b722ee2",
       "media"         : [
-        "https://api.catapult.inetwork.com/v1/users/{userId}/media/14762070468292kw2fuqty55yp2b2/0/bw.png",
-        "https://api.catapult.inetwork.com/v1/users/{userId}/media/14762070468292kw2fuqty55yp2b2/1/bandwidth_logo.png",
-        "https://api.catapult.inetwork.com/v1/users/{userId}/media/14762070468292kw2fuqty55yp2b2/2/Bandwidth_Contact.png"
+        "https://messaging.bandwidth.com/api/v2/users/{userId}/media/14762070468292kw2fuqty55yp2b2/0/bw.png",
+        "https://messaging.bandwidth.com/api/v2/users/{userId}/media/14762070468292kw2fuqty55yp2b2/1/bandwidth_logo.png",
+        "https://messaging.bandwidth.com/api/v2/users/{userId}/media/14762070468292kw2fuqty55yp2b2/2/Bandwidth_Contact.png"
         ],
       "owner"         : "+12345678902",
       "direction"     : "in",
