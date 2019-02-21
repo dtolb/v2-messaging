@@ -7,11 +7,13 @@ To receive [events/callbacks](../events/messageEvents.md) for incoming and outgo
 
 ### Base URL
 
-`https://api.catapult.inetwork.com/v2/users/{userId}/messages`
+`https://messaging.bandwidth.com/api/v2`
+
+** Notice: This URL will be active starting March 31st, 2019. The previous base URL `https://api.catapult.inetwork.com/v2/` can still be used, and will be deprecated on May 31st, 2019. **
 
 ### Capabilities
 
 | Verb                           | Path                                             | about                                  |
 |:-------------------------------|:-------------------------------------------------|:---------------------------------------|
-| <code class="post">POST</code> | [`/v2/users/{userId}/messages`](createMessage.md) | Send a text message to a single number |
-| <code class="post">POST</code> | [`/v2/users/{userId}/messages`](createMessage.md)  | Send a text message to a group MMS     |
+| <code class="post">POST</code> | [`/users/{userId}/messages`](createMessage.md) | Send a text message to a single number |
+| <code class="post">POST</code> | [`/users/{userId}/messages`](createMessage.md)  | Send a text message to a group MMS     |
