@@ -3,6 +3,8 @@
 ## Upload or Replace Media
 Uploads a file the normal HTTP way. You may add headers to the request in order to provide some control to your media-file.
 
+Bandwidth retains uploaded media for up to 48 hours.
+
 ### Request URL
 <code class="put">PUT</code>`https://messaging.bandwidth.com/api/v2/users/{userId}/media/{mediaName}`
 
@@ -10,7 +12,7 @@ Uploads a file the normal HTTP way. You may add headers to the request in order 
 
 <aside class="alert general small">
 <p>
-You can upload files up to `65MB` and file storage is free for an unlimited number of files.
+You can upload files up to `65MB` and file storage is free for an unlimited number of files within a 48 hour retention policy.
 </p>
 </aside>
 
