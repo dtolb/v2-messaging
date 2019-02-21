@@ -25,6 +25,12 @@
 | [Message Events/Callbacks](events/messageEvents.md) | Learn about the different HTTP Callbacks Bandwidth will send to the URL configured in your [application](applications/about.md) |
 | [Message Error Codes](codes.md)                     | Learn about the different error codes associated with a [message failure event](events/messageFailed.md)                        |
 
+## Media Overview
+
+| Guide                                               | Description                                                                                                                     |
+|:----------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------|
+| [Media API Overview](media/about.md)   | Learn how to upload, retrieve, delete and list media 
+
 ## Phone Number Management Overview
 
 | Guide                                                               | Description                                                                                              |

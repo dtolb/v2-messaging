@@ -54,6 +54,13 @@
 * [Messages Overview](methods/sendMessages.md)
 * [POST Send Message](methods/createMessage.md)
 
+## Media API
+* [Media Overview](media/about.md)
+* [PUT Upload Media](media/uploadMedia.md)
+* [GET Get Media](media/getMedia.md)
+* [GET List Media](media/listMedia.md)
+* [DELETE Delete Media](media/deleteMedia.md)
+
 ## Message Callbacks
 * [About Message Events/Callbacks](events/messageEvents.md)
 * [Incoming SMS/MMS Message](events/incomingSingle.md)
