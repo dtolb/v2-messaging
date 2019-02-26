@@ -34,7 +34,7 @@ Authorization: {apiToken:apiSecret}
     "text" : "Hello there from Bandwidth!"
 }
 {%- language name="v2/messages", type="http" -%}
-POST https://messaging.bandwidth.com/v2/users/{userId}/messages HTTP/1.1
+POST https://messaging.bandwidth.com/api/v2/users/{userId}/messages HTTP/1.1
 Content-Type: application/json; charset=utf-8
 Authorization: {apiToken:apiSecret}
 
