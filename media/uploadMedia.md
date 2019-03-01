@@ -12,7 +12,7 @@ Bandwidth retains uploaded media for up to 48 hours.
 
 <aside class="alert general small">
 <p>
-You can upload files up to `65MB` and file storage is free for an unlimited number of files within a 48 hour retention policy.
+You can upload files up to `5MB` and file storage is free for an unlimited number of files within a 48 hour retention policy.
 </p>
 </aside>
 
