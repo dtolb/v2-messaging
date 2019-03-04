@@ -1,5 +1,7 @@
 # V2 Messaging Base URL Migration And Media Endpoint Addition FAQ
 
+<br>
+
 ##  When do I need to update to the new Base URL and migrate my outbound traffic?
 After we go live, we are asking customers to migrate their outbound traffic to our new Base URL, as soon as possible, but no later than 60 days after the new Base URL is launched.  
 
