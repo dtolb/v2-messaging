@@ -11,6 +11,7 @@
 	* [How Bandwidth Helps Messaging](billingAndMpsGuidelines.md#how-bandwidth-helps)
 	* [Default Rate Limits](billingAndMpsGuidelines.md#default-rate-limit)
 	* [Managing Messages](billingAndMpsGuidelines.md#managing-messages)
+* [Base URL Change And Media FAQ](baseUrlMediaFAQ.md)
 
 ## Initial Account Setup
 * [via UI](uisetup.md)
