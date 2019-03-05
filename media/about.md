@@ -1,11 +1,11 @@
 
 # Media
-The Media resource lets you upload your media files to Bandwidth API servers so they can be used in applications without requiring a separate hosting provider. You can upload files up to `65MB` and file storage is free for an unlimited number of files. Files are stored for up to 48 hours. Files you upload can only be accessed by you when you supply your API access `token` and `secret`. They are not available to anonymous users. Bandwidth API supports the `Cache-Control` header when you upload files.
+The Media resource lets you upload your media files to Bandwidth API servers so they can be used in applications without requiring a separate hosting provider. You can upload files up to `5MB` and file storage is free for an unlimited number of files. Files are stored for up to 48 hours. Files you upload can only be accessed by you when you supply your API access `token` and `secret`. They are not available to anonymous users. Bandwidth API supports the `Cache-Control` header when you upload files.
 
 {% raw %}
 <aside class="alert general small">
 <p>
-You can upload files up to `65MB` and file storage is free for an unlimited number of files stored up to 48 hours.
+You can upload files up to `5MB` and file storage is free for an unlimited number of files stored up to 48 hours.
 </p>
 </aside>
 {% endraw %}
