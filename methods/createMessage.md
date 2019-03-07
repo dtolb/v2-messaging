@@ -8,7 +8,7 @@ Endpoint for sending text messages and picture messages using V2 messaging.
 
 <code class="post">POST</code>`https://messaging.bandwidth.com/api/v2/users/{userId}/messages`
 
-** Notice: This URL will be active on March 31st, 2019. The previous Request URL <code class="post">POST</code><code>https://api.catapult.inetwork.com/v2/users/{userId}/messages</code> can still be used, and will be deprecated on May 31st, 2019 **
+** Notice: This URL will be active in April 2019. The previous Request URL <code class="post">POST</code><code>https://api.catapult.inetwork.com/v2/users/{userId}/messages</code> can still be used, and will be deprecated in June 2019. **
 
 ### Invalid Phone Number handing
 
