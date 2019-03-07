@@ -8,6 +8,8 @@ Bandwidth retains uploaded media for up to 48 hours.
 ### Request URL
 <code class="put">PUT</code>`https://messaging.bandwidth.com/api/v2/users/{userId}/media/{mediaName}`
 
+**Notice: This URL will be active in April 2019. Current customers will be notified once this URL is ready.**
+
 ---
 
 <aside class="alert general small">

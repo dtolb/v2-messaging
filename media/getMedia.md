@@ -7,6 +7,8 @@ Downloads a media file you previously uploaded.
 
 <code class="get">GET</code>`https://messaging.bandwidth.com/api/v2/users/{userId}/media/{mediaName}`
 
+**Notice: This URL will be active in April 2019. Current customers will be notified once this URL is ready.**
+
 ## ⚠️ Caution on fetching Media ⚠️
 
 You **MUST** use your API token and secret to download the media each and every time you want to access the file.  We **DO NOT** recommend using Bandwidth's url to display/stream media files to your end-users.  Providing your user-id, token, and secret to users' devices is a security risk, as they _could_ use your credentials to access your account.

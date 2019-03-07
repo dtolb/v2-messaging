@@ -7,6 +7,8 @@ Gets a list of your media files. No query parameters are supported.
 
 <code class="get">GET</code>`https://messaging.bandwidth.com/api/v2/users/{userId}/media`
 
+**Notice: This URL will be active in April 2019. Current customers will be notified once this URL is ready.**
+
 ---
 
 ### Properties
