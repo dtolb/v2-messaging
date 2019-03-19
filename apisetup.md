@@ -151,6 +151,7 @@ Authorization: {user:password}
         <StateCode>DC</StateCode>
         <Zip>20006</Zip>
         <Country>US</Country>
+        <AddressType>Service</AddressType>
     </Address>
 </Site>
 <!-- and for a UC account ... -->
@@ -167,6 +168,7 @@ Authorization: {user:password}
         <StateCode>DC</StateCode>
         <Zip>20006</Zip>
         <Country>US</Country>
+        <AddressType>Service</AddressType>
     </Address>
     <UcTrunkingConfiguration>
         <Type>Seats</Type>
