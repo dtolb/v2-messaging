@@ -7,7 +7,7 @@ Downloads a media file you previously uploaded.
 
 <code class="get">GET</code>`https://messaging.bandwidth.com/api/v2/users/{userId}/media/{mediaName}`
 
-**Notice: This URL will be active in April 2019. Current customers will be notified once this URL is ready.**
+**Notice: This URL will be active April 15th, 2019. Current customers will be notified once this URL is ready.**
 
 ## ⚠️ Caution on fetching Media ⚠️
 

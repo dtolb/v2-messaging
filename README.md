@@ -2,7 +2,7 @@
 
 **PLEASE READ**: This is the home for customers using Bandwidth's Messaging v2. If you don't know which version of the messaging API to use, or if you are using our free trial, you're probably on our Messaging v1 API [(see docs)](https://dev.bandwidth.com/ap-docs/methods/restApi.html). Interested in our Messaging v2 API? Request access [here](https://go.bandwidth.com/messaging-v2-api.html).
 
-<div class="alert alert--general"><p>The base URL for the Messaging API is changing in early April 2019. The new base URL will be <code>https://messaging.bandwidth.com/api/v2</code> and is replacing the old base URL which is <code>https://api.catapult.inetwork.com/v2</code>. The old base URL will be deprecated in June 2019. Current customers will be notified when the new URL is ready to be used, and should not switch until notified.</p></div>
+<div class="alert alert--general"><p>The base URL for the Messaging API is changing on April 15th, 2019. The new base URL will be <code>https://messaging.bandwidth.com/api/v2</code> and is replacing the old base URL which is <code>https://api.catapult.inetwork.com/v2</code>. The old base URL will be deprecated June 1st, 2019. Current customers will be notified when the new URL is ready to be used, and should not switch until notified.</p></div>
 
 <div class="alert general medium"><p>Take note that Bandwidth's Messaging v2 does not store message content or records for fetching later. You may access MDR records using our Dashboard Portal, described <a href="https://support.bandwidth.com/hc/en-us/articles/226661127-How-to-Download-Billing-Detail-Records-BDRs-and-Message-Detail-Records-MDRs-">here</a>. If you need message history you need to implement a storage solution that meets your needs.</p></div>
 

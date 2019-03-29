@@ -13,7 +13,7 @@ You can upload files up to `5MB` and file storage is free for an unlimited numbe
 
 `https://messaging.bandwidth.com/api/v2/users/{userId}/media`
 
-** Notice: The `media` endpoint will be active in April 2019. Current customers will be notified once this endpoint is ready.**
+** Notice: The `media` endpoint will be active April 15th, 2019. Current customers will be notified once this endpoint is ready.**
 ### Capabilities
 
 | Verb                               | Path                                                              | about                                         |
