@@ -38,7 +38,7 @@ As a reminder it is recommended that you use your own media servers, but if you 
 You will perform a HTTP GET to download attachments as you do today and then a HTTP DELETE to remove them from Bandwidth servers immediately. It is a best practice to delete files immediately upon successfully receiving a copy of media content. 
 
 ## What is new for V2/media?
-There is a new max 48 hour retention policy for customers who have not already performed a HTTP DELETE themselves. Bandwidth will automatically delete all media from our servers 48 hours after it is created. Uploaded media is now limited to 5MB, down from 65MB.
+There is a new max 48 hour retention policy for customers who have not already performed a HTTP DELETE themselves. Bandwidth will automatically delete all media from our servers 48 hours after it is created. Uploaded media is now limited to 3.75MB, down from 65MB.
 
 <br>
 <br>
