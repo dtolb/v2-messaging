@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Message Delivered</title>
+        <title>GET Get Media</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content>
         <meta name="generator" content="GitBook 3.2.3">
@@ -72,10 +72,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="messageFailed.html">
+    <link rel="next" href="listMedia.html">
     
     
-    <link rel="prev" href="incomingGroup.html">
+    <link rel="prev" href="uploadMedia.html">
     
 
     <meta name="google-site-verification" content="zCASWBBoL4U7H-I0oVhlzfdosxVxPEK1dIxD4GqsW9E">
@@ -802,9 +802,9 @@
         
         
     
-        <li class="chapter " data-level="6.1" data-path="../media/about.html">
+        <li class="chapter " data-level="6.1" data-path="about.html">
             
-                <a href="../media/about.html">
+                <a href="about.html">
             
                     
                     Media Overview
@@ -815,9 +815,9 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2" data-path="../media/uploadMedia.html">
+        <li class="chapter " data-level="6.2" data-path="uploadMedia.html">
             
-                <a href="../media/uploadMedia.html">
+                <a href="uploadMedia.html">
             
                     
                     <code class="put">PUT </code> Upload Media
@@ -828,9 +828,9 @@
             
         </li>
     
-        <li class="chapter " data-level="6.3" data-path="../media/getMedia.html">
+        <li class="chapter active" data-level="6.3" data-path="getMedia.html">
             
-                <a href="../media/getMedia.html">
+                <a href="getMedia.html">
             
                     
                     <code class="get">GET </code> Get Media
@@ -841,9 +841,9 @@
             
         </li>
     
-        <li class="chapter " data-level="6.4" data-path="../media/listMedia.html">
+        <li class="chapter " data-level="6.4" data-path="listMedia.html">
             
-                <a href="../media/listMedia.html">
+                <a href="listMedia.html">
             
                     
                     <code class="get">GET </code> List Media
@@ -854,9 +854,9 @@
             
         </li>
     
-        <li class="chapter " data-level="6.5" data-path="../media/deleteMedia.html">
+        <li class="chapter " data-level="6.5" data-path="deleteMedia.html">
             
-                <a href="../media/deleteMedia.html">
+                <a href="deleteMedia.html">
             
                     
                     <code class="delete">DEL </code> Delete Media
@@ -874,9 +874,9 @@
         
         
     
-        <li class="chapter " data-level="7.1" data-path="messageEvents.html">
+        <li class="chapter " data-level="7.1" data-path="../events/messageEvents.html">
             
-                <a href="messageEvents.html">
+                <a href="../events/messageEvents.html">
             
                     
                     About Message Events/Callbacks
@@ -887,9 +887,9 @@
             
         </li>
     
-        <li class="chapter " data-level="7.2" data-path="incomingSingle.html">
+        <li class="chapter " data-level="7.2" data-path="../events/incomingSingle.html">
             
-                <a href="incomingSingle.html">
+                <a href="../events/incomingSingle.html">
             
                     
                     Incoming SMS/MMS Message
@@ -900,9 +900,9 @@
             
         </li>
     
-        <li class="chapter " data-level="7.3" data-path="incomingGroup.html">
+        <li class="chapter " data-level="7.3" data-path="../events/incomingGroup.html">
             
-                <a href="incomingGroup.html">
+                <a href="../events/incomingGroup.html">
             
                     
                     Incoming Group Message
@@ -913,9 +913,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="7.4" data-path="msgDelivered.html">
+        <li class="chapter " data-level="7.4" data-path="../events/msgDelivered.html">
             
-                <a href="msgDelivered.html">
+                <a href="../events/msgDelivered.html">
             
                     
                     Message Delivered
@@ -926,9 +926,9 @@
             
         </li>
     
-        <li class="chapter " data-level="7.5" data-path="messageFailed.html">
+        <li class="chapter " data-level="7.5" data-path="../events/messageFailed.html">
             
-                <a href="messageFailed.html">
+                <a href="../events/messageFailed.html">
             
                     
                     Message Failed
@@ -1216,7 +1216,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="..">Message Delivered</a>
+        <a href="..">GET Get Media</a>
     </h1>
 </div>
 
@@ -1231,136 +1231,18 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div class="api-method"><div class="api-method-definition"><div class="api-definition-top"></div><h1 id="message-delivered-event">Message Delivered Event</h1>
-<p>In order to receive message events, you need to ensure you have set up your application to send callbacks to your server&apos;s URL.</p>
-<aside class="alert general">
-<p><b>
-IMPORTANT NOTE ABOUT MMS AND GROUP MESSAGES!
-</b></p>
-MMS and Group messages <b>don&#x2019;t</b> currently support delivery receipts. However, you will still receive a message delivered event when the message is sent. For only MMS and Group Messages this means that your message has been handed off to the Bandwidth core network, but has not been confirmed at the downstream carrier. We are actively working to support true delivery receipts for the v2 Messaging API.
-</aside>
-
-
-
-<h3 id="parameters">Parameters</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Parameter</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">type</td>
-<td style="text-align:left"><code>string</code></td>
-<td style="text-align:left">The Event type</td>
-</tr>
-<tr>
-<td style="text-align:left">time</td>
-<td style="text-align:left"><code>array</code></td>
-<td style="text-align:left">The time of the event described in the receipt</td>
-</tr>
-<tr>
-<td style="text-align:left">description</td>
-<td style="text-align:left"><code>string</code></td>
-<td style="text-align:left">A detailed description of the event described by the receipt</td>
-</tr>
-<tr>
-<td style="text-align:left">to</td>
-<td style="text-align:left"><code>string</code></td>
-<td style="text-align:left">The destination number for an outbound message receipt</td>
-</tr>
-<tr>
-<td style="text-align:left">message</td>
-<td style="text-align:left"><code>string</code></td>
-<td style="text-align:left">Any string, it will be included in the callback events of the message.</td>
-</tr>
-<tr>
-<td style="text-align:left">message.id</td>
-<td style="text-align:left"><code>string</code></td>
-<td style="text-align:left">The unique ID of this message</td>
-</tr>
-<tr>
-<td style="text-align:left">message.owner</td>
-<td style="text-align:left"><code>string</code></td>
-<td style="text-align:left">The phone number this particular message is associated with.<br> For an outbound message, this is always the <code>from</code> number.<br> For an inbound message, this will be (one of) the <code>to</code> number(s).<br>For instance, if this is an inbound group message, the <code>owner</code> field will be set to the <code>to</code> number that this particular copy of the group message belongs to.</td>
-</tr>
-<tr>
-<td style="text-align:left">message.time</td>
-<td style="text-align:left"><code>string</code></td>
-<td style="text-align:left">The time stamp of when message was created</td>
-</tr>
-<tr>
-<td style="text-align:left">message.direction</td>
-<td style="text-align:left"><code>string</code></td>
-<td style="text-align:left">Whether the message was sent from Bandwidth, or received by a Bandwidth number</td>
-</tr>
-<tr>
-<td style="text-align:left">message.to</td>
-<td style="text-align:left"><code>array</code></td>
-<td style="text-align:left">The phone number (or numbers) the message the message is sent to. On a POST, this can be a String, or an array of one or more numbers. In all other places, this will be an array.</td>
-</tr>
-<tr>
-<td style="text-align:left">message.from</td>
-<td style="text-align:left"><code>string</code></td>
-<td style="text-align:left">The phone number the message was sent from</td>
-</tr>
-<tr>
-<td style="text-align:left">message.text</td>
-<td style="text-align:left"><code>string</code></td>
-<td style="text-align:left">The text content of the message</td>
-</tr>
-<tr>
-<td style="text-align:left">message.applicationId</td>
-<td style="text-align:left"><code>string</code></td>
-<td style="text-align:left">The ID of the Application your <code>from</code> number is associated with in the Bandwidth Phone Number Dashboard.</td>
-</tr>
-<tr>
-<td style="text-align:left">message.media</td>
-<td style="text-align:left"><code>array</code></td>
-<td style="text-align:left">A list of URLs to include as media attachments as part of the message</td>
-</tr>
-<tr>
-<td style="text-align:left">message.tag</td>
-<td style="text-align:left"><code>string</code></td>
-<td style="text-align:left">An custom String that you can use to track this particular message</td>
-</tr>
-<tr>
-<td style="text-align:left">message.segmentCount</td>
-<td style="text-align:left"><code>int</code></td>
-<td style="text-align:left">This indicates the number of segments the original message from the user is broken into before sending over to career networks</td>
-</tr>
-</tbody>
-</table>
-</div><div class="api-method-code"><div class="api-code-top"></div><div class="api-method-example"><h3 id="message-delivered-to-carrier">Message delivered to carrier</h3>
-</div><div class="api-method-sample" data-lang="http" data-name="HTTP"><pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">/your_url</span> HTTP/1.1
-<span class="hljs-attribute">Content-Type</span>: application/json; charset=utf-8
-<span class="hljs-attribute">User-Agent</span>: BandwidthAPI/v2
-
-<span class="json">[
-  {
-    <span class="hljs-attr">&quot;type&quot;</span>          : <span class="hljs-string">&quot;message-delivered&quot;</span>,
-    <span class="hljs-attr">&quot;time&quot;</span>          : <span class="hljs-string">&quot;2016-09-14T18:20:16Z&quot;</span>,
-    <span class="hljs-attr">&quot;description&quot;</span>   : <span class="hljs-string">&quot;Message delivered to carrier&quot;</span>,
-    <span class="hljs-attr">&quot;message&quot;</span>       : {
-      <span class="hljs-attr">&quot;id&quot;</span>            : <span class="hljs-string">&quot;14762070468292kw2fuqty55yp2b2&quot;</span>,
-      <span class="hljs-attr">&quot;time&quot;</span>          : <span class="hljs-string">&quot;2016-09-14T18:20:16Z&quot;</span>,
-      <span class="hljs-attr">&quot;to&quot;</span>            : [
-          <span class="hljs-string">&quot;+12345678902&quot;</span>,
-          <span class="hljs-string">&quot;+12345678903&quot;</span>
-        ],
-      <span class="hljs-attr">&quot;from&quot;</span>          : <span class="hljs-string">&quot;+12345678901&quot;</span>,
-      <span class="hljs-attr">&quot;text&quot;</span>          : <span class="hljs-string">&quot;Hey, check this out!&quot;</span>,
-      <span class="hljs-attr">&quot;applicationId&quot;</span> : <span class="hljs-string">&quot;93de2206-9669-4e07-948d-329f4b722ee2&quot;</span>,
-      <span class="hljs-attr">&quot;owner&quot;</span>         : <span class="hljs-string">&quot;+12345678902&quot;</span>,
-      <span class="hljs-attr">&quot;direction&quot;</span>     : <span class="hljs-string">&quot;in&quot;</span>,
-      <span class="hljs-attr">&quot;segmentCount&quot;</span>  : <span class="hljs-number">1</span>
-    }
-  }
-]
-</span></code></pre>
+                                <div class="api-method"><div class="api-method-definition"><div class="api-definition-top"></div><h2 id="download-media">Download Media</h2>
+<p>Downloads a media file you previously uploaded.</p>
+<h3 id="request-url">Request URL</h3>
+<p><code class="get">GET</code><code>https://messaging.bandwidth.com/api/v2/users/{userId}/media/{mediaName}</code></p>
+<p><strong>Notice: This URL will be active April 15th, 2019. Current customers will be notified once this URL is ready.</strong></p>
+<h2 id="&#x26A0;&#xFE0F;-caution-on-fetching-media-&#x26A0;&#xFE0F;">&#x26A0;&#xFE0F; Caution on fetching Media &#x26A0;&#xFE0F;</h2>
+<p>You <strong>MUST</strong> use your API token and secret to download the media each and every time you want to access the file.  We <strong>DO NOT</strong> recommend using Bandwidth&apos;s url to display/stream media files to your end-users.  Providing your user-id, token, and secret to users&apos; devices is a security risk, as they <em>could</em> use your credentials to access your account.</p>
+<p>Instead, we recommend that you create a copy on your local server or a cloud storage service.  Doing so allows you to specify <strong>YOUR</strong> authentication method (if any) to keep your Bandwidth account and users safe.</p>
+</div><div class="api-method-code"><div class="api-code-top"></div><div class="api-method-example"><h3 id="example-1-of-1-download-an-mp3-file">Example 1 of 1: Download an MP3 File</h3>
+</div><div class="api-method-sample" data-lang="bash" data-name="cURL"><pre><code class="lang-bash">curl -v -X GET https://messaging.bandwidth.com/api/v2/users/{userId}/media/{mediaName} \
+  -u {token}:{secret} \
+</code></pre>
 </div></div></div>
 
                                 
@@ -1395,7 +1277,7 @@ MMS and Group messages <b>don&#x2019;t</b> currently support delivery receipts. 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Message Delivered","level":"7.4","depth":1,"next":{"title":"Message Failed","level":"7.5","depth":1,"path":"events/messageFailed.md","ref":"events/messageFailed.md","articles":[]},"previous":{"title":"Incoming Group Message","level":"7.3","depth":1,"path":"events/incomingGroup.md","ref":"events/incomingGroup.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.9.11","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0","mouseflow","usabilla"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"mouseflow":{"projectId":"e48d3324-5985-479f-a9fc-7283fb266917"},"favicon":"images/favicon.ico","usabilla":{"usabillaId":"73009503da29"},"bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"events/msgDelivered.md","mtime":"2019-04-02T18:27:07.943Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-02T18:28:28.213Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"GET Get Media","level":"6.3","depth":1,"next":{"title":"GET List Media","level":"6.4","depth":1,"path":"media/listMedia.md","ref":"media/listMedia.md","articles":[]},"previous":{"title":"PUT Upload Media","level":"6.2","depth":1,"path":"media/uploadMedia.md","ref":"media/uploadMedia.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.9.11","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0","mouseflow","usabilla"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"mouseflow":{"projectId":"e48d3324-5985-479f-a9fc-7283fb266917"},"favicon":"images/favicon.ico","usabilla":{"usabillaId":"73009503da29"},"bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"media/getMedia.md","mtime":"2019-04-02T18:27:08.031Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-02T18:28:28.213Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
