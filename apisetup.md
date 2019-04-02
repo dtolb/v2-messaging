@@ -614,7 +614,7 @@ Content-Type: application/xml; charset=utf-8
 ### Message Parameters
 
 #### Request URL
-<code class="post">POST</code>`https://api.catapult.inetwork.com/v2/users/{{userId}}/messages`
+<code class="post">POST</code>`https://messaging.bandwidth.com/api/v2/users/{{userId}}/messages`
 
 | Parameter       | Mandatory | Description                                                                                                                                                                                       |
 |:----------------|:----------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -630,7 +630,7 @@ Content-Type: application/xml; charset=utf-8
 {% sample lang="http" %}
 
 ```http
-POST https://api.catapult.inetwork.com/v2/users/{{userId}}/messages HTTP/1.1
+POST https://messaging.bandwidth.com/api/v2/users/{{userId}}/messages HTTP/1.1
 Content-Type: application/json; charset=utf-8
 Authorization: {token:secret}
 

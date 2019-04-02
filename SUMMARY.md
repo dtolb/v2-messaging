@@ -11,6 +11,7 @@
 	* [How Bandwidth Helps Messaging](billingAndMpsGuidelines.md#how-bandwidth-helps)
 	* [Default Rate Limits](billingAndMpsGuidelines.md#default-rate-limit)
 	* [Managing Messages](billingAndMpsGuidelines.md#managing-messages)
+* [Base URL Change And Media FAQ](baseUrlMediaFAQ.md)
 
 ## Initial Account Setup
 * [via UI](uisetup.md)
@@ -53,6 +54,13 @@
 ## Messaging API
 * [Messages Overview](methods/sendMessages.md)
 * [POST Send Message](methods/createMessage.md)
+
+## Media API
+* [Media Overview](media/about.md)
+* [PUT Upload Media](media/uploadMedia.md)
+* [GET Get Media](media/getMedia.md)
+* [GET List Media](media/listMedia.md)
+* [DELETE Delete Media](media/deleteMedia.md)
 
 ## Message Callbacks
 * [About Message Events/Callbacks](events/messageEvents.md)
