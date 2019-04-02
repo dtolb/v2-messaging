@@ -23,7 +23,7 @@ You can upload files up to <code>3.75MB</code> and file storage is free for an u
 |:---------------|:-----------------------------------------------------------------------------------------------------------------------------------|:----------|
 | Content-Length | Indicates the size of the entity-body.                                                                                             | Yes       |
 | Cache-Control  | General-header field is used to specify directives that MUST be obeyed by all caching mechanisms along the request/response chain. | No        |
-| Content-Type   | The media type of the entity-body.                                                                                                 | No        |
+| Content-Type   | The media type of the entity-body.                                                                                                 | Yes        |
 
 {% common %}
 
