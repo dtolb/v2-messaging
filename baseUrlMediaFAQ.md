@@ -3,16 +3,16 @@
 <br>
 
 ##  When do I need to update to the new Base URL and migrate my outbound traffic?
-After we go live, we are asking customers to migrate their outbound traffic to our new Base URL, as soon as possible, but no later than 60 days after the new Base URL is launched.  
+After we go live, we are asking customers to migrate their outbound traffic to our new Base URL, as soon as possible, but no later than 60 days after the new Base URL is launched.
 
 ##  What is the new Base URL?
 The new Base URL is:  https://messaging.bandwidth.com/api/v2  
 
 ## When will the new Base URL environment be ready?
-The new environment will be ready in April 2019, but we will keep you posted on the exact date.
+The new environment will be ready April 15th, 2019.
 
 ## Is there a way I can test in advance of migrating my outbound SMS/MMS?
-Yes! After we deploy our new V2 infrastructure, you can test outbound traffic with a subset of your phone numbers, sending only outbound test traffic to the new Base URL. You should be able to complete a full test of functionality before you migrate all your traffic. Keep an eye out in the coming weeks for a follow-up communication with more details on our go-live date. 
+Yes! After we deploy our new V2 infrastructure, you can test outbound traffic with a subset of your phone numbers, sending only outbound test traffic to the new Base URL. You should be able to complete a full test of functionality before you migrate all your traffic. Keep an eye out in the coming weeks for a follow-up communication with more details on our go-live date.
 
 
 ## Will my current tokens work on the new Base URL? 
