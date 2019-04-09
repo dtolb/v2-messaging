@@ -183,7 +183,7 @@ Content-Type: application/xml
 {% sample lang="http" %}
 
 ```http
-POST https://api.catapult.inetwork.com/v2/users/{{userId}}/messages HTTP/1.1
+POST https://messaging.bandwidth.com/api/v2/users/{{userId}}/messages HTTP/1.1
 Content-Type: application/json; charset=utf-8
 Authorization: {token:secret}
 

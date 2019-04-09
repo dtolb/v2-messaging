@@ -24,7 +24,7 @@
 ### Sending Message
 
 {% codetabs name="v1/messages", type="http" -%}
-POST https://api.catapult.inetwork.com/v2/users/{userId}/messages HTTP/1.1
+POST https://messaging.bandwidth.com/api/v2/users/{userId}/messages HTTP/1.1
 Content-Type: application/json; charset=utf-8
 Authorization: {apiToken:apiSecret}
 
@@ -34,7 +34,7 @@ Authorization: {apiToken:apiSecret}
     "text" : "Hello there from Bandwidth!"
 }
 {%- language name="v2/messages", type="http" -%}
-POST https://api.catapult.inetwork.com/v2/users/{userId}/messages HTTP/1.1
+POST https://messaging.bandwidth.com/api/v2/users/{userId}/messages HTTP/1.1
 Content-Type: application/json; charset=utf-8
 Authorization: {apiToken:apiSecret}
 
@@ -51,7 +51,7 @@ Authorization: {apiToken:apiSecret}
 
 {% codetabs name="v1/messages response", type="http" -%}
 HTTP/1.1 201 Created
-Location: https://api.catapult.inetwork.com/v2/users/{userId}/messages/{message-id}
+Location: https://messaging.bandwidth.com/api/v2/users/{userId}/messages/{message-id}
 {%- language name="v2/messages response", type="http" -%}
 Status: 202 Accepted
 Content-Type: application/json; charset=utf-8
@@ -84,7 +84,7 @@ User-Agent: BandwidthAPI/v1
    "eventType"  : "sms",
    "direction"  : "out",
    "messageId"  : "{messageId}",
-   "messageUri" : "https://api.catapult.inetwork.com/v2/users/{userId}/messages/{messageId}",
+   "messageUri" : "https://messaging.bandwidth.com/api/v2/users/{userId}/messages/{messageId}",
    "from"       : "+13233326955",
    "to"         : "+13865245000",
    "text"       : "Example",
@@ -110,9 +110,9 @@ User-Agent: BandwidthAPI/v2
       "text"          : "Hey, check this out!",
       "applicationId" : "93de2206-9669-4e07-948d-329f4b722ee2",
       "media"         : [
-        "https://api.catapult.inetwork.com/v2/users/{userId}/media/14762070468292kw2fuqty55yp2b2/0/bw.png",
-        "https://api.catapult.inetwork.com/v2/users/{userId}/media/14762070468292kw2fuqty55yp2b2/1/bandwidth_logo.png",
-        "https://api.catapult.inetwork.com/v2/users/{userId}/media/14762070468292kw2fuqty55yp2b2/2/Bandwidth_Contact.png"
+        "https://messaging.bandwidth.com/api/v2/users/{userId}/media/14762070468292kw2fuqty55yp2b2/0/bw.png",
+        "https://messaging.bandwidth.com/api/v2/users/{userId}/media/14762070468292kw2fuqty55yp2b2/1/bandwidth_logo.png",
+        "https://messaging.bandwidth.com/api/v2/users/{userId}/media/14762070468292kw2fuqty55yp2b2/2/Bandwidth_Contact.png"
       ],
       "owner"         : "+12345678902",
       "direction"     : "in",
