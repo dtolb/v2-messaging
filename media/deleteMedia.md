@@ -7,8 +7,6 @@ Deletes a media file from Bandwidth API server. Make sure you don't have any app
 
 <code class="delete">DELETE</code>`https://messaging.bandwidth.com/api/v2/users/{userId}/media/{mediaName}`
 
-**Notice: This URL will be active April 15th, 2019. Current customers will be notified once this URL is ready.**
-
 {% common %}
 
 ### Example 1 of 1: Delete an MP3 File

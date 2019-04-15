@@ -6,9 +6,9 @@ Endpoint for sending text messages and picture messages using V2 messaging.
 
 ### Request URL
 
-<code class="post">POST</code>`https://api.catapult.inetwork.com/v2/users/{userId}/messages`
+<code class="post">POST</code>`https://messaging.bandwidth.com/api/v2/users/{userId}/messages`
 
-** Notice: This URL will be deprecated June 13th, 2019. This URL is being replaced by `https://messaging.bandwidth.com/api/v2/users/{userId}/messages`, which will be active April 15th, 2019. Current customers will be notified when the new URL is ready to be used, and should not switch until notified.**
+** Notice: The old URL `https://api.catapult.inetwork.com/v2/users/{userId}/messages` will be deprecated June 13th, 2019. Please update your system to use the new URL. **
 
 ### Invalid Phone Number handing
 
@@ -36,7 +36,7 @@ When sending a group message to an invalid phone number, you may receive extrane
 {% sample lang='http' %}
 
 ```http
-POST https://api.catapult.inetwork.com/v2/users/{userId}/messages HTTP/1.1
+POST https://messaging.bandwidth.com/api/v2/users/{userId}/messages HTTP/1.1
 Content-Type: application/json; charset=utf-8
 Authorization: {apiToken:apiSecret}
 
@@ -54,7 +54,7 @@ Authorization: {apiToken:apiSecret}
 
 ```bash
 curl --request POST \
-    --url https://api.catapult.inetwork.com/v2/users/{{userId}}/messages \
+    --url https://messaging.bandwidth.com/api/v2/users/{{userId}}/messages \
     --user {apiToken}:{apiSecret} \
     --header 'content-type: application/json' \
     --data '
@@ -74,7 +74,7 @@ curl --request POST \
 var request = require("request");
 
 var options = { method: 'POST',
-  url: 'https://api.catapult.inetwork.com/v2/users/{{userId}}/messages',
+  url: 'https://messaging.bandwidth.com/api/v2/users/{{userId}}/messages',
   headers: { 'content-type': 'application/json' },
   auth: {
     user: '{{apiToken}}',
@@ -124,7 +124,7 @@ Content-Type: application/json; charset=utf-8
 {% sample lang='http' %}
 
 ```http
-POST https://api.catapult.inetwork.com/v2/users/{userId}/messages HTTP/1.1
+POST https://messaging.bandwidth.com/api/v2/users/{userId}/messages HTTP/1.1
 Content-Type: application/json; charset=utf-8
 Authorization: {apiToken:apiSecret}
 
@@ -145,7 +145,7 @@ Authorization: {apiToken:apiSecret}
 
 ```bash
 curl --request POST \
-    --url https://api.catapult.inetwork.com/v2/users/{{userId}}/messages \
+    --url https://messaging.bandwidth.com/api/v2/users/{{userId}}/messages \
     --user {apiToken}:{apiSecret} \
     --header 'content-type: application/json' \
     --data '
@@ -168,7 +168,7 @@ curl --request POST \
 var request = require("request");
 
 var options = { method: 'POST',
-  url: 'https://api.catapult.inetwork.com/v2/users/{{userId}}/messages',
+  url: 'https://messaging.bandwidth.com/api/v2/users/{{userId}}/messages',
   headers: { 'content-type': 'application/json' },
   auth: {
     user: '{{apiToken}}',
@@ -223,7 +223,7 @@ Content-Type: application/json; charset=utf-8
 {% sample lang='http' %}
 
 ```http
-POST https://api.catapult.inetwork.com/v2/users/{userId}/messages HTTP/1.1
+POST https://messaging.bandwidth.com/api/v2/users/{userId}/messages HTTP/1.1
 Content-Type: application/json; charset=utf-8
 Authorization: {apiToken:apiSecret}
 
@@ -245,7 +245,7 @@ Authorization: {apiToken:apiSecret}
 
 ```bash
 curl --request POST \
-    --url https://api.catapult.inetwork.com/v2/users/{{userId}}/messages \
+    --url https://messaging.bandwidth.com/api/v2/users/{{userId}}/messages \
     --user {apiToken}:{apiSecret} \
     --header 'content-type: application/json' \
     --data '
@@ -269,7 +269,7 @@ curl --request POST \
 var request = require("request");
 
 var options = { method: 'POST',
-  url: 'https://api.catapult.inetwork.com/v2/users/{{userId}}/messages',
+  url: 'https://messaging.bandwidth.com/api/v2/users/{{userId}}/messages',
   headers: { 'content-type': 'application/json' },
   auth: {
     user: '{{apiToken}}',
@@ -325,7 +325,7 @@ Content-Type: application/json; charset=utf-8
 {% sample lang='http' %}
 
 ```http
-POST https://api.catapult.inetwork.com/v2/users/{userId}/messages HTTP/1.1
+POST https://messaging.bandwidth.com/api/v2/users/{userId}/messages HTTP/1.1
 Content-Type: application/json; charset=utf-8
 Authorization: {apiToken:apiSecret}
 
@@ -346,7 +346,7 @@ Authorization: {apiToken:apiSecret}
 
 ```bash
 curl --request POST \
-    --url https://api.catapult.inetwork.com/v2/users/{{userId}}/messages \
+    --url https://messaging.bandwidth.com/api/v2/users/{{userId}}/messages \
     --user {apiToken}:{apiSecret} \
     --header 'content-type: application/json' \
     --data '
@@ -369,7 +369,7 @@ curl --request POST \
 var request = require("request");
 
 var options = { method: 'POST',
-  url: 'https://api.catapult.inetwork.com/v2/users/{{userId}}/messages',
+  url: 'https://messaging.bandwidth.com/api/v2/users/{{userId}}/messages',
   headers: { 'content-type': 'application/json' },
   auth: {
     user: '{{apiToken}}',
@@ -419,7 +419,7 @@ Content-Type: application/json; charset=utf-8
 {% sample lang='http' %}
 
 ```http
-POST https://api.catapult.inetwork.com/v2/users/{userId}/messages HTTP/1.1
+POST https://messaging.bandwidth.com/api/v2/users/{userId}/messages HTTP/1.1
 Content-Type: application/json; charset=utf-8
 Authorization: {apiToken:apiSecret}
 
@@ -443,7 +443,7 @@ Authorization: {apiToken:apiSecret}
 
 ```bash
 curl --request POST \
-    --url https://api.catapult.inetwork.com/v2/users/{{userId}}/messages \
+    --url https://messaging.bandwidth.com/api/v2/users/{{userId}}/messages \
     --user {apiToken}:{apiSecret} \
     --header 'content-type: application/json' \
     --data '
@@ -469,7 +469,7 @@ curl --request POST \
 var request = require("request");
 
 var options = { method: 'POST',
-  url: 'https://api.catapult.inetwork.com/v2/users/{{userId}}/messages',
+  url: 'https://messaging.bandwidth.com/api/v2/users/{{userId}}/messages',
   headers: { 'content-type': 'application/json' },
   auth: {
     user: '{{apiToken}}',
