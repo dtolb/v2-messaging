@@ -24,7 +24,7 @@
 ### Sending Message
 
 {% codetabs name="v1/messages", type="http" -%}
-POST https://messaging.bandwidth.com/api/v2/users/{userId}/messages HTTP/1.1
+POST https://api.catapult.inetwork.com/v1/users/{userId}/messages HTTP/1.1
 Content-Type: application/json; charset=utf-8
 Authorization: {apiToken:apiSecret}
 
@@ -51,7 +51,7 @@ Authorization: {apiToken:apiSecret}
 
 {% codetabs name="v1/messages response", type="http" -%}
 HTTP/1.1 201 Created
-Location: https://messaging.bandwidth.com/api/v2/users/{userId}/messages/{message-id}
+Location: https://api.catapult.inetwork.com/v1/users/{userId}/messages/{message-id}
 {%- language name="v2/messages response", type="http" -%}
 Status: 202 Accepted
 Content-Type: application/json; charset=utf-8
@@ -84,7 +84,7 @@ User-Agent: BandwidthAPI/v1
    "eventType"  : "sms",
    "direction"  : "out",
    "messageId"  : "{messageId}",
-   "messageUri" : "https://messaging.bandwidth.com/api/v2/users/{userId}/messages/{messageId}",
+   "messageUri" : "https://api.catapult.inetwork.com/v1/users/{userId}/messages/{messageId}",
    "from"       : "+13233326955",
    "to"         : "+13865245000",
    "text"       : "Example",
