@@ -54,6 +54,9 @@
 ## Messaging API
 * [Messages Overview](methods/sendMessages.md)
 * [POST Send Message](methods/createMessage.md)
+* [GET List Messages](methods/listMessages.md)
+* [GET Get Message Details](methods/getMessage.md)
+
 
 ## Media API
 * [Media Overview](media/about.md)
