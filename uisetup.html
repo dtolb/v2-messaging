@@ -1255,10 +1255,10 @@ This guide is entirely focused on setup with the UI.  If you&apos;d like to foll
 <h2 id="get-your-account-id">Get your account ID </h2>
 <ol>
 <li>Log into the <a href="https://dashboard.bandwidth.com" target="_blank">Bandwidth Phone Number Dashboard</a></li>
-<li>Click the <strong>Account</strong> tab in the menu section to go to your <strong>Account Overview</strong></li>
+<li>Click the <strong>Account</strong> tab in the top navigation to go to your <strong>Account Overview</strong></li>
 <li>Under the <strong>Account overview</strong> section you should see your account ID.</li>
 </ol>
-<p><img src="images/messaging-2/account_id.png" alt="Get Account Id"></p>
+<p><img src="images/messaging-2/account_id_new.png" alt="Get Account Id"></p>
 <h2 id="setup-your-application">Create your first Application </h2>
 <p>&#x2139;&#xFE0F; Learn more about <a href="applications/about.html">Applications</a> &#x2139;&#xFE0F;</p>
 <p>The Application contains the HTTP URL you want to use for both inbound and outbound messages.</p>
@@ -1344,20 +1344,20 @@ Save the <code>Application Id</code> After creating the application.
 <ol>
 <li><p>Navigate to the <a href="https://dashboard.bandwidth.com/portal/report/#addsubaccount:" target="_blank"><strong>Add a sub-account</strong></a> page (<em>if you already have a sub-account you&apos;d like to use, you can skip this step</em>)</p>
 <ul>
-<li><strong>Account</strong> &gt; <strong>Configuration</strong> &gt; <strong>Sub-accounts</strong> &gt; <strong>Add a sub-account</strong></li>
+<li><strong>Account</strong> &gt; <strong>Sub-accounts</strong> &gt; <strong>Add a sub-account</strong></li>
 </ul>
 </li>
 <li><p>You&apos;ll need a sub-account (<em>site</em>) in order to create a location (<em>sippeer</em>).</p>
 </li>
 <li>Fill in the address and set the <code>type</code> to <code>Service</code></li>
 </ol>
-<p><img src="images/messaging-2/create_subaccount.png" alt="Create Sub-account"></p>
+<p><img src="images/messaging-2/createSubAccount_new.png" alt="Create Sub-account"></p>
 <hr>
 <h2 id="create-location-sippeer-and-assign-the-application">Create location (<em>sippeer</em>) and assign the application </h2>
 <ol>
 <li><p>Navigate to the <a href="https://dashboard.bandwidth.com/portal/report/#addlocation:" target="_blank"><strong>Add a location</strong></a> page</p>
 <ul>
-<li><strong>Account</strong> &gt; <strong>Configuration</strong> &gt; <strong>Locations</strong> &gt; <strong>Add a location</strong></li>
+<li><strong>Account</strong> &gt; <strong>Locations</strong> &gt; <strong>Add a location</strong></li>
 </ul>
 </li>
 <li><p>You&apos;ll need a location (<em>sippeer</em>) in order to group phone numbers.</p>
@@ -1379,7 +1379,7 @@ Save the <code>Application Id</code> After creating the application.
 <ol>
 <li><p>Navigate to the <a href="https://dashboard.bandwidth.com/" target="_blank"><strong>Order New Numbers</strong></a> page</p>
 <ul>
-<li><strong>Orders</strong> &gt; <strong>Order New Numbers</strong></li>
+<li><strong>Numbers</strong> &gt; <strong>Search &amp; Buy</strong></li>
 </ul>
 </li>
 <li><p>Once your application, sub-account (<em>site</em>), and location (<em>sippeer</em>) have been configured you&apos;re ready to start ordering phone numbers to use.</p>
@@ -1387,11 +1387,11 @@ Save the <code>Application Id</code> After creating the application.
 <li>Using the UI, search for a number and order it to the sub-account (<em>site</em>) and location (<em>sippeer</em>) created above.</li>
 </ol>
 <h3 id="search-and-buy-numbers">Search and buy numbers</h3>
-<p><img src="images/order-number-screenshots/search-and-buy-numbers.png" alt="Search and buy numbers"></p>
+<p><img src="images/messaging-2/searchNumbers.png" alt="Search and buy numbers"></p>
 <h3 id="view-available-numbers">View available numbers</h3>
-<p><img src="images/order-number-screenshots/view-available-numbers.png" alt="View available numbers"></p>
+<p><img src="images/messaging-2/chooseNumbers.png" alt="View available numbers"></p>
 <h3 id="place-and-purchase-numbers">Place and purchase numbers</h3>
-<p><img src="images/order-number-screenshots/place-and-purchase.png" alt="Place and purchase"></p>
+<p><img src="images/messaging-2/orderNumbers.png" alt="Place and purchase"></p>
 <hr>
 <h2 id="sending-messages">Sending Messages </h2>
 <p>&#x2139;&#xFE0F; Learn more about <a href="methods/sendMessages.html">Messages</a> &#x2139;&#xFE0F;</p>
@@ -1492,7 +1492,7 @@ Save the <code>Application Id</code> After creating the application.
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"via UI","level":"2.1","depth":1,"next":{"title":"1. Get your account ID","level":"2.1.1","depth":2,"anchor":"#get-your-account-id","path":"uisetup.md","ref":"uisetup.md#get-your-account-id","articles":[]},"previous":{"title":"Base URL Change And Media FAQ","level":"1.7","depth":1,"path":"baseUrlMediaFAQ.md","ref":"baseUrlMediaFAQ.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.9.11","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0","mouseflow","usabilla"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"mouseflow":{"projectId":"e48d3324-5985-479f-a9fc-7283fb266917"},"favicon":"images/favicon.ico","usabilla":{"usabillaId":"73009503da29"},"bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"uisetup.md","mtime":"2019-04-25T15:49:14.915Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-25T15:50:29.396Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"via UI","level":"2.1","depth":1,"next":{"title":"1. Get your account ID","level":"2.1.1","depth":2,"anchor":"#get-your-account-id","path":"uisetup.md","ref":"uisetup.md#get-your-account-id","articles":[]},"previous":{"title":"Base URL Change And Media FAQ","level":"1.7","depth":1,"path":"baseUrlMediaFAQ.md","ref":"baseUrlMediaFAQ.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.9.11","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0","mouseflow","usabilla"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"mouseflow":{"projectId":"e48d3324-5985-479f-a9fc-7283fb266917"},"favicon":"images/favicon.ico","usabilla":{"usabillaId":"73009503da29"},"bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"uisetup.md","mtime":"2019-05-06T14:18:29.490Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-06T14:19:46.441Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
