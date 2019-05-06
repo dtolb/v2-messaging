@@ -26,11 +26,11 @@ Fill out the form on the [Postman](postman.md) page to download the Messaging 2.
 ## Get your account ID {#get-your-account-id}
 
 1. Log into the [Bandwidth Phone Number Dashboard](https://dashboard.bandwidth.com)
-2. Click the **Account** tab in the menu section to go to your **Account Overview**
+2. Click the **Account** tab in the top navigation to go to your **Account Overview**
 3. Under the **Account overview** section you should see your account ID.
 
 
-![Get Account Id](./images/messaging-2/account_id.png)
+![Get Account Id](./images/messaging-2/account_id_new.png)
 
 ## Create your first Application {#setup-your-application}
 
@@ -107,19 +107,19 @@ Content-Type: application/xml
 ## Create sub-account (_site_) {#create-subaccount-site}
 
 1. Navigate to the [**Add a sub-account**](https://dashboard.bandwidth.com/portal/report/#addsubaccount:) page (_if you already have a sub-account you'd like to use, you can skip this step_)
-    * **Account** > **Configuration** > **Sub-accounts** > **Add a sub-account**
+    * **Account** > **Sub-accounts** > **Add a sub-account**
 
 * You'll need a sub-account (_site_) in order to create a location (_sippeer_).
 * Fill in the address and set the `type` to `Service`
 
-![Create Sub-account](./images/messaging-2/create_subaccount.png)
+![Create Sub-account](./images/messaging-2/createSubAccount_new.png)
 
 ---
 
 ## Create location (_sippeer_) and assign the application {#create-location-sippeer-and-assign-the-application}
 
 1. Navigate to the [**Add a location**](https://dashboard.bandwidth.com/portal/report/#addlocation:) page
-    * **Account** > **Configuration** > **Locations** > **Add a location**
+    * **Account** > **Locations** > **Add a location**
 
 * You'll need a location (_sippeer_) in order to group phone numbers.
 * When creating the location be sure to check:
@@ -138,7 +138,7 @@ Content-Type: application/xml
 ## Order Phone numbers to location (_sippeer_) {#order-numbers-to-location}
 
 1. Navigate to the [**Order New Numbers**](https://dashboard.bandwidth.com/) page
-    * **Orders** > **Order New Numbers**
+    * **Numbers** > **Search & Buy**
 
 * Once your application, sub-account (_site_), and location (_sippeer_) have been configured you're ready to start ordering phone numbers to use.
 * Using the UI, search for a number and order it to the sub-account (_site_) and location (_sippeer_) created above.
@@ -146,15 +146,15 @@ Content-Type: application/xml
 
 ### Search and buy numbers
 
-![Search and buy numbers](images/order-number-screenshots/search-and-buy-numbers.png)
+![Search and buy numbers](./images/messaging-2/searchNumbers.png)
 
 ### View available numbers
 
-![View available numbers](images/order-number-screenshots/view-available-numbers.png)
+![View available numbers](./images/messaging-2/chooseNumbers.png)
 
 ### Place and purchase numbers
 
-![Place and purchase](images/order-number-screenshots/place-and-purchase.png)
+![Place and purchase](./images/messaging-2/orderNumbers.png)
 
 ---
 
