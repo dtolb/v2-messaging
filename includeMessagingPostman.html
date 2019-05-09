@@ -24,11 +24,6 @@
 </div>
 <div class="inline-wrap">
     <div class="form-input clearfix blocks medium-block required">
-        <label for="input-text">Messaging API User Id / Bandwidth Dashboard Account ID:</label>
-        <input class="postman-env" type="text" value="" id="messaging_user_id" />
-        <div class="help">Your Messaging API User Id / Bandwidth Dashboard Account ID</div>
-    </div>
-    <div class="form-input clearfix blocks medium-block required">
         <label for="input-text">Messaging API Token:</label>
         <input class="postman-env" type="text" value="" id="messaging_api_token" />
         <div class="help">Your Messaging API Token</div>
@@ -43,7 +38,7 @@
 <div id="postman-container" style="pointer-events: none; opacity: 0.5;">
 <div class="postman-run-button"
 data-postman-action="collection/import"
-data-postman-var-1="e22838c8453c71551be4"
+data-postman-var-1="5318625-a07a8e56-77c1-4068-a7e1-57ee740ee037-S1LvX945"
 data-postman-param="env%5BBandwidth%20API%20Keys%5D=W3sia2V5IjoidXNlciIsInZhbHVlIjoiIiwiZGVzY3JpcHRpb24iOiIiLCJ0eXBlIjoidGV4dCIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoicGFzc3dvcmQiLCJ2YWx1ZSI6IiIsImRlc2NyaXB0aW9uIjoiIiwidHlwZSI6InRleHQiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6InVzZXJJZCIsInZhbHVlIjoiIiwiZGVzY3JpcHRpb24iOiIiLCJ0eXBlIjoidGV4dCIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoidG9rZW4iLCJ2YWx1ZSI6IiIsImRlc2NyaXB0aW9uIjoiIiwidHlwZSI6InRleHQiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6InNlY3JldCIsInZhbHVlIjoiIiwiZGVzY3JpcHRpb24iOiIiLCJ0eXBlIjoidGV4dCIsImVuYWJsZWQiOnRydWV9LHsia2V5Ijoic3ViYWNjb3VudCIsInZhbHVlIjoiIiwiZGVzY3JpcHRpb24iOiIiLCJ0eXBlIjoidGV4dCIsImVuYWJsZWQiOnRydWV9XQ=="></div></div>
 </div>
 <script type="text/javascript">
@@ -103,7 +98,6 @@ function messaging2Page () {
         const user       = document.getElementById("db_user").value;
         const password   = document.getElementById("db_password").value;
         const account    = document.getElementById("db_account_id").value;
-        const userId     = document.getElementById("messaging_user_id").value;
         const token      = document.getElementById("messaging_api_token").value;
         const secret     = document.getElementById("messaging_api_secret").value;
         const subaccount = document.getElementById("db_subaccount_id").value;
@@ -111,7 +105,6 @@ function messaging2Page () {
           user       : user,
           password   : password,
           account    : account,
-          userId     : userId,
           token      : token,
           secret     : secret,
           subaccount : subaccount
