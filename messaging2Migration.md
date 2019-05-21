@@ -34,7 +34,7 @@ Authorization: {apiToken:apiSecret}
     "text" : "Hello there from Bandwidth!"
 }
 {%- language name="v2/messages", type="http" -%}
-POST https://messaging.bandwidth.com/api/v2/users/{userId}/messages HTTP/1.1
+POST https://messaging.bandwidth.com/api/v2/users/{accountId}/messages HTTP/1.1
 Content-Type: application/json; charset=utf-8
 Authorization: {apiToken:apiSecret}
 
@@ -110,9 +110,9 @@ User-Agent: BandwidthAPI/v2
       "text"          : "Hey, check this out!",
       "applicationId" : "93de2206-9669-4e07-948d-329f4b722ee2",
       "media"         : [
-        "https://messaging.bandwidth.com/api/v2/users/{userId}/media/14762070468292kw2fuqty55yp2b2/0/bw.png",
-        "https://messaging.bandwidth.com/api/v2/users/{userId}/media/14762070468292kw2fuqty55yp2b2/1/bandwidth_logo.png",
-        "https://messaging.bandwidth.com/api/v2/users/{userId}/media/14762070468292kw2fuqty55yp2b2/2/Bandwidth_Contact.png"
+        "https://messaging.bandwidth.com/api/v2/users/{accountId}/media/14762070468292kw2fuqty55yp2b2/0/bw.png",
+        "https://messaging.bandwidth.com/api/v2/users/{accountId}/media/14762070468292kw2fuqty55yp2b2/1/bandwidth_logo.png",
+        "https://messaging.bandwidth.com/api/v2/users/{accountId}/media/14762070468292kw2fuqty55yp2b2/2/Bandwidth_Contact.png"
       ],
       "owner"         : "+12345678902",
       "direction"     : "in",

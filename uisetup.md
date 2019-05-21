@@ -6,7 +6,7 @@ This guide is entirely focused on setup with the UI.  If you'd like to follow al
 ## Assumptions
 
 * You have downloaded [Postman](https://www.getpostman.com/) -or- have the ability to make an API request.
-* You have your [Voice and Messaging API](https://app.bandwidth.com) `userId`, `token`, `secret`
+* You have your [Voice and Messaging API](https://app.bandwidth.com) `accountId`, `token`, `secret`
 * You have your [Phone Number API](https://dashboard.bandwidth.com) `username` and `password`
 * You have contacted [Support](http://support.bandwidth.com) to link your [Voice and Messaging API](https://app.bandwidth.com) and [Phone Number API](https://dashboard.bandwidth.com)
 
@@ -183,7 +183,7 @@ Content-Type: application/xml
 {% sample lang="http" %}
 
 ```http
-POST https://messaging.bandwidth.com/api/v2/users/{{userId}}/messages HTTP/1.1
+POST https://messaging.bandwidth.com/api/v2/users/{{accountId}}/messages HTTP/1.1
 Content-Type: application/json; charset=utf-8
 Authorization: {token:secret}
 
