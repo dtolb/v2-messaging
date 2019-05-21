@@ -9,8 +9,8 @@ This guide is entirely focused on setup with the API.  If you'd like to follow a
 ## Assumptions
 
 * You have downloaded [Postman](https://www.getpostman.com/) -or- have the ability to make an API request.
-* You have your [Voice and Messaging API](https://app.bandwidth.com) `accountId`, `token`, `secret`
-* You have your [Phone Number API](https://dashboard.bandwidth.com) `username` and `password`
+* You have your [Voice and Messaging API](https://app.bandwidth.com) `token`, `secret`
+* You have your [Phone Number API](https://dashboard.bandwidth.com) `accountId`, `username` and `password`
 * You have contacted [Support](http://support.bandwidth.com) to link your [Voice and Messaging API](https://app.bandwidth.com) and [Phone Number API](https://dashboard.bandwidth.com)
 * You have your Bandwidth Phone Number Dashboard [Account Id](uisetup.md#get-your-account-id)
 * You have an existing [Sub-account](uisetup.md#create-subaccount-site) you'd like to use.
