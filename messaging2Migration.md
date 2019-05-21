@@ -78,7 +78,7 @@ Content-Type: application/json; charset=utf-8
 {% codetabs name="v1/messages Callback", type="http" -%}
 POST /your_url HTTP/1.1
 Content-Type: application/json; charset=utf-8
-User-Agent: BandwidthAPI/v1 (CURRENT_BUILD_TIMESTAMP)
+User-Agent: BandwidthAPI/v1 ({CURRENT_BUILD_TIMESTAMP})
 
 {
    "eventType"  : "sms",
