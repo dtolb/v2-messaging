@@ -41,7 +41,7 @@ MMS and Group messages <b>don’t</b> currently support delivery receipts. Howev
 ```http
 POST /your_url HTTP/1.1
 Content-Type: application/json; charset=utf-8
-User-Agent: BandwidthAPI/v2
+User-Agent: bandwidth-api
 
 [
   {

@@ -29,7 +29,7 @@ In order to receive text messages events, you need to ensure you have set up you
 ```http
 POST /your_url HTTP/1.1
 Content-Type: application/json; charset=utf-8
-User-Agent: BandwidthAPI/v2
+User-Agent: bandwidth-api
 
 [
   {
@@ -63,7 +63,7 @@ User-Agent: BandwidthAPI/v2
 ```http
 POST /your_url HTTP/1.1
 Content-Type: application/json; charset=utf-8
-User-Agent: BandwidthAPI/v2
+User-Agent: bandwidth-api
 
 [
   {
