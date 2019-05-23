@@ -32,7 +32,7 @@ For sending and receiving Group Messages, there is a maximum of 10 participants 
 ```http
 POST /your_url HTTP/1.1
 Content-Type: application/json; charset=utf-8
-User-Agent: BandwidthAPI/v2
+User-Agent: bandwidth-api
 
 [
   {
@@ -70,7 +70,7 @@ User-Agent: BandwidthAPI/v2
 ```http
 POST /your_url HTTP/1.1
 Content-Type: application/json; charset=utf-8
-User-Agent: BandwidthAPI/v2
+User-Agent: bandwidth-api
 
 [
   {
