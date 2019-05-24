@@ -8,7 +8,7 @@ Endpoint for sending text messages and picture messages using V2 messaging.
 
 <code class="post">POST</code>`https://messaging.bandwidth.com/api/v2/users/{accountId}/messages`
 
-** Notice: The old URL `https://api.catapult.inetwork.com/v2/users/{accountId}/messages` has been deprecated, and will be taken offline June 13th, 2019. Please update your system to use the new URL. **
+** Notice: The old URL `https://api.catapult.inetwork.com/v2/users/{userId}/messages` has been deprecated, and will be taken offline June 13th, 2019. Please update your system to use the new URL. **
 
 ### Invalid Phone Number handing
 
