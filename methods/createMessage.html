@@ -1234,7 +1234,7 @@
                                 <div class="api-method"><div class="api-method-definition"><div class="api-definition-top"></div><h2 id="send-sms-or-mms-messages">Send SMS or MMS Messages</h2>
 <p>Endpoint for sending text messages and picture messages using V2 messaging.</p>
 <h3 id="request-url">Request URL</h3>
-<p><code class="post">POST</code><code>https://messaging.bandwidth.com/api/v2/users/{userId}/messages</code></p>
+<p><code class="post">POST</code><code>https://messaging.bandwidth.com/api/v2/users/{accountId}/messages</code></p>
 <p><strong> Notice: The old URL <code>https://api.catapult.inetwork.com/v2/users/{userId}/messages</code> has been deprecated, and will be taken offline June 13th, 2019. Please update your system to use the new URL. </strong></p>
 <h3 id="invalid-phone-number-handing">Invalid Phone Number handing</h3>
 <p>When sending a group message to an invalid phone number, you may receive extraneous <a href="../events/messageEvents.html">callback events</a>.  You can read more on the <a href="../concepts.html#group-message-invalid">Messaging API concepts page</a>.</p>
@@ -1293,7 +1293,7 @@
 </table>
 <p>*Please check the <a href="https://dev.bandwidth.com/faq" target="_blank">FAQ</a> for information on media size limits</p>
 </div><div class="api-method-code"><div class="api-code-top"></div><div class="api-method-example"><h3 id="example-1-of-5-send-a-single-text-message">Example 1 of 5: Send a single text message</h3>
-</div><div class="api-method-sample" data-lang="http" data-name="HTTP"><pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">https://messaging.bandwidth.com/api/v2/users/{userId}/messages</span> HTTP/1.1
+</div><div class="api-method-sample" data-lang="http" data-name="HTTP"><pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">https://messaging.bandwidth.com/api/v2/users/{accountId}/messages</span> HTTP/1.1
 <span class="hljs-attribute">Content-Type</span>: application/json; charset=utf-8
 <span class="hljs-attribute">Authorization</span>: {apiToken:apiSecret}
 
@@ -1306,7 +1306,7 @@
 }
 </span></code></pre>
 </div><div class="api-method-sample" data-lang="bash" data-name="cURL"><pre><code class="lang-bash">curl --request POST \
-    --url https://messaging.bandwidth.com/api/v2/users/{{userId}}/messages \
+    --url https://messaging.bandwidth.com/api/v2/users/{{accountId}}/messages \
     --user {apiToken}:{apiSecret} \
     --header <span class="hljs-string">&apos;content-type: application/json&apos;</span> \
     --data <span class="hljs-string">&apos;
@@ -1322,7 +1322,7 @@
 </div><div class="api-method-sample" data-lang="js" data-name="Js"><pre><code class="lang-js"><span class="hljs-keyword">var</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;request&quot;</span>);
 
 <span class="hljs-keyword">var</span> options = { <span class="hljs-attr">method</span>: <span class="hljs-string">&apos;POST&apos;</span>,
-  <span class="hljs-attr">url</span>: <span class="hljs-string">&apos;https://messaging.bandwidth.com/api/v2/users/{{userId}}/messages&apos;</span>,
+  <span class="hljs-attr">url</span>: <span class="hljs-string">&apos;https://messaging.bandwidth.com/api/v2/users/{{accountId}}/messages&apos;</span>,
   <span class="hljs-attr">headers</span>: { <span class="hljs-string">&apos;content-type&apos;</span>: <span class="hljs-string">&apos;application/json&apos;</span> },
   <span class="hljs-attr">auth</span>: {
     <span class="hljs-attr">user</span>: <span class="hljs-string">&apos;{{apiToken}}&apos;</span>,
@@ -1364,7 +1364,7 @@ request(options, <span class="hljs-function"><span class="hljs-keyword">function
 }
 </span></code></pre>
 <h3 id="example-2-of-5-send-a-picture-message">Example 2 of 5: Send a picture message</h3>
-</div><div class="api-method-sample" data-lang="http" data-name="HTTP"><pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">https://messaging.bandwidth.com/api/v2/users/{userId}/messages</span> HTTP/1.1
+</div><div class="api-method-sample" data-lang="http" data-name="HTTP"><pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">https://messaging.bandwidth.com/api/v2/users/{accountId}/messages</span> HTTP/1.1
 <span class="hljs-attribute">Content-Type</span>: application/json; charset=utf-8
 <span class="hljs-attribute">Authorization</span>: {apiToken:apiSecret}
 
@@ -1380,7 +1380,7 @@ request(options, <span class="hljs-function"><span class="hljs-keyword">function
 }
 </span></code></pre>
 </div><div class="api-method-sample" data-lang="bash" data-name="cURL"><pre><code class="lang-bash">curl --request POST \
-    --url https://messaging.bandwidth.com/api/v2/users/{{userId}}/messages \
+    --url https://messaging.bandwidth.com/api/v2/users/{{accountId}}/messages \
     --user {apiToken}:{apiSecret} \
     --header <span class="hljs-string">&apos;content-type: application/json&apos;</span> \
     --data <span class="hljs-string">&apos;
@@ -1399,7 +1399,7 @@ request(options, <span class="hljs-function"><span class="hljs-keyword">function
 </div><div class="api-method-sample" data-lang="js" data-name="Js"><pre><code class="lang-js"><span class="hljs-keyword">var</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;request&quot;</span>);
 
 <span class="hljs-keyword">var</span> options = { <span class="hljs-attr">method</span>: <span class="hljs-string">&apos;POST&apos;</span>,
-  <span class="hljs-attr">url</span>: <span class="hljs-string">&apos;https://messaging.bandwidth.com/api/v2/users/{{userId}}/messages&apos;</span>,
+  <span class="hljs-attr">url</span>: <span class="hljs-string">&apos;https://messaging.bandwidth.com/api/v2/users/{{accountId}}/messages&apos;</span>,
   <span class="hljs-attr">headers</span>: { <span class="hljs-string">&apos;content-type&apos;</span>: <span class="hljs-string">&apos;application/json&apos;</span> },
   <span class="hljs-attr">auth</span>: {
     <span class="hljs-attr">user</span>: <span class="hljs-string">&apos;{{apiToken}}&apos;</span>,
@@ -1447,7 +1447,7 @@ request(options, <span class="hljs-function"><span class="hljs-keyword">function
 }
 </span></code></pre>
 <h3 id="example-3-of-5-send-multiple-pictures-in-a-message">Example 3 of 5: Send multiple pictures in a message</h3>
-</div><div class="api-method-sample" data-lang="http" data-name="HTTP"><pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">https://messaging.bandwidth.com/api/v2/users/{userId}/messages</span> HTTP/1.1
+</div><div class="api-method-sample" data-lang="http" data-name="HTTP"><pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">https://messaging.bandwidth.com/api/v2/users/{accountId}/messages</span> HTTP/1.1
 <span class="hljs-attribute">Content-Type</span>: application/json; charset=utf-8
 <span class="hljs-attribute">Authorization</span>: {apiToken:apiSecret}
 
@@ -1464,7 +1464,7 @@ request(options, <span class="hljs-function"><span class="hljs-keyword">function
 }
 </span></code></pre>
 </div><div class="api-method-sample" data-lang="bash" data-name="cURL"><pre><code class="lang-bash">curl --request POST \
-    --url https://messaging.bandwidth.com/api/v2/users/{{userId}}/messages \
+    --url https://messaging.bandwidth.com/api/v2/users/{{accountId}}/messages \
     --user {apiToken}:{apiSecret} \
     --header <span class="hljs-string">&apos;content-type: application/json&apos;</span> \
     --data <span class="hljs-string">&apos;
@@ -1484,7 +1484,7 @@ request(options, <span class="hljs-function"><span class="hljs-keyword">function
 </div><div class="api-method-sample" data-lang="js" data-name="Js"><pre><code class="lang-js"><span class="hljs-keyword">var</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;request&quot;</span>);
 
 <span class="hljs-keyword">var</span> options = { <span class="hljs-attr">method</span>: <span class="hljs-string">&apos;POST&apos;</span>,
-  <span class="hljs-attr">url</span>: <span class="hljs-string">&apos;https://messaging.bandwidth.com/api/v2/users/{{userId}}/messages&apos;</span>,
+  <span class="hljs-attr">url</span>: <span class="hljs-string">&apos;https://messaging.bandwidth.com/api/v2/users/{{accountId}}/messages&apos;</span>,
   <span class="hljs-attr">headers</span>: { <span class="hljs-string">&apos;content-type&apos;</span>: <span class="hljs-string">&apos;application/json&apos;</span> },
   <span class="hljs-attr">auth</span>: {
     <span class="hljs-attr">user</span>: <span class="hljs-string">&apos;{{apiToken}}&apos;</span>,
@@ -1533,7 +1533,7 @@ request(options, <span class="hljs-function"><span class="hljs-keyword">function
 }
 </span></code></pre>
 <h3 id="example-4-of-5-send-a-group-message">Example 4 of 5: Send a group message</h3>
-</div><div class="api-method-sample" data-lang="http" data-name="HTTP"><pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">https://messaging.bandwidth.com/api/v2/users/{userId}/messages</span> HTTP/1.1
+</div><div class="api-method-sample" data-lang="http" data-name="HTTP"><pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">https://messaging.bandwidth.com/api/v2/users/{accountId}/messages</span> HTTP/1.1
 <span class="hljs-attribute">Content-Type</span>: application/json; charset=utf-8
 <span class="hljs-attribute">Authorization</span>: {apiToken:apiSecret}
 
@@ -1549,7 +1549,7 @@ request(options, <span class="hljs-function"><span class="hljs-keyword">function
 }
 </span></code></pre>
 </div><div class="api-method-sample" data-lang="bash" data-name="cURL"><pre><code class="lang-bash">curl --request POST \
-    --url https://messaging.bandwidth.com/api/v2/users/{{userId}}/messages \
+    --url https://messaging.bandwidth.com/api/v2/users/{{accountId}}/messages \
     --user {apiToken}:{apiSecret} \
     --header <span class="hljs-string">&apos;content-type: application/json&apos;</span> \
     --data <span class="hljs-string">&apos;
@@ -1568,7 +1568,7 @@ request(options, <span class="hljs-function"><span class="hljs-keyword">function
 </div><div class="api-method-sample" data-lang="js" data-name="Js"><pre><code class="lang-js"><span class="hljs-keyword">var</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;request&quot;</span>);
 
 <span class="hljs-keyword">var</span> options = { <span class="hljs-attr">method</span>: <span class="hljs-string">&apos;POST&apos;</span>,
-  <span class="hljs-attr">url</span>: <span class="hljs-string">&apos;https://messaging.bandwidth.com/api/v2/users/{{userId}}/messages&apos;</span>,
+  <span class="hljs-attr">url</span>: <span class="hljs-string">&apos;https://messaging.bandwidth.com/api/v2/users/{{accountId}}/messages&apos;</span>,
   <span class="hljs-attr">headers</span>: { <span class="hljs-string">&apos;content-type&apos;</span>: <span class="hljs-string">&apos;application/json&apos;</span> },
   <span class="hljs-attr">auth</span>: {
     <span class="hljs-attr">user</span>: <span class="hljs-string">&apos;{{apiToken}}&apos;</span>,
@@ -1611,7 +1611,7 @@ request(options, <span class="hljs-function"><span class="hljs-keyword">function
 }
 </span></code></pre>
 <h3 id="example-5-of-5-send-a-picture-to-a-group-message-thread">Example 5 of 5: Send a picture to a group message thread</h3>
-</div><div class="api-method-sample" data-lang="http" data-name="HTTP"><pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">https://messaging.bandwidth.com/api/v2/users/{userId}/messages</span> HTTP/1.1
+</div><div class="api-method-sample" data-lang="http" data-name="HTTP"><pre><code class="lang-http"><span class="hljs-keyword">POST</span> <span class="hljs-string">https://messaging.bandwidth.com/api/v2/users/{accountId}/messages</span> HTTP/1.1
 <span class="hljs-attribute">Content-Type</span>: application/json; charset=utf-8
 <span class="hljs-attribute">Authorization</span>: {apiToken:apiSecret}
 
@@ -1630,7 +1630,7 @@ request(options, <span class="hljs-function"><span class="hljs-keyword">function
 }
 </span></code></pre>
 </div><div class="api-method-sample" data-lang="bash" data-name="cURL"><pre><code class="lang-bash">curl --request POST \
-    --url https://messaging.bandwidth.com/api/v2/users/{{userId}}/messages \
+    --url https://messaging.bandwidth.com/api/v2/users/{{accountId}}/messages \
     --user {apiToken}:{apiSecret} \
     --header <span class="hljs-string">&apos;content-type: application/json&apos;</span> \
     --data <span class="hljs-string">&apos;
@@ -1652,7 +1652,7 @@ request(options, <span class="hljs-function"><span class="hljs-keyword">function
 </div><div class="api-method-sample" data-lang="js" data-name="Js"><pre><code class="lang-js"><span class="hljs-keyword">var</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;request&quot;</span>);
 
 <span class="hljs-keyword">var</span> options = { <span class="hljs-attr">method</span>: <span class="hljs-string">&apos;POST&apos;</span>,
-  <span class="hljs-attr">url</span>: <span class="hljs-string">&apos;https://messaging.bandwidth.com/api/v2/users/{{userId}}/messages&apos;</span>,
+  <span class="hljs-attr">url</span>: <span class="hljs-string">&apos;https://messaging.bandwidth.com/api/v2/users/{{accountId}}/messages&apos;</span>,
   <span class="hljs-attr">headers</span>: { <span class="hljs-string">&apos;content-type&apos;</span>: <span class="hljs-string">&apos;application/json&apos;</span> },
   <span class="hljs-attr">auth</span>: {
     <span class="hljs-attr">user</span>: <span class="hljs-string">&apos;{{apiToken}}&apos;</span>,
@@ -1734,7 +1734,7 @@ request(options, <span class="hljs-function"><span class="hljs-keyword">function
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"POST Send Message","level":"5.2","depth":1,"next":{"title":"Media Overview","level":"6.1","depth":1,"path":"media/about.md","ref":"media/about.md","articles":[]},"previous":{"title":"Messages Overview","level":"5.1","depth":1,"path":"methods/sendMessages.md","ref":"methods/sendMessages.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.9.11","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0","mouseflow","usabilla"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"mouseflow":{"projectId":"e48d3324-5985-479f-a9fc-7283fb266917"},"favicon":"images/favicon.ico","usabilla":{"usabillaId":"73009503da29"},"bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"methods/createMessage.md","mtime":"2019-05-23T13:53:30.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-23T13:54:55.364Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"POST Send Message","level":"5.2","depth":1,"next":{"title":"Media Overview","level":"6.1","depth":1,"path":"media/about.md","ref":"media/about.md","articles":[]},"previous":{"title":"Messages Overview","level":"5.1","depth":1,"path":"methods/sendMessages.md","ref":"methods/sendMessages.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-bandwidth@1.9.11","header","sharing","custom-favicon","toggle-chapters","custom-jquery-postprocessing","-fontsettings","bandwidth-fonts","-highlight","bandwidth-highlight","codetabs","include-html@0.2.0","mouseflow","usabilla"],"pluginsConfig":{"custom-jquery-postprocessing":{},"search":{},"bandwidth-fonts":{"family":"sans","size":2,"theme":"white"},"layout":{"headerPath":"layouts/header.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-bandwidth":{"languages":[{"lang":"js","name":"Js","default":true},{"lang":"csharp","name":"C#"},{"lang":"ruby","name":"ruby"},{"lang":"shell","name":"cURL"},{"lang":"bash","name":"cURL"}],"split":true,"theme":"light"},"header":{},"customJquery":{"js":"js/custom.js"},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"mouseflow":{"projectId":"e48d3324-5985-479f-a9fc-7283fb266917"},"favicon":"images/favicon.ico","usabilla":{"usabillaId":"73009503da29"},"bandwidth-highlight":{},"custom-favicon":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"methods/createMessage.md","mtime":"2019-05-24T13:29:33.577Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-24T13:30:50.860Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
