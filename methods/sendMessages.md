@@ -15,5 +15,5 @@ To receive [events/callbacks](../events/messageEvents.md) for incoming and outgo
 
 | Verb                           | Path                                             | about                                  |
 |:-------------------------------|:-------------------------------------------------|:---------------------------------------|
-| <code class="post">POST</code> | [`/users/{userId}/messages`](createMessage.md) | Send a text message to a single number |
-| <code class="post">POST</code> | [`/users/{userId}/messages`](createMessage.md)  | Send a text message to a group MMS     |
+| <code class="post">POST</code> | [`/users/{accountId}/messages`](createMessage.md) | Send a text message to a single number |
+| <code class="post">POST</code> | [`/users/{accountId}/messages`](createMessage.md)  | Send a text message to a group MMS     |
