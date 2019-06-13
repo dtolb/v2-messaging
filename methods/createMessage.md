@@ -8,8 +8,6 @@ Endpoint for sending text messages and picture messages using V2 messaging.
 
 <code class="post">POST</code>`https://messaging.bandwidth.com/api/v2/users/{accountId}/messages`
 
-** Notice: The old URL `https://api.catapult.inetwork.com/v2/users/{userId}/messages` has been deprecated, and will be taken offline June 13th, 2019. Please update your system to use the new URL. **
-
 ### Invalid Phone Number handing
 
 When sending a group message to an invalid phone number, you may receive extraneous [callback events](../events/messageEvents.md).  You can read more on the [Messaging API concepts page](../concepts.md#group-message-invalid).

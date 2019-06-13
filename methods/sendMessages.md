@@ -9,8 +9,6 @@ To receive [events/callbacks](../events/messageEvents.md) for incoming and outgo
 
 `https://messaging.bandwidth.com/api/v2`
 
-** Notice: The old base URL `https://api.catapult.inetwork.com/v2` has been deprecated, and will be taken offline June 13th, 2019. Please update your system to use the new URL. **
-
 ### Capabilities
 
 | Verb                           | Path                                             | about                                  |
