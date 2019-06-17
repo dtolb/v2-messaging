@@ -3,7 +3,14 @@
 This walks through the steps to configure your Bandwidth Phone Number Dashboard and Messaging API to work together.
 This guide is entirely focused on setup with the UI.  If you'd like to follow along with the API, head to the [via API](apisetup.md) to follow along there.
 
-## Before we get started
+## Table Of Conents
+1. [Before we get started](#prereqs)
+2. [Create an Application](#create-application)
+3. [Order Phone Numbers](#order-numbers)
+4. [Sending Messages](#send-message)
+5. [Related Links](#refs)
+
+## Before we get started {#prereqs}
 
 1. Have you downloaded [Postman](https://www.getpostman.com/) or have the ability to make an API request?
 * Postman is an app for easy RESTful API exploration.
@@ -37,7 +44,7 @@ This guide is entirely focused on setup with the UI.  If you'd like to follow al
 3. The collection should now appear in Postman when you toggle to the Collections tab.
 ![PostmanV2](images/uisetup/postman-v2.png)
 
-## Create an Application
+## Create an Application {#create-application}
 Now that we’ve taken care of the prerequisites, we’re ready to create an Application. Start by clicking the Applications menu in the dashboard.
 * Create New 
 * Enter your Application name
@@ -54,7 +61,7 @@ Now that we’ve taken care of the prerequisites, we’re ready to create an App
   * After selecting all of the appropriate settings for your Location, click Submit.
 ![LocationSettings](images/uisetup/location-settings.png)
 
-## Order Phone Numbers
+## Order Phone Numbers {#order-numbers}
 * Now that we’ve done all the set up work for our application, we need to order a phone number to use to send text messages.
 * In the Dashboard, use the Learning Lab & Support link to find the Quick Start guide for “Order New Phone Numbers.”
 ![OrderPhoneNumbers](images/uisetup/order-phone-numbers.png)
@@ -63,7 +70,7 @@ Now that we’ve taken care of the prerequisites, we’re ready to create an App
 * Scroll down the page till you see the number you ordered and use the Copy to Clipboard button to grab the number. This is the number you will use to send and receive messages with your Application.
 ![NewNumberOrderDetails](images/uisetup/new-number-order-details.png)
 
-## Sending Messages
+## Sending Messages {#send-message}
 * At this point you should have completed the following:
   * Downloaded Postman and filled out the Postman Collection form with your individual credentials and potentially created a Sub-Account and Location in this step.
   * Created an Application
@@ -86,6 +93,6 @@ Now that we’ve taken care of the prerequisites, we’re ready to create an App
 ### Message Parameters
 Parameters for sending a message can be found [here](methods.createMessage.md)
 
-## Related Links
+## Related Links {#refs}
 * [How to Download Message Detail Records (MDRs)](https://support.bandwidth.com/hc/en-us/articles/226661127-How-to-Download-Billing-Detail-Records-BDRs-and-Message-Detail-Records-MDRs-)
 * [Message Detail Record (MDR) Field Descriptions](https://support.bandwidth.com/hc/en-us/articles/360009991954)

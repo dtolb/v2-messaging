@@ -15,12 +15,11 @@
 
 ## Initial Account Setup
 * [via UI](uisetup.md)
-	* [1. Get your account ID](uisetup.md#get-your-account-id)
-	* [2. Setup your Application](uisetup.md#setup-your-application)
-	* [3. Create subaccount (_site_)](uisetup.md#create-subaccount-site)
-	* [4. Create location (_sippeer_) and assign the application](uisetup.md#create-location-sippeer-and-assign-the-application)
-	* [5. Order Phone numbers to location (_sippeer_)](uisetup.md#order-numbers-to-location)
-	* [6. Sending Messages](uisetup.md#sending-messages)
+    * [1. Before we get started](uisetup.md#prereqs)
+    * [2. Create an Application](uisetup.md#create-application)
+    * [3. Order Phone Numbers](uisetup.md#order-numbers)
+    * [4. Sending Messages](uisetup.md#send-message)
+    * [5. Related Links](uisetup.md#refs)
 * [via API](apisetup.md)
 	* [1. Create application](apisetup.md#create-application)
     * [2. Create subaccount (_site_)](apisetup.md#create-subaccount-site)
