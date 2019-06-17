@@ -1,218 +1,91 @@
-# Messaging 2.0 Account Setup (UI) {#top}
+# Messaging v2 API Account Setup (UI) {#top}
 
 This walks through the steps to configure your Bandwidth Phone Number Dashboard and Messaging API to work together.
 This guide is entirely focused on setup with the UI.  If you'd like to follow along with the API, head to the [via API](apisetup.md) to follow along there.
 
-## Assumptions
-
-* You have downloaded [Postman](https://www.getpostman.com/) -or- have the ability to make an API request.
-* You have your [Voice and Messaging API](https://app.bandwidth.com) `token`, `secret`
-* You have your [Phone Number API](https://dashboard.bandwidth.com) `accountId`, `username` and `password`
-* You have contacted [Support](http://support.bandwidth.com) to link your [Voice and Messaging API](https://app.bandwidth.com) and [Phone Number API](https://dashboard.bandwidth.com)
-
-## Follow along with Postman
-
-Fill out the form on the [Postman](postman.md) page to download the Messaging 2.0 collection.
-
-## Steps
-
-1. [Get your account ID](#get-your-account-id)
-2. [Create your first Application](#setup-your-application)
-3. [Create subaccount (_site_)](#create-subaccount-site)
-4. [Create location (_sippeer_) and assign the application](#create-location-sippeer-and-assign-the-application)
-5. [Order Phone numbers to location (_sippeer_)](#order-numbers-to-location)
-6. [Sending Messages](#sending-messages)
-
-## Get your account ID {#get-your-account-id}
-
-1. Log into the [Bandwidth Phone Number Dashboard](https://dashboard.bandwidth.com)
-2. Click the **Account** tab in the top navigation to go to your **Account Overview**
-3. Under the **Account overview** section you should see your account ID.
-
-
-![Get Account Id](./images/messaging-2/account_id_new.png)
-
-## Create your first Application {#setup-your-application}
-
-ℹ️ Learn more about [Applications](applications/about.md) ℹ️
-
-The Application contains the HTTP URL you want to use for both inbound and outbound messages.
-
-<aside class="alert general small">
-<p>
-Save the <code>Application Id</code> After creating the application.
-</p>
-</aside>
-
-#### Application Parameters
-
-{% extendmethod %}
-
-| Parameters               | Mandatory | Description                                                                         |
-|:-------------------------|:----------|:------------------------------------------------------------------------------------|
-| `AppName`                | Yes       | Plain text name of the application                                                  |
-| `CallbackUrl`            | Yes       | Url to receive _all_ [message events](./events/messageEvents.md)                    |
-| `CallbackCreds`          | No        | Basic auth credentials to apply to your [message events](./events/messageEvents.md) |
-| `CallbackCreds.UserId`   | No        | Basic auth `UserId`                                                                 |
-| `CallbackCreds.Password` | No        | Basic auth `Password`                                                               |
-
-{% common %}
-
-### Create Application
-
-{% sample lang="http" %}
-
-```http
-POST https://dashboard.bandwidth.com/api/accounts/{{accountId}}/applications HTTP/1.1
-Content-Type: application/xml; charset=utf-8
-Authorization: {user:password}
-
-<Application>
-    <AppName>Production Server</AppName>
-    <CallbackUrl>https://yourSecureSite.com/callbacks</CallbackUrl>
-    <CallbackCreds>
-      <UserId>Your-User-id</UserId>
-      <Password>Your-Password</Password>
-  </CallbackCreds>
-</Application>
-```
-
-{% common %}
-
-### Response
-
-```http
-HTTP/1.1 201 Created
-Content-Type: application/xml
-
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ApplicationProvisioningResponse>
-    <Application>
-        <ApplicationId>d775585a-ed5b-4a49-8b96-f68c0a993ebe</ApplicationId>
-        <ServiceType>Messaging-V2</ServiceType>
-        <AppName>Production Server</AppName>
-        <CallbackUrl>https://yourSecureSite.com/callbacks</CallbackUrl>
-        <CallbackCreds>
-            <UserId>Your-User-id</UserId>
-            <Password>Your-Password</Password>
-        </CallbackCreds>
-    </Application>
-</ApplicationProvisioningResponse>
-```
-
-{% endextendmethod %}
-
----
-
-## Create sub-account (_site_) {#create-subaccount-site}
-
-1. Navigate to the [**Add a sub-account**](https://dashboard.bandwidth.com/portal/report/#addsubaccount:) page (_if you already have a sub-account you'd like to use, you can skip this step_)
-    * **Account** > **Sub-accounts** > **Add a sub-account**
-
-* You'll need a sub-account (_site_) in order to create a location (_sippeer_).
-* Fill in the address and set the `type` to `Service`
-
-![Create Sub-account](./images/messaging-2/createSubAccount_new.png)
-
----
-
-## Create location (_sippeer_) and assign the application {#create-location-sippeer-and-assign-the-application}
-
-1. Navigate to the [**Add a location**](https://dashboard.bandwidth.com/portal/report/#addlocation:) page
-    * **Account** > **Locations** > **Add a location**
-
-* You'll need a location (_sippeer_) in order to group phone numbers.
-* When creating the location be sure to check:
-	* `SMS Enabled`
-	* `Toll Free` (if available)
-	* `Short Code` (if available)
-	* `V2 Messaging`
-	* `Application` - Select the application created above
-* If you need `Toll Free` or `Short Code` support contact [support](http://support.bandwidth.com) to enable.
-
-#### More Detail
-![detail Location](./images/messaging-2/detailLocation.png)
-
----
-
-## Order Phone numbers to location (_sippeer_) {#order-numbers-to-location}
-
-1. Navigate to the [**Order New Numbers**](https://dashboard.bandwidth.com/) page
-    * **Numbers** > **Search & Buy**
-
-* Once your application, sub-account (_site_), and location (_sippeer_) have been configured you're ready to start ordering phone numbers to use.
-* Using the UI, search for a number and order it to the sub-account (_site_) and location (_sippeer_) created above.
-
-
-### Search and buy numbers
-
-![Search and buy numbers](./images/messaging-2/searchNumbers.png)
-
-### View available numbers
-
-![View available numbers](./images/messaging-2/chooseNumbers.png)
-
-### Place and purchase numbers
-
-![Place and purchase](./images/messaging-2/orderNumbers.png)
-
----
-
-## Sending Messages {#sending-messages}
-
-ℹ️ Learn more about [Messages](methods/sendMessages.md) ℹ️
-
-* To send a message, `POST` to the [`/messages` endpoint](methods/createSingle.md)
-* In the V2 Messaging API, messages are sent asynchronously. Message validation will happen after the server returns `HTTP 202 - Created`. API clients should listen for [HTTP callback events](events/messageEvents.md) to track message state after the initial `POST` request.
-
-#### Message Parameters
-
-{% extendmethod %}
-
-| Parameter       | Mandatory | Description                                                                                                |
-|:----------------|:----------|:-----------------------------------------------------------------------------------------------------------|
-| `from`          | Yes       | One of your telephone numbers the message should come from (must be in E.164 format, like `+19195551212`). |
-| `to`            | Yes       | The phone number the message should be sent to (must be in E.164 format, like `+19195551212`).             |
-| `text`          | Yes       | The contents of the text message (must be 2048 characters or less).                                        |
-| `applicationId` | Yes       | The ID of the Application your `from` number is associated with in the Bandwidth Phone Number Dashboard.   |
-
-{% common %}
-
-### Send Text Message
-
-{% sample lang="http" %}
-
-```http
-POST https://messaging.bandwidth.com/api/v2/users/{{accountId}}/messages HTTP/1.1
-Content-Type: application/json; charset=utf-8
-Authorization: {token:secret}
-
-{
-  "from"          : "{{your-bandwidth-number}}",
-  "to"            : "{{yourTN}}",
-  "text"          : "Good morning, this is a test message",
-  "applicationId" : "{{your-application-id}}"
-}
-```
-
-{% common %}
-
-### Response
-
-```http
-HTTP/1.1 202
-Content-Type: "application/json;charset=UTF-8"
-
-{
-    "id"            : "15047516192013g5tuga77zsa6jrp",
-    "owner"         : "+19193529968",
-    "applicationId" : "05851417-c78b-4636-81a2-014a54d8f119",
-    "time"          : "2017-09-07T02:33:39.201Z",
-    "direction"     : "out",
-    "to"            : ["+19191231234"],
-    "from"          : "+19193524444",
-    "text"          : "Hi from Bandwidth!"
-}
-```
-
-{% endextendmethod %}
+## Before we get started
+
+1. Have you downloaded [Postman](https://www.getpostman.com/) or have the ability to make an API request?
+* Postman is an app for easy RESTful API exploration.
+![Postman](images/uisetup/postman.png)
+* In this guide, we will use Postman to send messages using our new application.
+* Once you’ve downloaded Postman and created an account (if you don’t already have one), fill out the form on the [Postman](postman.md) page to download the Messaging 2.0 collection of APIs.
+![Postman Follow Along](images/uisetup/postman-follow-along.png)
+* In order to fill out this form, you’ll need several pieces of information that can be located in the Bandwidth Dashboard.
+  * *Username* and *password*
+    * These are your credentials to log into the Bandwidth Dashboard
+![Dashboard Login](images/uisetup/dashboard-login.png)
+  * *Account ID*
+    * Once logged into the Dashboard, click on the Account menu to locate your Account ID at the top of the Account Overview section
+![Dashboard Overview](images/uisetup/dashboard-overview.png)
+  * *SubAccount*
+    * If you have an existing Sub-Account, from the Account Overview screen (screenshot above) click “Sub-accounts” from the menu bar.
+      * Click “manage sub-account” for the Sub-Account you will use for this Application
+      * You will see the ID for the sub-account at the top of this screen. Enter this ID into the Postman form.
+![SubAccount](images/uisetup/subaccount.png)
+    * If you don’t have a Sub-Account, or want to create a new one for this specific Application, click the Learning Lab & Support link in the dashboard and select the “Create a Sub-Account” guide.
+![CreateSubAccount](images/uisetup/create-subaccount.png)
+  * Messaging [API Token and Secret](https://support.bandwidth.com/hc/en-us/articles/360014110974-How-to-Create-API-Tokens-Secrets-V2-)
+    * Bandwidth APIs use BASIC HTTP Authentication. You will need to have your account ID, token, and secret to make API calls.
+    * You may already have a Token and Secret that you can enter into the Postman form, but if you need a new set of credentials, you’ll need to follow the steps below.
+    * In the Dashboard, navigate to the Applications menu. In the top right of your screen, you’ll see a link for API credentials
+![ApiCredentialsLink](images/uisetup/api-credentials-link.png)
+    * Click the button to CREATE NEW and then copy the credentials into a safe place for future use. Token and Secret pairs will not be visible after you leave this screen.
+![TokensAndSecrets](images/uisetup/token-secret.png)
+2. Once you’ve gathered all the information needed to complete the [Postman Collection form](postman.md), Click the “Run in Postman” button at the bottom of the page. 
+![RunInPostman](images/uisetup/run-in-postman.png)
+3. The collection should now appear in Postman when you toggle to the Collections tab.
+![PostmanV2](images/uisetup/postman-v2.png)
+
+## Create an Application
+Now that we’ve taken care of the prerequisites, we’re ready to create an Application. Start by clicking the Applications menu in the dashboard.
+* Create New 
+* Enter your Application name
+* Your Application ID is created for you
+* Enter your Callback URL (this is the URL of your server)
+* Create Application
+![CreateApplication](images/uisetup/create-application.png)
+* Once you’ve created your Application, we’ll need to associate it with a Location. If you have an existing Location, you’ll choose the “Associate a location with this application” link; if not, you’ll need to click the link to “Create a location.”
+  * If you’d like to follow along with a Quick Start guide for setting up a Location, you can use the Learning Lab & Support link to follow the “Create a Location” guide.
+![CreateLocation](images/uisetup/create-location.png)
+  * When creating a Location, Select the Sub-account that the Location will be associated with and enter a name for your Location.
+  * Select the SMS and MMS settings appropriate for your account.
+  * When selecting HTTPV2 Messaging (if your SMS Protocol is HTTP), you will need to use the drop down to assign the Application we just created to this Location.
+  * After selecting all of the appropriate settings for your Location, click Submit.
+![LocationSettings](images/uisetup/location-settings.png)
+
+## Order Phone Numbers
+* Now that we’ve done all the set up work for our application, we need to order a phone number to use to send text messages.
+* In the Dashboard, use the Learning Lab & Support link to find the Quick Start guide for “Order New Phone Numbers.”
+![OrderPhoneNumbers](images/uisetup/order-phone-numbers.png)
+* Follow along with the guide and once your order/purchase has been completed, you will land on the page below. Click the order ID to open the order. 
+![PhoneNumberOrders](images/uisetup/phone-number-orders.png)
+* Scroll down the page till you see the number you ordered and use the Copy to Clipboard button to grab the number. This is the number you will use to send and receive messages with your Application.
+![NewNumberOrderDetails](images/uisetup/new-number-order-details.png)
+
+## Sending Messages
+* At this point you should have completed the following:
+  * Downloaded Postman and filled out the Postman Collection form with your individual credentials and potentially created a Sub-Account and Location in this step.
+  * Created an Application
+  * Ordered number(s)
+* Let’s head over to Postman and see what it looks like to actually send a message.
+* Open Postman and toggle over to Collections. Use the drop down to open the Bandwidth Messaging 2.0 Collection and then click Send Text Messages.
+![PostmanV2Highlights](images/uisetup/postman-v2-highlights.png)
+* Click “POST Send Text Message” and then click into the Authorization tab.
+  * Confirm your Token and Secret are entered here for your Username and Password.
+* Now let’s move over to the Body tab in Postman.
+  * Enter the following information then click the Send button:
+    * *From*: The number we ordered in the previous section of the guide.
+    * *To*: The number you’re sending a message to.
+    * *Text*: Update with the message you want to send
+    * *ApplicationID*: From your Application in the Dashboard
+![ApplicationId](images/uisetup/application-id.png)
+![PostmanSendText](images/uisetup/postman-send-text.png)
+  * You should see a Status of 202 Accepted and a message completed to the receiving party.
+
+### Message Parameters
+Parameters for sending a message can be found [here](methods.createMessage.md)
+
+## Related Links
+* [How to Download Message Detail Records (MDRs)](https://support.bandwidth.com/hc/en-us/articles/226661127-How-to-Download-Billing-Detail-Records-BDRs-and-Message-Detail-Records-MDRs-)
+* [Message Detail Record (MDR) Field Descriptions](https://support.bandwidth.com/hc/en-us/articles/360009991954)
