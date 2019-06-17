@@ -80,6 +80,7 @@ Now that we’ve taken care of the prerequisites, we’re ready to create an App
 ![PostmanV2Highlights](images/uisetup/postman-v2-highlights.png)
 * Click “POST Send Text Message” and then click into the Authorization tab.
   * Confirm your Token and Secret are entered here for your Username and Password.
+![PostmanV2UsernamePassword](images/uisetup/postman-v2-username-password.png)
 * Now let’s move over to the Body tab in Postman.
   * Enter the following information then click the Send button:
     * *From*: The number we ordered in the previous section of the guide.
