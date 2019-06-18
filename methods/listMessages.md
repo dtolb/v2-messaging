@@ -15,15 +15,24 @@ Message results are paginated with 1000 records per request. If the number of me
 ### Supported Parameters
 | Parameter     | Type                                                           | Description                                                                                                                                                                                                                                                                                                                        | Mandatory |
 |:--------------|:---------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------|
-| sourceTn      | `string`                                                       | The telephone numbers the message was sent from (must be in E.164 format, like `+19195551212`).                                                                                                                                                                                                                                    | No       |
-| destinationTn | `string`<br>**-OR-**<br>`array` of `1` (one) or more `strings` | The phone number(s) the message was sent to (must be in E.164 format, like `+19195551212`). <br><br> Example: <br> `"+19195551212"` <br> **-OR-**<br> `["+19195551212"]` <br> **-OR-**<br> `["+19195551212", "+19195554444", "+19192227777"]` <br><br> **If you supply more than one number, it will be sent as a group message.** | No       |
+| sourceTn      | `string`                                                       | The telephone numbers the message was sent from (must be in E.164 format, like `+19195551212`).                                                                                                                                                                                                                                    | No        |
+| destinationTn | `string`<br>**-OR-**<br>`array` of `1` (one) or more `strings` | The phone number(s) the message was sent to (must be in E.164 format, like `+19195551212`). <br><br> Example: <br> `"+19195551212"` <br> **-OR-**<br> `["+19195551212"]` <br> **-OR-**<br> `["+19195551212", "+19195554444", "+19192227777"]` <br><br> **If you supply more than one number, it will be sent as a group message.** | No        |
 | fromDateTime  | `DateTime-string`                                              | The **inclusive** starting date time to filter the messages (must be in yyyy-MM-dd hh:mm:ss.sss format, like 2014-05-25 12:00:00.000. You can suppress parts of the date or time, like 2014-05-25, but the missing parameters will be filled with zeros).                                                                          | No        |
 | toDateTime    | `DateTime-string`                                              | The **exclusive** ending date time to filter the messages (must be in yyyy-MM-dd hh:mm:ss.sss format, like 2014-05-25 12:00:00.000. You can suppress parts of the date or time, like 2014-05-25, but the missing parameters will be filled with zeros).                                                                            | No        |
 | messageStatus | `string`                                                       | The message delivery state to filter. Values are `REJECTED-CUSTOMER`, `REJECTED-PROVIDER`, `REJECTED-BW`, `REJECTED-BW-SPAM`, `REJECTED-PROVIDER-SPAM`, `FAILED`, `ACCEPTED`, `DELIVERED`, `DELIVERY-FAIL`                                                                                                                         | No        |
-| errorCode     | `int`                                                          | The specific error code to filter the messages                                                                                                                                                                                                                                                                                     | No        |
+| errorCode     | `int`                                                          | The specific error code to filter the messages. <br> `errorCode` & (`fromErrorCode` & `toErrorCode` ) are mutually exclusive, you can specify either a specific code or a range.                                                                                                                                                   | No        |
+| fromErrorCode | `int`                                                          | The **inclusive** starting error code to filter the messages  <br> `errorCode` & (`fromErrorCode` & `toErrorCode` ) are mutually exclusive, you can specify either a specific code or a range.                                                                                                                                     | No        |
+| toErrorCode   | `int`                                                          | The **exclusive** ending error code to filter the messages   <br> `errorCode` & (`fromErrorCode` & `toErrorCode` ) are mutually exclusive, you can specify either a specific code or a range.                                                                                                                                      | No        |
 | billable      | `boolean`                                                      | This field reflects if a message is billable, or not.                                                                                                                                                                                                                                                                              | No        |
 
-### Properties
+### Pagination Parameters
+| Parameter     | Type                                                           | Description                                                                                                                                                                                                                                                                                                                        | Mandatory |
+|:--------------|:---------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------|
+| before        | `string`                                                       | A cursor for use in pagination. `before` is an `UUID` that defines your place in the list. For instance, if you make a list request and receive 100 objects, and the `meta` object contains `before` your subsequent call can include `before=before` in order to fetch the previous page of the list.                             | no        |
+| after         | `string`                                                       | A cursor for use in pagination. `after` is an `UUID` that defines your place in the list. For instance, if you make a list request and receive 100 objects, and the `meta` object contains `after` your subsequent call can include `after=after` in order to fetch the next page of the list.                                     | no        |
+| limit         | `int`                                                          | how many records between 1-1000; default 100                                                                                                                                                                                                                                                                                       | no        |
+
+### Message Properties
 
 | Field              | Description                                                                                                                                                                                                        | Detailed Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Example Value                                                                                                                                             |
 |:-------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -57,6 +66,15 @@ Message results are paginated with 1000 records per request. If the number of me
 | MdrID              | Unique identifier to each segment of a message.                                                                                                                                                                    | This is a unique identifier for this message detail record.  Note that each segment of a message has an individual MDR.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | 00000000-0000-0000-000000000000                                                                                                                           |
 | MessageStatus      | This is the status of the message. It will be reflected as one of the different status’ in the example column.                                                                                                     | This is a summary status of a message. Rather than providing a laundry list of numeric codes, Bandwidth summarizes the disposition of the message across 9 status values as shown described below.  Following each status is a Y or N, this relays if the message is billable or notj. <br> <br> REJECTED-CUSTOMER: May include messages which failed to be accepted by the customer for a variety of reasons.(N) <br> REJECTED-PROVIDER: A provider has rejected the message for any variety of reasons - malformed to number, carrier unavailable, carrier application error.(N) <br> REJECTED-BW: Bandwidth rejected the message.  This could be due to improper formatting, authorization violations or systems failures. (N) <br> REJECTED-BW-SPAM: Bandwidth rejected as SPAM. (Y) <br> REJECTED-PROVIDER-SPAM:  Provider rejected as SPAM. (Y) <br> FAILED: Message could not be transmitted to customer or to a provider. (N) <br> ACCEPTED: Message was accepted by the Customer or the Provider and no DLR was requested. (Y) <br> DELIVERED: Message was accepted and a successful DLR was provided. (Y) <br> DELIVERY-FAIL - Message was accepted, but DLR code indicated delivery failure or Bandwidth timed out waiting for the receipt of the DLR. (Y) | REJECTED-CUSTOMER <br> REJECTED-PROVIDER REJECTED-BW REJECTED-BW-SPAM REJECTED-PROVIDER-SPAM <br> FAILED <br> ACCEPTED <br> DELIVERED  <br> DELIVERY-FAIL |
 
+### Meta Properties
+
+| Field     | Description                                                           | Example             |
+|:----------|:----------------------------------------------------------------------|:--------------------|
+| before    | The UUID to filter and paginate through the previous page of messages | `ThlNjc5MjUwNDMzMA` |
+| hasBefore | Boolean value that represents there is a previous page of messages    | `true`              |
+| after     | the UUID to filter and paginate through the next page of messages     | `ADfaU5ODFmMWRiYQ`  |
+| hasAfter  | Boolean value that represents there is a next page of messages        | `true`              |
+
 {% common %}
 
 ### Example 1 of 3: List messages
@@ -69,48 +87,87 @@ Authorization: {userName:password}
 
 HTTP/1.1 200 OK
 Content-Type: application/json
-Link: <https://messaging.bandwidth.com/api/v2/users/{userId}/messages?sortKeyLT=1458576004287000989>; rel="next"
+Link: <https://messaging.bandwidth.com/api/v2/users/{userId}/messages?after=after&limit=int>; rel="next"
+Link: <https://messaging.bandwidth.com/api/v2/users/{userId}/messages?before=before&limit=int>; rel="prev"
 
-[
-  {},
-  {},
-  {}
-]
+{
+  "ok": true,
+  "meta": {
+    "before": "ThlNjc5MjUwNDMzMA",
+    "hasBefore": true,
+    "after": "ADfaU5ODFmMWRiYQ",
+    "hasAfter": true
+  },
+  "limit": 3,
+  "messages": [
+    {},
+    {},
+    {}
+  ]
+}
 ```
 
-### Example 2 of 3: List messages that were flagged as SPAM by Bandwidth
+{% common %}
+
+### Example 2 of 3: List messages that contained errorCode 4121
+
 {% sample lang='http' %}
 
+
 ```http
-GET https://messaging.bandwidth.com/api/v2/users/{userId}/messages?messageStatus=REJECTED-BW-SPAM HTTP/1.1
+GET https://messaging.bandwidth.com/api/v2/users/{userId}/messages?errorCode=4121& HTTP/1.1
 Authorization: {userName:password}
 
 HTTP/1.1 200 OK
 Content-Type: application/json
-Link: <https://messaging.bandwidth.com/api/v2/users/{userId}/messages?sortKeyLT=1458576004287000989>; rel="next"
+Link: <https://messaging.bandwidth.com/api/v2/users/{userId}/messages?errorCode=4121&after=after&limit=int>; rel="next"
+Link: <https://messaging.bandwidth.com/api/v2/users/{userId}/messages?errorCode=4121&before=before&limit=int>; rel="prev"
 
-[
-  {},
-  {},
-  {}
-]
+{
+  "ok": true,
+  "meta": {
+    "before": "ThlNjc5MjUwNDMzMA",
+    "hasBefore": true,
+    "after": "ADfaU5ODFmMWRiYQ",
+    "hasAfter": true
+  },
+  "limit": 3,
+  "messages": [
+    {},
+    {},
+    {}
+  ]
+}
 ```
+
+{% common %}
 
 ### Example 3 of 3: List messages that contained errors
 {% sample lang='http' %}
 
 ```http
-GET https://messaging.bandwidth.com/api/v2/users/{userId}/messages?errorCode[gt]=0& HTTP/1.1
+GET https://messaging.bandwidth.com/api/v2/users/{userId}/messages?fromErrorCode=1& HTTP/1.1
 Authorization: {userName:password}
 
 HTTP/1.1 200 OK
 Content-Type: application/json
-Link: <https://messaging.bandwidth.com/api/v2/users/{userId}/messages?sortKeyLT=1458576004287000989>; rel="next"
+Link: <https://messaging.bandwidth.com/api/v2/users/{userId}/messages?fromErrorCode=1&after=after&limit=int>; rel="next"
+Link: <https://messaging.bandwidth.com/api/v2/users/{userId}/messages?fromErrorCode=1&before=before&limit=int>; rel="prev"
 
-[
-  {},
-  {},
-  {}
-]
+{
+  "ok": true,
+  "meta": {
+    "before": "ThlNjc5MjUwNDMzMA",
+    "hasBefore": true,
+    "after": "ADfaU5ODFmMWRiYQ",
+    "hasAfter": true
+  },
+  "limit": 3,
+  "messages": [
+    {},
+    {},
+    {}
+  ]
+}
 ```
 {% endmethod %}
