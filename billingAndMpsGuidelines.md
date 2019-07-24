@@ -7,7 +7,8 @@ This guide will walk through the recommended approach to managing queues and rat
 ## Assumptions
 * You have signed up for the [Bandwidth Messaging API](https://app.bandwidth.com/)
 * You are familiar with:
-  * [2017 CTIA Best Practices](https://api.ctia.org/docs/default-source/default-document-library/170119-ctia-messaging-principles-and-best-practices.pdf)
+  * [2019 CTIA Best Practices (PDF)](https://api.ctia.org/wp-content/uploads/2019/07/190719-CTIA-Messaging-Principles-and-Best-Practices-FINAL.pdf)
+    * [2017 CTIA Best Practices (PDF)](https://api.ctia.org/docs/default-source/default-document-library/170119-ctia-messaging-principles-and-best-practices.pdf)
   * [The TCPA _Telephone Consumer Protection Act_](https://transition.fcc.gov/cgb/policy/TCPA-Rules.pdf)
   * [Your API Credentials](accountCredentials.md)
   * [Sending SMS & MMS](./methods/sendMessages.md)
