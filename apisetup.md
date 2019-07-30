@@ -1,23 +1,21 @@
 {% multimethod %}
 {% endmultimethod %}
 
-# Messaging 2.0 API Setup {#top}
+# Bandwidth Messaging API Setup {#top}
 
-This walks through how to setup your Bandwidth Phone Number API and Bandwidth Voice and Mesasging API to send messages with the new Messaging 2.0 API.
-This guide is entirely focused on setup with the API.  If you'd like to follow along with the UI, head to the [via UI](uisetup.md) to follow along there.
+This walks through how to setup the Bandwidth Messaging API to send messages.
+This guide is entirely focused on setup with the API.
 
 ## Assumptions
 
 * You have downloaded [Postman](https://www.getpostman.com/) -or- have the ability to make an API request.
-* You have your [Voice and Messaging API](https://app.bandwidth.com) `token`, `secret`
+* You have your [Messaging](https://dashboard.bandwidth.com/portal/report/#application:/create) `token`, `secret`
 * You have your [Phone Number API](https://dashboard.bandwidth.com) `accountId`, `username` and `password`
-* You have contacted [Support](http://support.bandwidth.com) to link your [Voice and Messaging API](https://app.bandwidth.com) and [Phone Number API](https://dashboard.bandwidth.com)
-* You have your Bandwidth Phone Number Dashboard [Account Id](uisetup.md#get-your-account-id)
-* You have an existing [Sub-account](uisetup.md#create-subaccount-site) you'd like to use.
+* You have an existing Sub-account you'd like to use.
 
 ## Follow along with Postman
 
-Fill out the form on the [Postman](postman.md) page to download the Messaging 2.0 collection.
+Fill out the form on the [Postman](postman.md) page to download the Messaging collection.
 
 ## Getting Started
 

@@ -31,7 +31,11 @@ module.exports = function ($) {
 		'billingAndMpsGuidelines.html'
 	];
 
-
+	// Add external link icon to all links in summary
+	$('ul.summary a[target=_blank]').each(function () {
+		var href = $(this); // retrive href foreach a
+		$(this).append('&nbsp;<i class="icons8-open-in-window"></i>');
+	});
 
 	$('li.chapter a').each(function(i, elem) {
 		var a = $(elem);
