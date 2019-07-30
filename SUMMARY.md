@@ -25,7 +25,6 @@
 	* [7. Order Available Numbers](apisetup.md#order-numbers)
 	* [8. Check Order Status](apisetup.md#check-order-status)
 	* [9. Send Text Message](apisetup.md#sending-messages)
-* [Video walkthrough](videosetup.md)
 
 ## Phone Number Management
 * [Ordering Phone Numbers Overview](concepts/numberOrderingSummary.md)
