@@ -7,8 +7,7 @@ Specific information for finding your credentials can be found [here](https://su
 
 ## Assumptions
 
-* You have a [Voice and Messaging](https://app.bandwidth.com) account
-* You have a [Phone Number](https://dashboard.bandwidth.com) account
+* You have a [Bandwidth](https://dashboard.bandwidth.com) account
 
 ## Credential overview
 

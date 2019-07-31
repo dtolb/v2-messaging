@@ -14,13 +14,7 @@
 * [Base URL Change And Media FAQ](baseUrlMediaFAQ.md)
 
 ## Initial Account Setup
-* [via UI](uisetup.md)
-	* [1. Get your account ID](uisetup.md#get-your-account-id)
-	* [2. Setup your Application](uisetup.md#setup-your-application)
-	* [3. Create subaccount (_site_)](uisetup.md#create-subaccount-site)
-	* [4. Create location (_sippeer_) and assign the application](uisetup.md#create-location-sippeer-and-assign-the-application)
-	* [5. Order Phone numbers to location (_sippeer_)](uisetup.md#order-numbers-to-location)
-	* [6. Sending Messages](uisetup.md#sending-messages)
+* [via UI](https://support.bandwidth.com/hc/en-us/articles/360033658613-Messaging-V2-API-Account-Setup-UI-)
 * [via API](apisetup.md)
 	* [1. Create application](apisetup.md#create-application)
     * [2. Create subaccount (_site_)](apisetup.md#create-subaccount-site)
@@ -31,7 +25,6 @@
 	* [7. Order Available Numbers](apisetup.md#order-numbers)
 	* [8. Check Order Status](apisetup.md#check-order-status)
 	* [9. Send Text Message](apisetup.md#sending-messages)
-* [Video walkthrough](videosetup.md)
 
 ## Phone Number Management
 * [Ordering Phone Numbers Overview](concepts/numberOrderingSummary.md)
